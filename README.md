@@ -28,7 +28,7 @@
 
 数据快照日期：2026-10-29。86 个英文关键词及 8 个分类全部附中文译文。标签来源于原站，可能不完整，不能当作完整生成提示词。图片为不含人物的服装参考，纵横比 2:3。
 
-当前版本包含完整元数据及首批 120 张本地缩略图，其余缩略图、预览图与 PNG 原图直接使用原站地址，依赖原站可用性。**这还不是全量离线镜像**。可用下方下载脚本补全全部 4,221 张素材；清单 `data/local-assets.json` 自动决定本地与原站资源的使用。跨站 PNG 链接可能在新标签打开，使用浏览器“图片另存为”保存。
+**完整本地镜像**：1,407 张 WebP 缩略图、1,407 张 WebP 预览图、1,407 张 PNG 原图，合计 4,221 张图片，约 1.42 GiB。画廊直接读取仓库内素材，浏览与下载不依赖原站。首次克隆体积较大；清单 `data/local-assets.json` 记录已校验的本地文件。
 
 ## 功能
 
@@ -73,12 +73,11 @@ python3 scripts/translate.py
 python3 -m unittest discover -s tests -v
 node --check assets/app.js
 python3 scripts/build.py
-python3 scripts/build.py --offline           # 仅在完整素材下载并校验通过后打包离线版
 ```
 
 ## 部署
 
-Cloudflare Pages 连接本仓库，框架选择 None，构建命令 `python3 scripts/build.py`，输出目录 `dist`。构建会检查数据与本地素材清单，仅拷贝网站文件，排除 Git 历史和脚本。离线构建额外校验全部素材。GitHub Pages 也可发布 `dist` 内容，站点内部资源使用相对路径，支持仓库子路径部署。
+Cloudflare Pages 连接本仓库，框架选择 None，构建命令 `python3 scripts/build.py`，输出目录 `dist`。构建会检查全部图片及中文数据，仅拷贝网站文件，排除 Git 历史和脚本。站点内部资源使用相对路径，支持仓库子路径部署。请根据托管平台的容量限制选择部署方式。
 
 ## 版权
 

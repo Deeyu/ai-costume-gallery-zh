@@ -1,12 +1,9 @@
-"""Package only website files; --offline requires a complete local mirror."""
-import argparse
+"""Package only website files after verifying the complete local mirror."""
 import shutil
 from translate import ROOT
 from verify import verify
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--offline', action='store_true')
-verify(assets=parser.parse_args().offline)
+verify(assets=True)
 from manifest import main as update_manifest
 update_manifest()
 dist = ROOT / 'dist'
