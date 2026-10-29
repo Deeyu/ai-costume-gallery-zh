@@ -14,5 +14,5 @@ jobs:
         with:
           node-version: '22'
       - run: python3 -m unittest discover -s tests -v
-      - run: python3 scripts/verify.py
+      - run: python3 scripts/verify.py --assets
       - run: node --check assets/app.js

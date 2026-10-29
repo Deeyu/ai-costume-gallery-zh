@@ -1,9 +1,6 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 let records = [], filtered = [], category = '', shown = 0, current = 0;
-let localAssets = new Set();
-const source = 'https://ai-costume-gallery.pages.dev/';
-const asset = (path) => localAssets.has(path) ? path : source + path;
 const PAGE = 60;
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -38,7 +35,7 @@ function appendPage() {
     const button = element('button', undefined, 'card');
     button.setAttribute('aria-label', `查看 ${r.id} ${r.分类}`);
     const img = element('img');
-    img.src = asset(r.缩略图); img.alt = `${r.分类} ${r.关键词.join('、')} ${r.id}`;
+    img.src = r.缩略图; img.alt = `${r.分类} ${r.关键词.join('、')} ${r.id}`;
     img.loading = 'lazy'; img.decoding = 'async'; img.width = 300; img.height = 450;
     img.addEventListener('error', () => { img.alt = `${r.id} 图片加载失败，请检查网络或本地素材`; });
     const info = element('div', undefined, 'card-info');
@@ -64,11 +61,10 @@ function showDetail() {
   $('image-status').textContent = '正在加载预览图…';
   $('large').onload = () => { $('image-status').textContent = ''; };
   $('large').onerror = () => { $('image-status').textContent = '预览图加载失败，可尝试打开原图。'; };
-  $('large').src = asset(r.预览图);
+  $('large').src = r.预览图;
   $('large').alt = `${r.id} ${r.关键词.join('、')}`;
-  $('download').href = asset(r.原图); $('download').download = `${r.id}.png`;
-  $('download').target = '_blank'; $('download').rel = 'noopener';
-  $('open-original').href = asset(r.原图);
+  $('download').href = r.原图; $('download').download = `${r.id}.png`;
+  $('open-original').href = r.原图;
   $('prev').disabled = current === 0; $('next').disabled = current === filtered.length - 1;
   $('copy').textContent = '复制 ID';
 }
@@ -101,9 +97,6 @@ async function init() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     records = await response.json();
     if (!Array.isArray(records) || !records.length) throw new Error('数据为空');
-    const manifest = await fetch('data/local-assets.json');
-    if (!manifest.ok) throw new Error('素材清单加载失败');
-    localAssets = new Set(await manifest.json());
     $('total').textContent = `${records.length.toLocaleString()} 套 / 8 个分类`;
     applyFilters();
   } catch (error) {

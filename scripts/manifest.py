@@ -1,4 +1,4 @@
-"""Record verified local assets; remaining assets resolve to the source site."""
+"""Record verified local assets for integrity checks."""
 import json
 from translate import ROOT
 
@@ -12,7 +12,7 @@ def main():
             if p.exists() and valid(p.read_bytes(), p.suffix):
                 paths.append(row[key])
     (ROOT / 'data/local-assets.json').write_text(json.dumps(sorted(paths), indent=2) + '\n')
-    print(f'本地素材 {len(paths)}/ {len(rows)*3}；其余素材使用原站地址。')
+    print(f'本地素材 {len(paths)}/{len(rows)*3}；缺失 {len(rows)*3-len(paths)} 张。')
 
 if __name__ == '__main__':
     main()
