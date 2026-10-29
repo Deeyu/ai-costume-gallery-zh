@@ -2,11 +2,16 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
+from tempfile import TemporaryDirectory
+from http.client import IncompleteRead
+from io import BytesIO
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from sync import extract
 from translate import ROOT, translate
 from download import valid
+from download import download
 
 class DataTests(unittest.TestCase):
     def setUp(self):
@@ -34,6 +39,13 @@ class DataTests(unittest.TestCase):
     def test_reject_error_response_and_truncated_webp(self):
         self.assertFalse(valid(b'<html>error</html>', '.png'))
         self.assertFalse(valid(b'RIFF\xff\xff\xff\xffWEBPbroken', '.webp'))
+
+    def test_retry_interrupted_image_response(self):
+        image = (ROOT / 'thumbs/SPR-0001.webp').read_bytes()
+        with TemporaryDirectory() as directory, patch('download.ROOT', Path(directory)), patch('download.time.sleep'), patch('download.urlopen', side_effect=[IncompleteRead(b'partial'), BytesIO(image)]) as request:
+            download('thumbs/SPR-0001.webp')
+            self.assertEqual((Path(directory) / 'thumbs/SPR-0001.webp').read_bytes(), image)
+            self.assertEqual(request.call_count, 2)
 
 if __name__ == '__main__':
     unittest.main()
