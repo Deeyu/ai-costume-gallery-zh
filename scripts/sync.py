@@ -3,7 +3,7 @@ import argparse
 import json
 import re
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 from translate import ROOT, main as translate
 
 SOURCE = 'https://ai-costume-gallery.pages.dev/'
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     if args.html:
         html = args.html.read_text()
     else:
-        with urlopen(SOURCE, timeout=30) as response:
+        with urlopen(Request(SOURCE, headers={'User-Agent': 'Mozilla/5.0'}), timeout=30) as response:
             html = response.read().decode('utf-8')
     rows = extract(html)
     # Validate translation coverage before replacing the existing snapshot.

@@ -4,6 +4,14 @@
 
 数据来源：[衣装集 COSTUME-DB-01](https://ai-costume-gallery.pages.dev/) · 原作者：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
 
+![桌面预览](docs/preview.png)
+
+<details><summary>手机预览</summary>
+
+![手机预览](docs/mobile.png)
+
+</details>
+
 ## 收录内容
 
 | 分类 | 套数 |

@@ -2,9 +2,10 @@
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+from http.client import HTTPException
 from pathlib import Path
 import time
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 from translate import ROOT
 from sync import SOURCE
 
@@ -19,7 +20,8 @@ def download(path):
         return
     for attempt in range(3):
         try:
-            with urlopen(SOURCE + path, timeout=45) as response:
+            request = Request(SOURCE + path, headers={'User-Agent': 'Mozilla/5.0', 'Referer': SOURCE})
+            with urlopen(request, timeout=45) as response:
                 data = response.read()
             if not valid(data, target.suffix):
                 raise ValueError('图片内容不完整或格式错误')
@@ -28,7 +30,7 @@ def download(path):
             temporary.write_bytes(data)
             temporary.replace(target)
             return
-        except (OSError, ValueError):
+        except (OSError, ValueError, HTTPException):
             if attempt == 2:
                 raise
             time.sleep(1 + attempt)
