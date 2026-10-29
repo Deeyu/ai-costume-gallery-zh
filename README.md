@@ -8,6 +8,12 @@
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
 
+## 演示视频
+
+https://github.com/user-attachments/assets/b0ca88cc-0cd9-483b-abe5-c6b3b8fc9d1a
+
+## 界面预览
+
 ![桌面预览](docs/preview.png)
 
 <details><summary>手机预览</summary>
