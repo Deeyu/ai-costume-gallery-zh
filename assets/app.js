@@ -79,6 +79,30 @@ $('copy').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(filtered[current].id); $('copy').textContent = '已复制'; }
   catch { $('copy').textContent = '复制失败，请手动复制上方 ID'; }
 });
+$('download').addEventListener('click', async (event) => {
+  const link = event.currentTarget;
+  if (new URL(link.href).origin === location.origin) return;
+  event.preventDefault();
+  if (link.getAttribute('aria-disabled') === 'true') return;
+  const href = link.href, filename = link.download;
+  link.setAttribute('aria-disabled', 'true');
+  link.textContent = '正在下载…';
+  let label = '下载 PNG 原图';
+  try {
+    const response = await fetch(href);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const url = URL.createObjectURL(await response.blob());
+    const save = element('a');
+    save.href = url; save.download = filename; save.hidden = true;
+    document.body.append(save); save.click(); save.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch {
+    label = '下载失败，请点“打开原图”';
+  } finally {
+    link.removeAttribute('aria-disabled');
+    link.textContent = label;
+  }
+});
 document.addEventListener('keydown', (e) => {
   if ($('viewer').open) {
     if (e.key === 'ArrowLeft') { e.preventDefault(); $('prev').click(); }
