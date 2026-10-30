@@ -2,11 +2,11 @@
 
 面向 AI 绘画、角色设定与漫剧创作的服装参考图库。按 [Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)的整理模式制作：保留原始数据、提供中文翻译、静态画廊与可复现的素材下载脚本。
 
-数据来源：[衣装集 COSTUME-DB-01](https://ai-costume-gallery.pages.dev/) · 原作者：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
-
-**在线浏览：[中文版服装集](https://deeyu.github.io/ai-costume-gallery-zh/)** · [自动部署状态](https://github.com/Deeyu/ai-costume-gallery-zh/actions/workflows/deploy.yml) · [版权与致谢](#版权与致谢)
+**在线浏览地址：[中文版服装集](https://deeyu.github.io/ai-costume-gallery-zh/)** · [版权与致谢](#版权与致谢)
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
+
+数据来源：[衣装集](https://ai-costume-gallery.pages.dev/) · 原作者X：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
 
 ## 演示视频
 
@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 ## 界面预览
 
-![桌面预览](docs/preview.png)
+![1793322085655](image/README/1793322085655.png)
 
 <details><summary>手机预览</summary>
 
@@ -24,27 +24,27 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 ## 收录内容
 
-| 分类 | 套数 |
-| --- | ---: |
-| 春装 | 215 |
-| 夏装 | 254 |
-| 秋装 | 244 |
-| 冬装 | 253 |
-| 内衣 | 199 |
-| 派对 | 48 |
-| 泳装 | 54 |
-| 性感 | 140 |
+| 分类 |  套数 |
+| ---- | ----: |
+| 春装 |   215 |
+| 夏装 |   254 |
+| 秋装 |   244 |
+| 冬装 |   253 |
+| 内衣 |   199 |
+| 派对 |    48 |
+| 泳装 |    54 |
+| 性感 |   140 |
 | 合计 | 1,407 |
 
 数据快照日期：2026-10-29。86 个英文关键词及 8 个分类全部附中文译文。标签来源于原站，可能不完整，不能当作完整生成提示词。图片为不含人物的服装参考，纵横比 2:3。
 
 **完整本地镜像**：1,407 套服装，每套保存三个图片版本，共 4,221 个图片文件，约 1.42 GiB。它们对应相同的 1,407 套服装。首次克隆体积较大；清单 `data/local-assets.json` 记录已校验的本地文件。
 
-| 目录 | 版本 | 文件数 | 体积 | 用途 |
-| --- | --- | ---: | ---: | --- |
-| `thumbs/` | WebP 缩略图 | 1,407 | 约 9.8 MiB | 列表浏览 |
-| `img/` | WebP 预览图 | 1,407 | 约 113.5 MiB | 大图浏览 |
-| `png/` | PNG 原图 | 1,407 | 约 1,331.1 MiB | 下载与创作参考 |
+| 目录        | 版本        | 文件数 |           体积 | 用途           |
+| ----------- | ----------- | -----: | -------------: | -------------- |
+| `thumbs/` | WebP 缩略图 |  1,407 |     约 9.8 MiB | 列表浏览       |
+| `img/`    | WebP 预览图 |  1,407 |   约 113.5 MiB | 大图浏览       |
+| `png/`    | PNG 原图    |  1,407 | 约 1,331.1 MiB | 下载与创作参考 |
 
 本地完整版直接读取以上全部素材。GitHub Pages 版本托管缩略图和预览图，下载 PNG 时从本 GitHub 仓库读取原图；两种方式均不依赖原站提供图片。
 
@@ -79,16 +79,16 @@ THIRD_PARTY_NOTICES.md      第三方素材、许可范围与致谢
 
 `data/costume.json` 保留原始日文字段；`data/costume-zh.json` 是前端读取的中文记录。
 
-| 字段 | 示例或含义 |
-| --- | --- |
-| `id` | `SPR-0001`，沿用原站唯一编号 |
-| `分类` | 春装等 8 个中文分类 |
-| `关键词` | 中文关键词数组 |
-| `英文关键词` | 原始英文关键词，便于对照与搜索 |
-| `缩略图` | `thumbs/SPR-0001.webp` |
-| `预览图` | `img/SPR-0001.webp` |
-| `原图` | `png/SPR-0001.png` |
-| `检索` | ID、分类及中英文关键词组成的检索文本 |
+| 字段           | 示例或含义                           |
+| -------------- | ------------------------------------ |
+| `id`         | `SPR-0001`，沿用原站唯一编号       |
+| `分类`       | 春装等 8 个中文分类                  |
+| `关键词`     | 中文关键词数组                       |
+| `英文关键词` | 原始英文关键词，便于对照与搜索       |
+| `缩略图`     | `thumbs/SPR-0001.webp`             |
+| `预览图`     | `img/SPR-0001.webp`                |
+| `原图`       | `png/SPR-0001.png`                 |
+| `检索`       | ID、分类及中英文关键词组成的检索文本 |
 
 GitHub Pages 构建只在 `dist/data/costume-zh.json` 中将 `原图` 改为 GitHub 地址，自动部署时固定到对应提交；仓库源数据保持本地相对路径。
 
@@ -104,7 +104,7 @@ python3 scripts/verify.py --assets           # 校验全部 4,221 张图片及�
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-打开 <http://127.0.0.1:8000>。由于页面通过 fetch 读取 JSON，请通过 HTTP 预览。代理可通过标准 `HTTPS_PROXY` 环境变量指定；勿将凭证写入仓库。更新原站数据时如出现新关键词，先补充 `scripts/translate.py`，避免漏译。
+打开 [http://127.0.0.1:8000](http://127.0.0.1:8000)。由于页面通过 fetch 读取 JSON，请通过 HTTP 预览。代理可通过标准 `HTTPS_PROXY` 环境变量指定；勿将凭证写入仓库。更新原站数据时如出现新关键词，先补充 `scripts/translate.py`，避免漏译。
 
 ```bash
 python3 scripts/translate.py
