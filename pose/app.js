@@ -188,7 +188,9 @@ async function load() {
     for (const response of responses) if (!response.ok) throw new Error(`HTTP ${response.status}`);
     [rows, meta] = await Promise.all(responses.map((response) => response.json()));
     state.system = Object.keys(meta.systems)[0];
-    $('total').textContent = `常规动作参考 · ${meta.groups} 组 · ${meta.total} 张 · 中文词条来自 Anhao`;
+    $('total').textContent = `完整索引 · ${meta.groups} 组 · ${meta.total.toLocaleString('zh-CN')} 张 · 中文词条来自 Anhao`;
+    const missing = Object.entries(meta.missing_views).map(([group, angles]) => `${group} 缺少${angles.join('、')}图`);
+    $('source-note').textContent = `人体动作教学与绘画参考 · ${meta.groups} 组、${meta.total.toLocaleString('zh-CN')} 张。图片由原站提供。${missing.length ? `上游数据：${missing.join('；')}，按实际视角显示。` : ''}`;
     for (const angle of POSE_ANGLES) $('angle').append(new Option(angle, angle));
     renderSystems(); renderCategories(); render();
   } catch (error) {

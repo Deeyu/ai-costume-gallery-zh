@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AI 姿势库中文版｜多视角动作参考</title>
-  <meta name="description" content="98 组常规姿势、490 张参考图，包含全身与上半身动作。中文搜索、动作分类与五视角切换，原站 PNG 下载。">
+  <title>AI 姿势库中文版｜人体动作教学与绘画参考</title>
+  <meta name="description" content="完整收录参考仓库 288 组、1,439 张人体模型线稿，涵盖 4 个体系、26 个分类，用于人体动作教学、绘画与构图参考。支持中文搜索、多视角浏览和原站 PNG 下载。">
   <meta name="color-scheme" content="light">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/style.css">
@@ -15,19 +15,19 @@
 <body>
   <header class="topbar"><a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28">姿势库 <span>中文版</span></a><nav aria-label="站点"><a href="https://ai-pose-gallery.pages.dev/" target="_blank" rel="noopener">原始图库</a><a class="gallery-switch" href="../">服装库</a><a class="gallery-switch" href="../portrait/">脸库</a><a class="github-link" href="https://github.com/Deeyu/ai-costume-gallery-zh" aria-label="GitHub 项目仓库"><img src="../assets/github-mark.svg" alt="" width="20" height="20"><span>GitHub</span></a><button id="follow" class="nav-follow" aria-haspopup="dialog" aria-controls="wechat">公众号</button><button id="help" aria-label="使用指南"><span class="help-label">使用指南</span><span class="help-short" aria-hidden="true">指南</span></button></nav></header>
   <main>
-    <section class="intro pose-intro"><div><h1>为角色，找到合适的姿势。</h1><p>从坐姿、站姿到上半身动作，在五个视角间观察身体结构。<br>选择动作、切换角度，为绘画、角色设定与分镜提供参考。</p><p id="total" class="pose-total" role="status">正在读取姿势索引…</p></div><div class="pose-count"><strong>5</strong> 个视角 / 每组</div></section>
+    <section class="intro pose-intro"><div><h1>为角色，找到合适的姿势。</h1><p>用人体模型线稿，观察动作、身体结构与双人构图。<br>用于人体动作教学、绘画练习、角色设定与分镜参考。</p><p id="total" class="pose-total" role="status">正在读取姿势索引…</p></div><div class="pose-count"><strong>5</strong> 个参考视角</div></section>
     <section class="library" aria-label="姿势图库">
       <div id="systems" class="systems" aria-label="姿势体系"></div>
       <div class="pose-filters"><label>动作分类<select id="category" aria-label="动作分类"><option value="">全部动作</option></select></label><label>视角<select id="angle" aria-label="视角"><option value="">全部视角</option></select></label><div class="view-mode" aria-label="浏览方式"><button id="grouped" aria-pressed="true">分组浏览</button><button id="single" aria-pressed="false">单图浏览</button></div></div>
       <div class="toolbar"><label class="search"><span>搜索</span><input id="q" type="search" placeholder="试试 坐姿、前倾、P001 或日文名称" autocomplete="off"><kbd>/</kbd></label><button id="reset">重置筛选</button></div>
-      <div class="result-line"><h2 id="section-title">常规动作参考</h2><p id="status" role="status" aria-live="polite">正在加载数据…</p></div>
+      <div class="result-line"><h2 id="section-title">人体动作参考</h2><p id="status" role="status" aria-live="polite">正在加载数据…</p></div>
       <div id="grid" class="grid"></div><p id="empty" hidden>没有找到匹配的姿势。试试其他关键词，或重置筛选。</p><button id="more" class="more" hidden>加载更多</button>
-      <p class="source-note">本页收录常规动作参考：标准全身与上半身可爱系，共 98 组。图片由原站提供，加载和下载需访问原站。</p>
+      <p id="source-note" class="source-note">用于人体动作教学与绘画参考。图片由原站提供，加载和下载需访问原站。</p>
     </section>
   </main>
   <footer><p>图片及原始索引：<a href="https://ai-pose-gallery.pages.dev/">AI 姿势原始图库</a> · 原作者 <a href="https://x.com/giaaibusi">ギア（@giaaibusi）</a></p><p>中文词条整理：<a href="https://github.com/anhao/ai-pose-gallery-zh">Anhao · ai-pose-gallery-zh</a>。本页在其中文索引基础上整理，保留原始 ID 和日文名称。</p><p>原站允许商用、编辑及绘画参考，禁止图像数据的再分发、转载与转售。本仓库仅保存索引，图片由原站加载。<a href="../">服装库</a> · <a href="../portrait/">脸库</a> · <a href="https://github.com/Deeyu/ai-costume-gallery-zh/blob/main/THIRD_PARTY_NOTICES.md">版权与致谢</a></p></footer>
   <dialog id="viewer" aria-labelledby="detail-title"><div class="detail"><div class="picture"><img id="large" alt=""><p id="image-status" role="status"></p></div><div class="detail-info pose-detail-info"><button id="close" class="close" aria-label="关闭大图">×</button><p id="detail-cat" class="detail-cat"></p><h2 id="detail-title"></h2><p id="position"></p><div id="angles" class="angle-choices" aria-label="切换视角"></div><details><summary>原始日文与图片 ID</summary><p id="original"></p></details><div class="actions"><a id="download" class="primary" download target="_blank" rel="noopener">下载 PNG 原图</a><a id="open-original" target="_blank" rel="noopener">打开原图</a><button id="copy">复制 ID</button></div><p class="download-note">原图由原站提供；下载失败时可点“打开原图”后保存。</p><div class="pose-paging"><button id="prev-angle">← 上个视角</button><button id="next-angle">下个视角 →</button><button id="prev-pose">↑ 上组姿势</button><button id="next-pose">下组姿势 ↓</button></div><small>← → 切换视角 · ↑ ↓ 切换姿势 · Esc 关闭</small></div></div></dialog>
-  <dialog id="guide" aria-labelledby="guide-title"><h2 id="guide-title">如何使用姿势库</h2><p>按体系、动作分类、视角筛选，或用中文、日文和 ID 搜索。多个关键词以空格分隔，结果需同时包含。</p><p>“分组浏览”将同一姿势的五个视角放在一张卡片中；“单图浏览”逐张显示参考图。点击卡片进入大图，用方向键切换视角与姿势；视角筛选会同时限制卡片和大图中的视角。</p><p>本页收录标准全身与上半身可爱系的常规动作，中文词条来自 <a href="https://github.com/anhao/ai-pose-gallery-zh">Anhao 中文姿势图库</a>。原始索引和图片由 <a href="https://ai-pose-gallery.pages.dev/">ギア的原始图库</a>提供。</p><p>原站允许商用、编辑及绘画参考，禁止图像数据的再分发、转载与转售。图片不适用本项目的代码 MIT 许可，使用前请阅读原站说明。</p><form method="dialog"><button class="primary">知道了</button></form></dialog>
+  <dialog id="guide" aria-labelledby="guide-title"><h2 id="guide-title">如何使用姿势库</h2><p>按体系、动作分类、视角筛选，或用中文、日文和 ID 搜索。多个关键词以空格分隔，结果需同时包含。</p><p>“分组浏览”将同一姿势的现有视角放在一张卡片中；“单图浏览”逐张显示参考图。点击卡片进入大图，用方向键切换视角与姿势；视角筛选会同时限制卡片和大图中的视角。</p><p>完整索引包含 288 组、1,439 张人体模型线稿，保留原站四个体系与分类名称，用于人体动作教学、绘画与构图参考。上游 full_sexy_P018 缺少仰视图，其余 287 组各有 5 个视角。</p><p>中文词条来自 <a href="https://github.com/anhao/ai-pose-gallery-zh">Anhao 中文姿势图库</a>，原始索引和图片由 <a href="https://ai-pose-gallery.pages.dev/">ギア的原始图库</a>提供。本页保留来源名称与 ID，教学用途说明不代表额外素材授权。</p><p>原站允许商用、编辑及绘画参考，禁止图片批量下载、再分发、转载与转售。图片不适用本项目的代码 MIT 许可；参考项目对商用范围另有表述，详见<a href="https://github.com/Deeyu/ai-costume-gallery-zh/blob/main/THIRD_PARTY_NOTICES.md">版权与致谢</a>。</p><form method="dialog"><button class="primary">知道了</button></form></dialog>
   <dialog id="wechat" aria-labelledby="wechat-title" aria-describedby="wechat-description"><form method="dialog"><button class="close" aria-label="关闭公众号二维码">×</button></form><h2 id="wechat-title">Agent内参</h2><p id="wechat-description">微信扫一扫，关注公众号</p><img src="../assets/wechat-qr.jpg" alt="Agent内参公众号二维码" width="430" height="430"><small>手机可保存二维码后，在微信中识别</small></dialog>
 </body>
 </html>

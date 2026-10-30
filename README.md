@@ -16,11 +16,11 @@
 | --- | --- | --- |
 | 服装库 | 1,407 套服装，每套三个图片版本 | 仓库内完整镜像 |
 | 脸库 | 1,499 张参考图，包含 893 张正面脸图、606 张造型参考 | 本地中文索引，引用原站缩略图及 PNG |
-| 姿势库 | 98 组常规动作、490 张图，每组 5 个视角 | 本地双语索引，引用原站缩略图及 PNG |
+| 姿势库 · 人体动作教学与绘画参考 | 288 组、1,439 张人体模型线稿，4 个体系、26 个分类 | 完整双语索引，引用原站缩略图及 PNG |
 
 脸库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸库图片。脸库浏览与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
-姿势库集成标准全身和上半身可爱系的常规动作子集，不是上游全部 1,439 张图片的完整镜像。原站禁止图像数据再分发，因此本仓库仅保存索引，浏览与下载依赖原站。
+姿势库完整收录参考仓库的 **1,439 条图片记录**，用于**人体动作教学、绘画练习、身体结构与构图参考**。素材为无面部、无生殖器细节的人体模型线稿；保留来源体系、分类、姿势名称及编号，不依据名称删减记录。原站禁止图片批量下载及再分发，因此本仓库保存完整索引，图片逐张由原站提供，浏览与下载依赖原站。
 
 ## 演示视频
 
@@ -90,8 +90,8 @@ portrait/data/portrait-zh.json 中文发长、发型及检索字段
 portrait/data/ranking-zh.json 原站下载排行快照
 scripts/portrait.py        脸库元数据提取、翻译及校验
 pose/                      姿势库中文版（分组、单图与多视角浏览）
-pose/data/pose.json         所收录姿势的原始日文记录
-pose/data/upstream-zh.json  Anhao 中文词条快照（所收录子集）
+pose/data/pose.json         完整 1,439 条原始日文记录
+pose/data/upstream-zh.json  Anhao 完整中文词条快照（1,439 条）
 pose/data/pose-zh.json      中文检索、分组与原站图片 URL
 pose/UPSTREAM_LICENSE      Anhao 参考项目的完整许可与范围说明
 scripts/pose.py            姿势索引同步、来源记录与校验
@@ -131,15 +131,23 @@ python3 scripts/portrait.py check-images --limit 8
 
 `sync` 只读取原站公开的元数据和排行快照，不下载或镜像图片，也不执行原站 JavaScript。也可使用已保存的文件：`python3 scripts/portrait.py sync --images-js /path/to/images.js --ranking-js /path/to/ranking.js`。出现新增分类或发型时会先报错，补齐词典后再更新，避免静默漏译。`check-images` 仅用 HEAD 请求抽查不同模式和发长的图片地址。
 
-## 姿势库功能与数据
+## 姿势库：人体动作教学与绘画参考
 
-- 98 组常规动作：全身单人标准系 73 组、上半身可爱系 25 组，共 490 张图。
-- 10 个动作分类；每组含正面、斜侧、侧面、俯视、仰视五个视角。
+- 完整 288 组、1,439 张图，涵盖原站 4 个体系、26 个分类；使用人体模型线稿观察动作、重心、身体结构和双人构图。
+- 正面、斜侧、侧面、俯视、仰视五种视角。287 组各有 5 张；`full_sexy_P018` 在上游仅有 4 张，缺少仰视图，页面按实际视角显示，不补造缺失图片。
 - 分组浏览与单图浏览，按体系、动作分类和视角筛选；支持中文、日文、ID 及多词搜索。
 - 卡片内切换视角；大图中左右键切换视角、上下键切换姿势，切换姿势时保留当前角度。
 - PNG 原图下载、复制 ID、公众号二维码，与服装库和脸库相互导航。
 
-快照日期：2026-10-30。中文词条基于 [Anhao/ai-pose-gallery-zh 的固定提交](https://github.com/anhao/ai-pose-gallery-zh/tree/072a3690af6e7e0011abbe0fa1ccc08939fbb47d)，保留所收录记录的原始日文、上游中文数据、对照词典与来源提交，界面与脚本独立编写。使用体系前缀和姿势编号共同分组，避免不同体系的同编号混在一起。
+| 体系（沿用来源名称） | 姿势组数 | 图片记录数 |
+| --- | ---: | ---: |
+| 全身单人・标准系 | 73 | 365 |
+| 全身单人・性感系 | 80 | 399 |
+| 上半身单人 | 80 | 400 |
+| 双人缠绵 | 55 | 275 |
+| 合计 | 288 | 1,439 |
+
+快照日期：2026-10-30。中文词条基于 [Anhao/ai-pose-gallery-zh 的固定提交](https://github.com/anhao/ai-pose-gallery-zh/tree/072a3690af6e7e0011abbe0fa1ccc08939fbb47d)，完整保留其 1,439 条原始日文及中文记录、对照词典与来源提交，界面与脚本独立编写。使用体系前缀和姿势编号共同分组，避免不同体系的同编号混在一起。教学与绘画参考为本项目的用途说明，不代表原作者的背书或额外素材授权。
 
 从仓库根目录启动 HTTP 服务，访问 <http://127.0.0.1:8000/pose/>。更新与校验：
 
@@ -149,7 +157,7 @@ python3 scripts/pose.py verify
 python3 scripts/pose.py check-images
 ```
 
-`sync` 读取参考仓库同一固定提交中的日文、中文索引和许可，仅写入常规动作子集，不下载图片。`--commit` 可指定上游提交；也可使用 `--original-json`、`--chinese-json`、`--license` 配合 `--commit` 读取本地快照。更新会检查 ID、路径、同组名称及五视角完整性；`check-images` 用 HEAD 请求抽查两个体系五个视角的缩略图及 PNG，共 20 个地址。
+`sync` 读取参考仓库同一固定提交中的完整日文、中文索引和许可，不按分类删减，不下载图片。`--commit` 可指定上游提交；也可使用 `--original-json`、`--chinese-json`、`--license` 配合 `--commit` 读取本地快照。更新会检查日文与中文 ID 集合一致、记录数与上游一致、路径、同组名称和视角；当前已知的缺失仰视图记录在 `meta.json` 的 `missing_views` 中，其他视角缺失会报错。`check-images` 用 HEAD 请求抽查四个体系五个视角的缩略图及 PNG，共 40 个地址。
 
 ## 数据结构
 
@@ -243,7 +251,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 ### 姿势库来源与说明
 
-姿势图片与原始元数据来自 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 的 **[AI 姿势图库](https://ai-pose-gallery.pages.dev/)**，中文词条来自 **[Anhao/ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)**。感谢两位作者制作原始素材及中文整理。本仓库保留来源提交、双语索引和参考项目完整 [许可文件](pose/UPSTREAM_LICENSE)，不镜像姿势图片。
+姿势图片与原始元数据来自 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 的 **[AI 姿势图库](https://ai-pose-gallery.pages.dev/)**，中文词条来自 **[Anhao/ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)**。感谢两位作者制作原始素材及中文整理。本仓库为人体动作教学、绘画与构图参考提供完整 1,439 条索引，保留来源提交、双语数据和参考项目完整 [许可文件](pose/UPSTREAM_LICENSE)，不镜像姿势图片。原站禁止图片批量下载、再分发、转载和转售，本项目仅提供逐张浏览和原图链接。
 
 原站说明允许商用、编辑与绘画参考，同时禁止图像数据再分发、转载与转售；参考项目许可对原始素材另有“不得用于商业用途”的表述。两处说明并不完全一致，本项目不修改上游许可或提供额外授权，商用范围应向原权利人确认。姿势图片及来源元数据不适用本项目独立代码的 MIT 许可，完整范围见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
@@ -251,7 +259,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。原作者推文：[查看原文](https://x.com/giaaibusi/status/2115638135208260002)。
 - 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
-- 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供中文姿势词条及静态画廊整理思路。本次姿势库基于其中文索引整理常规动作子集；本项目界面及脚本独立编写，未复制其代码。
+- 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本次姿势库完整接入其 1,439 条索引，用于人体动作教学与绘画参考；本项目界面及脚本独立编写，未复制其代码。
 - 感谢提交翻译校对、问题反馈与改进建议的贡献者。
 
 完整第三方说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
