@@ -14,21 +14,50 @@ function button(text, handler) {
 }
 
 const SYSTEM_LABELS = {'全身单人・标准系': '全身·标准', '全身单人・性感系': '全身·性感', '上半身单人': '上半身', '双人缠绵': '双人'};
-let categoriesExpanded = false;
+const ADULT_SYSTEMS = ['全身单人・性感系', '双人缠绵'];
+let categoriesExpanded = false, pendingAdultState = null;
 
 function renderSystems() {
   const systems = [['', {groups: meta.groups, images: meta.total}], ...Object.entries(meta.systems)];
   $('systems').replaceChildren(...systems.map(([name, info]) => {
     const choice = button(SYSTEM_LABELS[name] || '全部', () => {
-      state.system = state.system === name ? '' : name;
-      state.category = ''; categoriesExpanded = false; render();
+      const next = {...state, system: state.system === name ? '' : name, category: ''};
+      if (ADULT_SYSTEMS.includes(next.system)) requestAdultConfirmation(next);
+      else applyFilterState(next);
     });
     choice.dataset.filter = 'systems'; choice.dataset.value = name;
     choice.setAttribute('aria-pressed', String(state.system === name));
-    choice.setAttribute('aria-label', `${name || '全部体系'}，${info.groups} 组姿势`);
+    const adult = ADULT_SYSTEMS.includes(name);
+    choice.setAttribute('aria-label', `${name || '全部体系'}，${adult ? '成人向，' : ''}${info.groups} 组姿势`);
+    if (adult) {
+      const badge = document.createElement('span'); badge.className = 'adult-badge'; badge.textContent = '成人向';
+      choice.append(badge);
+    }
     return choice;
   }));
 }
+
+function applyFilterState(next) {
+  Object.assign(state, next); $('q').value = state.query;
+  categoriesExpanded = false; render();
+}
+
+function requestAdultConfirmation(next) {
+  pendingAdultState = {...next};
+  $('adult-selection').textContent = SYSTEM_LABELS[next.system];
+  $('adult-warning').showModal();
+}
+
+$('adult-confirm').addEventListener('click', () => {
+  if (!pendingAdultState) return;
+  const next = pendingAdultState; pendingAdultState = null;
+  applyFilterState(next); $('adult-warning').close();
+});
+for (const id of ['adult-cancel', 'adult-close']) $(id).addEventListener('click', () => $('adult-warning').close());
+$('adult-warning').addEventListener('close', () => {
+  pendingAdultState = null;
+  [...$('systems').children].find((choice) => choice.dataset.value === state.system)?.focus({preventScroll: true});
+});
 
 function renderCategories() {
   const categories = poseCategories(rows, state.system);
@@ -222,7 +251,7 @@ $('close').addEventListener('click', () => $('viewer').close());
 $('viewer').addEventListener('close', () => { imageVersion++; });
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
-for (const id of ['viewer', 'guide', 'wechat']) $(id).addEventListener('click', (event) => {
+for (const id of ['viewer', 'guide', 'wechat', 'adult-warning']) $(id).addEventListener('click', (event) => {
   if (event.target !== $(id)) return;
   const rect = $(id).getBoundingClientRect();
   if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $(id).close();
@@ -282,7 +311,11 @@ async function load() {
     $('total').textContent = `完整索引 · ${meta.groups} 组 · ${meta.total.toLocaleString('zh-CN')} 张 · 中文词条来自 Anhao`;
     const missing = Object.entries(meta.missing_views).map(([group, angles]) => `${group} 缺少${angles.join('、')}图`);
     $('source-note').textContent = `人体动作教学与绘画参考 · ${meta.groups} 组、${meta.total.toLocaleString('zh-CN')} 张。图片由原站提供。${missing.length ? `上游数据：${missing.join('；')}，按实际视角显示。` : ''}`;
-    render();
+    if (ADULT_SYSTEMS.includes(state.system)) {
+      const requested = {...state};
+      applyFilterState({system: '全身单人・标准系', category: '', angle: '', query: '', grouped: true});
+      requestAdultConfirmation(requested);
+    } else render();
   } catch (error) {
     $('total').textContent = '姿势索引加载失败。';
     $('status').textContent = '请刷新重试，或通过 HTTP 服务打开本页面。';
