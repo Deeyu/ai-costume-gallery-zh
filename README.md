@@ -10,7 +10,7 @@
 
 ## 演示视频
 
-https://github.com/user-attachments/assets/b0ca88cc-0cd9-483b-abe5-c6b3b8fc9d1a
+https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 ## 界面预览
 

@@ -13,6 +13,7 @@
 | 内容 | 路径 | 说明 |
 | --- | --- | --- |
 | 第三方图片 | `thumbs/`、`img/`、`png/` | 相关权利归原权利人所有，不适用本项目 MIT 许可 |
+| GitHub 官方 Logo | `assets/github-mark.svg` | 来源于 [GitHub 官方品牌素材](https://brand.github.com/foundations/logo)，用于链接本项目仓库；相关商标及素材权利归 GitHub, Inc. 所有，不适用本项目 MIT 许可 |
 | 原始数据与中文整理数据 | `data/` | 基于原站元数据及其译文；不因汉化或镜像而获得额外素材授权，不适用本项目 MIT 许可 |
 | 本项目独立程序代码 | `index.html`、`assets/`、`scripts/`、`tests/`、工作流 | 依照 [LICENSE](LICENSE) 中的 MIT 许可使用 |
 

@@ -73,6 +73,7 @@ $('reset').addEventListener('click', () => { category = ''; $('q').value = ''; a
 $('more').addEventListener('click', appendPage);
 $('close').addEventListener('click', () => $('viewer').close());
 $('help').addEventListener('click', () => $('guide').showModal());
+$('follow').addEventListener('click', () => $('wechat').showModal());
 $('prev').addEventListener('click', () => { if (current > 0) { current--; showDetail(); } });
 $('next').addEventListener('click', () => { if (current < filtered.length - 1) { current++; showDetail(); } });
 $('copy').addEventListener('click', async () => {
@@ -107,11 +108,11 @@ document.addEventListener('keydown', (e) => {
   if ($('viewer').open) {
     if (e.key === 'ArrowLeft') { e.preventDefault(); $('prev').click(); }
     if (e.key === 'ArrowRight') { e.preventDefault(); $('next').click(); }
-  } else if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) && !$('guide').open) {
+  } else if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) && !$('guide').open && !$('wechat').open) {
     e.preventDefault(); $('q').focus();
   }
 });
-for (const dialog of [$('viewer'), $('guide')]) dialog.addEventListener('click', (e) => {
+for (const dialog of [$('viewer'), $('guide'), $('wechat')]) dialog.addEventListener('click', (e) => {
   const box = dialog.getBoundingClientRect();
   if (e.target === dialog && (e.clientX < box.left || e.clientX > box.right || e.clientY < box.top || e.clientY > box.bottom)) dialog.close();
 });

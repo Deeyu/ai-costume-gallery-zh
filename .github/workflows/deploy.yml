@@ -28,6 +28,7 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -v
           node --check assets/app.js
+          node --test tests/test_ui.js
           python3 scripts/build.py --github-pages
       - uses: actions/upload-pages-artifact@v4
         with:
