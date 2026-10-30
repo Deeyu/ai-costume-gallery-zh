@@ -16,46 +16,58 @@ CATALOGS = [
          meta='data/meta-zh.json', data='data/costume-zh.json', snapshot='2026-10-29',
          source='https://ai-costume-gallery.pages.dev/', creator='ギア',
          creator_url='https://x.com/giaaibusi',
+         aliases=['AI 服装库', '衣装参考库'],
+         scenario='中文创作场景：为 AI 绘画、漫剧和短剧选取角色服装，建立角色定妆参考；用春装、外套等中文关键词查找，再结合脸库与姿势库制作分镜。',
          purpose='无人物衣装搭配、角色服装设计与漫剧造型参考',
          coverage='春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类',
          feature='中文分类、中英文关键词与 ID 搜索、服装预览、PNG 原图下载',
          delivery='服装图片保存在仓库；在线预览由 GitHub Pages 提供，PNG 原图由 GitHub 仓库提供。',
          questions=[('服装库适合用来做什么？', '用于查找不含人物的服装搭配，为角色设定、AI 绘画和漫剧造型提供参考；脸、体型和背景需要另行指定。'),
                     ('服装数量和图片文件数有什么区别？', '每套服装有缩略图、预览图、PNG 原图三个版本，三份文件对应同一套服装，不能按图片文件数计算不同服装。'),
-                    ('可以直接将标签当成生成提示词吗？', '标签来自原站元数据的中文翻译，用于检索，可能不完整；请结合图片和创作需求补充提示词。')]),
+                    ('可以直接将标签当成生成提示词吗？', '标签来自原站元数据的中文翻译，用于检索，可能不完整；请结合图片和创作需求补充提示词。'),
+                    ('做漫剧角色定妆，服装库和脸库怎么配合？', '先选单套衣装 PNG，再选脸库的虚构人物参考，在支持多图参考的工具中分别说明衣装和五官要求；保存确认后的定妆图，供后续分镜复用。')]),
     dict(key='portrait', path='portrait/', name='脸库', label='AI 脸库中文版',
          meta='portrait/data/meta-zh.json', data='portrait/data/portrait-zh.json',
          source='https://ai-portrait-gallery.pages.dev/', creator='あぎ',
          creator_url='https://x.com/agi_aibusi',
+         aliases=['AI 人像参考库', 'AI 虚构人物脸库'],
+         scenario='中文创作场景：为 AI 绘画和漫剧挑选人物五官与发型，配合服装库建立角色设定。固定同一张脸部参考图有助于说明外观要求，角色一致性仍需逐镜核对。',
          purpose='AI 虚构人物的五官、发型与角色造型参考',
          coverage='正面脸图与造型参考两种模式，4 类发长、50 种细分发型',
          feature='中文发型与发长筛选、中日文及 ID 搜索、PNG 下载、原站下载排行快照',
          delivery='仓库保存原始与中文索引、排行快照；脸库图片和 PNG 由脸库原站提供。',
          questions=[('脸库里的图片是真实人物照片吗？', '原站说明这些是 AI 生成的虚构人物。图片用于五官、发型与角色外观参考，不代表真实人物，也不是人脸识别服务。'),
                     ('正面脸图和造型参考有什么区别？', '正面脸图便于观察五官与脸型；造型参考展示发型质感、服装与整体氛围，人物朝向可能不同。图片记录数不代表互不重复的人物数量。'),
-                    ('脸库图片在仓库里吗？', '不在。仓库保存中文索引，页面按需加载原站图片；浏览和原图下载需要能够访问脸库原站。')]),
+                    ('脸库图片在仓库里吗？', '不在。仓库保存中文索引，页面按需加载原站图片；浏览和原图下载需要能够访问脸库原站。'),
+                    ('做 AI 漫剧，脸库能保证角色一致性吗？', '固定脸图可以明确五官和发型参考，但不能保证不同镜头的人物完全一致；应复用已确认的定妆图，并逐镜检查脸型、发际线与服装细节。')]),
     dict(key='pose', path='pose/', name='姿势库', label='AI 姿势库中文版',
          meta='pose/data/meta.json', data='pose/data/pose-zh.json',
          source='https://ai-pose-gallery.pages.dev/', creator='ギア',
          creator_url='https://x.com/giaaibusi',
+         aliases=['人体姿势参考库', '动作线稿库'],
+         scenario='中文创作场景：为绘画人体练习、漫剧和短剧分镜选择站姿、坐姿与俯仰视角；配合服装参考说明动作和穿搭，保留完整姿势 ID 以便复用。',
          purpose='人体模型线稿的动作、身体结构与双人构图参考',
          coverage='4 个体系、26 个分类；正面、斜侧、侧面、俯视、仰视五种视角',
          feature='中文动作检索、体系与视角筛选、分组或单图浏览、键盘切换、PNG 下载',
          delivery='完整双语索引保存在仓库，姿势线稿和 PNG 按需由姿势原站提供。',
          questions=[('姿势库包含哪些参考内容？', '完整保留参考仓库的四个体系和原始分类名称，使用人体模型线稿观察动作与构图。包含成人向姿势及相关术语，仅限成年人艺术与动作参考。'),
                     ('为什么不是每组都显示五个视角？', '上游 full_sexy_P018 缺少仰视图，实际只有四张；其余 287 组各有五张。页面按已有图片显示，不生成缺失视角。'),
-                    ('姿势线稿和深度图有什么区别？', '线稿强调身体轮廓、关节与动作结构；深度图用灰度表达远近。观察动作可使用姿势库，参考空间前后关系可使用深度库。')]),
+                    ('姿势线稿和深度图有什么区别？', '线稿强调身体轮廓、关节与动作结构；深度图用灰度表达远近。观察动作可使用姿势库，参考空间前后关系可使用深度库。'),
+                    ('姿势图怎么用于中文 AI 绘画和分镜？', '先选动作与观察视角，再搭配服装或已确认的角色定妆图，明确每张图负责的内容；记录完整姿势 ID，便于在深度库匹配。人体线稿不等于 OpenPose 骨架控制图。')]),
     dict(key='depth', path='depth/', name='深度库', label='AI 深度图库中文版',
          meta='depth/data/meta.json', data='depth/data/depth-zh.json',
          source='https://ai-pose-depth-gallery.pages.dev/', creator='ギア',
          creator_url='https://x.com/giaaibusi',
+         aliases=['人体深度图库', '姿势深度图参考库'],
+         scenario='中文创作场景：为 AI 绘画、漫剧和短剧分镜选择深度参考，观察透视、肢体遮挡与空间前后关系；与姿势库使用相同体系、姿势编号和视角配对。',
          purpose='人体模型深度图的姿态、遮挡与空间前后关系参考',
          coverage='4 个体系、26 个分类；与姿势库对应的编号和实际视角',
          feature='中文检索、多视角预览、分组或单图浏览、原尺寸深度 PNG 下载',
          delivery='完整双语索引保存在仓库，深度图和 PNG 按需由独立的深度原站提供。',
          questions=[('深度图的黑白代表什么？', '本图库的约定是白色越近、黑色越远，灰度表达模型与观察视角之间的前后关系。深度图不是姿势线稿，也不是法线图。'),
                     ('深度图怎么用于 AI 创作？', '选择姿势与视角，下载 PNG，再导入所用 AI 工具的深度参照功能。脸型、服装和背景需另行指定，具体参数以工具说明为准。'),
-                    ('深度库与姿势库的内容是否对应？', '两库使用对应的姿势 ID、分类与视角，但图片来源和图像形式不同。full_sexy_P018 同样只有四个视角。包含成人向分类，仅限成年人艺术与动作参考。')]),
+                    ('深度库与姿势库的内容是否对应？', '两库使用对应的姿势 ID、分类与视角，但图片来源和图像形式不同。full_sexy_P018 同样只有四个视角。包含成人向分类，仅限成年人艺术与动作参考。'),
+                    ('漫剧分镜的姿势图和深度图怎么配对？', '用相同体系、姿势编号和视角组成的完整 ID 配对，例如 full_single_P015_front。深度 PNG 应导入工具支持的深度参照输入，普通图片参考不等于启用了深度控制。')]),
 ]
 
 
@@ -73,7 +85,8 @@ def info(catalog, root):
     description = f'{catalog["label"]}，收录 {count}，用于{catalog["purpose"]}。{catalog["feature"]}。'
     if catalog['key'] in ['pose', 'depth']:
         description += '含成人向分类，仅限成年人艺术参考。'
-    return dict(catalog, total=meta['total'], groups=meta.get('groups'), count=count,
+    keywords = [catalog['name'], *catalog['aliases'], 'AI 绘画', '漫剧', '角色设定']
+    return dict(catalog, keywords=keywords, total=meta['total'], groups=meta.get('groups'), count=count,
                 snapshot=snapshot, description=description, url=BASE + catalog['path'])
 
 
@@ -81,6 +94,7 @@ def structured(data):
     url, site = data['url'], BASE + '#website'
     rights = BASE + 'THIRD_PARTY_NOTICES.md'
     dataset = {'@type': 'Dataset', '@id': url + '#dataset', 'name': data['label'] + '中文索引',
+               'alternateName': data['aliases'], 'keywords': data['keywords'],
                'description': data['description'], 'url': url + 'catalog.md', 'inLanguage': 'zh-CN',
                'dateModified': data['snapshot'], 'creator': {'@type': 'Person', 'name': data['creator'], 'url': data['creator_url']},
                'contributor': {'@id': BASE + '#maintainer'}, 'isBasedOn': data['source'],
@@ -93,6 +107,7 @@ def structured(data):
     if data['key'] in ['pose', 'depth']:
         dataset['citation'].append('https://github.com/anhao/ai-pose-gallery-zh')
     gallery = {'@type': 'ImageGallery', '@id': url + '#gallery', 'url': url, 'name': data['label'],
+               'alternateName': data['aliases'], 'keywords': data['keywords'],
                'description': data['description'], 'inLanguage': 'zh-CN', 'isPartOf': {'@id': site},
                'publisher': {'@id': BASE + '#maintainer'}, 'mainEntity': {'@id': url + '#dataset'},
                'breadcrumb': {'@id': url + '#breadcrumb'},
@@ -141,7 +156,7 @@ def head(data):
 
 def overview(data):
     prefix = '../' if data['path'] else ''
-    paragraphs = [f'{data["label"]}收录 {data["count"]}，用于{data["purpose"]}。{data["coverage"]}。', data['delivery']]
+    paragraphs = [f'{data["label"]}（{"、".join(data["aliases"])}）收录 {data["count"]}，用于{data["purpose"]}。{data["coverage"]}。', data['delivery'], data['scenario']]
     details = ''.join(f'<details><summary>{escape(question)}</summary><p>{escape(answer)}</p></details>' for question, answer in data['questions'])
     related = ' · '.join(f'<a href="{prefix + other["path"] if other["path"] else prefix or "./"}">{other["label"]}</a>' for other in CATALOGS if other['key'] != data['key'])
     body = '\n'.join(f'      <p>{escape(p)}</p>' for p in paragraphs)
@@ -153,6 +168,9 @@ def overview(data):
       <h3>常见问题</h3>
       {details}
       <p>其他图库：{related}</p>
+      <h3>四库联合使用：角色定妆与分镜</h3>
+      <p>先用姿势线稿说明动作、服装图说明穿搭，再加入脸部参考明确人物外观；需要空间参照时选择同编号同视角的深度图。按工具实际支持的参考功能分步使用，并检查人物一致性与遮挡关系。</p>
+      <p><a href="{prefix}guide.md">中文联合使用指南与提示词示例</a> · 思路参考：<a href="https://x.com/ai_bange/status/2115651909948477678" target="_blank" rel="noopener">半格（@ai_bange）的姿势与服装联合参考案例</a></p>
     </section>
     <!-- seo:overview:end -->'''
 
@@ -187,7 +205,10 @@ def markdown(data):
              f'- 索引快照：{data["snapshot"]}', f'- 功能：{data["feature"]}', f'- 图片提供：{data["delivery"]}',
              '- 中文整理与维护：Deeyu（https://github.com/Deeyu）',
              f'- 原始素材来源：{data["source"]}，原作者 {data["creator"]}（{data["creator_url"]}）',
-             f'- 中文 JSON 索引：{BASE + data["data"]}', '', '## 内容提示', '', NOTICE, '', '## 常见问题', '']
+             f'- 中文 JSON 索引：{BASE + data["data"]}', '', '## 中文创作用法', '',
+             f'常用名称：{"、".join(data["aliases"])}。', '', data['scenario'], '',
+             f'联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：{BASE}guide.md', '',
+             '## 内容提示', '', NOTICE, '', '## 常见问题', '']
     for question, answer in data['questions']:
         lines += ['### ' + question, '', answer, '']
     lines += ['## 来源与使用条件', '', f'本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：{BASE}THIRD_PARTY_NOTICES.md', '']
@@ -195,6 +216,14 @@ def markdown(data):
         lines += ['中文词条来源：https://github.com/anhao/ai-pose-gallery-zh ，固定提交 072a3690af6e7e0011abbe0fa1ccc08939fbb47d。', '']
     lines += ['## 相关入口', ''] + [f'- [{item["label"]}]({BASE + item["path"]})' for item in CATALOGS]
     return '\n'.join(lines) + '\n'
+
+
+def source_directory():
+    items = []
+    for catalog in CATALOGS:
+        handle = catalog['creator_url'].rsplit('/', 1)[-1]
+        items.append(f'<li><strong>{catalog["name"]}</strong><a href="{catalog["source"]}" target="_blank" rel="noopener">{catalog["source"]}</a><span>原作者：<a href="{catalog["creator_url"]}" target="_blank" rel="noopener">{catalog["creator"]}（@{handle}）</a></span></li>')
+    return '<!-- seo:sources:start --><section class="source-directory" aria-labelledby="source-directory-title"><h2 id="source-directory-title">四库原始来源与作者</h2><ul>' + ''.join(items) + '</ul></section><!-- seo:sources:end -->'
 
 
 def outputs(root=ROOT):
@@ -228,6 +257,10 @@ def outputs(root=ROOT):
         if '<!-- seo:footer -->' not in html:
             links = f'<p><!-- seo:footer --><a href="#catalog-guide">图库介绍与常见问题</a> · <a href="{prefix}sitemap.xml">站点地图</a> · <a href="{prefix}llms.txt">AI 检索参考</a></p>'
             html = html.replace('</footer>', links + '</footer>', 1)
+        if '<!-- seo:sources:start -->' in html:
+            html = re.sub(r'<!-- seo:sources:start -->.*?<!-- seo:sources:end -->', lambda _: source_directory(), html, flags=re.S)
+        else:
+            html = re.sub(r'(<footer\b[^>]*>)', lambda match: match[1] + '\n' + source_directory(), html, count=1)
         result[path] = html
         result[data['path'] + 'catalog.md'] = markdown(data)
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
@@ -241,6 +274,7 @@ def outputs(root=ROOT):
              '## 四个图库', '']
     lines += [f'- [{data["label"]}]({data["url"]}catalog.md): {data["count"]}；{data["purpose"]}；快照 {data["snapshot"]}。' for data in summaries]
     lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 四库用途、功能、本地预览与部署说明。',
+              f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
               f'- [站点地图]({BASE}sitemap.xml): 四个正式图库入口。', '', '## 内容和计数说明', '', NOTICE, '',
               '服装按套数统计，三个文件版本不计为三套；脸库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。', '',

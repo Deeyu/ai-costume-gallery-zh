@@ -63,10 +63,13 @@ class NavigationTests(unittest.TestCase):
                 self.assertEqual([link['text'] for link in current], [LABELS[index]])
 
     def test_source_links_are_in_footer_and_notice_is_complete(self):
-        for name, source in zip(PAGES, SOURCES):
+        for name in PAGES:
             with self.subTest(page=name):
                 parsed = PageLinks((ROOT / name).read_text())
-                self.assertIn(source, parsed.sources)
+                for source in SOURCES:
+                    self.assertIn(source, parsed.sources)
+                for author in ['https://x.com/giaaibusi', 'https://x.com/agi_aibusi']:
+                    self.assertIn(author, parsed.sources)
                 self.assertTrue(all(not link['href'].startswith('https://') for link in parsed.links))
                 self.assertIn(NOTICE, ''.join(parsed.notice))
 

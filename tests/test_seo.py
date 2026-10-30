@@ -99,3 +99,22 @@ class SeoTests(unittest.TestCase):
             content = (ROOT / f'assets/og-{catalog["key"]}.png').read_bytes()
             self.assertEqual(content[:8], b'\x89PNG\r\n\x1a\n')
             self.assertEqual(struct.unpack('>II', content[16:24]), (1200, 630))
+
+    def test_chinese_use_cases_and_aliases_are_visible_and_machine_readable(self):
+        for catalog in CATALOGS:
+            with self.subTest(gallery=catalog['key']):
+                html = (ROOT / catalog['path'] / 'index.html').read_text()
+                text = (ROOT / catalog['path'] / 'catalog.md').read_text()
+                graph = json.loads(html.split('<script type="application/ld+json">')[1].split('</script>')[0])['@graph']
+                gallery = next(node for node in graph if node['@type'] == 'ImageGallery')
+                self.assertEqual(gallery['alternateName'], catalog['aliases'])
+                overview = html.split('<!-- seo:overview:start -->')[1].split('<!-- seo:overview:end -->')[0]
+                for alias in gallery['alternateName']:
+                    self.assertIn(alias, overview)
+                    self.assertIn(alias, text)
+                self.assertIn(catalog['scenario'], overview)
+                self.assertIn(catalog['scenario'], text)
+                prefix = '../' if catalog['path'] else ''
+                self.assertIn(f'href="{prefix}guide.md"', overview)
+                self.assertIn('https://x.com/ai_bange/status/2115651909948477678', overview)
+        self.assertIn(BASE + 'guide.md', (ROOT / 'llms.txt').read_text())

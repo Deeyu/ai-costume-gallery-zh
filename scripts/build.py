@@ -16,7 +16,7 @@ def package_site(root: Path, github_pages=False, repository='Deeyu/ai-costume-ga
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir()
-    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'catalog.md', 'sitemap.xml', 'robots.txt', 'llms.txt', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
+    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'catalog.md', 'guide.md', 'sitemap.xml', 'robots.txt', 'llms.txt', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
     if not github_pages:
         names.append('png')
     for name in names:
