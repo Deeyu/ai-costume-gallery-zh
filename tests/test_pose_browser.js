@@ -60,7 +60,9 @@ for (const folder of ['pose', 'depth']) {
       assert.match(ui.node('status').textContent, count);
       system(name).events.click();
       assert.equal(ui.node('adult-warning').open, false);
-      assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
+      assert.match(ui.node('status').textContent, count);
+      system('全身单人・标准系').events.click();
+      assert.match(ui.node('status').textContent, /73 组 · 365 张/);
       system(name).events.click();
       assert.equal(ui.node('adult-warning').open, true);
       ui.node('adult-cancel').events.click();
@@ -102,9 +104,12 @@ for (const folder of ['pose', 'depth']) {
     }
   });
 
-  test(`${folder}：全部／体系／动作可取消筛选，URL 可恢复，空结果可重置`, async () => {
+  test(`${folder}：人物固定单选并默认标准系，动作可取消，URL 可恢复，空结果可重置`, async () => {
     const ui = await loadBrowser(folder);
-    assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
+    assert.match(ui.node('status').textContent, /73 组 · 365 张/);
+    assert.equal(ui.node('systems').children.length, 4);
+    assert.ok(ui.node('systems').children.every(button => button.dataset.value));
+    assert.ok(!ui.node('total').textContent.includes('中文词条来自 Anhao'));
     const system = () => ui.node('systems').children.find(button => button.dataset.value === '全身单人・标准系');
     system().events.click();
     assert.match(ui.node('status').textContent, /73 组 · 365 张/);
@@ -116,16 +121,40 @@ for (const folder of ['pose', 'depth']) {
     sitting().events.click();
     assert.match(ui.node('status').textContent, /73 组 · 365 张/);
     system().events.click();
-    assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
+    assert.match(ui.node('status').textContent, /73 组 · 365 张/);
     ui.node('q').events.input({target: {value: 'no-such-pose'}});
     assert.equal(ui.node('grid').children.length, 0);
     assert.equal(ui.node('empty').hidden, false);
     ui.node('reset').events.click();
-    assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
+    assert.match(ui.node('status').textContent, /73 组 · 365 张/);
+  });
+
+  test(`${folder}：四个体系的全部动作始终按原顺序显示，点击与取消不会重排`, async () => {
+    const ui = await loadBrowser(folder);
+    for (const name of ['全身单人・标准系', '全身单人・性感系', '上半身单人', '双人缠绵']) {
+      ui.node('systems').children.find(button => button.dataset.value === name).events.click();
+      if (ui.node('adult-warning').open) ui.node('adult-confirm').events.click();
+      const order = () => ui.node('category-options').children.map(button => button.dataset.value);
+      const before = order();
+      const rows = JSON.parse(readFileSync(join(__dirname, '..', folder, 'data', folder + '-zh.json'), 'utf8'));
+      const expected = ['', ...new Set(rows.filter(row => row.体系 === name).map(row => row.分类))];
+      assert.deepEqual(before, expected);
+      const last = before.at(-1);
+      ui.node('category-options').children.find(button => button.dataset.value === last).events.click();
+      assert.deepEqual(order(), before);
+      assert.equal(ui.node('category-options').children.find(button => button.getAttribute('aria-pressed') === 'true').dataset.value, last);
+      ui.node('category-options').children.find(button => button.dataset.value === last).events.click();
+      assert.deepEqual(order(), before);
+    }
   });
 
   test(`${folder}：筛选视角后保留缩略图切换，分组／单图及已知缺图正确`, async () => {
     const ui = await loadBrowser(folder);
+    const selectSexy = () => {
+      ui.node('systems').children.find(button => button.dataset.value === '全身单人・性感系').events.click();
+      ui.node('adult-confirm').events.click();
+    };
+    selectSexy();
     ui.node('q').events.input({target: {value: 'full_sexy_P018'}});
     const side = ui.node('angle-options').children.find(button => button.dataset.value === '侧面');
     side.events.click();
@@ -145,6 +174,7 @@ for (const folder of ['pose', 'depth']) {
     ui.node('single').events.click();
     assert.equal(ui.node('grid').children.length, 1);
     ui.node('reset').events.click();
+    selectSexy();
     ui.node('q').events.input({target: {value: 'full_sexy_P018'}});
     ui.node('single').events.click();
     assert.equal(ui.node('grid').children.length, 4);
