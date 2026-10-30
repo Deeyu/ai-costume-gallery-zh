@@ -37,6 +37,15 @@ class BuildTests(unittest.TestCase):
         for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md']:
             self.assertEqual((self.root / 'dist' / name).read_text(), name)
 
+    def test_pages_build_keeps_example_video_images_and_player_together(self):
+        example = self.root / 'examples'
+        example.mkdir()
+        for name in ['index.html', 'joint-reference-demo.mp4', 'costume-reference.png', 'pose-reference.jpeg', 'joint-reference-poster.jpg']:
+            (example / name).write_bytes(b'media fixture')
+        package_site(self.root, github_pages=True)
+        for original in example.iterdir():
+            self.assertEqual((self.root / 'dist/examples' / original.name).read_bytes(), original.read_bytes())
+
     def test_pages_build_removes_old_pngs_and_uses_selected_repository_and_commit(self):
         package_site(self.root)
         package_site(self.root, github_pages=True, repository='fork/gallery', ref='abc123')

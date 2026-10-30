@@ -4,6 +4,20 @@
 
 思路参考：[半格（@ai_bange）的姿势库与服装库联合使用案例](https://x.com/ai_bange/status/2115651909948477678)（2026-10-29）。原文介绍了姿势与服装两种参考的串联方式；下面的脸型库、深度库用法与中文提示词由本站扩展整理，属于操作示例，未提供模型实测成片或一致性保证。
 
+## 联合使用演示与参考图片
+
+[打开视频与图文案例](https://deeyu.github.io/ai-costume-gallery-zh/examples/) · [下载原始 MP4](examples/joint-reference-demo.mp4)
+
+<a href="https://deeyu.github.io/ai-costume-gallery-zh/examples/"><img src="examples/joint-reference-poster.jpg" alt="点击播放脸部、服装与姿势联合使用演示" width="240"></a>
+
+视频约 5 秒，展示脸部、服装和姿势参考的组合输入。点击封面进入播放器。下方两张合集展示可选素材，实际使用时各挑选一套服装与一个姿势。
+
+| 服装参考合集 | 姿势参考合集 |
+| --- | --- |
+| ![服装参考合集：衣装、配色与搭配](examples/costume-reference.png) | ![姿势参考合集：人体模型动作线稿](examples/pose-reference.jpeg) |
+
+视频与两张合集由用户提供，关联思路参考[半格的原帖](https://x.com/ai_bange/status/2115651909948477678)；原始素材作者与使用条件见[版权与致谢](THIRD_PARTY_NOTICES.md)。
+
 ## 四库分别负责什么
 
 | 图库 | 参考职责 | 选择方法 |

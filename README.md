@@ -144,9 +144,9 @@ python3 scripts/portrait.py check-images --limit 8
 
 - 完整 288 组、1,439 张图，涵盖原站 4 个体系、26 个分类；使用人体模型线稿观察动作、重心、身体结构和双人构图。
 - 正面、斜侧、侧面、俯视、仰视五种视角。287 组各有 5 张；`full_sexy_P018` 在上游仅有 4 张，缺少仰视图，页面按实际视角显示，不补造缺失图片。
-- 分组浏览与单图浏览，按体系、动作分类和视角筛选；支持中文、日文、ID 及多词搜索。
-- 卡片内切换视角；大图中左右键切换视角、上下键切换姿势，切换姿势时保留当前角度。
-- PNG 原图下载、复制 ID、公众号二维码，与服装库和脸型库相互导航；滚动追加每批 24 组／张，保留已有卡片视角。
+- 分组浏览与单图浏览，按体系、动作分类和视角筛选；支持中文、日文、ID 及多词搜索。人物、动作和视角采用可取消的直接选项，动作支持展开更多；筛选条件保存在 URL，可复制链接复现。
+- 卡片和大图均提供视角缩略图；大图中左右键切换视角、上下键切换姿势，切换姿势时保留当前角度；手机可左右滑动大图。
+- PNG 原图下载、复制图片与 ID、公众号二维码，与服装库和脸型库相互导航；滚动追加每批 24 组／张，保留已有卡片视角。
 
 | 体系（沿用来源名称） | 姿势组数 | 图片记录数 |
 | --- | ---: | ---: |
@@ -184,8 +184,8 @@ python3 scripts/pose.py check-images
 
 ### 深度库功能与用法
 
-- 中文、日文、ID 多词检索，按动作分类和视角组合筛选。
-- 分组／单图浏览，大图预览、方向键切换、原尺寸 PNG 下载；滚动追加每批 24 组／张。
+- 中文、日文、ID 多词检索，人物、动作与视角直接筛选，可再次点击取消；动作支持展开，筛选链接可分享。
+- 分组／单图浏览，卡片与大图的视角缩略图、手机滑动切换、PNG 图片复制及原尺寸下载；滚动追加每批 24 组／张。
 - 选择姿势和视角后，下载 PNG，导入所用 AI 工具的深度参照功能；具体参数以工具说明为准。
 - 深度图不包含脸型、服装和背景，需要通过其他参考图或提示词补充；手指及肢体重叠边界需检查生成结果。
 
@@ -210,6 +210,20 @@ python3 scripts/depth.py verify
 ## 联合使用案例：从角色定妆到漫剧分镜
 
 参考[半格（@ai_bange）的联合使用案例](https://x.com/ai_bange/status/2115651909948477678)，先分别用姿势图说明动作、服装图说明穿搭。下面进一步加入脸型库与深度库，适用于中文 AI 绘画、AIGC 角色设定、漫剧和短剧分镜准备；扩展步骤与提示词由本站整理，属于操作示例，未提供模型实测效果。
+
+### 联合使用演示与参考图片
+
+[打开视频与图文案例](https://deeyu.github.io/ai-costume-gallery-zh/examples/) · [下载原始 MP4](examples/joint-reference-demo.mp4)
+
+<a href="https://deeyu.github.io/ai-costume-gallery-zh/examples/"><img src="examples/joint-reference-poster.jpg" alt="点击播放脸部、服装与姿势联合使用演示" width="240"></a>
+
+视频约 5 秒，展示脸部、服装和姿势参考的组合输入。点击封面进入播放器。下方两张合集展示可选素材，实际使用时各挑选一套服装与一个姿势。
+
+| 服装参考合集 | 姿势参考合集 |
+| --- | --- |
+| ![服装参考合集：衣装、配色与搭配](examples/costume-reference.png) | ![姿势参考合集：人体模型动作线稿](examples/pose-reference.jpeg) |
+
+视频与两张合集由用户提供，关联思路参考[半格的原帖](https://x.com/ai_bange/status/2115651909948477678)；原始素材作者与使用条件见[版权与致谢](THIRD_PARTY_NOTICES.md)。
 
 | 案例 | 参考图组合 | 操作要点 |
 | --- | --- | --- |
@@ -256,7 +270,8 @@ scripts/pose.py            姿势索引同步、来源记录与校验
 depth/                     深度图中文版（页面、完整索引与来源许可）
 scripts/depth.py           深度原站索引提取、中文词条核对及校验
 scripts/seo.py             四库搜索元数据、静态介绍与摘要生成/校验
-sitemap.xml                四个图库的正式地址
+examples/                  联合使用案例播放器、视频与两张参考合集
+sitemap.xml                四个图库与联合案例的正式地址
 llms.txt                   AI 检索摘要与来源入口
 catalog.md                 服装库纯文本介绍（各子库也有独立文件）
 guide.md                   中文四库联合使用指南与提示词案例
@@ -337,7 +352,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 四个页面各有独立标题、摘要、canonical、Open Graph / Twitter 分享图和 JSON-LD，包含图库、索引数据、维护者与来源信息。首批 12 张参考卡片、图库介绍、真实计数、快照日期和常见问题直接写入 HTML，不依赖 JavaScript 才可读取。交互图库继续使用原有筛选和下载功能。
 
-- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml)：四个正式页面地址。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml)：四个图库与联合案例的正式页面地址。
 - [llms.txt](https://deeyu.github.io/ai-costume-gallery-zh/llms.txt)：四库摘要、纯文本介绍、原始来源和版权入口。
 - 每个图库的 `catalog.md` 提供可引用的用途、数量、快照和常见问题；不将代码 MIT 许可当作图片授权。
 - 更新索引或介绍后运行 `python3 scripts/seo.py`，使用 `python3 scripts/seo.py --check` 检查生成文件；构建和 CI 已接入。
@@ -390,6 +405,7 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作[深度图库](https://ai-pose-depth-gallery.pages.dev/)，为姿态、遮挡和空间关系参考提供深度图与原始元数据。
 - 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本次姿势库完整接入其 1,439 条索引，用于人体动作教学与绘画参考；本项目界面及脚本独立编写，未复制其代码。
 - 感谢 **[半格（@ai_bange）](https://x.com/ai_bange)** 分享[姿势库与服装库联合使用思路](https://x.com/ai_bange/status/2115651909948477678)，为本项目的联合使用指南提供参考。
+- 感谢 **[HAL-9909](https://github.com/HAL-9909)** 在 **[Anhao 项目 PR #3](https://github.com/anhao/ai-pose-gallery-zh/pull/3)** 中提出人物／动作／视角直接筛选、可展开动作及缩略图视角切换等界面方案。本项目参考其交互思路适配姿势库与深度库，保留现有四库架构、数据、滚动加载及图片来源。
 - 感谢提交翻译校对、问题反馈与改进建议的贡献者。
 
 完整第三方说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

@@ -173,7 +173,7 @@ def overview(data):
       <p>其他图库：{related}</p>
       <h3>四库联合使用：角色定妆与分镜</h3>
       <p>先用姿势线稿说明动作、服装图说明穿搭，再加入脸部参考明确人物外观；需要空间参照时选择同编号同视角的深度图。按工具实际支持的参考功能分步使用，并检查人物一致性与遮挡关系。</p>
-      <p><a href="{prefix}guide.md">中文联合使用指南与提示词示例</a> · 思路参考：<a href="https://x.com/ai_bange/status/2115651909948477678" target="_blank" rel="noopener">半格（@ai_bange）的姿势与服装联合参考案例</a></p>
+      <p><a href="{prefix}examples/">联合使用案例：视频与参考图片</a> · <a href="{prefix}guide.md">中文操作指南与提示词</a> · 思路参考：<a href="https://x.com/ai_bange/status/2115651909948477678" target="_blank" rel="noopener">半格（@ai_bange）的姿势与服装联合参考案例</a></p>
     </section>
     <!-- seo:overview:end -->'''
 
@@ -229,6 +229,18 @@ def source_directory():
     return '<!-- seo:sources:start --><section class="source-directory" aria-labelledby="source-directory-title"><h2 id="source-directory-title">四库原始来源与作者</h2><ul>' + ''.join(items) + '</ul></section><!-- seo:sources:end -->'
 
 
+def version_assets(html, folder):
+    # New HTML must not reuse a cached app from the previous deployment.
+    def replace(match):
+        path = match[2].split('?', 1)[0]
+        if path.startswith(('https:', 'http:', '//')):
+            return match[0]
+        digest = sha256((folder / path).read_bytes()).hexdigest()[:12]
+        return match[1] + path + '?v=' + digest + match[3]
+    html = re.sub(r'(<script\b[^>]*\bsrc=")([^"]+)(")', replace, html)
+    return re.sub(r'(<link\b[^>]*\brel="stylesheet"[^>]*\bhref=")([^"]+)(")', replace, html)
+
+
 def outputs(root=ROOT):
     result, summaries = {}, []
     for catalog in CATALOGS:
@@ -264,22 +276,14 @@ def outputs(root=ROOT):
             html = re.sub(r'<!-- seo:sources:start -->.*?<!-- seo:sources:end -->', lambda _: source_directory(), html, flags=re.S)
         else:
             html = re.sub(r'(<footer\b[^>]*>)', lambda match: match[1] + '\n' + source_directory(), html, count=1)
-        # New HTML must not reuse a cached app from the previous deployment.
-        def version_asset(match):
-            path = match[2].split('?', 1)[0]
-            if path.startswith(('https:', 'http:', '//')):
-                return match[0]
-            asset = (root / data['path'] / path).resolve()
-            digest = sha256(asset.read_bytes()).hexdigest()[:12]
-            return match[1] + path + '?v=' + digest + match[3]
-        html = re.sub(r'(<script\b[^>]*\bsrc=")([^"]+)(")', version_asset, html)
-        html = re.sub(r'(<link\b[^>]*\brel="stylesheet"[^>]*\bhref=")([^"]+)(")', version_asset, html)
-        result[path] = html
+        result[path] = version_assets(html, root / data['path'])
         result[data['path'] + 'catalog.md'] = markdown(data)
+    result['examples/index.html'] = version_assets((root / 'examples/index.html').read_text(encoding='utf-8'), root / 'examples')
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     sitemap = ET.Element('{http://www.sitemaps.org/schemas/sitemap/0.9}urlset')
     for data in summaries:
         ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = data['url']
+    ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = BASE + 'examples/'
     ET.indent(sitemap, space='  ')
     result['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(sitemap, encoding='unicode') + '\n'
     result['robots.txt'] = '# Project-path copy; robots rules apply only when served at the origin root.\nUser-agent: *\nAllow: /\nSitemap: ' + BASE + 'sitemap.xml\n'
@@ -288,8 +292,9 @@ def outputs(root=ROOT):
     lines += [f'- [{data["label"]}]({data["url"]}catalog.md): {data["count"]}；{data["purpose"]}；快照 {data["snapshot"]}。' for data in summaries]
     lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 四库用途、功能、本地预览与部署说明。',
               f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
+              f'- [联合使用视频与图片]({BASE}examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
-              f'- [站点地图]({BASE}sitemap.xml): 四个正式图库入口。', '', '## 内容和计数说明', '', NOTICE, '',
+              f'- [站点地图]({BASE}sitemap.xml): 四个正式图库入口及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
               '服装按套数统计，三个文件版本不计为三套；脸型库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。', '',
               '脸型库、姿势库和深度库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
     result['llms.txt'] = '\n'.join(lines)
