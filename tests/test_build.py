@@ -53,6 +53,22 @@ class BuildTests(unittest.TestCase):
         self.assertTrue((published / 'index.html').is_file())
         self.assertEqual(json.loads((published / 'data/portrait-zh.json').read_text()), rows)
 
+    def test_pages_build_includes_depth_page_data_and_shared_pose_dependencies(self):
+        for name in ['depth', 'pose']:
+            folder = self.root / name
+            (folder / 'data').mkdir(parents=True)
+            (folder / 'index.html').write_text(name, encoding='utf-8')
+        (self.root / 'pose/catalog.js').write_text('shared filters', encoding='utf-8')
+        (self.root / 'pose/style.css').write_text('shared layout', encoding='utf-8')
+        rows = [{'id': 'full_single_P001_front', '原图': 'https://ai-pose-depth-gallery.pages.dev/img/full_single_P001_front.png'}]
+        (self.root / 'depth/data/depth-zh.json').write_text(json.dumps(rows), encoding='utf-8')
+        (self.root / 'depth/UPSTREAM_LICENSE').write_text('translation attribution', encoding='utf-8')
+        package_site(self.root, github_pages=True)
+        dist = self.root / 'dist'
+        for path in ['depth/index.html', 'depth/UPSTREAM_LICENSE', 'pose/catalog.js', 'pose/style.css']:
+            self.assertTrue((dist / path).is_file())
+        self.assertEqual(json.loads((dist / 'depth/data/depth-zh.json').read_text()), rows)
+
     def test_pages_build_preserves_pose_sources_and_license(self):
         pose = self.root / 'pose'
         (pose / 'data').mkdir(parents=True)

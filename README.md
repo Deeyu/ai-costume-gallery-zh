@@ -1,8 +1,14 @@
-# AI 参考图库 · 服装、脸与姿势中文版
+# AI 参考图库 · 服装、脸、姿势与深度图中文版
 
-面向 AI 绘画、角色设定与漫剧创作的服装、人像与姿势参考图库。按 [Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)的整理模式制作：保留原始数据、提供中文翻译与零依赖静态画廊。三个图库放在同一仓库中维护、测试和自动部署。
+面向 AI 绘画、角色设定与漫剧创作的服装、人像、姿势与深度参考图库。按 [Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)的整理模式制作：保留原始数据、提供中文翻译与零依赖静态画廊。四个图库放在同一仓库中维护、测试和自动部署。
 
-**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/)** · [版权与致谢](#版权与致谢)
+**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/)** · [版权与致谢](#版权与致谢)
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+四个页面均显示上述提示。顶部导航始终提供四个图库入口，并在滚动时固定显示；当前图库有选中标记，源站地址位于各页面底部。
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
 
@@ -17,6 +23,7 @@
 | 服装库 | 1,407 套服装，每套三个图片版本 | 仓库内完整镜像 |
 | 脸库 | 1,499 张参考图，包含 893 张正面脸图、606 张造型参考 | 本地中文索引，引用原站缩略图及 PNG |
 | 姿势库 · 人体动作教学与绘画参考 | 288 组、1,439 张人体模型线稿，4 个体系、26 个分类 | 完整双语索引，引用原站缩略图及 PNG |
+| 深度库 · 姿态与空间参考 | 288 组、1,439 张人体模型深度图，4 个体系、26 个分类 | 完整双语索引，引用深度原站缩略图及 PNG |
 
 脸库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸库图片。脸库浏览与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
@@ -95,6 +102,8 @@ pose/data/upstream-zh.json  Anhao 完整中文词条快照（1,439 条）
 pose/data/pose-zh.json      中文检索、分组与原站图片 URL
 pose/UPSTREAM_LICENSE      Anhao 参考项目的完整许可与范围说明
 scripts/pose.py            姿势索引同步、来源记录与校验
+depth/                     深度图中文版（页面、完整索引与来源许可）
+scripts/depth.py           深度原站索引提取、中文词条核对及校验
 .github/workflows/         数据校验与 GitHub Pages 自动部署
 LICENSE                    本项目独立程序代码的 MIT 许可
 THIRD_PARTY_NOTICES.md      第三方素材、许可范围与致谢
@@ -159,6 +168,22 @@ python3 scripts/pose.py check-images
 
 `sync` 读取参考仓库同一固定提交中的完整日文、中文索引和许可，不按分类删减，不下载图片。`--commit` 可指定上游提交；也可使用 `--original-json`、`--chinese-json`、`--license` 配合 `--commit` 读取本地快照。更新会检查日文与中文 ID 集合一致、记录数与上游一致、路径、同组名称和视角；当前已知的缺失仰视图记录在 `meta.json` 的 `missing_views` 中，其他视角缺失会报错。`check-images` 用 HEAD 请求抽查四个体系五个视角的缩略图及 PNG，共 40 个地址。
 
+## 深度库：姿态与空间参考
+
+原始站点：[POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/)。本地页面：`depth/`。启动 HTTP 服务后访问 <http://127.0.0.1:8000/depth/>。
+
+快照日期：2026-10-30，完整 288 组、1,439 张深度图，涵盖 4 个体系、26 个分类。白色越近、黑色越远，可将原尺寸 PNG 导入 AI 工具的深度参照功能。支持中文、日文、ID 多词搜索、分类与视角筛选、分组与单图浏览、大图、方向键切换和单张下载。同姿势 `full_sexy_P018` 在原站缺少仰视图，仅显示实际四视角。
+
+`depth/data/depth.json` 保存原始日文索引，`upstream-zh.json` 保留中文词条快照，`depth-zh.json` 包含中文检索字段及深度原站图片 URL，`meta.json` 记录计数、缺失视角、原页面 SHA-256 与中文来源提交。中文词条与现有姿势库同源，逐条核对日文元数据后复用，保留 [Anhao 来源许可](depth/UPSTREAM_LICENSE)。两库使用独立图片地址，深度库不会用线稿替代深度图。共享姿势库的筛选函数及布局样式，不增加运行时依赖。
+
+```bash
+python3 scripts/depth.py sync                 # 仅更新公开元数据，不下载图片
+python3 scripts/depth.py sync --html /path/to/saved.html
+python3 scripts/depth.py verify
+```
+
+原站禁止图片批量下载和再分发，因此仅保存完整索引，图片按需由原站提供。界面独立编写，不包含原站统计或引流脚本。构建与 CI 已包含深度库，执行现有 GitHub Pages 发布流程时会一起发布。
+
 ## 数据结构
 
 `data/costume.json` 保留原始日文字段；`data/costume-zh.json` 是前端读取的中文记录。
@@ -203,9 +228,9 @@ python3 scripts/build.py
 
 **https://deeyu.github.io/ai-costume-gallery-zh/**
 
-每次推送到 `main`，工作流会运行三个图库的单元测试、JavaScript 语法检查、服装库素材校验以及脸库与姿势库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布三个图库到 `dist/`。服装库保持根路径，脸库位于 `/portrait/`，姿势库位于 `/pose/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
+每次推送到 `main`，工作流会运行四个图库的单元测试、导航与内容提示检查、JavaScript 语法检查、服装库素材校验，以及脸库、姿势库和深度库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布四个图库到 `dist/`。服装库保持根路径，脸库位于 `/portrait/`，姿势库位于 `/pose/`，深度库位于 `/depth/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
 
-GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸库与姿势库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
+GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸库、姿势库与深度库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
 
 Fork 后部署：
 
