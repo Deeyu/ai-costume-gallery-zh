@@ -5,7 +5,7 @@ const {runInNewContext} = require('node:vm');
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-function loadUI() {
+function loadUI(script = 'assets/app.js') {
   const nodes = new Map(), documentEvents = {};
   function node(id) {
     if (!nodes.has(id)) nodes.set(id, {
@@ -23,11 +23,20 @@ function loadUI() {
     activeElement: {tagName: 'BODY'},
     addEventListener(type, listener) { documentEvents[type] = listener; }
   };
-  runInNewContext(readFileSync(join(__dirname, '../assets/app.js'), 'utf8'), {
+  runInNewContext(readFileSync(join(__dirname, '..', script), 'utf8'), {
     document, fetch: () => new Promise(() => {})
   });
   return {node, documentEvents};
 }
+
+test('四库索引尚未读取完成时可以输入搜索词', () => {
+  for (const script of ['assets/app.js', 'portrait/app.js', 'pose/app.js', 'depth/app.js']) {
+    const {node} = loadUI(script);
+    node('q').value = '参考';
+    assert.doesNotThrow(() => node('q').events.input({target: node('q')}));
+    assert.equal(node('q').value, '参考');
+  }
+});
 
 test('公众号入口打开二维码弹窗', () => {
   const {node} = loadUI();
