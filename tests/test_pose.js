@@ -10,8 +10,10 @@ const rows = JSON.parse(readFileSync(join(__dirname, '../pose/data/pose-zh.json'
 
 test('体系、动作与视角共同限制结果', () => {
   assert.equal(catalog.filterPoses(rows, {system: '全身单人・标准系'}).length, 365);
-  assert.equal(catalog.filterPoses(rows, {system: '上半身单人'}).length, 125);
-  assert.equal(catalog.filterPoses(rows, {category: '坐姿', angle: '正面'}).length, 14);
+  assert.equal(catalog.filterPoses(rows, {system: '全身单人・性感系'}).length, 399);
+  assert.equal(catalog.filterPoses(rows, {system: '上半身单人'}).length, 400);
+  assert.equal(catalog.filterPoses(rows, {system: '双人缠绵'}).length, 275);
+  assert.equal(catalog.filterPoses(rows, {system: '全身单人・标准系', category: '坐姿', angle: '正面'}).length, 14);
   assert.equal(catalog.filterPoses(rows, {system: '上半身单人', category: '坐姿'}).length, 0);
 });
 
@@ -23,11 +25,13 @@ test('中文与日文多词搜索，ID 忽略大小写', () => {
 
 test('同编号的不同体系不合并，组内视角固定排序', () => {
   const groups = catalog.groupPoses(rows);
-  assert.equal(groups.length, 98);
-  assert.ok(groups.every(group => group.length === 5));
+  assert.equal(groups.length, 288);
+  assert.equal(groups.filter(group => group.length === 5).length, 287);
+  const incomplete = groups.find(group => group[0].组ID === 'full_sexy_P018');
+  assert.deepEqual(Array.from(incomplete, row => row.角度), ['正面', '斜侧', '侧面', '俯视']);
   assert.deepEqual(Array.from(groups[0], row => row.角度), ['正面', '斜侧', '侧面', '俯视', '仰视']);
-  assert.equal(catalog.groupPoses(catalog.filterPoses(rows, {query: 'P001'})).length, 2);
+  assert.equal(catalog.groupPoses(catalog.filterPoses(rows, {query: 'P001'})).length, 4);
   const filtered = catalog.groupPoses(catalog.filterPoses(rows, {angle: '侧面'}));
-  assert.equal(filtered.length, 98);
+  assert.equal(filtered.length, 288);
   assert.ok(filtered.every(group => group.length === 1 && group[0].角度 === '侧面'));
 });
