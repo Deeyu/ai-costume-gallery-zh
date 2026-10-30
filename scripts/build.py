@@ -15,7 +15,7 @@ def package_site(root: Path, github_pages=False, repository='Deeyu/ai-costume-ga
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir()
-    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
+    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
     if not github_pages:
         names.append('png')
     for name in names:
@@ -50,6 +50,9 @@ def main():
     if (ROOT / 'pose/data/pose.json').exists():
         from pose import verify as verify_pose
         verify_pose()
+    if (ROOT / 'depth/data/depth.json').exists():
+        from depth import verify as verify_depth
+        verify_depth()
     update_manifest()
     package_site(ROOT, args.github_pages,
                  os.environ.get('GITHUB_REPOSITORY', 'Deeyu/ai-costume-gallery-zh'),

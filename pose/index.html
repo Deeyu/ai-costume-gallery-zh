@@ -13,8 +13,13 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28">姿势库 <span>中文版</span></a><nav aria-label="站点"><a href="https://ai-pose-gallery.pages.dev/" target="_blank" rel="noopener">原始图库</a><a class="gallery-switch" href="../">服装库</a><a class="gallery-switch" href="../portrait/">脸库</a><a class="github-link" href="https://github.com/Deeyu/ai-costume-gallery-zh" aria-label="GitHub 项目仓库"><img src="../assets/github-mark.svg" alt="" width="20" height="20"><span>GitHub</span></a><button id="follow" class="nav-follow" aria-haspopup="dialog" aria-controls="wechat">公众号</button><button id="help" aria-label="使用指南"><span class="help-label">使用指南</span><span class="help-short" aria-hidden="true">指南</span></button></nav></header>
+  <header class="topbar">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28">姿势库 <span>中文版</span></a>
+    <nav class="gallery-nav" aria-label="图库"><a class="gallery-switch" href="../">服装库</a><a class="gallery-switch" href="../portrait/">脸库</a><a class="gallery-switch" href="../pose/" aria-current="page">姿势库</a><a class="gallery-switch" href="../depth/">深度库</a></nav>
+    <div class="nav-tools" role="group" aria-label="站点工具"><a class="github-link" href="https://github.com/Deeyu/ai-costume-gallery-zh" aria-label="GitHub 项目仓库"><img src="../assets/github-mark.svg" alt="" width="20" height="20"><span>GitHub</span></a><button id="follow" class="nav-follow" aria-haspopup="dialog" aria-controls="wechat">公众号</button><button id="help" aria-label="使用指南"><span class="help-label">使用指南</span><span class="help-short" aria-hidden="true">指南</span></button></div>
+  </header>
   <main>
+    <aside class="content-notice" role="note" aria-labelledby="content-notice-title"><h2 id="content-notice-title">内容提示</h2><p>图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。</p></aside>
     <section class="intro pose-intro"><div><h1>为角色，找到合适的姿势。</h1><p>用人体模型线稿，观察动作、身体结构与双人构图。<br>用于人体动作教学、绘画练习、角色设定与分镜参考。</p><p id="total" class="pose-total" role="status">正在读取姿势索引…</p></div><div class="pose-count"><strong>5</strong> 个参考视角</div></section>
     <section class="library" aria-label="姿势图库">
       <div id="systems" class="systems" aria-label="姿势体系"></div>

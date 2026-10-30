@@ -1,0 +1,5 @@
+.depth-legend{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:12px;color:var(--muted)}
+.depth-ramp{width:128px;height:12px;border:1px solid #b9c1cf;border-radius:3px;background:linear-gradient(90deg,#000,#fff)}
+.pose-card img,.picture,.picture img{background:#000}
+.depth-note{padding:12px 16px;background:var(--soft);border-radius:8px;font-size:13px;color:var(--blue);line-height:1.8}
+.picture p{padding:3px 8px;border-radius:4px}
