@@ -30,6 +30,8 @@ jobs:
           node --check assets/app.js
           node --check portrait/app.js
           node --check portrait/catalog.js
+          node --check pose/app.js
+          node --check pose/catalog.js
           node --test tests/test_*.js
           python3 scripts/build.py --github-pages
       - uses: actions/upload-pages-artifact@v4

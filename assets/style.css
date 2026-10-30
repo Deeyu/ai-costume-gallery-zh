@@ -5,3 +5,6 @@
 @media(max-width:400px){.topbar{padding-inline:16px;gap:12px}nav{gap:10px}.github-link span{display:none}}
 .help-short{display:none}
 @media(max-width:400px){nav{gap:8px}.help-label{display:none}.help-short{display:inline}}
+
+.topbar .brand,.topbar nav{white-space:nowrap}
+@media(max-width:640px){.topbar{flex-wrap:wrap;gap:10px}.topbar nav{width:100%;justify-content:space-between}}

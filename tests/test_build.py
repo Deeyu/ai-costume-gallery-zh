@@ -53,6 +53,19 @@ class BuildTests(unittest.TestCase):
         self.assertTrue((published / 'index.html').is_file())
         self.assertEqual(json.loads((published / 'data/portrait-zh.json').read_text()), rows)
 
+    def test_pages_build_preserves_pose_sources_and_license(self):
+        pose = self.root / 'pose'
+        (pose / 'data').mkdir(parents=True)
+        (pose / 'index.html').write_text('pose fixture', encoding='utf-8')
+        (pose / 'UPSTREAM_LICENSE').write_text('upstream attribution', encoding='utf-8')
+        rows = [{'id': 'full_single_P001_front', '原图': 'https://ai-pose-gallery.pages.dev/img/full_single_P001_front.png'}]
+        (pose / 'data/pose-zh.json').write_text(json.dumps(rows), encoding='utf-8')
+        package_site(self.root, github_pages=True)
+        published = self.root / 'dist/pose'
+        self.assertTrue((published / 'index.html').is_file())
+        self.assertTrue((published / 'UPSTREAM_LICENSE').is_file())
+        self.assertEqual(json.loads((published / 'data/pose-zh.json').read_text()), rows)
+
 
 if __name__ == '__main__':
     unittest.main()
