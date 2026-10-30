@@ -19,7 +19,8 @@ async function loadBrowser(folder, search = '') {
       setAttribute(name, value) { attrs[name] = value; },
       getAttribute(name) { return attrs[name]; },
       focus() { document.activeElement = this; },
-      showModal() { this.open = true; }, close() { this.open = false; },
+      showModal() { this.open = true; }, close() { this.open = false; this.events.close?.(); },
+      getBoundingClientRect() { return {left: 100, right: 400, top: 100, bottom: 400}; },
       classList: {toggle(name, enabled) { if (enabled) classes.add(name); else classes.delete(name); }, contains(name) { return classes.has(name); }}
     };
   }
@@ -43,6 +44,64 @@ async function loadBrowser(folder, search = '') {
 }
 
 for (const folder of ['pose', 'depth']) {
+  test(`${folder}：两个成人向标签有标识，每次进入均须确认，退出不提醒`, async () => {
+    const ui = await loadBrowser(folder);
+    const system = name => ui.node('systems').children.find(button => button.dataset.value === name);
+    const badges = ui.node('systems').children.filter(button => button.children.some(child => child.className === 'adult-badge'));
+    assert.equal(badges.length, 2);
+    for (const [name, count] of [['全身单人・性感系', /80 组 · 399 张/], ['双人缠绵', /55 组 · 275 张/]]) {
+      const before = ui.node('status').textContent, url = ui.url();
+      system(name).events.click();
+      assert.equal(ui.node('adult-warning').open, true);
+      assert.equal(ui.node('status').textContent, before);
+      assert.equal(ui.url(), url);
+      ui.node('adult-confirm').events.click();
+      assert.equal(ui.node('adult-warning').open, false);
+      assert.match(ui.node('status').textContent, count);
+      system(name).events.click();
+      assert.equal(ui.node('adult-warning').open, false);
+      assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
+      system(name).events.click();
+      assert.equal(ui.node('adult-warning').open, true);
+      ui.node('adult-cancel').events.click();
+    }
+  });
+
+  test(`${folder}：取消、关闭、Esc 原生关闭和遮罩都保留原筛选`, async () => {
+    const ui = await loadBrowser(folder, '?system=' + encodeURIComponent('全身单人・标准系') + '&category=' + encodeURIComponent('坐姿'));
+    const before = ui.node('status').textContent, url = ui.url(), card = ui.node('grid').children[0];
+    for (const cancel of [
+      () => ui.node('adult-cancel').events.click(),
+      () => ui.node('adult-close').events.click(),
+      () => ui.node('adult-warning').close(),
+      () => ui.node('adult-warning').events.click({target: ui.node('adult-warning'), clientX: 0, clientY: 0})
+    ]) {
+      ui.node('systems').children.find(button => button.dataset.value === '双人缠绵').events.click();
+      cancel();
+      assert.equal(ui.node('adult-warning').open, false);
+      assert.equal(ui.node('status').textContent, before);
+      assert.equal(ui.url(), url);
+      assert.equal(ui.node('grid').children[0], card);
+      ui.node('adult-confirm').events.click();
+      assert.equal(ui.node('status').textContent, before);
+    }
+  });
+
+  test(`${folder}：成人向直达链接先显示标准系，确认后恢复完整筛选`, async () => {
+    for (const name of ['全身单人・性感系', '双人缠绵']) {
+      const ui = await loadBrowser(folder, '?system=' + encodeURIComponent(name) + '&angle=' + encodeURIComponent('侧面') + '&view=single');
+      assert.equal(ui.node('adult-warning').open, true);
+      assert.match(ui.node('status').textContent, /73 组 · 365 张/);
+      assert.ok(ui.node('grid').children.every(card => card.children[0].children[0].src.includes('full_single_')));
+      assert.ok(!ui.url().includes(encodeURIComponent(name)));
+      ui.node('adult-confirm').events.click();
+      assert.match(ui.node('status').textContent, name === '双人缠绵' ? /55 组 · 55 张/ : /80 组 · 80 张/);
+      assert.match(ui.node('status').textContent, /逐张查看/);
+      assert.ok(ui.url().includes(encodeURIComponent(name)));
+      assert.ok(ui.node('grid').children.every(card => card.children[0].children[0].src.includes('_side.')));
+    }
+  });
+
   test(`${folder}：全部／体系／动作可取消筛选，URL 可恢复，空结果可重置`, async () => {
     const ui = await loadBrowser(folder);
     assert.match(ui.node('status').textContent, /288 组 · 1439 张/);
