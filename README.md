@@ -161,7 +161,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 ### 致谢
 
-- 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。
+- 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。原作者推文：[查看原文](https://x.com/giaaibusi/status/2115638135208260002)。
 - 感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)**。本项目参考其素材镜像、中文元数据整理与零依赖静态画廊的实践模式，并应用到服装主题；本项目界面及脚本独立编写，未复制其代码。
 - 感谢提交翻译校对、问题反馈与改进建议的贡献者。
 
