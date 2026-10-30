@@ -7,6 +7,7 @@ import shutil
 from translate import ROOT
 from verify import verify
 from manifest import main as update_manifest
+from seo import generate as update_seo
 
 
 def package_site(root: Path, github_pages=False, repository='Deeyu/ai-costume-gallery-zh', ref='main'):
@@ -15,7 +16,7 @@ def package_site(root: Path, github_pages=False, repository='Deeyu/ai-costume-ga
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir()
-    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
+    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'catalog.md', 'sitemap.xml', 'robots.txt', 'llms.txt', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
     if not github_pages:
         names.append('png')
     for name in names:
@@ -54,6 +55,7 @@ def main():
         from depth import verify as verify_depth
         verify_depth()
     update_manifest()
+    update_seo()
     package_site(ROOT, args.github_pages,
                  os.environ.get('GITHUB_REPOSITORY', 'Deeyu/ai-costume-gallery-zh'),
                  os.environ.get('GITHUB_SHA', 'main'))
