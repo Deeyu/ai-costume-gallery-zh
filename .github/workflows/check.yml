@@ -16,3 +16,4 @@ jobs:
       - run: python3 -m unittest discover -s tests -v
       - run: python3 scripts/verify.py --assets
       - run: node --check assets/app.js
+      - run: node --test tests/test_ui.js
