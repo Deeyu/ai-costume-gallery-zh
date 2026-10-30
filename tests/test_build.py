@@ -30,6 +30,13 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(json.loads((dist / 'data/costume-zh.json').read_text()), [self.row])
         self.assertTrue((dist / 'THIRD_PARTY_NOTICES.md').is_file())
 
+    def test_pages_build_includes_crawler_and_machine_readable_resources(self):
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md']:
+            (self.root / name).write_text(name, encoding='utf-8')
+        package_site(self.root, github_pages=True)
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md']:
+            self.assertEqual((self.root / 'dist' / name).read_text(), name)
+
     def test_pages_build_removes_old_pngs_and_uses_selected_repository_and_commit(self):
         package_site(self.root)
         package_site(self.root, github_pages=True, repository='fork/gallery', ref='abc123')

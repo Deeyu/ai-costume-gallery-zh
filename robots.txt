@@ -1,0 +1,4 @@
+# Project-path copy; robots rules apply only when served at the origin root.
+User-agent: *
+Allow: /
+Sitemap: https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml

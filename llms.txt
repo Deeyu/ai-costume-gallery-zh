@@ -1,0 +1,24 @@
+# AI 参考图库中文版
+
+> 服装、人像、姿势线稿与深度图四库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。
+
+## 四个图库
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/catalog.md): 1,407 套服装；无人物衣装搭配、角色服装设计与漫剧造型参考；快照 2026-10-29。
+- [AI 脸库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/catalog.md): 1,499 张参考图；AI 虚构人物的五官、发型与角色造型参考；快照 2026-10-30。
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/catalog.md): 288 组、1,439 张人体模型线稿；人体模型线稿的动作、身体结构与双人构图参考；快照 2026-10-30。
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/catalog.md): 288 组、1,439 张深度图；人体模型深度图的姿态、遮挡与空间前后关系参考；快照 2026-10-30。
+
+## 项目与来源
+
+- [项目说明](https://github.com/Deeyu/ai-costume-gallery-zh#readme): 四库用途、功能、本地预览与部署说明。
+- [版权与致谢](https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 四个正式图库入口。
+
+## 内容和计数说明
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+服装按套数统计，三个文件版本不计为三套；脸库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。
+
+脸库、姿势库和深度库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。
