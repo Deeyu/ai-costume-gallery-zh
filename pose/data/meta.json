@@ -1,0 +1,53 @@
+{
+  "total": 490,
+  "groups": 98,
+  "snapshot": "2026-10-30",
+  "source": "https://ai-pose-gallery.pages.dev/",
+  "translation_source": "https://github.com/anhao/ai-pose-gallery-zh",
+  "upstream_commit": "072a3690af6e7e0011abbe0fa1ccc08939fbb47d",
+  "upstream_total": 1439,
+  "scope": "标准全身与上半身常规动作参考",
+  "angles": [
+    "正面",
+    "斜侧",
+    "侧面",
+    "俯视",
+    "仰视"
+  ],
+  "systems": {
+    "全身单人・标准系": {
+      "images": 365,
+      "groups": 73,
+      "categories": [
+        "坐姿",
+        "站姿",
+        "跪立",
+        "侧坐・女孩坐",
+        "趴卧",
+        "蹲姿",
+        "前倾",
+        "后仰・挺背",
+        "扭身"
+      ]
+    },
+    "上半身单人": {
+      "images": 125,
+      "groups": 25,
+      "categories": [
+        "可爱系"
+      ]
+    }
+  },
+  "categories": {
+    "坐姿": 70,
+    "站姿": 70,
+    "跪立": 50,
+    "侧坐・女孩坐": 40,
+    "趴卧": 45,
+    "蹲姿": 30,
+    "前倾": 30,
+    "后仰・挺背": 15,
+    "扭身": 15,
+    "可爱系": 125
+  }
+}
