@@ -99,6 +99,18 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 **[在线使用脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)** · [原始脸库](https://ai-portrait-gallery.pages.dev/) · [中文索引](portrait/data/portrait-zh.json) · [纯文本介绍](portrait/catalog.md)
 
+### 脸库界面预览
+
+桌面版展示发长快捷入口、原站下载排行、正面脸图与造型参考切换，以及中文搜索与筛选。
+
+![脸库中文版桌面截图：发长筛选、下载排行与正面脸图](docs/portrait-desktop.jpg)
+
+<details><summary>脸库手机预览</summary>
+
+![脸库中文版手机截图：响应式导航与人像参考浏览](docs/portrait-mobile.jpg)
+
+</details>
+
 ### 脸库功能与收录
 
 - “正面脸图 / 造型参考”两种模式，各自显示数量与发长筛选结果。
@@ -138,6 +150,18 @@ python3 scripts/portrait.py check-images --limit 8
 
 **[在线使用姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/)** · [原始姿势库](https://ai-pose-gallery.pages.dev/) · [中文索引](pose/data/pose-zh.json) · [纯文本介绍](pose/catalog.md)
 
+### 姿势库界面预览
+
+桌面版展示完整四个体系、动作与视角筛选，以及按姿势分组的人体模型线稿。
+
+![姿势库中文版桌面截图：四个体系、动作分类与多视角线稿](docs/pose-desktop.jpg)
+
+<details><summary>姿势库手机预览</summary>
+
+![姿势库中文版手机截图：四库常驻导航、分类筛选与线稿参考](docs/pose-mobile.jpg)
+
+</details>
+
 ### 姿势库功能与收录
 
 - 完整 288 组、1,439 张图，涵盖原站 4 个体系、26 个分类；使用人体模型线稿观察动作、重心、身体结构和双人构图。
@@ -173,6 +197,18 @@ python3 scripts/pose.py check-images
 深度库（Depth Gallery）提供 **288 组、1,439 张人体模型深度图**，通过灰度表达姿态、遮挡与空间前后关系：**白色越近，黑色越远**。与姿势库使用对应编号和视角，但两库使用不同图像形式与原站地址；深度图不是线稿或法线图。包含成人向分类，仅限成年人艺术与动作参考。
 
 **[在线使用深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/)** · [原始深度库](https://ai-pose-depth-gallery.pages.dev/) · [中文索引](depth/data/depth-zh.json) · [纯文本介绍](depth/catalog.md)
+
+### 深度库界面预览
+
+桌面版展示“白色越近、黑色越远”的深度示意、姿势筛选与灰度深度图；可按需下载 PNG 作为空间关系参考。
+
+![深度库中文版桌面截图：黑白远近示意、分类筛选与灰度参考图](docs/depth-desktop.jpg)
+
+<details><summary>深度库手机预览</summary>
+
+![深度库中文版手机截图：响应式导航、深度示意与姿态参考](docs/depth-mobile.jpg)
+
+</details>
 
 ### 深度库功能与用法
 
