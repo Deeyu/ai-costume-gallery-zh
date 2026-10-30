@@ -1,12 +1,21 @@
-# AI Costume Gallery · 中文版服装集
+# AI 参考图库 · 服装库与脸库中文版
 
-面向 AI 绘画、角色设定与漫剧创作的服装参考图库。按 [Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)的整理模式制作：保留原始数据、提供中文翻译、静态画廊与可复现的素材下载脚本。
+面向 AI 绘画、角色设定与漫剧创作的服装与人像参考图库。按 [Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)的整理模式制作：保留原始数据、提供中文翻译与零依赖静态画廊。两个图库放在同一仓库中维护、测试和自动部署。
 
-**在线浏览地址：[中文版服装集](https://deeyu.github.io/ai-costume-gallery-zh/)** · [版权与致谢](#版权与致谢)
+**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)** · [版权与致谢](#版权与致谢)
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
 
 数据来源：[衣装集](https://ai-costume-gallery.pages.dev/) · 原作者X：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
+
+脸库来源：[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) · 原作者：[あぎ（@agi_aibusi）](https://x.com/agi_aibusi) · [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。
+
+| 图库 | 收录 | 图片提供方式 |
+| --- | --- | --- |
+| 服装库 | 1,407 套服装，每套三个图片版本 | 仓库内完整镜像 |
+| 脸库 | 1,499 张参考图，包含 893 张正面脸图、606 张造型参考 | 本地中文索引，引用原站缩略图及 PNG |
+
+脸库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸库图片。脸库浏览与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
 ## 演示视频
 
@@ -22,7 +31,7 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 </details>
 
-## 收录内容
+## 服装库收录内容
 
 | 分类 |  套数 |
 | ---- | ----: |
@@ -70,10 +79,46 @@ img/                       WebP 预览图
 png/                       PNG 原图
 scripts/                   提取、翻译、下载、校验、构建
 tests/                     数据与提取安全校验
+portrait/                  脸库中文版（独立子页面、界面与数据）
+portrait/data/portrait.json 原始脸库元数据
+portrait/data/portrait-zh.json 中文发长、发型及检索字段
+portrait/data/ranking-zh.json 原站下载排行快照
+scripts/portrait.py        脸库元数据提取、翻译及校验
 .github/workflows/         数据校验与 GitHub Pages 自动部署
 LICENSE                    本项目独立程序代码的 MIT 许可
 THIRD_PARTY_NOTICES.md      第三方素材、许可范围与致谢
 ```
+
+## 脸库功能与数据
+
+- “正面脸图 / 造型参考”两种模式，各自显示数量与发长筛选结果。
+- 4 类发长、50 种细分发型全部汉化，保留原始日文名称；未标注的细分发型保持为空，不推测人物特征。
+- 支持中文、日文、模式英文名及图片 ID 搜索，多个词同时匹配；每批加载 60 张。
+- 保留原站下载排行的本地快照，明确显示快照日期，不代表本站访问或下载统计。
+- 灯箱导航、PNG 下载、复制 ID、键盘操作；与服装库共用 GitHub 及公众号入口。
+- 页面与脚本独立编写，不包含原站的点击上报、实时排行请求或 LINE 引流。
+
+| 发长 | 正面脸图 | 造型参考 | 合计 |
+| --- | ---: | ---: | ---: |
+| 短发 | 433 | 294 | 727 |
+| 中发 | 229 | 147 | 376 |
+| 中长发 | 154 | 106 | 260 |
+| 长发 | 77 | 59 | 136 |
+| 合计 | 893 | 606 | 1,499 |
+
+脸库快照日期：2026-10-30。`portrait/data/` 中保留原始 JSON、中文 JSON、分类计数、原始/中文排行快照及 56 条分类与发型对照。中文记录包含图片 ID、模式、发长、细分发型、原始日文、原站图片 URL、原图尺寸与大小、检索文本。
+
+从仓库根目录启动 `python3 -m http.server 8000 --bind 127.0.0.1`，打开 <http://127.0.0.1:8000/portrait/>。
+
+更新与校验脸库索引：
+
+```bash
+python3 scripts/portrait.py sync
+python3 scripts/portrait.py verify
+python3 scripts/portrait.py check-images --limit 8
+```
+
+`sync` 只读取原站公开的元数据和排行快照，不下载或镜像图片，也不执行原站 JavaScript。也可使用已保存的文件：`python3 scripts/portrait.py sync --images-js /path/to/images.js --ranking-js /path/to/ranking.js`。出现新增分类或发型时会先报错，补齐词典后再更新，避免静默漏译。`check-images` 仅用 HEAD 请求抽查不同模式和发长的图片地址。
 
 ## 数据结构
 
@@ -119,9 +164,9 @@ python3 scripts/build.py
 
 **https://deeyu.github.io/ai-costume-gallery-zh/**
 
-每次推送到 `main`，工作流会运行单元测试、JavaScript 语法检查和全部素材校验，执行 `python3 scripts/build.py --github-pages`，然后发布 `dist/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
+每次推送到 `main`，工作流会运行两个图库的单元测试、JavaScript 语法检查、服装库素材校验与脸库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布两个图库到 `dist/`。服装库保持根路径，脸库位于 `/portrait/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
 
-GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件、缩略图和预览图，约 125 MiB；PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。下载失败时可使用「打开原图」后保存。
+GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸库图片由原站提供。下载失败时可使用「打开原图」后保存。
 
 Fork 后部署：
 
@@ -159,9 +204,16 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 本项目独立编写的页面程序、样式与维护脚本以 **[MIT 许可](LICENSE)** 开源。使用这些代码时请保留许可与版权声明。该许可的范围仅限独立程序代码，不覆盖上文所述第三方图片与数据。
 
+### 脸库来源与说明
+
+脸库原始图片与元数据来自 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布的 **[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/)**，见 [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。原站将图片标注为 CC0 1.0，并说明人物为 AI 生成的虚构人物；允许商用、编辑与参考使用，同时要求不要冒充真实人物，并请求不要重新分发图片。
+
+本仓库尊重该请求，仅提供中文索引、分类翻译及原站图片链接，不将脸库图片上传到仓库。请阅读原站使用规则与 [CC0 说明](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hans)；中文整理不代表原作者的官方版本、背书或额外授权。脸库图片许可与服装库素材说明分别适用。
+
 ### 致谢
 
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。原作者推文：[查看原文](https://x.com/giaaibusi/status/2115638135208260002)。
+- 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
 - 感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)**。本项目参考其素材镜像、中文元数据整理与零依赖静态画廊的实践模式，并应用到服装主题；本项目界面及脚本独立编写，未复制其代码。
 - 感谢提交翻译校对、问题反馈与改进建议的贡献者。
 

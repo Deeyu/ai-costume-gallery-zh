@@ -3,3 +3,5 @@
 .github-link{display:inline-flex;align-items:center;gap:7px}.github-link img{flex-shrink:0}nav .nav-follow{padding:7px 0;border-color:transparent;background:transparent;color:var(--blue)}nav .nav-follow:hover{text-decoration:underline;text-underline-offset:4px}
 #wechat{max-width:380px;padding:30px 24px 24px;text-align:center}#wechat .close{position:absolute;top:8px;right:8px;min-width:44px;min-height:44px}#wechat-title{font-size:24px;margin:8px 0 0}#wechat-description{margin:8px 0 16px;font-size:14px;color:var(--muted)}#wechat img{display:block;width:100%;max-width:300px;height:auto;margin:auto}#wechat small{display:block;margin-top:14px;font-size:12px;line-height:1.8;color:var(--muted)}
 @media(max-width:400px){.topbar{padding-inline:16px;gap:12px}nav{gap:10px}.github-link span{display:none}}
+.help-short{display:none}
+@media(max-width:400px){nav{gap:8px}.help-label{display:none}.help-short{display:inline}}

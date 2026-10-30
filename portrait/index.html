@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI 脸库中文版｜人像与发型参考</title>
+  <meta name="description" content="1,499 张 AI 虚构人物参考图，包含正面脸图和造型参考。按发长与发型筛选，中文、日文和 ID 搜索，下载 PNG 原图。">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28">脸库 <span>中文版</span></a><nav aria-label="站点"><a href="https://ai-portrait-gallery.pages.dev/" target="_blank" rel="noopener">原始图库</a><a class="gallery-switch" href="../">服装库</a><a class="github-link" href="https://github.com/Deeyu/ai-costume-gallery-zh" aria-label="GitHub 项目仓库"><img src="../assets/github-mark.svg" alt="" width="20" height="20"><span>GitHub</span></a><button id="follow" class="nav-follow" aria-haspopup="dialog" aria-controls="wechat">公众号</button><button id="help" aria-label="使用指南"><span class="help-label">使用指南</span><span class="help-short" aria-hidden="true">指南</span></button></nav></header>
+  <main>
+    <section class="intro portrait-intro"><div><h1>找到角色的脸与风格。</h1><p>用正面脸图参考五官，用造型图寻找发型与整体氛围。<br>为 AI 绘画、角色设定与视频创作，挑选一张持续使用的参考图。</p><p id="total" class="portrait-total" role="status">正在读取参考图库…</p></div><div id="featured" class="featured" aria-label="按发长快速浏览"></div></section>
+    <section id="ranking" class="ranking" aria-labelledby="ranking-title" hidden><div class="result-line"><h2 id="ranking-title">原站下载排行</h2><p id="ranking-note"></p></div><div id="rank-categories" class="rank-categories" aria-label="排行分类"></div><div id="rank-grid" class="rank-grid"></div></section>
+    <section id="library" class="library" aria-label="人像图库">
+      <div id="sections" class="sections" aria-label="参考图类型"></div>
+      <p id="section-note" class="section-note"></p>
+      <div id="categories" class="categories" aria-label="发长分类"></div>
+      <div class="toolbar"><label class="search"><span>搜索</span><input id="q" type="search" placeholder="试试 空气刘海、波波头、黑发 或图片 ID" autocomplete="off"><kbd>/</kbd></label><button id="reset">重置筛选</button></div>
+      <div class="result-line"><h2 id="section-title">正面脸图</h2><p id="status" role="status" aria-live="polite">正在加载数据…</p></div>
+      <div id="grid" class="grid"></div><p id="empty" hidden>没有找到匹配的参考图。试试更短的关键词，或重置筛选。</p><button id="more" class="more" hidden>加载更多</button>
+    </section>
+  </main>
+  <footer><p>图片及原始索引：<a href="https://ai-portrait-gallery.pages.dev/">原始脸库</a> · 原作者 <a href="https://x.com/agi_aibusi">あぎ</a> · <a href="https://x.com/agi_aibusi/status/2113187345814204557">原作者推文</a></p><p>原站标注 CC0 1.0，并请求不要重新分发图片。本页提供中文索引，图片与原图下载由原站提供，加载需访问原站。</p><p>由 <a href="https://github.com/Deeyu">Deeyu</a> 整理，参考 <a href="https://github.com/anhao/ai-pose-gallery-zh">Anhao 中文姿势图库</a>的整理模式。<a href="../">服装库</a> · <a href="https://github.com/Deeyu/ai-costume-gallery-zh/blob/main/THIRD_PARTY_NOTICES.md">版权与致谢</a></p></footer>
+  <dialog id="viewer" aria-labelledby="detail-title"><div class="detail"><div class="picture"><img id="large" alt=""><p id="image-status" role="status"></p></div><div class="detail-info"><button id="close" class="close" aria-label="关闭大图">×</button><p id="detail-cat" class="detail-cat"></p><h2 id="detail-title"></h2><p id="position"></p><h3>发型参考</h3><p id="detail-style"></p><p id="dimensions" class="dimensions"></p><details><summary>原始日文说明</summary><p id="original-style"></p></details><div class="actions"><a id="download" class="primary" download target="_blank" rel="noopener">下载 PNG 原图</a><a id="open-original" target="_blank" rel="noopener">打开原图</a><button id="copy">复制 ID</button></div><p class="download-note">预览使用缩略图；原图从原站下载。失败时可点“打开原图”后保存。</p><div class="paging"><button id="prev">上一张</button><button id="next">下一张</button></div><small>← → 切换 · Esc 关闭</small></div></div></dialog>
+  <dialog id="guide" aria-labelledby="guide-title"><h2 id="guide-title">如何使用脸库</h2><p>“正面脸图”适合五官与脸型参考；“造型参考”展示服装、发型质感与整体氛围，人物朝向可能不同。</p><p>按发长筛选，或用中文、日文发型名称及图片 ID 搜索。多个词以空格分隔，结果需同时包含。原站未标注的细分发型不会补写推测内容。</p><p>点击卡片查看预览，下载 PNG 后放入 AI 工具的角色或人脸参考功能。持续使用同一张参考图，有助于保持角色外观一致。</p><p>图片为原站发布的 AI 虚构人物。原站标注 CC0，允许商用、编辑及参考使用；同时要求不要冒充真实人物，并请求不要重新分发图片。请阅读<a href="https://ai-portrait-gallery.pages.dev/#rules" target="_blank" rel="noopener">原站使用说明</a>及 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hans" target="_blank" rel="noopener">CC0 说明</a>。</p><form method="dialog"><button class="primary">知道了</button></form></dialog>
+  <dialog id="wechat" aria-labelledby="wechat-title" aria-describedby="wechat-description"><form method="dialog"><button class="close" aria-label="关闭公众号二维码">×</button></form><h2 id="wechat-title">Agent内参</h2><p id="wechat-description">微信扫一扫，关注公众号</p><img src="../assets/wechat-qr.jpg" alt="Agent内参公众号二维码" width="430" height="430"><small>手机可保存二维码后，在微信中识别</small></dialog>
+</body>
+</html>
