@@ -13,8 +13,9 @@
 
 - [项目说明](https://github.com/Deeyu/ai-costume-gallery-zh#readme): 四库用途、功能、本地预览与部署说明。
 - [中文联合使用指南](https://deeyu.github.io/ai-costume-gallery-zh/guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。
+- [联合使用视频与图片](https://deeyu.github.io/ai-costume-gallery-zh/examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。
 - [版权与致谢](https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。
-- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 四个正式图库入口。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 四个正式图库入口及联合使用案例。
 
 ## 内容和计数说明
 

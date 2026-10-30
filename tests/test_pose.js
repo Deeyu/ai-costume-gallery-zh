@@ -35,3 +35,44 @@ test('同编号的不同体系不合并，组内视角固定排序', () => {
   assert.equal(filtered.length, 288);
   assert.ok(filtered.every(group => group.length === 1 && group[0].角度 === '侧面'));
 });
+
+test('全部体系保留完整姿势，视角筛选保留组内真实的其他视角', () => {
+  const all = catalog.browsePoses(rows, {});
+  assert.equal(all.filtered.length, 1439);
+  assert.equal(all.groups.length, 288);
+  const side = catalog.browsePoses(rows, {system: '全身单人・标准系', angle: '侧面'});
+  assert.equal(side.filtered.length, 73);
+  assert.equal(side.groups.length, 73);
+  assert.ok(side.groups.every(views => views.length === 5));
+  const missing = catalog.browsePoses(rows, {query: 'full_sexy_P018'});
+  assert.equal(missing.groups[0].length, 4);
+});
+
+test('动作选项按当前体系统计，并以组 ID 避免多视角重复计数', () => {
+  const categories = catalog.poseCategories(rows);
+  assert.equal(categories.length, 26);
+  assert.equal(categories.reduce((sum, item) => sum + item.groups, 0), 288);
+  const standard = catalog.poseCategories(rows, '全身单人・标准系');
+  assert.equal(standard.reduce((sum, item) => sum + item.groups, 0), 73);
+  assert.equal(standard.find(item => item.name === '坐姿').groups, 14);
+});
+
+test('复制 PNG 在点击期间提交剪贴板请求，并处理源站失败', async () => {
+  let resolveResponse, requested, clipboard;
+  const copy = {};
+  runInNewContext(readFileSync(join(__dirname, '../pose/catalog.js'), 'utf8'), Object.assign(copy, {
+    navigator: {clipboard: {write(items) { clipboard = items; return Promise.all(items.map(item => item.data['image/png'])); }}},
+    ClipboardItem: class { constructor(data) { this.data = data; } },
+    fetch(url) { requested = url; return new Promise(resolve => { resolveResponse = resolve; }); }
+  }));
+  const success = copy.copyPoseImage({原图: 'https://example.com/pose.png'});
+  assert.equal(requested, 'https://example.com/pose.png');
+  assert.equal(clipboard.length, 1);
+  const png = {type: 'image/png'};
+  resolveResponse({ok: true, blob: async () => png});
+  await success;
+  assert.equal(await clipboard[0].data['image/png'], png);
+  const failure = copy.copyPoseImage({原图: 'https://example.com/missing.png'});
+  resolveResponse({ok: false, status: 404});
+  await assert.rejects(failure, /HTTP 404/);
+});

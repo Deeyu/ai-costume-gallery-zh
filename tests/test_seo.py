@@ -96,10 +96,11 @@ class SeoTests(unittest.TestCase):
                 if data['groups']:
                     self.assertEqual(dataset['variableMeasured'][1]['value'], data['groups'])
 
-    def test_sitemap_and_text_resources_cover_exactly_the_four_canonical_pages(self):
+    def test_sitemap_and_text_resources_cover_the_galleries_and_media_example(self):
         tree = ET.fromstring((ROOT / 'sitemap.xml').read_text())
         urls = [node.text for node in tree.findall('.//{*}loc')]
-        self.assertEqual(urls, [BASE + catalog['path'] for catalog in CATALOGS])
+        self.assertEqual(urls, [BASE + catalog['path'] for catalog in CATALOGS] + [BASE + 'examples/'])
+        self.assertIn(BASE + 'examples/', (ROOT / 'llms.txt').read_text())
         llms = (ROOT / 'llms.txt').read_text()
         for catalog in CATALOGS:
             self.assertIn(BASE + catalog['path'] + 'catalog.md', llms)

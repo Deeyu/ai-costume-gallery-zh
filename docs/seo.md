@@ -2,7 +2,7 @@
 
 ## 本次优化的范围
 
-仓库面向需要服装、虚构人物、人体姿势和深度图参考的成年创作者。四个正式入口分别对应这四种检索意图，保留现有 URL、四库常驻导航、内容提示与来源署名，不创建重复关键词页面，不引入统计、遥测或第三方运行时依赖。
+仓库面向需要服装、虚构人物、人体姿势和深度图参考的成年创作者。四个图库入口分别对应这四种检索意图，联合案例页提供视频与参考合集，保留现有 URL、四库常驻导航、内容提示与来源署名，不创建重复关键词页面，不引入统计、遥测或第三方运行时依赖。
 
 优化前，页面只有基础标题和摘要，图片卡片由 JavaScript 生成，缺少 canonical、分享元数据、结构化索引与站点地图；仓库 About 仍只介绍服装库。这里记录的是实现及验证，不是自然搜索流量或排名报告。
 
@@ -18,7 +18,7 @@
 | 结构化信息 | WebSite、ImageGallery、Dataset、Person、BreadcrumbList；索引记录数与源数据校验 |
 | 来源与权限 | 原作者、Anhao 中文词条、维护者及第三方使用条件分开表述，不把 MIT 扩展到图片 |
 | 成人内容 | 保留用户指定的可见内容提示；姿势与深度页面标注 `rating=adult`、`isFamilyFriendly=false` |
-| 发现入口 | 四页面 sitemap、页脚内链、每库 `catalog.md` 与项目 `llms.txt` |
+| 发现入口 | 四库及联合案例页 sitemap、页脚内链、每库 `catalog.md` 与项目 `llms.txt` |
 | 图片与浏览性能 | 四库滚动追加、首批缩略图优先加载、异步解码、远程图片源预连接；临近下一批时限量预加载缩略图，省流量模式跳过；脚本与样式使用内容哈希更新缓存 |
 | 回归保护 | 生成文件一致性、计数、canonical、分享图尺寸、静态卡片、结构化数据及构建打包测试 |
 
@@ -82,3 +82,7 @@ https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml
 - [Google：成人内容元数据](https://developers.google.com/search/docs/specialty/explicit/guidelines)。
 - [Schema.org ImageGallery](https://schema.org/ImageGallery)、[Dataset](https://schema.org/Dataset)。
 - [llms.txt 原始提案](https://llmstxt.org/)。
+
+## 联合案例媒体
+
+`examples/` 随站点打包，包含播放器、原始 MP4、两张参考合集和视频截帧封面。播放器采用 `preload="none"`，用户点击后才加载视频；图片支持懒加载。案例页与四库相互链接，并加入 sitemap 和 llms.txt；README 与操作指南均提供视频入口及两张图片。
