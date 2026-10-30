@@ -78,12 +78,12 @@ def extract(source, variable):
 
 def validate(rows):
     if not isinstance(rows, list) or not rows:
-        raise ValueError('脸库数据为空或格式错误')
+        raise ValueError('脸型库数据为空或格式错误')
     ids = set()
     for row in rows:
         identifier = row['id']
         if not re.fullmatch(r'f[0-9a-f]{10}', identifier) or identifier in ids:
-            raise ValueError('脸库 ID 非法或重复')
+            raise ValueError('脸型库 ID 非法或重复')
         ids.add(identifier)
         if row['section'] not in SECTIONS or row['hair'] not in HAIRS:
             raise ValueError('出现未翻译的模式或发长')
@@ -165,13 +165,13 @@ def verify():
     load = lambda name: json.loads((DATA / name).read_text(encoding='utf-8'))
     rows = load('portrait.json')
     if load('portrait-zh.json') != translate(rows):
-        raise ValueError('脸库中文数据与原始数据或词典不一致')
+        raise ValueError('脸型库中文数据与原始数据或词典不一致')
     if load('ranking-zh.json') != translate_ranking(load('ranking.json'), rows):
-        raise ValueError('脸库排行不一致')
+        raise ValueError('脸型库排行不一致')
     meta = load('meta-zh.json')
     if meta != metadata(rows, meta['snapshot']):
-        raise ValueError('脸库计数或来源不一致')
-    print(f'脸库校验通过：{len(rows)} 张参考图，所有分类及发型均有中文译文。')
+        raise ValueError('脸型库计数或来源不一致')
+    print(f'脸型库校验通过：{len(rows)} 张参考图，所有分类及发型均有中文译文。')
 
 
 def check_images(limit):

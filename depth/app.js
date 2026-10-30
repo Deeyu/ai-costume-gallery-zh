@@ -1,9 +1,10 @@
 'use strict';
 
 const $ = (id) => document.getElementById(id);
-const state = {system: '', category: '', angle: '', query: '', grouped: true, limit: 24};
+const state = {system: '', category: '', angle: '', query: '', grouped: true};
 let rows = [], meta, filtered = [], groups = [], viewerGroups = [], groupIndex = 0, angleIndex = 0;
 let imageVersion = 0, downloading = false;
+let items = [], shown = 0, loader;
 
 function button(text, handler) {
   const element = document.createElement('button');
@@ -16,7 +17,7 @@ function renderSystems() {
   $('systems').replaceChildren();
   for (const [name, info] of Object.entries(meta.systems)) {
     const element = button(name, () => {
-      state.system = name; state.category = ''; state.limit = 24;
+      state.system = name; state.category = '';
       renderSystems(); renderCategories(); render();
     });
     element.setAttribute('aria-pressed', String(state.system === name));
@@ -38,22 +39,32 @@ function render() {
   filtered = filterPoses(rows, state);
   groups = groupPoses(filtered);
   $('section-title').textContent = state.category || state.system;
-  $('status').textContent = `${groups.length} 组 · ${filtered.length} 张 · ${state.grouped ? '按姿势分组' : '逐张查看'}`;
   $('grouped').setAttribute('aria-pressed', String(state.grouped));
   $('single').setAttribute('aria-pressed', String(!state.grouped));
-  const items = state.grouped ? groups : filtered.map((row) => [row]);
-  $('grid').replaceChildren(...items.slice(0, state.limit).map(card));
+  items = state.grouped ? groups : filtered.map((row) => [row]);
+  loader.reset(); shown = 0;
+  $('grid').replaceChildren();
   $('empty').hidden = items.length > 0;
-  $('more').hidden = state.limit >= items.length;
+  appendPage();
 }
 
-function card(views) {
+function appendPage() {
+  const start = shown, batch = items.slice(start, start + 24);
+  $('grid').append(...batch.map((views, index) => card(views, start + index)));
+  shown += batch.length;
+  $('status').textContent = `${groups.length} 组 · ${filtered.length} 张 · ${state.grouped ? '按姿势分组' : '逐张查看'} · 已显示 ${shown} ${state.grouped ? '组' : '张'}`;
+  loader.update();
+}
+
+function card(views, index) {
   let selected = views[0];
   const article = document.createElement('article'); article.className = 'card pose-card';
   const open = button('', () => openViewer(selected)); open.className = 'card-open';
   const img = document.createElement('img');
+  img.loading = index < 12 ? 'eager' : 'lazy'; img.decoding = 'async';
+  if (index === 0) img.fetchPriority = 'high';
+  img.width = 300; img.height = 400;
   img.src = selected.缩略图; img.alt = `${selected.姿势名称} · ${selected.角度}`;
-  img.loading = 'lazy'; img.width = 300; img.height = 400;
   const info = document.createElement('div'); info.className = 'card-info';
   const title = document.createElement('h3'); title.textContent = selected.姿势名称;
   const detail = document.createElement('p'); detail.className = 'card-meta';
@@ -144,17 +155,16 @@ async function download(event) {
 }
 
 for (const id of ['category', 'angle']) $(id).addEventListener('change', (event) => {
-  state[id] = event.target.value; state.limit = 24; render();
+  state[id] = event.target.value; render();
 });
-$('q').addEventListener('input', (event) => { state.query = event.target.value; state.limit = 24; render(); });
+$('q').addEventListener('input', (event) => { state.query = event.target.value; render(); });
 $('reset').addEventListener('click', () => {
-  state.category = ''; state.angle = ''; state.query = ''; state.limit = 24;
+  state.category = ''; state.angle = ''; state.query = '';
   $('category').value = ''; $('angle').value = ''; $('q').value = ''; render();
 });
 for (const id of ['grouped', 'single']) $(id).addEventListener('click', () => {
-  state.grouped = id === 'grouped'; state.limit = 24; render();
+  state.grouped = id === 'grouped'; render();
 });
-$('more').addEventListener('click', () => { state.limit += 24; render(); });
 $('close').addEventListener('click', () => $('viewer').close());
 $('viewer').addEventListener('close', () => { imageVersion++; });
 $('help').addEventListener('click', () => $('guide').showModal());
@@ -188,6 +198,8 @@ async function load() {
     for (const response of responses) if (!response.ok) throw new Error(`HTTP ${response.status}`);
     [rows, meta] = await Promise.all(responses.map((response) => response.json()));
     state.system = Object.keys(meta.systems)[0];
+    loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < items.length,
+      loadMore: appendPage, preloadUrls: () => items.slice(shown, shown + 12).map((views) => views[0].缩略图)});
     $('total').textContent = `完整索引 · ${meta.groups} 组 · ${meta.total.toLocaleString('zh-CN')} 张 · 中文词条来自 Anhao`;
     const missing = Object.entries(meta.missing_views).map(([group, angles]) => `${group} 缺少${angles.join('、')}图`);
     $('source-note').textContent = `深度图 · 白色越近，黑色越远 · ${meta.groups} 组、${meta.total.toLocaleString('zh-CN')} 张。图片由原站提供。${missing.length ? `上游数据：${missing.join('；')}，按实际视角显示。` : ''}`;

@@ -1,16 +1,16 @@
-# AI 参考图库中文版｜服装库 · 脸库 · 姿势库 · 深度库
+# AI 参考图库中文版｜服装库 · 脸型库 · 姿势库 · 深度库
 
-面向 AI 绘画、角色设定与漫剧创作的四合一中文参考图库：**服装库选衣装，脸库选人物与发型，姿势库看动作结构，深度库看空间前后关系**。支持中文检索、多视角浏览、PNG 原图下载。原始与中文索引、零依赖静态页面、Python 维护脚本及 GitHub Pages 自动部署放在同一开源仓库维护。
+面向 AI 绘画、角色设定与漫剧创作的四合一中文参考图库：**服装库选衣装，脸型库选人物与发型，姿势库看动作结构，深度库看空间前后关系**。支持中文检索、多视角浏览、PNG 原图下载。原始与中文索引、零依赖静态页面、Python 维护脚本及 GitHub Pages 自动部署放在同一开源仓库维护。
 
-**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/)** · [版权与致谢](#版权与致谢)
+**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/)** · [版权与致谢](#版权与致谢)
 
-四个页面顶部均显示内容提示。导航始终提供四个图库入口，并在滚动时固定显示；当前图库有选中标记，每个页面底部均列出四库的来源地址与作者。
+四个页面顶部均显示内容提示。导航始终提供四个图库入口，并在滚动时固定显示；当前图库有选中标记，每个页面底部均列出四库的来源地址与作者。“中文版”旁的“日文源版”在新标签页打开对应作者原站。
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
 
 数据来源：[衣装集](https://ai-costume-gallery.pages.dev/) · 原作者X：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
 
-脸库来源：[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) · 原作者：[あぎ（@agi_aibusi）](https://x.com/agi_aibusi) · [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。
+脸型库来源：[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) · 原作者：[あぎ（@agi_aibusi）](https://x.com/agi_aibusi) · [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。
 
 姿势库来源：[AI 姿势原始图库](https://ai-pose-gallery.pages.dev/) · 原作者：[ギア（@giaaibusi）](https://x.com/giaaibusi) · 中文词条：[Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)。
 
@@ -21,13 +21,13 @@
 | 图库与介绍 | 用途 | 实际收录 | 在线浏览 |
 | --- | --- | --- | --- |
 | [服装库](#costume-library) | 无人物衣装搭配、角色服装设计 | 1,407 套，8 个分类，每套三个图片版本 | [打开服装库](https://deeyu.github.io/ai-costume-gallery-zh/) |
-| [脸库](#portrait-library) | AI 虚构人物的五官、发型和造型参考 | 1,499 张：893 张正面脸图、606 张造型参考 | [打开脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) |
+| [脸型库](#portrait-library) | AI 虚构人物的五官、发型和造型参考 | 1,499 张：893 张正面脸图、606 张造型参考 | [打开脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) |
 | [姿势库](#pose-library) | 人体动作教学、线稿结构与双人构图 | 288 组、1,439 张线稿，4 体系、26 分类 | [打开姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) |
 | [深度库](#depth-library) | 姿态、遮挡和空间前后关系参考 | 288 组、1,439 张深度图，4 体系、26 分类 | [打开深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) |
 
-服装图在仓库内保存缩略图、预览图及 PNG；脸库、姿势库和深度库只保存完整双语索引，图片按需由各自原站提供。数量按各库独立记录统计，不将不同文件版本或视角重复计为不同服装或人物。
+服装图在仓库内保存缩略图、预览图及 PNG；脸型库、姿势库和深度库只保存完整双语索引，图片按需由各自原站提供。数量按各库独立记录统计，不将不同文件版本或视角重复计为不同服装或人物。
 
-脸库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸库图片。脸库浏览与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
+脸型库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸型库图片。脸型库浏览与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
 姿势库完整收录参考仓库的 **1,439 条图片记录**，用于**人体动作教学、绘画练习、身体结构与构图参考**。素材为无面部、无生殖器细节的人体模型线稿；保留来源体系、分类、姿势名称及编号，不依据名称删减记录。原站禁止图片批量下载及再分发，因此本仓库保存完整索引，图片逐张由原站提供，浏览与下载依赖原站。
 
@@ -76,30 +76,30 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 ### 服装库功能
 
 - 中文分类，支持中文、英文、ID 搜索；多个词以空格分隔，按“同时包含”匹配。
-- 响应式网格、缩略图懒加载、每批 60 套渐进加载。
+- 响应式网格、缩略图异步解码与懒加载；接近列表底部自动追加，每批 60 套。
 - 大图浏览、PNG 原图下载、复制 ID；左右方向键切换、Esc 关闭、`/` 聚焦搜索。
 - 无框架、无运行时依赖、无统计或遥测。
 - 原始与中文 JSON、94 条对照词典、下载重试、素材校验、CI。
 
 <a id="portrait-library"></a>
 
-## 2. 脸库：AI 虚构人物与发型参考
+## 2. 脸型库：AI 虚构人物与发型参考
 
-脸库（Portrait Gallery）提供 **1,499 张 AI 虚构人物参考图**，用于挑选五官、脸型、发型和角色整体造型。正面脸图便于观察面部结构，造型参考展示发型质感与整体氛围。原站标注这些是虚构人物，收录数是图片记录数，不等于独立人物数量，也不提供人脸识别。
+脸型库（Portrait Gallery）提供 **1,499 张 AI 虚构人物参考图**，用于挑选五官、脸型、发型和角色整体造型。正面脸图便于观察面部结构，造型参考展示发型质感与整体氛围。原站标注这些是虚构人物，收录数是图片记录数，不等于独立人物数量，也不提供人脸识别。
 
-**[在线使用脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)** · [原始脸库](https://ai-portrait-gallery.pages.dev/) · [中文索引](portrait/data/portrait-zh.json) · [纯文本介绍](portrait/catalog.md)
+**[在线使用脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)** · [原始脸型库](https://ai-portrait-gallery.pages.dev/) · [中文索引](portrait/data/portrait-zh.json) · [纯文本介绍](portrait/catalog.md)
 
-### 脸库界面预览
+### 脸型库界面预览
 
-桌面版展示发长快捷入口、原站下载排行、正面脸图与造型参考切换，以及中文搜索与筛选。
+以下为正面脸图列表截图，展示人物卡片、发长与细分发型信息。
 
-![脸库中文版桌面截图：发长筛选、下载排行与正面脸图](docs/portrait-desktop.jpg)
+![脸型库中文版桌面截图：正面脸图、发长与发型信息](docs/portrait-desktop.png)
 
-### 脸库功能与收录
+### 脸型库功能与收录
 
 - “正面脸图 / 造型参考”两种模式，各自显示数量与发长筛选结果。
 - 4 类发长、50 种细分发型全部汉化，保留原始日文名称；未标注的细分发型保持为空，不推测人物特征。
-- 支持中文、日文、模式英文名及图片 ID 搜索，多个词同时匹配；每批加载 60 张。
+- 支持中文、日文、模式英文名及图片 ID 搜索，多个词同时匹配；滚动到底部自动追加，每批 60 张。
 - 保留原站下载排行的本地快照，明确显示快照日期，不代表本站访问或下载统计。
 - 灯箱导航、PNG 下载、复制 ID、键盘操作；与服装库共用 GitHub 及公众号入口。
 - 页面与脚本独立编写，不包含原站的点击上报、实时排行请求或 LINE 引流。
@@ -112,11 +112,11 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 | 长发 | 77 | 59 | 136 |
 | 合计 | 893 | 606 | 1,499 |
 
-脸库快照日期：2026-10-30。`portrait/data/` 中保留原始 JSON、中文 JSON、分类计数、原始/中文排行快照及 56 条分类与发型对照。中文记录包含图片 ID、模式、发长、细分发型、原始日文、原站图片 URL、原图尺寸与大小、检索文本。
+脸型库快照日期：2026-10-30。`portrait/data/` 中保留原始 JSON、中文 JSON、分类计数、原始/中文排行快照及 56 条分类与发型对照。中文记录包含图片 ID、模式、发长、细分发型、原始日文、原站图片 URL、原图尺寸与大小、检索文本。
 
 从仓库根目录启动 `python3 -m http.server 8000 --bind 127.0.0.1`，打开 <http://127.0.0.1:8000/portrait/>。
 
-更新与校验脸库索引：
+更新与校验脸型库索引：
 
 ```bash
 python3 scripts/portrait.py sync
@@ -136,9 +136,9 @@ python3 scripts/portrait.py check-images --limit 8
 
 ### 姿势库界面预览
 
-桌面版展示完整四个体系、动作与视角筛选，以及按姿势分组的人体模型线稿。
+以下为标准系姿势列表截图，展示按姿势分组的人体模型线稿与卡片内视角切换。
 
-![姿势库中文版桌面截图：四个体系、动作分类与多视角线稿](docs/pose-desktop.jpg)
+![姿势库中文版桌面截图：标准系人体线稿与多视角切换](docs/pose-desktop.png)
 
 ### 姿势库功能与收录
 
@@ -146,7 +146,7 @@ python3 scripts/portrait.py check-images --limit 8
 - 正面、斜侧、侧面、俯视、仰视五种视角。287 组各有 5 张；`full_sexy_P018` 在上游仅有 4 张，缺少仰视图，页面按实际视角显示，不补造缺失图片。
 - 分组浏览与单图浏览，按体系、动作分类和视角筛选；支持中文、日文、ID 及多词搜索。
 - 卡片内切换视角；大图中左右键切换视角、上下键切换姿势，切换姿势时保留当前角度。
-- PNG 原图下载、复制 ID、公众号二维码，与服装库和脸库相互导航。
+- PNG 原图下载、复制 ID、公众号二维码，与服装库和脸型库相互导航；滚动追加每批 24 组／张，保留已有卡片视角。
 
 | 体系（沿用来源名称） | 姿势组数 | 图片记录数 |
 | --- | ---: | ---: |
@@ -178,14 +178,14 @@ python3 scripts/pose.py check-images
 
 ### 深度库界面预览
 
-桌面版展示“白色越近、黑色越远”的深度示意、姿势筛选与灰度深度图；可按需下载 PNG 作为空间关系参考。
+以下为标准系深度图列表截图，展示灰度深度参考与多视角切换；本库约定白色越近、黑色越远。
 
-![深度库中文版桌面截图：黑白远近示意、分类筛选与灰度参考图](docs/depth-desktop.jpg)
+![深度库中文版桌面截图：标准系灰度深度图与多视角切换](docs/depth-desktop.png)
 
 ### 深度库功能与用法
 
 - 中文、日文、ID 多词检索，按动作分类和视角组合筛选。
-- 分组／单图浏览，大图预览、方向键切换、原尺寸 PNG 下载。
+- 分组／单图浏览，大图预览、方向键切换、原尺寸 PNG 下载；滚动追加每批 24 组／张。
 - 选择姿势和视角后，下载 PNG，导入所用 AI 工具的深度参照功能；具体参数以工具说明为准。
 - 深度图不包含脸型、服装和背景，需要通过其他参考图或提示词补充；手指及肢体重叠边界需检查生成结果。
 
@@ -203,9 +203,13 @@ python3 scripts/depth.py verify
 
 原站禁止图片批量下载和再分发，因此仅保存完整索引，图片按需由原站提供。界面独立编写，不包含原站统计或引流脚本。构建与 CI 已包含深度库，执行现有 GitHub Pages 发布流程时会一起发布。
 
+### 滚动加载与图片预加载
+
+四库在接近列表底部时自动追加下一批卡片，筛选或切换模式会重新从首批开始；姿势库与深度库追加时保留已浏览卡片的视角。首批缩略图优先加载并异步解码，其余图片懒加载；接近下一批时最多提前请求 12 张缩略图，同时最多 4 个预加载请求。省流量模式或 2G 网络跳过提前请求。不会预取整库或批量下载 PNG 原图，实际显示速度取决于图片来源站与网络。
+
 ## 联合使用案例：从角色定妆到漫剧分镜
 
-参考[半格（@ai_bange）的联合使用案例](https://x.com/ai_bange/status/2115651909948477678)，先分别用姿势图说明动作、服装图说明穿搭。下面进一步加入脸库与深度库，适用于中文 AI 绘画、AIGC 角色设定、漫剧和短剧分镜准备；扩展步骤与提示词由本站整理，属于操作示例，未提供模型实测效果。
+参考[半格（@ai_bange）的联合使用案例](https://x.com/ai_bange/status/2115651909948477678)，先分别用姿势图说明动作、服装图说明穿搭。下面进一步加入脸型库与深度库，适用于中文 AI 绘画、AIGC 角色设定、漫剧和短剧分镜准备；扩展步骤与提示词由本站整理，属于操作示例，未提供模型实测效果。
 
 | 案例 | 参考图组合 | 操作要点 |
 | --- | --- | --- |
@@ -238,11 +242,11 @@ img/                       WebP 预览图
 png/                       PNG 原图
 scripts/                   提取、翻译、下载、校验、构建
 tests/                     数据与提取安全校验
-portrait/                  脸库中文版（独立子页面、界面与数据）
-portrait/data/portrait.json 原始脸库元数据
+portrait/                  脸型库中文版（独立子页面、界面与数据）
+portrait/data/portrait.json 原始脸型库元数据
 portrait/data/portrait-zh.json 中文发长、发型及检索字段
 portrait/data/ranking-zh.json 原站下载排行快照
-scripts/portrait.py        脸库元数据提取、翻译及校验
+scripts/portrait.py        脸型库元数据提取、翻译及校验
 pose/                      姿势库中文版（分组、单图与多视角浏览）
 pose/data/pose.json         完整 1,439 条原始日文记录
 pose/data/upstream-zh.json  Anhao 完整中文词条快照（1,439 条）
@@ -306,9 +310,9 @@ python3 scripts/build.py
 
 **https://deeyu.github.io/ai-costume-gallery-zh/**
 
-每次推送到 `main`，工作流会运行四个图库的单元测试、导航与内容提示检查、JavaScript 语法检查、服装库素材校验，以及脸库、姿势库和深度库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布四个图库到 `dist/`。服装库保持根路径，脸库位于 `/portrait/`，姿势库位于 `/pose/`，深度库位于 `/depth/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
+每次推送到 `main`，工作流会运行四个图库的单元测试、导航与内容提示检查、JavaScript 语法检查、服装库素材校验，以及脸型库、姿势库和深度库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布四个图库到 `dist/`。服装库保持根路径，脸型库位于 `/portrait/`，姿势库位于 `/pose/`，深度库位于 `/depth/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
 
-GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸库、姿势库与深度库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
+GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸型库、姿势库与深度库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
 
 Fork 后部署：
 
@@ -338,7 +342,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 - 每个图库的 `catalog.md` 提供可引用的用途、数量、快照和常见问题；不将代码 MIT 许可当作图片授权。
 - 更新索引或介绍后运行 `python3 scripts/seo.py`，使用 `python3 scripts/seo.py --check` 检查生成文件；构建和 CI 已接入。
 
-针对中文社区，页面介绍、常见问题、结构化数据与纯文本摘要统一使用“AI 服装库／衣装参考”“AI 人像／脸库”“人体姿势／动作线稿”“人体深度图”等真实名称，并覆盖 AI 绘画、角色定妆、漫剧、短剧分镜及空间遮挡等实际使用场景。[联合使用指南](guide.md)提供可引用的中文步骤、素材编号、提示词和原始案例链接。
+针对中文社区，页面介绍、常见问题、结构化数据与纯文本摘要统一使用“AI 服装库／衣装参考”“AI 人像／脸型库”“人体姿势／动作线稿”“人体深度图”等真实名称，并覆盖 AI 绘画、角色定妆、漫剧、短剧分镜及空间遮挡等实际使用场景。[联合使用指南](guide.md)提供可引用的中文步骤、素材编号、提示词和原始案例链接。
 
 面向知乎问答、微信公众号教程或 B 站演示分享时，可按具体创作问题链接对应图库或案例，并保留原作者、快照数量与使用条件；未自动向这些社区发布内容，也不声称已获社区推荐。中文检索场景与分享说明见 [SEO / GEO 维护说明](docs/seo.md#中文社区检索与引用)。
 
@@ -361,11 +365,11 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 
 本项目独立编写的页面程序、样式与维护脚本以 **[MIT 许可](LICENSE)** 开源。使用这些代码时请保留许可与版权声明。该许可的范围仅限独立程序代码，不覆盖上文所述第三方图片与数据。
 
-### 脸库来源与说明
+### 脸型库来源与说明
 
-脸库原始图片与元数据来自 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布的 **[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/)**，见 [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。原站将图片标注为 CC0 1.0，并说明人物为 AI 生成的虚构人物；允许商用、编辑与参考使用，同时要求不要冒充真实人物，并请求不要重新分发图片。
+脸型库原始图片与元数据来自 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布的 **[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/)**，见 [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。原站将图片标注为 CC0 1.0，并说明人物为 AI 生成的虚构人物；允许商用、编辑与参考使用，同时要求不要冒充真实人物，并请求不要重新分发图片。
 
-本仓库尊重该请求，仅提供中文索引、分类翻译及原站图片链接，不将脸库图片上传到仓库。请阅读原站使用规则与 [CC0 说明](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hans)；中文整理不代表原作者的官方版本、背书或额外授权。脸库图片许可与服装库素材说明分别适用。
+本仓库尊重该请求，仅提供中文索引、分类翻译及原站图片链接，不将脸型库图片上传到仓库。请阅读原站使用规则与 [CC0 说明](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hans)；中文整理不代表原作者的官方版本、背书或额外授权。脸型库图片许可与服装库素材说明分别适用。
 
 ### 姿势库来源与说明
 
@@ -382,7 +386,7 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 ### 致谢
 
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。原作者推文：[查看原文](https://x.com/giaaibusi/status/2115638135208260002)。
-- 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
+- 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸型库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作[深度图库](https://ai-pose-depth-gallery.pages.dev/)，为姿态、遮挡和空间关系参考提供深度图与原始元数据。
 - 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本次姿势库完整接入其 1,439 条索引，用于人体动作教学与绘画参考；本项目界面及脚本独立编写，未复制其代码。
 - 感谢 **[半格（@ai_bange）](https://x.com/ai_bange)** 分享[姿势库与服装库联合使用思路](https://x.com/ai_bange/status/2115651909948477678)，为本项目的联合使用指南提供参考。

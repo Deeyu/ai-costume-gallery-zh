@@ -28,6 +28,7 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -v
           python3 scripts/seo.py --check
+          node --check assets/gallery-loader.js
           node --check assets/app.js
           node --check portrait/app.js
           node --check portrait/catalog.js

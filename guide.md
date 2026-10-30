@@ -2,14 +2,14 @@
 
 用姿势图说明动作，用服装图说明穿搭；再根据需要加入脸部参考和深度图，把人物外观、衣装、动作及空间关系分别说明清楚。这套流程适合中文 AI 绘画、AIGC 角色设定，以及漫剧和短剧分镜的参考图准备。
 
-思路参考：[半格（@ai_bange）的姿势库与服装库联合使用案例](https://x.com/ai_bange/status/2115651909948477678)（2026-10-29）。原文介绍了姿势与服装两种参考的串联方式；下面的脸库、深度库用法与中文提示词由本站扩展整理，属于操作示例，未提供模型实测成片或一致性保证。
+思路参考：[半格（@ai_bange）的姿势库与服装库联合使用案例](https://x.com/ai_bange/status/2115651909948477678)（2026-10-29）。原文介绍了姿势与服装两种参考的串联方式；下面的脸型库、深度库用法与中文提示词由本站扩展整理，属于操作示例，未提供模型实测成片或一致性保证。
 
 ## 四库分别负责什么
 
 | 图库 | 参考职责 | 选择方法 |
 | --- | --- | --- |
 | [服装库](https://deeyu.github.io/ai-costume-gallery-zh/) | 款式、配色、材质、穿搭层次 | 按季节、场合与中文关键词筛选，下载单套 PNG |
-| [脸库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) | AI 虚构人物的五官、脸型与发型 | 正面脸图看五官，造型参考看整体外观 |
+| [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) | AI 虚构人物的五官、脸型与发型 | 正面脸图看五官，造型参考看整体外观 |
 | [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) | 身体动作、关节方向与构图视角 | 选择体系、姿势编号和视角，下载人体模型线稿 |
 | [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) | 空间远近、透视与肢体遮挡 | 使用与姿势线稿相同的完整编号及视角；白色越近、黑色越远 |
 
@@ -34,11 +34,11 @@
 
 检查动作重心、手的位置、鞋子、衣装层次以及肢体与衣料的交界。若姿态被服装图带偏，先单独确认动作，再逐步加入衣装参考；每次只调整一类要求，便于判断效果。
 
-## 案例二：脸库＋服装库，建立角色定妆参考
+## 案例二：脸型库＋服装库，建立角色定妆参考
 
 目标：为后续多个镜头固定同一套人物外观与衣装要求。
 
-1. 在脸库挑选正面脸图并记录 ID，例如 `f71f980dde3`，该条属于短发正面脸图；五官细节以实际图片为准。
+1. 在脸型库挑选正面脸图并记录 ID，例如 `f71f980dde3`，该条属于短发正面脸图；五官细节以实际图片为准。
 2. 保持案例一的服装图不变，将脸图作为图 1、衣装图作为图 2，生成或手工绘制定妆参考。
 3. 选定满意结果，记录脸图 ID、服装 ID、使用工具、提示词及实际参数，之后复用同一张已确认的定妆图。
 
@@ -73,7 +73,7 @@
 | 图库 | 原始数据与图片来源 | 原作者 |
 | --- | --- | --- |
 | 服装库 | <https://ai-costume-gallery.pages.dev/> | [ギア（@giaaibusi）](https://x.com/giaaibusi) |
-| 脸库 | <https://ai-portrait-gallery.pages.dev/> | [あぎ（@agi_aibusi）](https://x.com/agi_aibusi) |
+| 脸型库 | <https://ai-portrait-gallery.pages.dev/> | [あぎ（@agi_aibusi）](https://x.com/agi_aibusi) |
 | 姿势库 | <https://ai-pose-gallery.pages.dev/> | [ギア（@giaaibusi）](https://x.com/giaaibusi) |
 | 深度库 | <https://ai-pose-depth-gallery.pages.dev/> | [ギア（@giaaibusi）](https://x.com/giaaibusi) |
 

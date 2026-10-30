@@ -6,6 +6,7 @@ const NOTES = {face: '正面、简洁背景的脸部参考，适合五官与脸�
 const HAIRS = ['短发', '中发', '中长发', '长发'];
 let records = [], filtered = [], ranking = {}, meta, mode = 'face', hair = '', shown = 0;
 let viewList = [], current = 0, rankCategory = '全部';
+let loader;
 
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -14,12 +15,13 @@ function element(tag, text, className) {
   return node;
 }
 
-function imageFor(row, className) {
+function imageFor(row, className, index = 12) {
   const image = element('img', undefined, className);
-  image.src = row.缩略图;
   image.alt = `AI 虚构人物 · ${row.发长} · ${row.发型 || row.类型} · ${row.id}`;
   image.width = row.缩略图宽度; image.height = row.缩略图高度;
-  image.loading = 'lazy'; image.decoding = 'async';
+  image.loading = index < 12 ? 'eager' : 'lazy'; image.decoding = 'async';
+  if (index === 0) image.fetchPriority = 'high';
+  image.src = row.缩略图;
   image.addEventListener('error', () => { image.alt = `${row.id} 图片加载失败，请检查与原站的连接`; });
   return image;
 }
@@ -44,6 +46,7 @@ function renderFilters() {
 }
 
 function applyFilters() {
+  loader.reset();
   filtered = filterPortraits(records, {mode, hair, query: $('q').value});
   shown = 0;
   $('grid').replaceChildren();
@@ -62,15 +65,14 @@ function appendPage() {
     const heading = element('div', undefined, 'card-heading');
     heading.append(element('h3', row.id), element('span', row.发长, 'card-cat'));
     info.append(heading, element('p', row.发型 || '原站未标注细分发型'));
-    button.append(imageFor(row), info);
+    button.append(imageFor(row, undefined, start + index), info);
     button.addEventListener('click', () => openViewer(filtered, start + index));
     return button;
   });
   $('grid').append(...cards);
   shown += cards.length;
   $('status').textContent = `共 ${filtered.length.toLocaleString()} 张 · 已显示 ${shown.toLocaleString()} 张`;
-  $('more').hidden = shown >= filtered.length;
-  $('more').textContent = `加载更多（剩余 ${filtered.length - shown} 张）`;
+  loader.update();
 }
 
 function openViewer(list, index) {
@@ -111,7 +113,7 @@ function renderRanking() {
   $('rank-grid').replaceChildren(...list.map((row, index) => {
     const button = element('button', undefined, 'rank-card');
     button.setAttribute('aria-label', `排行第 ${index + 1} 名，查看 ${row.id}`);
-    button.append(imageFor(row), element('span', index + 1));
+    button.append(imageFor(row, undefined, index + 4), element('span', index + 1));
     button.addEventListener('click', () => openViewer(list, index));
     return button;
   }));
@@ -120,11 +122,11 @@ function renderRanking() {
 }
 
 function renderFeatured() {
-  $('featured').replaceChildren(...HAIRS.map((label) => {
+  $('featured').replaceChildren(...HAIRS.map((label, index) => {
     const row = records.find((item) => item.模式 === 'face' && item.发长 === label);
     const button = element('button');
     button.setAttribute('aria-label', `浏览${label}正面脸图`);
-    button.append(imageFor(row), element('span', label));
+    button.append(imageFor(row, undefined, index), element('span', label));
     button.addEventListener('click', () => {
       mode = 'face'; hair = label; $('q').value = ''; applyFilters();
       $('library').scrollIntoView({block: 'start'});
@@ -135,7 +137,6 @@ function renderFeatured() {
 
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { hair = ''; $('q').value = ''; applyFilters(); });
-$('more').addEventListener('click', appendPage);
 $('close').addEventListener('click', () => $('viewer').close());
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
@@ -191,12 +192,14 @@ async function init() {
       loadJson('data/portrait-zh.json'), loadJson('data/meta-zh.json'), loadJson('data/ranking-zh.json')
     ]);
     if (!Array.isArray(records) || !records.length || !ranking.全部) throw new Error('数据格式不正确');
+    loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < filtered.length,
+      loadMore: appendPage, preloadUrls: () => filtered.slice(shown, shown + 12).map((row) => row.缩略图)});
     $('total').textContent = `${meta.sections.face.toLocaleString()} 张正面脸图 / ${meta.sections.styling.toLocaleString()} 张造型参考`;
     renderFeatured(); renderRanking(); applyFilters();
   } catch (error) {
     $('status').textContent = '数据加载失败，请刷新重试；本地预览请先启动 HTTP 服务。';
     $('total').textContent = '暂时无法读取图库';
-    console.error('脸库数据加载失败', error);
+    console.error('脸型库数据加载失败', error);
   }
 }
 init();
