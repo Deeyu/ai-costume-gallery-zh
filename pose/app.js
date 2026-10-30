@@ -1,7 +1,8 @@
 'use strict';
 
 const $ = (id) => document.getElementById(id);
-const state = {system: '', category: '', angle: '', query: '', grouped: true};
+const DEFAULT_SYSTEM = '全身单人・标准系';
+const state = {system: DEFAULT_SYSTEM, category: '', angle: '', query: '', grouped: true};
 let rows = [], meta, filtered = [], groups = [], viewerGroups = [], groupIndex = 0, angleIndex = 0;
 let imageVersion = 0, downloading = false;
 let items = [], shown = 0, loader, matchingIds = new Set();
@@ -15,20 +16,21 @@ function button(text, handler) {
 
 const SYSTEM_LABELS = {'全身单人・标准系': '全身·标准', '全身单人・性感系': '全身·性感', '上半身单人': '上半身', '双人缠绵': '双人'};
 const ADULT_SYSTEMS = ['全身单人・性感系', '双人缠绵'];
-let categoriesExpanded = false, pendingAdultState = null;
+let pendingAdultState = null;
 
 function renderSystems() {
-  const systems = [['', {groups: meta.groups, images: meta.total}], ...Object.entries(meta.systems)];
+  const systems = Object.entries(meta.systems);
   $('systems').replaceChildren(...systems.map(([name, info]) => {
-    const choice = button(SYSTEM_LABELS[name] || '全部', () => {
-      const next = {...state, system: state.system === name ? '' : name, category: ''};
+    const choice = button(SYSTEM_LABELS[name], () => {
+      if (state.system === name) return;
+      const next = {...state, system: name, category: ''};
       if (ADULT_SYSTEMS.includes(next.system)) requestAdultConfirmation(next);
       else applyFilterState(next);
     });
     choice.dataset.filter = 'systems'; choice.dataset.value = name;
     choice.setAttribute('aria-pressed', String(state.system === name));
     const adult = ADULT_SYSTEMS.includes(name);
-    choice.setAttribute('aria-label', `${name || '全部体系'}，${adult ? '成人向，' : ''}${info.groups} 组姿势`);
+    choice.setAttribute('aria-label', `${name}，${adult ? '成人向，' : ''}${info.groups} 组姿势`);
     if (adult) {
       const badge = document.createElement('span'); badge.className = 'adult-badge'; badge.textContent = '成人向';
       choice.append(badge);
@@ -39,7 +41,7 @@ function renderSystems() {
 
 function applyFilterState(next) {
   Object.assign(state, next); $('q').value = state.query;
-  categoriesExpanded = false; render();
+  render();
 }
 
 function requestAdultConfirmation(next) {
@@ -62,21 +64,16 @@ $('adult-warning').addEventListener('close', () => {
 function renderCategories() {
   const categories = poseCategories(rows, state.system);
   if (state.category && !categories.some((item) => item.name === state.category)) state.category = '';
-  const selected = categories.findIndex((item) => item.name === state.category);
-  if (selected > 0) categories.unshift(...categories.splice(selected, 1));
   $('category-options').replaceChildren(...[{name: '', groups: 0}, ...categories].map(({name, groups}) => {
     const choice = button(name || '全部动作', () => {
       state.category = state.category === name ? '' : name;
-      categoriesExpanded = false; render();
+      render();
     });
     choice.className = 'filter-chip'; choice.dataset.filter = 'category-options'; choice.dataset.value = name;
     choice.setAttribute('aria-pressed', String(state.category === name));
     if (name) choice.title = `${groups} 组姿势`;
     return choice;
   }));
-  $('category-options').classList.toggle('expanded', categoriesExpanded);
-  $('more-categories').setAttribute('aria-expanded', String(categoriesExpanded));
-  $('more-categories').textContent = categoriesExpanded ? '收起动作' : `更多动作（${categories.length}）`;
 }
 
 function renderAngles() {
@@ -105,7 +102,7 @@ function render() {
   matchingIds = new Set(filtered.map((row) => row.id));
   const systems = Object.keys(meta.systems);
   groups.sort((a, b) => systems.indexOf(a[0].体系) - systems.indexOf(b[0].体系));
-  $('section-title').textContent = state.category || state.system || '全部姿势';
+  $('section-title').textContent = state.category || state.system;
   $('grouped').setAttribute('aria-pressed', String(state.grouped));
   $('single').setAttribute('aria-pressed', String(!state.grouped));
   items = state.grouped ? groups : filtered.map((row) => [row]);
@@ -240,10 +237,9 @@ async function download(event) {
 
 $('q').addEventListener('input', (event) => { state.query = event.target.value; render(); });
 $('reset').addEventListener('click', () => {
-  Object.assign(state, {system: '', category: '', angle: '', query: '', grouped: true});
-  categoriesExpanded = false; $('q').value = ''; render();
+  Object.assign(state, {system: DEFAULT_SYSTEM, category: '', angle: '', query: '', grouped: true});
+  $('q').value = ''; render();
 });
-$('more-categories').addEventListener('click', () => { categoriesExpanded = !categoriesExpanded; if (loader) renderCategories(); });
 for (const id of ['grouped', 'single']) $(id).addEventListener('click', () => {
   state.grouped = id === 'grouped'; render();
 });
@@ -301,19 +297,19 @@ async function load() {
     for (const response of responses) if (!response.ok) throw new Error(`HTTP ${response.status}`);
     [rows, meta] = await Promise.all(responses.map((response) => response.json()));
     const params = new URLSearchParams(location.search);
-    state.system = meta.systems[params.get('system')] ? params.get('system') : '';
+    state.system = meta.systems[params.get('system')] ? params.get('system') : DEFAULT_SYSTEM;
     state.category = params.get('category') || '';
     state.angle = POSE_ANGLES.includes(params.get('angle')) ? params.get('angle') : '';
     state.grouped = params.get('view') !== 'single';
     state.query = $('q').value || params.get('q') || ''; $('q').value = state.query;
     loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < items.length,
       loadMore: appendPage, preloadUrls: () => items.slice(shown, shown + 12).map((views) => previewView(views).缩略图)});
-    $('total').textContent = `完整索引 · ${meta.groups} 组 · ${meta.total.toLocaleString('zh-CN')} 张 · 中文词条来自 Anhao`;
+    $('total').textContent = `完整索引 · ${meta.groups} 组 · ${meta.total.toLocaleString('zh-CN')} 张`;
     const missing = Object.entries(meta.missing_views).map(([group, angles]) => `${group} 缺少${angles.join('、')}图`);
     $('source-note').textContent = `人体动作教学与绘画参考 · ${meta.groups} 组、${meta.total.toLocaleString('zh-CN')} 张。图片由原站提供。${missing.length ? `上游数据：${missing.join('；')}，按实际视角显示。` : ''}`;
     if (ADULT_SYSTEMS.includes(state.system)) {
       const requested = {...state};
-      applyFilterState({system: '全身单人・标准系', category: '', angle: '', query: '', grouped: true});
+      applyFilterState({system: DEFAULT_SYSTEM, category: '', angle: '', query: '', grouped: true});
       requestAdultConfirmation(requested);
     } else render();
   } catch (error) {
