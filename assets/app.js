@@ -1,6 +1,7 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 let records = [], filtered = [], category = '', shown = 0, current = 0;
+let loader;
 const PAGE = 60;
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -20,6 +21,7 @@ function renderCategories() {
   }));
 }
 function applyFilters() {
+  loader.reset();
   const words = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
   filtered = records.filter((r) => (!category || r.分类 === category) && words.every((w) => r.检索.includes(w)));
   shown = 0;
@@ -35,8 +37,9 @@ function appendPage() {
     const button = element('button', undefined, 'card');
     button.setAttribute('aria-label', `查看 ${r.id} ${r.分类}`);
     const img = element('img');
+    img.loading = start + i < 12 ? 'eager' : 'lazy'; img.decoding = 'async'; img.width = 300; img.height = 450;
+    if (start + i === 0) img.fetchPriority = 'high';
     img.src = r.缩略图; img.alt = `${r.分类} ${r.关键词.join('、')} ${r.id}`;
-    img.loading = 'lazy'; img.decoding = 'async'; img.width = 300; img.height = 450;
     img.addEventListener('error', () => { img.alt = `${r.id} 图片加载失败，请检查网络或本地素材`; });
     const info = element('div', undefined, 'card-info');
     const heading = element('div', undefined, 'card-heading');
@@ -48,8 +51,7 @@ function appendPage() {
   });
   $('grid').append(...cards); shown += cards.length;
   $('status').textContent = `共 ${filtered.length.toLocaleString()} 套 · 已显示 ${shown.toLocaleString()} 套`;
-  $('more').hidden = shown >= filtered.length;
-  $('more').textContent = `加载更多（剩余 ${filtered.length - shown} 套）`;
+  loader.update();
 }
 function showDetail() {
   const r = filtered[current];
@@ -70,7 +72,6 @@ function showDetail() {
 }
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { category = ''; $('q').value = ''; applyFilters(); });
-$('more').addEventListener('click', appendPage);
 $('close').addEventListener('click', () => $('viewer').close());
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
@@ -122,6 +123,8 @@ async function init() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     records = await response.json();
     if (!Array.isArray(records) || !records.length) throw new Error('数据为空');
+    loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < filtered.length,
+      loadMore: appendPage, preloadUrls: () => filtered.slice(shown, shown + 12).map((row) => row.缩略图)});
     $('total').textContent = `${records.length.toLocaleString()} 套 / 8 个分类`;
     applyFilters();
   } catch (error) {

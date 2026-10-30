@@ -16,7 +16,7 @@
 
 常用名称：AI 服装库、衣装参考库。
 
-中文创作场景：为 AI 绘画、漫剧和短剧选取角色服装，建立角色定妆参考；用春装、外套等中文关键词查找，再结合脸库与姿势库制作分镜。
+中文创作场景：为 AI 绘画、漫剧和短剧选取角色服装，建立角色定妆参考；用春装、外套等中文关键词查找，再结合脸型库与姿势库制作分镜。
 
 联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
 
@@ -38,9 +38,9 @@
 
 标签来自原站元数据的中文翻译，用于检索，可能不完整；请结合图片和创作需求补充提示词。
 
-### 做漫剧角色定妆，服装库和脸库怎么配合？
+### 做漫剧角色定妆，服装库和脸型库怎么配合？
 
-先选单套衣装 PNG，再选脸库的虚构人物参考，在支持多图参考的工具中分别说明衣装和五官要求；保存确认后的定妆图，供后续分镜复用。
+先选单套衣装 PNG，再选脸型库的虚构人物参考，在支持多图参考的工具中分别说明衣装和五官要求；保存确认后的定妆图，供后续分镜复用。
 
 ## 来源与使用条件
 
@@ -49,6 +49,6 @@
 ## 相关入口
 
 - [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
-- [AI 脸库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
 - [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)

@@ -19,6 +19,7 @@ jobs:
       - run: python3 scripts/portrait.py verify
       - run: python3 scripts/pose.py verify
       - run: python3 scripts/depth.py verify
+      - run: node --check assets/gallery-loader.js
       - run: node --check assets/app.js
       - run: node --check portrait/app.js && node --check portrait/catalog.js
       - run: node --check pose/app.js && node --check pose/catalog.js

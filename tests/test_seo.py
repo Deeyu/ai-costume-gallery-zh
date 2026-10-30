@@ -1,4 +1,5 @@
 from html.parser import HTMLParser
+from hashlib import sha256
 import json
 from pathlib import Path
 import struct
@@ -15,6 +16,7 @@ class HeadAndCards(HTMLParser):
         super().__init__()
         self.meta, self.links, self.images = {}, {}, []
         self.h1_count = 0
+        self.scripts = []
         self.previews = 0
         self.feed(html)
 
@@ -26,6 +28,8 @@ class HeadAndCards(HTMLParser):
             self.links.setdefault(attrs.get('rel'), []).append(attrs)
         elif tag == 'h1':
             self.h1_count += 1
+        elif tag == 'script' and attrs.get('src'):
+            self.scripts.append(attrs['src'])
         elif tag == 'a' and 'static-preview' in attrs.get('class', '').split():
             self.previews += 1
         elif tag == 'img':
@@ -33,6 +37,16 @@ class HeadAndCards(HTMLParser):
 
 
 class SeoTests(unittest.TestCase):
+    def test_script_and_stylesheet_versions_match_the_deployed_file_contents(self):
+        for catalog in CATALOGS:
+            with self.subTest(gallery=catalog['key']):
+                folder = ROOT / catalog['path']
+                parsed = HeadAndCards((folder / 'index.html').read_text())
+                assets = parsed.scripts + [link['href'] for link in parsed.links['stylesheet']]
+                for url in assets:
+                    name, version = url.split('?v=')
+                    self.assertEqual(version, sha256((folder / name).read_bytes()).hexdigest()[:12])
+
     def test_generated_files_are_current_and_idempotent(self):
         for name, expected in outputs().items():
             with self.subTest(file=name):
