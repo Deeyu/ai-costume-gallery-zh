@@ -42,6 +42,17 @@ class BuildTests(unittest.TestCase):
         self.assertTrue((dist / '.nojekyll').exists())
         self.assertEqual(json.loads((self.root / 'data/costume-zh.json').read_text()), [self.row])
 
+    def test_pages_build_includes_portrait_index_without_rewriting_remote_images(self):
+        portrait = self.root / 'portrait'
+        (portrait / 'data').mkdir(parents=True)
+        (portrait / 'index.html').write_text('portrait fixture', encoding='utf-8')
+        rows = [{'id': 'f71f980dde3', '原图': 'https://ai-portrait-gallery.pages.dev/img/full/f71f980dde3.png'}]
+        (portrait / 'data/portrait-zh.json').write_text(json.dumps(rows), encoding='utf-8')
+        package_site(self.root, github_pages=True)
+        published = self.root / 'dist/portrait'
+        self.assertTrue((published / 'index.html').is_file())
+        self.assertEqual(json.loads((published / 'data/portrait-zh.json').read_text()), rows)
+
 
 if __name__ == '__main__':
     unittest.main()

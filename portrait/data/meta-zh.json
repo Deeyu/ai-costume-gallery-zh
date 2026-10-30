@@ -1,0 +1,25 @@
+{
+  "total": 1499,
+  "snapshot": "2026-10-30",
+  "source": "https://ai-portrait-gallery.pages.dev/",
+  "tweet": "https://x.com/agi_aibusi/status/2113187345814204557",
+  "sections": {
+    "face": 893,
+    "styling": 606
+  },
+  "hairs": {
+    "face": {
+      "短发": 433,
+      "中发": 229,
+      "中长发": 154,
+      "长发": 77
+    },
+    "styling": {
+      "短发": 294,
+      "中发": 147,
+      "中长发": 106,
+      "长发": 59
+    }
+  },
+  "styles": 50
+}
