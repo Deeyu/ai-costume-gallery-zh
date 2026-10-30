@@ -36,6 +36,7 @@ function renderCategories() {
 }
 
 function render() {
+  if (!loader) return;
   filtered = filterPoses(rows, state);
   groups = groupPoses(filtered);
   $('section-title').textContent = state.category || state.system;

@@ -21,6 +21,7 @@ function renderCategories() {
   }));
 }
 function applyFilters() {
+  if (!loader) return;
   loader.reset();
   const words = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
   filtered = records.filter((r) => (!category || r.分类 === category) && words.every((w) => r.检索.includes(w)));

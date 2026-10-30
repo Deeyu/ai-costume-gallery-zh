@@ -46,6 +46,7 @@ function renderFilters() {
 }
 
 function applyFilters() {
+  if (!loader) return;
   loader.reset();
   filtered = filterPortraits(records, {mode, hair, query: $('q').value});
   shown = 0;
