@@ -11,6 +11,22 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://deeyu.github.io/ai-costume-gallery-zh/'
 REPOSITORY = 'https://github.com/Deeyu/ai-costume-gallery-zh'
 SITE_NAME = 'AI 参考图库中文版'
+# Change only when the published descriptive content changes, never on each build.
+CONTENT_UPDATED = '2026-11-02'
+SOURCE_POSTS = {
+    'costume': 'https://x.com/giaaibusi/status/2115638135208260002',
+    'costume-anime': 'https://x.com/giaaibusi/status/2117089256015622274',
+    'portrait': 'https://x.com/agi_aibusi/status/2113187345814204557',
+    'anime': 'https://x.com/taki_auto/status/2116818463125803239',
+}
+SEARCH_INTENTS = {
+    'costume': ('衣装搭配与角色服装设计', '套无人物衣装搭配，支持四季与场合分类、中文颜色材质检索、图片复制与 PNG 下载；另有动画版，可配合脸型库制作角色定妆参考。'),
+    'costume-anime': ('动漫衣装与角色造型参考', '套无人物动漫衣装，支持四季与场合筛选、中文检索、图片复制与 PNG 下载；在服装库内部切换写实与动画画风，保留各版原始编号和来源。'),
+    'portrait': ('人物五官与发型参考', '张 AI 虚构人物脸部与造型参考，包含正面脸图和造型参考两种模式，支持发长、发型及中文检索，可配合服装库制作角色定妆。'),
+    'pose': ('人体动作线稿与绘画参考', '张人体模型动作线稿，覆盖 288 组姿势、4 个体系与 5 种视角。支持中文动作检索、分组浏览和单张 PNG 下载。含成人向分类，仅限成年人艺术参考。'),
+    'depth': ('姿态、遮挡与空间参考', '张人体模型深度图，用灰度观察姿态、遮挡及空间前后关系；可与姿势库按完整编号和视角配对。支持中文检索。含成人向分类，仅限成年人艺术参考。'),
+    'anime': ('二次元发型、衣装与英文标签', '张二次元彩图（含发色变体），另有 281 张姿势线稿；完整公开版共 843 个基础条目，涵盖发型、眼睛、服装和姿势，支持中文检索及图片、英文标签复制。'),
+}
 NOTICE = '图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。'
 CATALOGS = [
     dict(key='costume', path='', name='服装库', label='AI 服装参考库中文版',
@@ -111,12 +127,13 @@ def info(catalog, root):
     if 'groups' in meta:
         count = f'{meta["groups"]} 组、' + count
     snapshot = meta.get('snapshot', catalog.get('snapshot'))
-    description = f'{catalog["label"]}，收录 {count}，用于{catalog["purpose"]}。{catalog["feature"]}。'
-    if catalog['key'] in ['pose', 'depth']:
-        description += '含成人向分类，仅限成年人艺术参考。'
+    intent, summary = SEARCH_INTENTS[catalog['key']]
+    description = f'{catalog["label"]}收录 {meta["total"]:,} ' + summary
     keywords = [catalog['name'], *catalog['aliases'], 'AI 绘画', '漫剧', '角色设定']
     return dict(catalog, keywords=keywords, total=meta['total'], groups=meta.get('groups'), count=count,
-                snapshot=snapshot, description=description, url=BASE + catalog['path'])
+                snapshot=snapshot, description=description, url=BASE + catalog['path'],
+                title=f'{catalog["label"]}｜{intent}', cards=meta.get('cards'), lineart=meta.get('lineart'),
+                directory='directory/' + catalog['key'] + '/')
 
 
 def structured(data):
@@ -127,7 +144,7 @@ def structured(data):
                'description': data['description'], 'url': url + 'catalog.md', 'inLanguage': 'zh-CN',
                'dateModified': data['snapshot'], 'creator': {'@type': 'Person', 'name': data['creator'], 'url': data['creator_url']},
                'contributor': {'@id': BASE + '#maintainer'}, 'isBasedOn': data['source'],
-               'citation': [data['source'], REPOSITORY], 'usageInfo': rights,
+               'citation': [data['source'], REPOSITORY] + ([SOURCE_POSTS[data['key']]] if data['key'] in SOURCE_POSTS else []), 'usageInfo': rights,
                'conditionsOfAccess': '第三方图片及来源数据不适用项目代码的 MIT 许可，使用条件见版权与致谢。',
                'variableMeasured': [{'@type': 'PropertyValue', 'name': '索引记录数', 'value': data['total'], 'unitText': '条'}],
                'distribution': {'@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': BASE + data['data']}}
@@ -135,9 +152,14 @@ def structured(data):
         dataset['variableMeasured'].append({'@type': 'PropertyValue', 'name': '姿势组数', 'value': data['groups'], 'unitText': '组'})
     if data['key'] in ['pose', 'depth']:
         dataset['citation'].append('https://github.com/anhao/ai-pose-gallery-zh')
+    if data['cards']:
+        dataset['variableMeasured'] += [
+            {'@type': 'PropertyValue', 'name': '基础条目数', 'value': data['cards'], 'unitText': '条'},
+            {'@type': 'PropertyValue', 'name': '姿势线稿数', 'value': data['lineart'], 'unitText': '张'}]
     gallery = {'@type': 'ImageGallery', '@id': url + '#gallery', 'url': url, 'name': data['label'],
                'alternateName': data['aliases'], 'keywords': data['keywords'],
                'description': data['description'], 'inLanguage': 'zh-CN', 'isPartOf': {'@id': site},
+               'dateModified': CONTENT_UPDATED, 'relatedLink': BASE + data['directory'],
                'publisher': {'@id': BASE + '#maintainer'}, 'mainEntity': {'@id': url + '#dataset'},
                'breadcrumb': {'@id': url + '#breadcrumb'},
                'primaryImageOfPage': {'@type': 'ImageObject', 'contentUrl': BASE + f'assets/og-{data["key"]}.png', 'width': 1200, 'height': 630}}
@@ -150,38 +172,49 @@ def structured(data):
         {'@type': 'WebSite', '@id': site, 'url': BASE, 'name': SITE_NAME, 'inLanguage': 'zh-CN',
          'description': '服装、AI 人像、人体姿势线稿、深度图与二次元角色五库中文检索，供成年人艺术创作和角色设定参考。',
          'publisher': {'@id': BASE + '#maintainer'},
-         'hasPart': [{'@id': BASE + item['path'] + '#gallery'} for item in CATALOGS]},
+         'hasPart': [{'@id': BASE + item['path'] + '#gallery'} for item in CATALOGS],
+         'subjectOf': {'@id': BASE + '#source-code'}},
         {'@type': 'Person', '@id': BASE + '#maintainer', 'name': 'Deeyu', 'url': 'https://github.com/Deeyu'},
+        {'@type': 'SoftwareSourceCode', '@id': BASE + '#source-code', 'name': SITE_NAME + '静态站点代码',
+         'codeRepository': REPOSITORY, 'programmingLanguage': ['JavaScript', 'Python', 'HTML', 'CSS'],
+         'license': 'https://opensource.org/license/mit', 'author': {'@id': BASE + '#maintainer'},
+         'description': '独立站点代码以 MIT 开源；此许可不覆盖第三方图片、原始元数据及来源词条。'},
         gallery, dataset, {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': crumbs}]}
 
 
 def head(data):
     prefix = '../' if data['path'] else ''
     image = BASE + f'assets/og-{data["key"]}.png'
-    unit = {'costume': '套衣装', 'costume-anime': '套动漫衣装', 'portrait': '张人像参考', 'pose': '张动作线稿', 'depth': '张深度图', 'anime': '张二次元彩图'}[data['key']]
-    title = f'{data["label"]}｜{data["total"]:,} {unit}'
-    fields = [('name', 'description', data['description']), ('name', 'author', 'Deeyu'),
-              ('name', 'robots', 'index,follow,max-image-preview:large'),
-              ('name', 'theme-color', '#364e79'), ('property', 'og:type', 'website'),
+    return metadata_head(data['title'], data['description'], data['url'], image, structured(data), prefix,
+                         adult=data['key'] in ['pose', 'depth'], source=data['source'] if data['key'] != 'costume' else None,
+                         alternate=('catalog.md', data['label'] + '纯文本介绍'))
+
+
+def metadata_head(title, description, url, image, graph, prefix, *, adult=False, source=None, alternate=None, image_size=(1200, 630)):
+    fields = [('name', 'description', description), ('name', 'author', 'Deeyu'),
+              ('name', 'robots', 'index,follow,max-image-preview:large,max-video-preview:-1'),
+              ('name', 'theme-color', '#34577d'), ('property', 'og:type', 'website'),
               ('property', 'og:site_name', SITE_NAME), ('property', 'og:locale', 'zh_CN'),
-              ('property', 'og:title', title), ('property', 'og:description', data['description']),
-              ('property', 'og:url', data['url']), ('property', 'og:image', image),
-              ('property', 'og:image:type', 'image/png'), ('property', 'og:image:width', '1200'),
-              ('property', 'og:image:height', '630'), ('property', 'og:image:alt', data['label'] + '：中文检索与创作参考'),
+              ('property', 'og:title', title), ('property', 'og:description', description),
+              ('property', 'og:url', url), ('property', 'og:image', image),
+              ('property', 'og:image:type', 'image/png'), ('property', 'og:image:width', str(image_size[0])),
+              ('property', 'og:image:height', str(image_size[1])), ('property', 'og:image:alt', title),
               ('name', 'twitter:card', 'summary_large_image'), ('name', 'twitter:title', title),
-              ('name', 'twitter:description', data['description']), ('name', 'twitter:image', image),
-              ('name', 'twitter:image:alt', data['label'] + '分享卡片')]
-    if data['key'] in ['pose', 'depth']:
+              ('name', 'twitter:description', description), ('name', 'twitter:image', image),
+              ('name', 'twitter:image:alt', title)]
+    if adult:
         fields.append(('name', 'rating', 'adult'))
     lines = [f'  <title>{escape(title)}</title>']
-    if data['key'] != 'costume':
-        lines.append(f'  <link rel="preconnect" href="{data["source"]}">')
+    if source:
+        lines.append(f'  <link rel="preconnect" href="{source}">')
     lines += [f'  <meta {kind}="{key}" content="{escape(value, quote=True)}">' for kind, key, value in fields]
-    lines += [f'  <link rel="canonical" href="{data["url"]}">',
-              f'  <link rel="sitemap" type="application/xml" href="{prefix}sitemap.xml">',
-              f'  <link rel="alternate" type="text/markdown" title="{data["label"]}纯文本介绍" href="catalog.md">',
+    lines += [f'  <link rel="canonical" href="{url}">',
+              f'  <link rel="sitemap" type="application/xml" href="{prefix}sitemap.xml">']
+    if alternate:
+        lines.append(f'  <link rel="alternate" type="text/markdown" title="{alternate[1]}" href="{alternate[0]}">')
+    lines += [
               f'  <link rel="alternate" type="text/plain" title="AI 检索参考" href="{prefix}llms.txt">',
-              '  <script type="application/ld+json">' + json.dumps(structured(data), ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + '</script>']
+              '  <script type="application/ld+json">' + json.dumps(graph, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + '</script>']
     return '  <!-- seo:head:start -->\n' + '\n'.join(lines) + '\n  <!-- seo:head:end -->'
 
 
@@ -196,6 +229,7 @@ def overview(data):
       <h2 id="catalog-guide-title">{data['name']}：收录内容与使用方法</h2>
 {body}
       <p>索引快照：<time datetime="{data['snapshot']}">{data['snapshot']}</time> · 中文整理：<a href="https://github.com/Deeyu">Deeyu</a> · <a href="{prefix + data['data']}">中文 JSON 索引</a> · <a href="catalog.md">纯文本介绍</a></p>
+      <p><a href="{prefix + data['directory']}">{data['name']}完整文字目录</a>：按分类核对全部编号、中文名称与来源词条，无需滚动加载图片。介绍更新：<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time>。</p>
       <h3>常见问题</h3>
       {details}
       <p>其他图库：{related}</p>
@@ -238,7 +272,8 @@ def previews(data, root):
 def markdown(data):
     lines = [f'# {data["label"]}', '', f'> {data["description"]}', '',
              f'- 在线入口：{data["url"]}', f'- 收录：{data["count"]}', f'- 分类与视角：{data["coverage"]}',
-             f'- 索引快照：{data["snapshot"]}', f'- 功能：{data["feature"]}', f'- 图片提供：{data["delivery"]}',
+             f'- 索引快照：{data["snapshot"]}', f'- 介绍更新：{CONTENT_UPDATED}', f'- 功能：{data["feature"]}', f'- 图片提供：{data["delivery"]}',
+             f'- 完整文字目录：{BASE + data["directory"]}',
              '- 中文整理与维护：Deeyu（https://github.com/Deeyu）',
              f'- 原始素材来源：{data["source"]}，原作者 {data["creator"]}（{data["creator_url"]}）',
              f'- 中文 JSON 索引：{BASE + data["data"]}', '', '## 中文创作用法', '',
@@ -250,8 +285,116 @@ def markdown(data):
     lines += ['## 来源与使用条件', '', f'本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：{BASE}THIRD_PARTY_NOTICES.md', '']
     if data['key'] in ['pose', 'depth']:
         lines += ['中文词条来源：https://github.com/anhao/ai-pose-gallery-zh ，固定提交 072a3690af6e7e0011abbe0fa1ccc08939fbb47d。', '']
+    if data['key'] in SOURCE_POSTS:
+        lines += ['原作者发布推文：' + SOURCE_POSTS[data['key']], '']
     lines += ['## 相关入口', ''] + [f'- [{item["label"]}]({BASE + item["path"]})' for item in CATALOGS]
     return '\n'.join(lines) + '\n'
+
+
+def directory_shell(root, path, title, description, body, *, data=None):
+    prefix = '../' * path.count('/')
+    url = BASE + path.removesuffix('index.html')
+    graph = {'@context': 'https://schema.org', '@type': 'CollectionPage', '@id': url,
+             'url': url, 'name': title, 'description': description, 'inLanguage': 'zh-CN',
+             'dateModified': CONTENT_UPDATED, 'isPartOf': {'@id': BASE + '#website'},
+             'publisher': {'@type': 'Person', 'name': 'Deeyu', 'url': 'https://github.com/Deeyu'}}
+    if data:
+        graph.update(about={'@id': data['url'] + '#dataset'}, isBasedOn=data['source'],
+                     mainEntity={'@type': 'ItemList', 'numberOfItems': data['total']})
+        if data['key'] in ['pose', 'depth']:
+            graph['isFamilyFriendly'] = False
+    image = BASE + f'assets/og-{data["key"] if data else "costume"}.png'
+    metadata = metadata_head(title, description, url, image, graph, prefix,
+                             adult=bool(data and data['key'] in ['pose', 'depth']))
+    styles = '\n'.join(f'  <link rel="stylesheet" href="{prefix}assets/{name}?v={sha256((root / "assets" / name).read_bytes()).hexdigest()[:12]}">'
+                       for name in ['style.css', 'refinement.css', 'directory.css'])
+    nav = ''.join(f'<a href="{prefix + item["path"] if item["path"] else prefix}">{item["name"]}</a>'
+                  for item in CATALOGS if item['key'] != 'costume-anime')
+    return f'''<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+{metadata}
+{styles}
+  <link rel="icon" href="{prefix}assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="{prefix}"><img src="{prefix}assets/icon.svg" alt="" width="28" height="28">文字目录 <span>中文版</span></a><nav class="gallery-nav" aria-label="图库">{nav}</nav><div class="nav-tools"><a class="github-link" href="{REPOSITORY}" target="_blank" rel="noopener noreferrer"><img src="{prefix}assets/github-mark.svg" alt="" width="20" height="20">GitHub</a></div></header>
+  <main class="directory-content">
+{body}
+  </main>
+  <footer>{source_directory()}<p>本项目是独立中文整理与静态站点实践，不代表原作者的官方版本或背书。中文维护：<a href="https://github.com/Deeyu">Deeyu</a> · <a href="{prefix}THIRD_PARTY_NOTICES.md">版权与使用条件</a> · <a href="{prefix}directory/">完整目录入口</a> · <a href="{prefix}llms.txt">AI 检索参考</a></p><aside class="content-notice" role="note"><h2>内容提示</h2><p>{NOTICE}</p></aside></footer>
+</body>
+</html>
+'''
+
+
+def directories(root, summaries):
+    result, index_rows = {}, []
+    for data in summaries:
+        rows = json.loads((root / data['data']).read_text(encoding='utf-8'))
+        groups = {}
+        for row in rows:
+            if data['key'] in ['pose', 'depth']:
+                category = row['体系'] + ' · ' + row['分类']
+                name, terms = row['姿势名称'], row['角度'] + ' · ' + row['原始姿势名称']
+            elif data['key'] == 'portrait':
+                category = row['类型'] + ' · ' + row['发长']
+                name = row['发型'] or row['发长'] + ' · ' + row['类型']
+                terms = ' · '.join(filter(None, [row['原始发长'], row['原始发型']]))
+            elif data['key'] == 'anime':
+                category = row['类型'] + ' · ' + row['分类']
+                name, terms = row['名称'], row['原始名称'] + ' · ' + row['标签']
+                if row['发色']:
+                    terms += ' · 发色版本：' + row['发色']
+            else:
+                category, name = row['分类'], '、'.join(row['关键词'])
+                terms = row['英文关键词']
+            groups.setdefault(category, []).append((row['id'], name, terms))
+        sections, navigation = [], []
+        for index, (category, entries) in enumerate(groups.items(), 1):
+            anchor = f'category-{index}'
+            navigation.append(f'<a href="#{anchor}">{escape(category)} <span>{len(entries):,}</span></a>')
+            table = '\n'.join(f'<tr id="entry-{escape(id, quote=True)}" data-record-id="{escape(id, quote=True)}"><th scope="row"><a href="#entry-{escape(id, quote=True)}">{escape(id)}</a></th><td><p>{escape(name)}</p><p class="directory-terms">{escape(terms)}</p></td></tr>' for id, name, terms in entries)
+            sections.append(f'<section id="{anchor}" class="directory-section"><h2>{escape(category)} · {len(entries):,} 条</h2><table class="directory-table"><caption>{escape(category)}的编号、中文名称与原始词条</caption><thead><tr><th scope="col">编号</th><th scope="col">中文名称与原始词条</th></tr></thead><tbody>\n{table}\n</tbody></table></section>')
+        title = data['name'] + '完整文字目录｜' + SITE_NAME
+        description = f'{data["name"]}完整 {len(rows):,} 条中文索引，按分类列出全部编号、中文名称与原始词条。用于核对记录和引用来源；图片浏览、复制与下载请进入交互图库。'
+        body = f'''    <section class="intro"><div><h1>{data['name']}完整文字目录</h1><p>{description}</p><p>收录：{data['count']}。索引快照：{data['snapshot']}；介绍更新：{CONTENT_UPDATED}。</p></div></section>
+    <p class="directory-links"><a class="primary" href="{data['url']}">进入{data['name']}浏览图片</a><a href="{BASE}directory/">全部目录</a><a href="{BASE + data['data']}">完整 JSON</a><a href="{data['url']}catalog.md">文字介绍与常见问题</a></p>
+    <p>使用浏览器查找（Ctrl/⌘ + F）按编号、中文名称或原始词条定位。本页只列出文字索引，不批量加载或打包图片。</p>
+    <nav class="directory-categories" aria-label="目录分类">{''.join(navigation)}</nav>
+''' + '\n'.join(sections)
+        if data['cards']:
+            body = body.replace('使用浏览器查找', f'本库有 {data["cards"]} 个基础条目；本页 {len(rows):,} 条包含额外发色变体，另有 {data["lineart"]} 张线稿，不作为独立造型重复计数。使用浏览器查找', 1)
+        path = data['directory'] + 'index.html'
+        result[path] = directory_shell(root, path, title, description, body, data=data)
+        index_rows.append(f'<tr><th scope="row"><a href="{data["key"]}/">{data["name"]}</a></th><td>{data["count"]}</td><td>{data["purpose"]}</td></tr>')
+    title = '五库完整文字目录｜' + SITE_NAME
+    description = '服装写实版与动画版、脸型、姿势线稿、深度图和二次元库的完整中文文字索引。按分类核对编号、中文名称、英文标签与原始词条，附图片浏览入口及素材来源。'
+    body = f'''    <section class="intro"><div><h1>五库完整文字目录</h1><p>{description}</p></div></section>
+    <p>服装库包含写实版与动画版两个目录。目录与交互页面使用同一份公开索引，保留实际数量和快照日期；无需启用 JavaScript 或滚动加载图片。</p>
+    <table class="directory-table"><caption>按创作用途选择完整目录</caption><thead><tr><th scope="col">目录</th><th scope="col">收录</th><th scope="col">用途</th></tr></thead><tbody>{''.join(index_rows)}</tbody></table>
+    <p>服装按套数、脸型按图像记录、姿势与深度按视角记录分别统计；二次元库按基础条目、彩图发色变体和姿势线稿分别说明。</p>
+    <p><a href="{BASE}examples/">联合使用视频与图片</a> · <a href="{BASE}guide.md">中文操作指南</a> · <a href="{REPOSITORY}#readme">项目 README</a></p>'''
+    result['directory/index.html'] = directory_shell(root, 'directory/index.html', title, description, body)
+    return result
+
+
+def example_head():
+    url = BASE + 'examples/'
+    title = 'AI 绘画多图参考案例｜脸型、服装与姿势联合使用'
+    description = '观看约 5 秒的多图参考演示及服装、姿势参考合集，了解如何分别指定人物五官、穿搭与动作，为角色定妆和漫剧分镜准备参考图。附中文操作步骤、案例原帖及素材来源。'
+    graph = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'WebPage', '@id': url, 'url': url, 'name': title, 'description': description,
+         'inLanguage': 'zh-CN', 'dateModified': CONTENT_UPDATED,
+         'isPartOf': {'@id': BASE + '#website'}, 'mainEntity': {'@id': url + '#demo'},
+         'citation': 'https://x.com/ai_bange/status/2115651909948477678'},
+        {'@type': 'VideoObject', '@id': url + '#demo', 'name': '脸部、服装与姿势多图参考演示',
+         'description': '用户提供的约 5 秒参考输入演示；视频不代表本站提供图像生成服务。',
+         'thumbnailUrl': url + 'joint-reference-poster.jpg', 'contentUrl': url + 'joint-reference-demo.mp4',
+         'uploadDate': '2026-10-30T17:14:59+08:00', 'duration': 'PT5.178S', 'creditText': '演示视频由用户提供。'}]}
+    return metadata_head(title, description, url, url + 'costume-reference.png', graph, '../', image_size=(900, 675))
 
 
 def source_directory():
@@ -311,30 +454,54 @@ def outputs(root=ROOT):
             html = re.sub(r'(<footer\b[^>]*>)', lambda match: match[1] + '\n' + source_directory(), html, count=1)
         result[path] = version_assets(html, root / data['path'])
         result[data['path'] + 'catalog.md'] = markdown(data)
+    directory_pages = directories(root, summaries)
+    result.update(directory_pages)
     example = (root / 'examples/index.html').read_text(encoding='utf-8')
+    if '<!-- seo:head:start -->' in example:
+        example = re.sub(r'  <!-- seo:head:start -->.*?<!-- seo:head:end -->', lambda _: example_head(), example, flags=re.S)
+    else:
+        example = re.sub(r'  <title>.*?(?=  <link rel="stylesheet")', lambda _: example_head() + '\n', example, count=1, flags=re.S)
+    if '<!-- seo:example-info -->' not in example:
+        example = example.replace('    <div class="example-layout">',
+                                  f'    <p><!-- seo:example-info -->本站流程整理：<a href="https://github.com/Deeyu">Deeyu</a> · 介绍更新：<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time> · <a href="../directory/">五库完整文字目录</a></p>\n    <div class="example-layout">', 1)
+    else:
+        example = re.sub(r'(<!-- seo:example-info -->.*?)<time datetime="[^"]+">[^<]+</time>',
+                         lambda match: match[1] + f'<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time>', example)
     example = re.sub(r'<!-- seo:sources:start -->.*?<!-- seo:sources:end -->', lambda _: source_directory(), example, flags=re.S)
     result['examples/index.html'] = version_assets(example, root / 'examples')
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     sitemap = ET.Element('{http://www.sitemaps.org/schemas/sitemap/0.9}urlset')
-    for data in summaries:
-        ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = data['url']
-    ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = BASE + 'examples/'
+    urls = [data['url'] for data in summaries] + [BASE + 'examples/']
+    urls += [BASE + path.removesuffix('index.html') for path in directory_pages]
+    for url in urls:
+        node = ET.SubElement(sitemap, 'url')
+        ET.SubElement(node, 'loc').text = url
+        ET.SubElement(node, 'lastmod').text = CONTENT_UPDATED
     ET.indent(sitemap, space='  ')
     result['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(sitemap, encoding='unicode') + '\n'
     result['robots.txt'] = '# Project-path copy; robots rules apply only when served at the origin root.\nUser-agent: *\nAllow: /\nSitemap: ' + BASE + 'sitemap.xml\n'
     lines = ['# ' + SITE_NAME, '', '> 服装、人像、姿势线稿、深度图与二次元角色五库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。', '',
              '## 五个图库（服装库含写实版与动画版）', '']
     lines += [f'- [{data["label"]}]({data["url"]}catalog.md): {data["count"]}；{data["purpose"]}；快照 {data["snapshot"]}。' for data in summaries]
+    lines += ['', '## 完整文字目录', '', f'- [五库目录入口]({BASE}directory/): 与图片浏览使用同一份完整索引，无需启用 JavaScript。']
+    lines += [f'- [{data["name"]}全部条目]({BASE + data["directory"]}): 全部编号、中文名称、原始词条与分类。' for data in summaries]
+    lines += ['', '## 合并参考', '', f'- [五库完整文字介绍]({BASE}llms-full.txt): 六个版本的收录、用途、问答、快照、作者及许可边界合并阅读。']
     lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 五库用途、功能、本地预览与部署说明。',
               f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
               f'- [联合使用视频与图片]({BASE}examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
-              f'- [站点地图]({BASE}sitemap.xml): 五库入口、服装动画版及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
+              f'- [站点地图]({BASE}sitemap.xml): 五库入口、服装动画版、联合案例及完整文字目录。', '',
+              '## 维护与引用', '', f'内容整理更新：{CONTENT_UPDATED}；各库原始索引的快照日期分别标注，不代表原站实时数量。', '',
+              '维护者为 Deeyu（https://github.com/Deeyu）。本项目是独立中文整理与静态站点学习实践，不代表原作者的官方版本或背书。引用请注明具体图库、完整编号、视角、索引快照及原始作者。', '',
+              '## 内容和计数说明', '', NOTICE, '',
               '服装按套数统计，三个文件版本不计为三套；脸型库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。', '',
               '二次元库完整公开索引为 843 个基础条目，含发色变体共 1,027 张彩图，另有 281 张姿势线稿；不接入作者未公开的特典。', '',
               '服装库动画版完整收录 1,320 套无人物动漫衣装，作为服装库内部版本，不新增顶部图库标签；与写实版 1,407 套分别统计。', '',
               '动画服装、脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
     result['llms.txt'] = '\n'.join(lines)
+    result['llms-full.txt'] = '# ' + SITE_NAME + '：完整文字参考\n\n' + \
+        f'介绍更新：{CONTENT_UPDATED}。本文件合并六个图库版本的公开介绍，便于核对与引用。原始素材许可不因本文件而改变。\n\n' + \
+        '\n---\n\n'.join(markdown(data) for data in summaries)
     return result
 
 
@@ -345,6 +512,7 @@ def generate(root=ROOT, check=False):
         if not path.exists() or path.read_text(encoding='utf-8') != content:
             changed.append(name)
             if not check:
+                path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(content, encoding='utf-8')
     if check and changed:
         raise ValueError('SEO 文件需要更新：' + '、'.join(changed))

@@ -1,13 +1,15 @@
 # AI 脸型库中文版
 
-> AI 脸型库中文版，收录 1,499 张参考图，用于AI 虚构人物的五官、发型与角色造型参考。中文发型与发长筛选、中日文及 ID 搜索、图片复制、PNG 下载、原站下载排行快照。
+> AI 脸型库中文版收录 1,499 张 AI 虚构人物脸部与造型参考，包含正面脸图和造型参考两种模式，支持发长、发型及中文检索，可配合服装库制作角色定妆。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/portrait/
 - 收录：1,499 张参考图
 - 分类与视角：正面脸图与造型参考两种模式，4 类发长、50 种细分发型
 - 索引快照：2026-10-30
+- 介绍更新：2026-11-02
 - 功能：中文发型与发长筛选、中日文及 ID 搜索、图片复制、PNG 下载、原站下载排行快照
 - 图片提供：仓库保存原始与中文索引、排行快照；脸型库图片和 PNG 由脸型库原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/portrait/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://ai-portrait-gallery.pages.dev/，原作者 あぎ（https://x.com/agi_aibusi）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/portrait/data/portrait-zh.json
@@ -45,6 +47,8 @@
 ## 来源与使用条件
 
 本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/agi_aibusi/status/2113187345814204557
 
 ## 相关入口
 

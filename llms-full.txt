@@ -1,0 +1,379 @@
+# AI 参考图库中文版：完整文字参考
+
+介绍更新：2026-11-02。本文件合并六个图库版本的公开介绍，便于核对与引用。原始素材许可不因本文件而改变。
+
+# AI 服装参考库中文版
+
+> AI 服装参考库中文版收录 1,407 套无人物衣装搭配，支持四季与场合分类、中文颜色材质检索、图片复制与 PNG 下载；另有动画版，可配合脸型库制作角色定妆参考。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/
+- 收录：1,407 套服装
+- 分类与视角：春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类
+- 索引快照：2026-10-29
+- 介绍更新：2026-11-02
+- 功能：中文分类、中英文关键词与 ID 搜索、服装预览、PNG 原图下载、复制图片
+- 图片提供：服装图片保存在仓库；在线预览由 GitHub Pages 提供，PNG 原图由 GitHub 仓库提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/costume/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://ai-costume-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/data/costume-zh.json
+
+## 中文创作用法
+
+常用名称：AI 服装库、衣装参考库。
+
+中文创作场景：为 AI 绘画、漫剧和短剧选取角色服装，建立角色定妆参考；用春装、外套等中文关键词查找，再结合脸型库与姿势库制作分镜。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 服装库适合用来做什么？
+
+用于查找不含人物的服装搭配，为角色设定、AI 绘画和漫剧造型提供参考；脸、体型和背景需要另行指定。
+
+### 服装数量和图片文件数有什么区别？
+
+每套服装有缩略图、预览图、PNG 原图三个版本，三份文件对应同一套服装，不能按图片文件数计算不同服装。
+
+### 可以直接将标签当成生成提示词吗？
+
+标签来自原站元数据的中文翻译，用于检索，可能不完整；请结合图片和创作需求补充提示词。
+
+### 做漫剧角色定妆，服装库和脸型库怎么配合？
+
+先选单套衣装 PNG，再选脸型库的虚构人物参考，在支持多图参考的工具中分别说明衣装和五官要求；保存确认后的定妆图，供后续分镜复用。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/giaaibusi/status/2115638135208260002
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)
+
+---
+
+# AI 动画服装参考库中文版
+
+> AI 动画服装参考库中文版收录 1,320 套无人物动漫衣装，支持四季与场合筛选、中文检索、图片复制与 PNG 下载；在服装库内部切换写实与动画画风，保留各版原始编号和来源。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/
+- 收录：1,320 套服装
+- 分类与视角：春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类；与写实版分别保留实际收录及关键词
+- 索引快照：2026-11-02
+- 介绍更新：2026-11-02
+- 功能：完整公开索引、中文分类、中英文与 ID 检索、画风切换、滚动加载、图片复制与单张 PNG 下载
+- 图片提供：仅保存完整原始与中文索引；动画服装缩略图、预览和 PNG 按需从原站读取，不镜像或批量下载图片。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/costume-anime/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://ai-costume-anime-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/data/costume-zh.json
+
+## 中文创作用法
+
+常用名称：动画服装库、动漫衣装参考库、服装库动画版。
+
+中文创作场景：为 AI 绘画、漫画和动画角色设定挑选无人物的动漫衣装。用中文颜色、材质和季节关键词检索，再配合二次元库的发型或姿势参考；服装库内部可切换写实版与动画版，并保留分类和搜索词。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 动画版和写实版在哪里切换？
+
+服装库内容区上方提供写实版与动画版切换，顶部仍只有五个图库入口。切换保留当前分类及搜索词，两个版本有各自的分享链接。
+
+### 动画版为什么是 1,320 套，不是 1,407 套？
+
+两个原站公开索引的实际数量不同。动画版完整收录 1,320 套，保留原始编号间的缺号；不把写实版记录或缩略图、预览图、原图三个版本重复计入动画套数。
+
+### 动画版与二次元库有什么区别？
+
+动画版是ギア的无人物衣装搭配集，是服装库的另一种画风。二次元库是たき AI的 CharaDB，另有角色发型、眼睛、服装、姿势和英文标签。
+
+### 动画服装图片可以商用或重新打包吗？
+
+原作者允许作品创作中的商用、编辑和参考使用，但禁止图像数据批量下载、再分发、转载和转售，也不得用于表现真实人物或未成年人。以原站说明为准。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/giaaibusi/status/2117089256015622274
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)
+
+---
+
+# AI 脸型库中文版
+
+> AI 脸型库中文版收录 1,499 张 AI 虚构人物脸部与造型参考，包含正面脸图和造型参考两种模式，支持发长、发型及中文检索，可配合服装库制作角色定妆。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/portrait/
+- 收录：1,499 张参考图
+- 分类与视角：正面脸图与造型参考两种模式，4 类发长、50 种细分发型
+- 索引快照：2026-10-30
+- 介绍更新：2026-11-02
+- 功能：中文发型与发长筛选、中日文及 ID 搜索、图片复制、PNG 下载、原站下载排行快照
+- 图片提供：仓库保存原始与中文索引、排行快照；脸型库图片和 PNG 由脸型库原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/portrait/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://ai-portrait-gallery.pages.dev/，原作者 あぎ（https://x.com/agi_aibusi）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/portrait/data/portrait-zh.json
+
+## 中文创作用法
+
+常用名称：AI 脸库、AI 人像参考库、AI 虚构人物脸型库。
+
+中文创作场景：为 AI 绘画和漫剧挑选人物五官与发型，配合服装库建立角色设定。固定同一张脸部参考图有助于说明外观要求，角色一致性仍需逐镜核对。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 脸型库里的图片是真实人物照片吗？
+
+原站说明这些是 AI 生成的虚构人物。图片用于五官、发型与角色外观参考，不代表真实人物，也不是人脸识别服务。
+
+### 正面脸图和造型参考有什么区别？
+
+正面脸图便于观察五官与脸型；造型参考展示发型质感、服装与整体氛围，人物朝向可能不同。图片记录数不代表互不重复的人物数量。
+
+### 脸型库图片在仓库里吗？
+
+不在。仓库保存中文索引，页面按需加载原站图片；浏览和原图下载需要能够访问脸型库原站。
+
+### 做 AI 漫剧，脸型库能保证角色一致性吗？
+
+固定脸图可以明确五官和发型参考，但不能保证不同镜头的人物完全一致；应复用已确认的定妆图，并逐镜检查脸型、发际线与服装细节。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/agi_aibusi/status/2113187345814204557
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)
+
+---
+
+# AI 姿势库中文版
+
+> AI 姿势库中文版收录 1,439 张人体模型动作线稿，覆盖 288 组姿势、4 个体系与 5 种视角。支持中文动作检索、分组浏览和单张 PNG 下载。含成人向分类，仅限成年人艺术参考。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/pose/
+- 收录：288 组、1,439 张人体模型线稿
+- 分类与视角：4 个体系、26 个分类；正面、斜侧、侧面、俯视、仰视五种视角
+- 索引快照：2026-10-30
+- 介绍更新：2026-11-02
+- 功能：中文动作检索、体系与视角筛选、分组或单图浏览、键盘切换、PNG 下载
+- 图片提供：完整双语索引保存在仓库，姿势线稿和 PNG 按需由姿势原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/pose/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://ai-pose-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/pose/data/pose-zh.json
+
+## 中文创作用法
+
+常用名称：人体姿势参考库、动作线稿库。
+
+中文创作场景：为绘画人体练习、漫剧和短剧分镜选择站姿、坐姿与俯仰视角；配合服装参考说明动作和穿搭，保留完整姿势 ID 以便复用。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 姿势库包含哪些参考内容？
+
+完整保留参考仓库的四个体系和原始分类名称，使用人体模型线稿观察动作与构图。包含成人向姿势及相关术语，仅限成年人艺术与动作参考。
+
+### 为什么不是每组都显示五个视角？
+
+上游 full_sexy_P018 缺少仰视图，实际只有四张；其余 287 组各有五张。页面按已有图片显示，不生成缺失视角。
+
+### 姿势线稿和深度图有什么区别？
+
+线稿强调身体轮廓、关节与动作结构；深度图用灰度表达远近。观察动作可使用姿势库，参考空间前后关系可使用深度库。
+
+### 姿势图怎么用于中文 AI 绘画和分镜？
+
+先选动作与观察视角，再搭配服装或已确认的角色定妆图，明确每张图负责的内容；记录完整姿势 ID，便于在深度库匹配。人体线稿不等于 OpenPose 骨架控制图。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+中文词条来源：https://github.com/anhao/ai-pose-gallery-zh ，固定提交 072a3690af6e7e0011abbe0fa1ccc08939fbb47d。
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)
+
+---
+
+# AI 深度图库中文版
+
+> AI 深度图库中文版收录 1,439 张人体模型深度图，用灰度观察姿态、遮挡及空间前后关系；可与姿势库按完整编号和视角配对。支持中文检索。含成人向分类，仅限成年人艺术参考。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/depth/
+- 收录：288 组、1,439 张深度图
+- 分类与视角：4 个体系、26 个分类；与姿势库对应的编号和实际视角
+- 索引快照：2026-10-30
+- 介绍更新：2026-11-02
+- 功能：中文检索、多视角预览、分组或单图浏览、原尺寸深度 PNG 下载
+- 图片提供：完整双语索引保存在仓库，深度图和 PNG 按需由独立的深度原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/depth/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://ai-pose-depth-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/depth/data/depth-zh.json
+
+## 中文创作用法
+
+常用名称：人体深度图库、姿势深度图参考库。
+
+中文创作场景：为 AI 绘画、漫剧和短剧分镜选择深度参考，观察透视、肢体遮挡与空间前后关系；与姿势库使用相同体系、姿势编号和视角配对。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 深度图的黑白代表什么？
+
+本图库的约定是白色越近、黑色越远，灰度表达模型与观察视角之间的前后关系。深度图不是姿势线稿，也不是法线图。
+
+### 深度图怎么用于 AI 创作？
+
+选择姿势与视角，下载 PNG，再导入所用 AI 工具的深度参照功能。脸型、服装和背景需另行指定，具体参数以工具说明为准。
+
+### 深度库与姿势库的内容是否对应？
+
+两库使用对应的姿势 ID、分类与视角，但图片来源和图像形式不同。full_sexy_P018 同样只有四个视角。包含成人向分类，仅限成年人艺术与动作参考。
+
+### 漫剧分镜的姿势图和深度图怎么配对？
+
+用相同体系、姿势编号和视角组成的完整 ID 配对，例如 full_single_P015_front。深度 PNG 应导入工具支持的深度参照输入，普通图片参考不等于启用了深度控制。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+中文词条来源：https://github.com/anhao/ai-pose-gallery-zh ，固定提交 072a3690af6e7e0011abbe0fa1ccc08939fbb47d。
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)
+
+---
+
+# AI 二次元造型库中文版
+
+> AI 二次元造型库中文版收录 1,027 张二次元彩图（含发色变体），另有 281 张姿势线稿；完整公开版共 843 个基础条目，涵盖发型、眼睛、服装和姿势，支持中文检索及图片、英文标签复制。
+
+- 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/anime/
+- 收录：1,027 张彩图（含发色变体），另有 281 张姿势线稿
+- 分类与视角：843 个基础条目：发型与眼睛 122 项、服装 440 项（15 类）、姿势 281 项（8 类）；含发色变体共 1,027 张彩图，另有 281 张姿势线稿
+- 索引快照：2026-11-02
+- 介绍更新：2026-11-02
+- 功能：完整公开索引、中文分类与三语搜索、五色发型预览、彩图与线稿切换、本地收藏、图片与英文标签复制
+- 图片提供：仓库仅保存完整公开索引与中文译文；彩图 JPG、缩略图 WebP 和姿势线稿 PNG 按需由 CharaDB 原站提供，不包含特典内容及图片打包。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/anime/
+- 中文整理与维护：Deeyu（https://github.com/Deeyu）
+- 原始素材来源：https://charadb-2fi.pages.dev/，原作者 たき AI（https://x.com/taki_auto）
+- 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/anime/data/anime-zh.json
+
+## 中文创作用法
+
+常用名称：二次元服装库、动漫角色参考库、二次元发型与姿势库、CharaDB 中文版。
+
+中文创作场景：为二次元角色设定、AI 绘画和漫画分开选择发型、刘海、发色、发饰、眼睛颜色与形状、服装和姿势，复制图片或原始英文标签，在创作工具中自行搭配。保持角色外观项，替换衣装或动作，并核对生成结果。
+
+联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+
+## 内容提示
+
+图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。
+
+## 常见问题
+
+### 二次元库是只收录服装吗？
+
+不是。完整接入原站公开版的发型与眼睛、服装、姿势三个类型；发型支持五色预览，全部 281 个公开姿势都提供彩图与线稿。
+
+### 843 条、1,027 张和 1,308 张有什么区别？
+
+843 是基础卡片数。46 种发型各有五色，额外 184 个变体加上基础卡片形成 1,027 张彩图；再加 281 张姿势线稿，共 1,308 个远程图片版本。它们不代表 1,308 个不同造型。
+
+### 为什么服装编号到 O495，却只有 440 套？
+
+公开版保留 O001–O340 与 O396–O495，O341–O395 不在作者公开索引中。这里不补造未公开内容，也不把编号上限作为条目数量。
+
+### 可以把二次元库图片重新打包或用于真人吗？
+
+作者允许标签、提示词及应用商用，但图片仅供创作参考，禁止原图或加工图再分发、转载和转售，不能用于表现真实人物或未成年人。图片使用条件不适用本项目代码的 MIT 许可。
+
+## 来源与使用条件
+
+本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/taki_auto/status/2116818463125803239
+
+## 相关入口
+
+- [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
+- [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
+- [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
+- [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)

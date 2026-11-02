@@ -42,11 +42,18 @@ class BuildTests(unittest.TestCase):
         self.assertFalse((self.root / 'dist/costume-anime/png').exists())
 
     def test_pages_build_includes_crawler_and_machine_readable_resources(self):
-        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md', 'statistics.md']:
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'llms-full.txt', 'catalog.md', 'guide.md', 'statistics.md']:
             (self.root / name).write_text(name, encoding='utf-8')
         package_site(self.root, github_pages=True)
-        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md', 'statistics.md']:
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'llms-full.txt', 'catalog.md', 'guide.md', 'statistics.md']:
             self.assertEqual((self.root / 'dist' / name).read_text(), name)
+
+    def test_pages_build_preserves_complete_nested_text_directories(self):
+        folder = self.root / 'directory' / 'costume-anime'
+        folder.mkdir(parents=True)
+        (folder / 'index.html').write_text('<h1>动画服装完整文字目录</h1>', encoding='utf-8')
+        package_site(self.root, github_pages=True)
+        self.assertEqual((self.root / 'dist/directory/costume-anime/index.html').read_text(), '<h1>动画服装完整文字目录</h1>')
 
     def test_pages_build_keeps_example_video_images_and_player_together(self):
         example = self.root / 'examples'

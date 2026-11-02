@@ -1,13 +1,15 @@
 # AI 动画服装参考库中文版
 
-> AI 动画服装参考库中文版，收录 1,320 套服装，用于动漫衣装搭配、动画角色服装设计与漫画造型参考。完整公开索引、中文分类、中英文与 ID 检索、画风切换、滚动加载、图片复制与单张 PNG 下载。
+> AI 动画服装参考库中文版收录 1,320 套无人物动漫衣装，支持四季与场合筛选、中文检索、图片复制与 PNG 下载；在服装库内部切换写实与动画画风，保留各版原始编号和来源。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/
 - 收录：1,320 套服装
 - 分类与视角：春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类；与写实版分别保留实际收录及关键词
 - 索引快照：2026-11-02
+- 介绍更新：2026-11-02
 - 功能：完整公开索引、中文分类、中英文与 ID 检索、画风切换、滚动加载、图片复制与单张 PNG 下载
 - 图片提供：仅保存完整原始与中文索引；动画服装缩略图、预览和 PNG 按需从原站读取，不镜像或批量下载图片。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/costume-anime/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://ai-costume-anime-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/data/costume-zh.json
@@ -45,6 +47,8 @@
 ## 来源与使用条件
 
 本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/giaaibusi/status/2117089256015622274
 
 ## 相关入口
 

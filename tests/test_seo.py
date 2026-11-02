@@ -2,13 +2,14 @@ from html.parser import HTMLParser
 from hashlib import sha256
 import json
 from pathlib import Path
+import re
 import struct
 import sys
 import unittest
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from seo import BASE, CATALOGS, ROOT, info, outputs
+from seo import BASE, CATALOGS, CONTENT_UPDATED, ROOT, info, outputs
 
 
 class HeadAndCards(HTMLParser):
@@ -99,7 +100,10 @@ class SeoTests(unittest.TestCase):
     def test_sitemap_and_text_resources_cover_the_galleries_and_media_example(self):
         tree = ET.fromstring((ROOT / 'sitemap.xml').read_text())
         urls = [node.text for node in tree.findall('.//{*}loc')]
-        self.assertEqual(urls, [BASE + catalog['path'] for catalog in CATALOGS] + [BASE + 'examples/'])
+        expected = [BASE + catalog['path'] for catalog in CATALOGS] + [BASE + 'examples/']
+        expected += [BASE + 'directory/' + catalog['key'] + '/' for catalog in CATALOGS] + [BASE + 'directory/']
+        self.assertEqual(urls, expected)
+        self.assertEqual([node.text for node in tree.findall('.//{*}lastmod')], [CONTENT_UPDATED] * len(expected))
         self.assertIn(BASE + 'examples/', (ROOT / 'llms.txt').read_text())
         llms = (ROOT / 'llms.txt').read_text()
         for catalog in CATALOGS:
@@ -133,3 +137,63 @@ class SeoTests(unittest.TestCase):
                 self.assertIn(f'href="{prefix}guide.md"', overview)
                 self.assertIn('https://x.com/ai_bange/status/2115651909948477678', overview)
         self.assertIn(BASE + 'guide.md', (ROOT / 'llms.txt').read_text())
+
+    def test_complete_directories_cover_every_record_and_keep_source_terms(self):
+        total = 0
+        for catalog in CATALOGS:
+            with self.subTest(gallery=catalog['key']):
+                data = info(catalog, ROOT)
+                rows = json.loads((ROOT / catalog['data']).read_text())
+                html = (ROOT / data['directory'] / 'index.html').read_text()
+                parsed = HeadAndCards(html)
+                ids = re.findall(r'data-record-id="([^"]+)"', html)
+                self.assertCountEqual(ids, [row['id'] for row in rows])
+                self.assertEqual(len(ids), len(set(ids)))
+                self.assertEqual(parsed.h1_count, 1)
+                self.assertEqual(parsed.links['canonical'][0]['href'], BASE + data['directory'])
+                self.assertEqual(parsed.scripts, [])
+                self.assertTrue(all(not image['src'].startswith('http') for image in parsed.images))
+                self.assertIn(catalog['source'], html)
+                self.assertIn('未成年人请勿访问', html)
+                for row in [rows[0], rows[-1]]:
+                    term = row.get('原始姿势名称', row.get('原始名称', row.get('英文关键词', row.get('原始发长'))))
+                    self.assertIn(term.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'), html)
+                if catalog['key'] in ['pose', 'depth']:
+                    self.assertEqual(parsed.meta['rating'], 'adult')
+                total += len(ids)
+        self.assertEqual(total, 8131)
+
+    def test_combined_reference_preserves_snapshot_sources_and_separate_licenses(self):
+        combined = (ROOT / 'llms-full.txt').read_text()
+        short = (ROOT / 'llms.txt').read_text()
+        self.assertIn(BASE + 'llms-full.txt', short)
+        for catalog in CATALOGS:
+            data = info(catalog, ROOT)
+            self.assertIn(data['count'], combined)
+            self.assertIn(data['snapshot'], combined)
+            self.assertIn(catalog['source'], combined)
+            self.assertIn(BASE + data['directory'], short)
+            graph = json.loads((ROOT / catalog['path'] / 'index.html').read_text().split('<script type="application/ld+json">')[1].split('</script>')[0])['@graph']
+            licensed = [node for node in graph if 'license' in node]
+            self.assertEqual([node['@type'] for node in licensed], ['SoftwareSourceCode'])
+            gallery = next(node for node in graph if node['@type'] == 'ImageGallery')
+            self.assertEqual(gallery['dateModified'], CONTENT_UPDATED)
+        self.assertIn('不代表原作者的官方版本或背书', short)
+
+    def test_example_social_metadata_and_video_match_real_local_media(self):
+        html = (ROOT / 'examples/index.html').read_text()
+        parsed = HeadAndCards(html)
+        self.assertEqual(parsed.h1_count, 1)
+        self.assertEqual(parsed.links['canonical'][0]['href'], BASE + 'examples/')
+        self.assertEqual(parsed.meta['description'], parsed.meta['og:description'])
+        self.assertEqual(parsed.meta['description'], parsed.meta['twitter:description'])
+        self.assertEqual(parsed.meta['og:image'], parsed.meta['twitter:image'])
+        graph = json.loads(html.split('<script type="application/ld+json">')[1].split('</script>')[0])['@graph']
+        video = next(node for node in graph if node['@type'] == 'VideoObject')
+        for field in ['contentUrl', 'thumbnailUrl']:
+            self.assertTrue((ROOT / video[field].removeprefix(BASE)).is_file())
+        self.assertEqual(video['duration'], 'PT5.178S')
+        self.assertLessEqual(video['uploadDate'][:10], CONTENT_UPDATED)
+        image = (ROOT / parsed.meta['og:image'].removeprefix(BASE)).read_bytes()
+        self.assertEqual(struct.unpack('>II', image[16:24]), (int(parsed.meta['og:image:width']), int(parsed.meta['og:image:height'])))
+        self.assertIn('案例原帖', parsed.meta['description'])

@@ -1,13 +1,15 @@
 # AI 二次元造型库中文版
 
-> AI 二次元造型库中文版，收录 1,027 张彩图（含发色变体），另有 281 张姿势线稿，用于二次元角色发型、眼睛、服装、姿势与英文标签参考。完整公开索引、中文分类与三语搜索、五色发型预览、彩图与线稿切换、本地收藏、图片与英文标签复制。
+> AI 二次元造型库中文版收录 1,027 张二次元彩图（含发色变体），另有 281 张姿势线稿；完整公开版共 843 个基础条目，涵盖发型、眼睛、服装和姿势，支持中文检索及图片、英文标签复制。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/anime/
 - 收录：1,027 张彩图（含发色变体），另有 281 张姿势线稿
 - 分类与视角：843 个基础条目：发型与眼睛 122 项、服装 440 项（15 类）、姿势 281 项（8 类）；含发色变体共 1,027 张彩图，另有 281 张姿势线稿
 - 索引快照：2026-11-02
+- 介绍更新：2026-11-02
 - 功能：完整公开索引、中文分类与三语搜索、五色发型预览、彩图与线稿切换、本地收藏、图片与英文标签复制
 - 图片提供：仓库仅保存完整公开索引与中文译文；彩图 JPG、缩略图 WebP 和姿势线稿 PNG 按需由 CharaDB 原站提供，不包含特典内容及图片打包。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/anime/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://charadb-2fi.pages.dev/，原作者 たき AI（https://x.com/taki_auto）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/anime/data/anime-zh.json
@@ -45,6 +47,8 @@
 ## 来源与使用条件
 
 本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/taki_auto/status/2116818463125803239
 
 ## 相关入口
 

@@ -1,13 +1,15 @@
 # AI 深度图库中文版
 
-> AI 深度图库中文版，收录 288 组、1,439 张深度图，用于人体模型深度图的姿态、遮挡与空间前后关系参考。中文检索、多视角预览、分组或单图浏览、原尺寸深度 PNG 下载。含成人向分类，仅限成年人艺术参考。
+> AI 深度图库中文版收录 1,439 张人体模型深度图，用灰度观察姿态、遮挡及空间前后关系；可与姿势库按完整编号和视角配对。支持中文检索。含成人向分类，仅限成年人艺术参考。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/depth/
 - 收录：288 组、1,439 张深度图
 - 分类与视角：4 个体系、26 个分类；与姿势库对应的编号和实际视角
 - 索引快照：2026-10-30
+- 介绍更新：2026-11-02
 - 功能：中文检索、多视角预览、分组或单图浏览、原尺寸深度 PNG 下载
 - 图片提供：完整双语索引保存在仓库，深度图和 PNG 按需由独立的深度原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/depth/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://ai-pose-depth-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/depth/data/depth-zh.json

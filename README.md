@@ -1,8 +1,12 @@
 # AI 参考图库中文版｜服装库 · 脸型库 · 姿势库 · 深度库 · 二次元库
 
-面向 AI 绘画、角色设定与漫剧创作的五合一中文参考图库：**服装库选衣装，脸型库选人物与发型，姿势库看动作结构，深度库看空间前后关系，二次元库参考发型、眼睛、衣装与动作**。支持中文检索、多视角浏览、PNG 原图下载。原始与中文索引、零依赖静态页面、Python 维护脚本及 GitHub Pages 自动部署放在同一开源仓库维护。
+面向 **AI 绘画、角色设计、绘画人体练习与漫剧分镜** 的五合一中文参考图库。服装库选衣装（写实／动画两版），脸型库选五官与发型，姿势库看动作线稿，深度库看空间遮挡，二次元库查发型、眼睛、衣装、姿势与英文标签。
+
+支持中文检索、多视角浏览、图片复制与单张下载；保留原始编号、双语索引及素材出处。页面使用原生 HTML、CSS、JavaScript，配套 Python 数据维护脚本与 GitHub Pages 自动部署，可用于静态站点学习与二次开发。
 
 **在线浏览地址：服装库 [写实版](https://deeyu.github.io/ai-costume-gallery-zh/) / [动画版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/) · [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) · [二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/)** · [版权与致谢](#版权与致谢)
+
+[五库完整文字目录](https://deeyu.github.io/ai-costume-gallery-zh/directory/) · [中文操作指南](guide.md) · [联合使用视频与图片](https://deeyu.github.io/ai-costume-gallery-zh/examples/)
 
 五个页面底部均显示内容提示。导航始终提供五个图库入口，并在滚动时固定显示；当前图库有选中标记，每个页面底部均列出五库的来源地址与作者。“中文版”旁的“日文源版”在新标签页打开对应作者原站。
 
@@ -21,6 +25,14 @@
 脸型库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸型库图片。脸型库浏览、复制与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
 姿势库完整收录参考仓库的 **1,439 条图片记录**，用于**人体动作教学、绘画练习、身体结构与构图参考**。素材为无面部、无生殖器细节的人体模型线稿；保留来源体系、分类、姿势名称及编号，不依据名称删减记录。原站禁止图片批量下载及再分发，因此本仓库保存完整索引，图片逐张由原站提供，浏览、复制与下载依赖原站。
+
+### 服装动画版和二次元库有什么区别？
+
+服装动画版是无人物的动漫衣装搭配，收录 1,320 套，作为服装库的一种画风。二次元库来自 CharaDB，公开版有 843 个基础条目，涵盖发型、眼睛、服装和姿势；两者来源、编号和使用条件分别保留。
+
+### 怎样把脸型、服装和姿势一起用于 AI 漫剧？
+
+在支持多图参考的创作工具中，分别指定脸图负责五官与发型、服装图负责穿搭、姿势图负责身体动作。需要空间参照时，再匹配同编号、同视角的深度图。生成后逐镜核对人物外观、衣装和遮挡；本站提供参考图库，生成能力及效果取决于所用工具。详见[联合使用指南](guide.md)。
 
 ## 服装库演示视频
 
@@ -421,10 +433,14 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 ## 搜索引擎与 AI 检索（SEO / GEO）
 
-五库及服装动画版各有独立标题、摘要、canonical、Open Graph / Twitter 分享图和 JSON-LD，包含图库、索引数据、维护者与来源信息。首批 12 张参考卡片、图库介绍、真实计数、快照日期和常见问题直接写入 HTML，不依赖 JavaScript 才可读取。交互图库继续使用原有筛选和下载功能。
+五库及服装动画版按衣装搭配、人物五官、动作线稿、空间遮挡与二次元角色参考分别编写标题、摘要、常见问题及来源说明。页面提供自引用 canonical、Open Graph / Twitter 分享信息与 JSON-LD，区分原始作者、中文维护者、数据快照及介绍更新时间；独立代码的 MIT 许可与第三方图片和数据分开描述。
 
-- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml)：五个图库与联合案例的正式页面地址。
+交互页面保留滚动加载和首批 12 张静态预览；另提供 **8,131 条索引记录的完整 HTML 文字目录**，与图库使用同一份数据，包含动画版和二次元发色变体。目录直接列出全部编号、中文名称、分类和原始词条，不需要启用 JavaScript 或滚动触发加载，也不会批量请求图片。该数值是六个版本索引记录之和，不代表独立人物或造型总数。
+
+- [完整文字目录](https://deeyu.github.io/ai-costume-gallery-zh/directory/)：六个版本的全部索引记录，按分类核对编号与原始词条。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml)：五库、服装动画版、联合案例和完整文字目录，共 14 个正式 HTML 页面。
 - [llms.txt](https://deeyu.github.io/ai-costume-gallery-zh/llms.txt)：五库摘要、纯文本介绍、原始来源和版权入口。
+- [llms-full.txt](https://deeyu.github.io/ai-costume-gallery-zh/llms-full.txt)：将六个版本的收录、用途、问答、快照和来源合并阅读。
 - 每个图库的 `catalog.md` 提供可引用的用途、数量、快照和常见问题；不将代码 MIT 许可当作图片授权。
 - 更新索引或介绍后运行 `python3 scripts/seo.py`，使用 `python3 scripts/seo.py --check` 检查生成文件；构建和 CI 已接入。
 

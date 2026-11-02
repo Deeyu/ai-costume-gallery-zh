@@ -1,0 +1,33 @@
+.directory-content { max-width: 1280px; }
+.directory-content .intro { padding-bottom: 20px; }
+.directory-content h1 { font-size: 2rem; }
+.directory-content .intro p { max-width: 72ch; margin-top: 12px; }
+.directory-content > p { color: var(--muted); font-size: 14px; line-height: 1.9; }
+.directory-links, .directory-categories { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.directory-links { align-items: center; margin: 0 0 20px; }
+.directory-links a { font-size: 14px; }
+.directory-links .primary { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border-radius: var(--control-radius); }
+.directory-categories { justify-content: flex-start; margin: 24px 0 32px; padding: 16px 0; border-block: 1px solid var(--line); }
+.directory-categories a { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; text-decoration: none; font-size: 13px; }
+.directory-categories a:hover { color: var(--blue); text-decoration: underline; }
+.directory-categories span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.directory-section { margin-top: 36px; scroll-margin-top: 160px; }
+.directory-section h2 { margin-bottom: 16px; font-size: 20px; }
+.directory-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 14px; line-height: 1.8; }
+.directory-table caption { padding-bottom: 12px; text-align: left; color: var(--muted); font-size: 13px; }
+.directory-table th, .directory-table td { padding: 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.directory-table thead { color: var(--muted); background: var(--soft); }
+.directory-table th:first-child { width: 25%; }
+.directory-table tbody th { font-weight: 500; }
+.directory-table tbody tr { scroll-margin-top: 160px; }
+.directory-table tbody tr:target { background: var(--soft); }
+.directory-table p { margin: 0; }
+.directory-table .directory-terms { margin-top: 6px; font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) {
+  .directory-content h1 { font-size: 1.625rem; }
+  .directory-categories { gap: 4px 12px; margin-top: 20px; }
+  .directory-table th, .directory-table td { padding: 12px 8px; font-size: 13px; }
+  .directory-table th:first-child { width: 32%; }
+  .directory-table .directory-terms { font-size: 12px; }
+  .directory-section h2 { font-size: 18px; }
+}

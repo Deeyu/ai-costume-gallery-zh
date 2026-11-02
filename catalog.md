@@ -1,13 +1,15 @@
 # AI 服装参考库中文版
 
-> AI 服装参考库中文版，收录 1,407 套服装，用于无人物衣装搭配、角色服装设计与漫剧造型参考。中文分类、中英文关键词与 ID 搜索、服装预览、PNG 原图下载、复制图片。
+> AI 服装参考库中文版收录 1,407 套无人物衣装搭配，支持四季与场合分类、中文颜色材质检索、图片复制与 PNG 下载；另有动画版，可配合脸型库制作角色定妆参考。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/
 - 收录：1,407 套服装
 - 分类与视角：春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类
 - 索引快照：2026-10-29
+- 介绍更新：2026-11-02
 - 功能：中文分类、中英文关键词与 ID 搜索、服装预览、PNG 原图下载、复制图片
 - 图片提供：服装图片保存在仓库；在线预览由 GitHub Pages 提供，PNG 原图由 GitHub 仓库提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/costume/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://ai-costume-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/data/costume-zh.json
@@ -45,6 +47,8 @@
 ## 来源与使用条件
 
 本项目为独立中文整理。原作者图片与索引、Anhao 中文词条及代码许可分别适用各自说明，不能将代码 MIT 许可当作素材商用授权。详见：https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md
+
+原作者发布推文：https://x.com/giaaibusi/status/2115638135208260002
 
 ## 相关入口
 

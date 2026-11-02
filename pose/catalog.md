@@ -1,13 +1,15 @@
 # AI 姿势库中文版
 
-> AI 姿势库中文版，收录 288 组、1,439 张人体模型线稿，用于人体模型线稿的动作、身体结构与双人构图参考。中文动作检索、体系与视角筛选、分组或单图浏览、键盘切换、PNG 下载。含成人向分类，仅限成年人艺术参考。
+> AI 姿势库中文版收录 1,439 张人体模型动作线稿，覆盖 288 组姿势、4 个体系与 5 种视角。支持中文动作检索、分组浏览和单张 PNG 下载。含成人向分类，仅限成年人艺术参考。
 
 - 在线入口：https://deeyu.github.io/ai-costume-gallery-zh/pose/
 - 收录：288 组、1,439 张人体模型线稿
 - 分类与视角：4 个体系、26 个分类；正面、斜侧、侧面、俯视、仰视五种视角
 - 索引快照：2026-10-30
+- 介绍更新：2026-11-02
 - 功能：中文动作检索、体系与视角筛选、分组或单图浏览、键盘切换、PNG 下载
 - 图片提供：完整双语索引保存在仓库，姿势线稿和 PNG 按需由姿势原站提供。
+- 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/pose/
 - 中文整理与维护：Deeyu（https://github.com/Deeyu）
 - 原始素材来源：https://ai-pose-gallery.pages.dev/，原作者 ギア（https://x.com/giaaibusi）
 - 中文 JSON 索引：https://deeyu.github.io/ai-costume-gallery-zh/pose/data/pose-zh.json

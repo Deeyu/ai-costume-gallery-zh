@@ -11,13 +11,33 @@
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/catalog.md): 288 组、1,439 张深度图；人体模型深度图的姿态、遮挡与空间前后关系参考；快照 2026-10-30。
 - [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/catalog.md): 1,027 张彩图（含发色变体），另有 281 张姿势线稿；二次元角色发型、眼睛、服装、姿势与英文标签参考；快照 2026-11-02。
 
+## 完整文字目录
+
+- [五库目录入口](https://deeyu.github.io/ai-costume-gallery-zh/directory/): 与图片浏览使用同一份完整索引，无需启用 JavaScript。
+- [服装库全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/costume/): 全部编号、中文名称、原始词条与分类。
+- [服装库·动画版全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/costume-anime/): 全部编号、中文名称、原始词条与分类。
+- [脸型库全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/portrait/): 全部编号、中文名称、原始词条与分类。
+- [姿势库全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/pose/): 全部编号、中文名称、原始词条与分类。
+- [深度库全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/depth/): 全部编号、中文名称、原始词条与分类。
+- [二次元库全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/anime/): 全部编号、中文名称、原始词条与分类。
+
+## 合并参考
+
+- [五库完整文字介绍](https://deeyu.github.io/ai-costume-gallery-zh/llms-full.txt): 六个版本的收录、用途、问答、快照、作者及许可边界合并阅读。
+
 ## 项目与来源
 
 - [项目说明](https://github.com/Deeyu/ai-costume-gallery-zh#readme): 五库用途、功能、本地预览与部署说明。
 - [中文联合使用指南](https://deeyu.github.io/ai-costume-gallery-zh/guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。
 - [联合使用视频与图片](https://deeyu.github.io/ai-costume-gallery-zh/examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。
 - [版权与致谢](https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。
-- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 五库入口、服装动画版及联合使用案例。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 五库入口、服装动画版、联合案例及完整文字目录。
+
+## 维护与引用
+
+内容整理更新：2026-11-02；各库原始索引的快照日期分别标注，不代表原站实时数量。
+
+维护者为 Deeyu（https://github.com/Deeyu）。本项目是独立中文整理与静态站点学习实践，不代表原作者的官方版本或背书。引用请注明具体图库、完整编号、视角、索引快照及原始作者。
 
 ## 内容和计数说明
 
