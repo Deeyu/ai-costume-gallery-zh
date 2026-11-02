@@ -6,20 +6,6 @@
 
 五个页面底部均显示内容提示。导航始终提供五个图库入口，并在滚动时固定显示；当前图库有选中标记，每个页面底部均列出五库的来源地址与作者。“中文版”旁的“日文源版”在新标签页打开对应作者原站。
 
-本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
-
-数据来源：[衣装集](https://ai-costume-gallery.pages.dev/) · 原作者X：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
-
-服装库动画版来源：[衣装集 アニメ版 COSTUME-ANIME-DB](https://ai-costume-anime-gallery.pages.dev/) · 原作者：[ギア（@giaaibusi）](https://x.com/giaaibusi) · [动画版发布推文](https://x.com/giaaibusi/status/2117089256015622274)。
-
-脸型库来源：[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) · 原作者：[あぎ（@agi_aibusi）](https://x.com/agi_aibusi) · [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。
-
-姿势库来源：[AI 姿势原始图库](https://ai-pose-gallery.pages.dev/) · 原作者：[ギア（@giaaibusi）](https://x.com/giaaibusi) · 中文词条：[Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh)。
-
-深度库来源：[POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/) · 原作者：[ギア（@giaaibusi）](https://x.com/giaaibusi) · 中文词条与姿势库同源。
-
-二次元库来源：[キャラ組み立てDB / CharaDB](https://charadb-2fi.pages.dev/) · 原作者：[たき AI（@taki_auto）](https://x.com/taki_auto) · [原作者推文](https://x.com/taki_auto/status/2116818463125803239)。
-
 ## 五个图库如何选择
 
 | 图库与介绍 | 用途 | 实际收录 | 在线浏览 |
@@ -43,10 +29,6 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 ## 界面预览
 
 ![服装库中文版：中文分类、关键词搜索与服装参考卡片](image/README/1793322085655.png)
-
-二次元库界面总览（你提供的截图；卡片中的旧版组合按钮已从现网移除）：
-
-![二次元库界面预览：节庆与季节服装、中文名称与英文标签](docs/anime-overview.png)
 
 <a id="costume-library"></a>
 
@@ -251,7 +233,7 @@ python3 scripts/depth.py verify
 
 服装、发型和姿势三个浏览界面如下。每项可打开图片弹窗，复制当前图片或英文标签；本站已移除提示词组合入口和弹窗。
 
-![二次元库服装界面：春夏服装参考与标签复制](docs/anime-costume-desktop.jpg)
+![二次元库服装界面：节庆与季节服装、中文名称与英文标签](docs/anime-overview.png)
 
 ![二次元库发型界面：中文名称、发型参考与英文标签](docs/anime-hair-desktop.jpg)
 
@@ -458,11 +440,24 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 
 ## 版权与致谢
 
+### 数据来源与说明
+
+本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。中文版由 **[Deeyu](https://github.com/Deeyu)** 维护。
+
+| 图库 | 原始站点 | 原作者 | 发布与中文整理参考 |
+| --- | --- | --- | --- |
+| 服装库·写实版 | [衣装集 COSTUME-DB-01](https://ai-costume-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | [发布推文](https://x.com/giaaibusi/status/2115638135208260002) |
+| 服装库·动画版 | [衣装集 アニメ版 COSTUME-ANIME-DB](https://ai-costume-anime-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | [发布推文](https://x.com/giaaibusi/status/2117089256015622274) |
+| 脸型库 | [AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) | [あぎ（@agi_aibusi）](https://x.com/agi_aibusi) | [发布推文](https://x.com/agi_aibusi/status/2113187345814204557) |
+| 姿势库 | [AI 姿势原始图库](https://ai-pose-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | 中文词条：[Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh) |
+| 深度库 | [POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | 中文词条与姿势库同源，保留 [来源许可](depth/UPSTREAM_LICENSE) |
+| 二次元库 | [キャラ組み立てDB / CharaDB](https://charadb-2fi.pages.dev/) | [たき AI（@taki_auto）](https://x.com/taki_auto) | [发布推文](https://x.com/taki_auto/status/2116818463125803239) |
+
 ### 图片与原始数据
 
-- 图片及原始元数据由 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 在 **[衣装集 COSTUME-DB-01](https://ai-costume-gallery.pages.dev/)** 发布，相关权利归原权利人所有。本项目保留来源、原始编号及英文关键词，不对第三方素材主张权利。
-- 服装库动画版同样由ギア发布：[动画原站](https://ai-costume-anime-gallery.pages.dev/) · [发布推文](https://x.com/giaaibusi/status/2117089256015622274)。仅保存完整 1,320 套元数据与中文译文，图片由原站按需提供。原站允许作品创作中的商用、编辑及参考使用，禁止图片批量获取、再分发、转载和转售，不得用于表现真实人物或未成年人；完整整理见 [第三方说明](THIRD_PARTY_NOTICES.md#服装库动画版来源与使用条件)。
-- 本项目用于个人学习、中文检索整理与静态站点实践。公开收录与提供下载不代表素材进入公有领域，也不构成原作者对本项目的背书。
+- 图片及原始元数据的相关权利归原权利人所有。本项目保留来源、原始编号及英文关键词，不对第三方素材主张权利。
+- 服装库动画版仅保存完整 1,320 套元数据与中文译文，图片由原站按需提供。原站允许作品创作中的商用、编辑及参考使用，禁止图片批量获取、再分发、转载和转售，不得用于表现真实人物或未成年人；完整整理见 [第三方说明](THIRD_PARTY_NOTICES.md#服装库动画版来源与使用条件)。
+- 公开收录与提供下载不代表素材进入公有领域。
 - **图片、原始数据及基于原始数据整理的中文数据不适用本项目代码的 MIT 许可。** 使用、再分发或商用前，请自行确认原作者的许可及适用条件；本项目不提供额外授权。
 - 若权利人认为收录内容侵犯其权益，请通过 [GitHub Issue](https://github.com/Deeyu/ai-costume-gallery-zh/issues) 提供相关素材 ID 和说明，维护者将核实并及时删除或调整相关内容。
 
@@ -472,37 +467,32 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 
 ### 脸型库来源与说明
 
-脸型库原始图片与元数据来自 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布的 **[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/)**，见 [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。原站将图片标注为 CC0 1.0，并说明人物为 AI 生成的虚构人物；允许商用、编辑与参考使用，同时要求不要冒充真实人物，并请求不要重新分发图片。
+原站将图片标注为 CC0 1.0，并说明人物为 AI 生成的虚构人物；允许商用、编辑与参考使用，同时要求不要冒充真实人物，并请求不要重新分发图片。
 
 本仓库尊重该请求，仅提供中文索引、分类翻译及原站图片链接，不将脸型库图片上传到仓库。请阅读原站使用规则与 [CC0 说明](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hans)；中文整理不代表原作者的官方版本、背书或额外授权。脸型库图片许可与服装库素材说明分别适用。
 
 ### 姿势库来源与说明
 
-姿势图片与原始元数据来自 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 的 **[AI 姿势图库](https://ai-pose-gallery.pages.dev/)**，中文词条来自 **[Anhao/ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)**。感谢两位作者制作原始素材及中文整理。本仓库为人体动作教学、绘画与构图参考提供完整 1,439 条索引，保留来源提交、双语数据和参考项目完整 [许可文件](pose/UPSTREAM_LICENSE)，不镜像姿势图片。原站禁止图片批量下载、再分发、转载和转售，本项目仅提供逐张浏览和原图链接。
+本仓库为人体动作教学、绘画与构图参考提供完整 1,439 条索引，保留来源提交、双语数据和参考项目完整 [许可文件](pose/UPSTREAM_LICENSE)，不镜像姿势图片。原站禁止图片批量下载、再分发、转载和转售，本项目仅提供逐张浏览和原图链接。
 
 原站说明允许商用、编辑与绘画参考，同时禁止图像数据再分发、转载与转售；参考项目许可对原始素材另有“不得用于商业用途”的表述。两处说明并不完全一致，本项目不修改上游许可或提供额外授权，商用范围应向原权利人确认。姿势图片及来源元数据不适用本项目独立代码的 MIT 许可，完整范围见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
 ### 深度库来源与说明
 
-深度图与日文元数据来自 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 的 **[POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/)**。中文词条与姿势库同源，复用 **[Anhao](https://github.com/anhao/ai-pose-gallery-zh)** 的固定提交快照，并逐条核对编号、日文名称、分类及视角；来源许可保存在 [depth/UPSTREAM_LICENSE](depth/UPSTREAM_LICENSE)。
+中文词条与姿势库同源，复用 Anhao 的固定提交快照，并逐条核对编号、日文名称、分类及视角；来源许可保存在 [depth/UPSTREAM_LICENSE](depth/UPSTREAM_LICENSE)。
 
 本仓库保存完整 1,439 条深度索引，图片由深度原站按需提供，不使用姿势线稿替代深度图。原站禁止图片批量下载、再分发、转载与转售；第三方素材和词条不适用本项目独立代码的 MIT 许可，详见 [版权范围](THIRD_PARTY_NOTICES.md#深度库素材与中文词条来源)。
 
 ### 二次元库来源与说明
 
-二次元库来源：[キャラ組み立てDB / CharaDB](https://charadb-2fi.pages.dev/) · 原作者：[たき AI（@taki_auto）](https://x.com/taki_auto) · [原作者推文](https://x.com/taki_auto/status/2116818463125803239)。
-
 仅接入完整公开索引，保留所有原始 ID、日文名称、英文标签及来源，不镜像图片。标签、提示词与应用的商用条件，和图片的参考使用限制分别适用；原站没有向本项目授予第三方图片的额外许可。详见[二次元库来源与使用条件](THIRD_PARTY_NOTICES.md#二次元库来源与使用条件)。
 
 ### 致谢
 
-- 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开写实与动画服装参考图库。发布推文：[写实版](https://x.com/giaaibusi/status/2115638135208260002) · [动画版](https://x.com/giaaibusi/status/2117089256015622274)。
-- 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸型库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
-- 感谢 **[ギア](https://x.com/giaaibusi)** 制作[深度图库](https://ai-pose-depth-gallery.pages.dev/)，为姿态、遮挡和空间关系参考提供深度图与原始元数据。
-- 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本次姿势库完整接入其 1,439 条索引，用于人体动作教学与绘画参考；本项目界面及脚本独立编写，未复制其代码。
+- 感谢上表中的 **ギア、あぎ和たき AI** 制作并公开各图库的图片、元数据与标签。
+- 感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本项目完整接入其 1,439 条姿势索引，用于人体动作教学与绘画参考；界面及脚本独立编写，未复制其代码。
 - 感谢 **[半格（@ai_bange）](https://x.com/ai_bange)** 分享[姿势库与服装库联合使用思路](https://x.com/ai_bange/status/2115651909948477678)，为本项目的联合使用指南提供参考。
 - 感谢 **[HAL-9909](https://github.com/HAL-9909)** 在 **[Anhao 项目 PR #3](https://github.com/anhao/ai-pose-gallery-zh/pull/3)** 中提出人物／动作／视角直接筛选、可展开动作及缩略图视角切换等界面方案。本项目参考其交互思路适配姿势库与深度库，沿用现有图库架构、数据、滚动加载及图片来源。
-- 感谢 **[たき AI（@taki_auto）](https://x.com/taki_auto)** 制作并公开 [CharaDB](https://charadb-2fi.pages.dev/) 的二次元发型、眼睛、衣装、姿势、线稿与标签；[原作者推文](https://x.com/taki_auto/status/2116818463125803239)介绍完整公开版及组合用法。
 - 感谢提交翻译校对、问题反馈与改进建议的贡献者。
 
 完整第三方说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

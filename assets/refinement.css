@@ -11,6 +11,21 @@ input::placeholder { color: var(--muted); opacity: 1; }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
 .topbar { padding: 16px 32px; background: var(--white); }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topbar {
+    background: rgb(255 255 255 / 78%);
+    border-bottom-color: rgb(54 78 121 / 14%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    backdrop-filter: blur(18px) saturate(120%);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topbar {
+    background: var(--white);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
 .brand { gap: 8px; font-size: 18px; }
 .topbar nav.gallery-nav a { min-height: 40px; padding: 8px 12px; border-radius: var(--control-radius); }
 .nav-tools { gap: 14px; }
