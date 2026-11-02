@@ -5,7 +5,7 @@ const {runInNewContext} = require('node:vm');
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-async function loadBrowser() {
+async function loadBrowser({copyFails = false} = {}) {
   const nodes = new Map();
   const document = {activeElement: {tagName: 'BODY'}, addEventListener() {}, querySelector: () => null};
   function createElement(tag) {
@@ -26,14 +26,19 @@ async function loadBrowser() {
     return nodes.get(id);
   };
   let copied, imageSource, loader;
-  const context = {document, console, copyGalleryImage: async source => { imageSource = source; },
+  const recorded = [], families = [];
+  const context = {document, console, copyGalleryImage: async source => {
+    if (copyFails) throw new Error('clipboard unavailable');
+    imageSource = source;
+  },
+    galleryStats: {sort: items => items, decorate: (_card, ids) => families.push(ids), record: (action, id) => recorded.push({action, id})},
     localStorage: {getItem() { throw new Error('storage blocked'); }, setItem() { throw new Error('storage blocked'); }},
     navigator: {clipboard: {writeText: async (text) => { copied = text; }}},
     GalleryLoader: class { constructor(options) { loader = options; } reset() {} update() {} },
     fetch: async url => ({ok: true, json: async () => JSON.parse(readFileSync(join(__dirname, '../anime', url), 'utf8'))})};
   runInNewContext(readFileSync(join(__dirname, '../anime/catalog.js'), 'utf8'), context);
   await runInNewContext(readFileSync(join(__dirname, '../anime/app.js'), 'utf8'), context);
-  return {node: document.getElementById, copied: () => copied, imageSource: () => imageSource, loader: () => loader};
+  return {node: document.getElementById, copied: () => copied, imageSource: () => imageSource, loader: () => loader, recorded, families};
 }
 
 test('三类切换完整计数，滚动追加保留旧卡片，收藏存储被禁用时仍能使用', async () => {
@@ -67,6 +72,8 @@ test('发色预览、标签和图片复制使用同一颜色，姿势切换保�
   await ui.node('copy-image').events.click();
   assert.ok(ui.imageSource().endsWith('/img/H001-silver.jpg'));
   assert.equal(ui.node('copy-status').textContent, '图片已复制');
+  assert.deepEqual(ui.recorded, [{action: 'copy', id: 'H001-silver'}]);
+  assert.ok(ui.families.some(ids => ids.length === 5 && ids.includes('H001-silver')));
   ui.node('close').events.click();
   find('sections', '姿势281').events.click();
   ui.node('grid').children[0].children[0].events.click();
@@ -74,7 +81,18 @@ test('发色预览、标签和图片复制使用同一颜色，姿势切换保�
   assert.ok(ui.node('large').src.endsWith('/line/P001.png'));
   await ui.node('copy-image').events.click();
   assert.ok(ui.imageSource().endsWith('/line/P001.png'));
+  assert.deepEqual(ui.recorded[1], {action: 'copy', id: 'P001'});
   ui.node('next').events.click();
   assert.ok(ui.node('large').src.endsWith('/line/P001-s.png'));
   assert.equal(ui.node('open-original').href, ui.node('large').src);
+});
+
+test('图片复制失败和仅复制标签不会累计图片热度', async () => {
+  const ui = await loadBrowser({copyFails: true});
+  ui.node('grid').children[0].children[0].events.click();
+  await ui.node('copy').events.click();
+  assert.equal(ui.recorded.length, 0);
+  await ui.node('copy-image').events.click();
+  assert.equal(ui.recorded.length, 0);
+  assert.match(ui.node('copy-status').textContent, /复制失败/);
 });

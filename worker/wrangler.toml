@@ -1,0 +1,15 @@
+name = "ai-reference-gallery-stats"
+main = "src/index.js"
+compatibility_date = "2026-11-02"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://deeyu.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-reference-gallery-stats"
+database_id = "a0de3155-f9be-4782-a899-9d8644d41e31"
+
+[triggers]
+crons = ["0 19 * * *"]

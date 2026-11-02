@@ -30,11 +30,22 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(json.loads((dist / 'data/costume-zh.json').read_text()), [self.row])
         self.assertTrue((dist / 'THIRD_PARTY_NOTICES.md').is_file())
 
+    def test_animation_edition_keeps_source_urls_and_shared_app(self):
+        folder = self.root / 'costume-anime'
+        (folder / 'data').mkdir(parents=True)
+        (folder / 'index.html').write_text('animation edition')
+        rows = [{'id': 'SPR-0001', '原图': 'https://ai-costume-anime-gallery.pages.dev/png/SPR-0001.png'}]
+        (folder / 'data/costume-zh.json').write_text(json.dumps(rows))
+        package_site(self.root, github_pages=True)
+        self.assertTrue((self.root / 'dist/costume-anime/index.html').is_file())
+        self.assertEqual(json.loads((self.root / 'dist/costume-anime/data/costume-zh.json').read_text()), rows)
+        self.assertFalse((self.root / 'dist/costume-anime/png').exists())
+
     def test_pages_build_includes_crawler_and_machine_readable_resources(self):
-        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md']:
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md', 'statistics.md']:
             (self.root / name).write_text(name, encoding='utf-8')
         package_site(self.root, github_pages=True)
-        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md']:
+        for name in ['sitemap.xml', 'robots.txt', 'llms.txt', 'catalog.md', 'guide.md', 'statistics.md']:
             self.assertEqual((self.root / 'dist' / name).read_text(), name)
 
     def test_pages_build_keeps_example_video_images_and_player_together(self):

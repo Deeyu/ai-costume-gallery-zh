@@ -52,6 +52,9 @@ function applyFilters() {
   if (!loader) return;
   loader.reset();
   filtered = filterAnime(records, {mode, category, query: $('q').value, favoritesOnly: $('favorites').getAttribute('aria-pressed') === 'true', favorites});
+  const families = filtered.map(row => animeSlot(row) === 'style'
+    ? [row, ...animeFamily(records, row).filter(item => item.id !== row.id)] : [row]);
+  filtered = (globalThis.galleryStats?.sort(families) || families).map(family => family[0]);
   shown = 0; $('grid').replaceChildren(); renderFilters();
   $('section-title').textContent = [ANIME_MODES[mode], category].filter(Boolean).join(' · ');
   $('empty').hidden = filtered.length > 0;
@@ -80,6 +83,7 @@ function appendPage() {
       else { favorite.textContent = favorites.has(row.id) ? '★' : '☆'; favorite.setAttribute('aria-pressed', String(favorites.has(row.id))); }
     });
     actions.append(copy, favorite); info.append(heading, element('p', animeTags(row)), actions); card.append(preview, info);
+    globalThis.galleryStats?.decorate(card, animeSlot(row) === 'style' ? animeFamily(records, row).map(item => item.id) : [row.id]);
     return card;
   });
   $('grid').append(...cards); shown += cards.length;
@@ -104,6 +108,9 @@ function showDetail() {
   const src = lineart && row.线稿 ? row.线稿 : row.原图;
   $('large').src = src; $('large').alt = `${row.名称} · ${lineart && row.线稿 ? '线稿' : '彩图'}`;
   $('open-original').href = src;
+  $('download').href = src;
+  $('download').download = `${row.id}.${lineart && row.线稿 ? 'png' : 'jpg'}`;
+  if ($('download').getAttribute('aria-disabled') !== 'true') $('download').textContent = lineart && row.线稿 ? '下载线稿 PNG' : '下载彩图 JPG';
   $('open-original').textContent = lineart && row.线稿 ? '打开原站线稿 PNG' : '打开原站彩图 JPG';
   $('copy').textContent = '复制标签';
   $('variants').replaceChildren();
@@ -120,22 +127,46 @@ function showDetail() {
   $('prev').disabled = current === 0; $('next').disabled = current === viewList.length - 1;
 }
 
+document.addEventListener('gallery-sort-change', applyFilters);
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { category = ''; $('q').value = ''; $('favorites').setAttribute('aria-pressed', 'false'); applyFilters(); });
 $('favorites').addEventListener('click', () => { $('favorites').setAttribute('aria-pressed', String($('favorites').getAttribute('aria-pressed') !== 'true')); applyFilters(); });
 $('close').addEventListener('click', () => $('viewer').close());
 $('viewer').addEventListener('close', () => { imageVersion++; });
 $('copy-image').addEventListener('click', async () => {
-  const version = imageVersion, source = lineart && detailRow().线稿 ? detailRow().线稿 : detailRow().原图;
+  const version = imageVersion, row = detailRow(), source = lineart && row.线稿 ? row.线稿 : row.原图;
   $('copy-image').disabled = true; $('copy-status').textContent = '正在复制图片…';
   try {
     await copyGalleryImage(source);
+    globalThis.galleryStats?.record('copy', row.id);
     if (version === imageVersion) $('copy-status').textContent = '图片已复制';
   } catch {
     if (version === imageVersion) $('copy-status').textContent = '复制失败，请打开原图后保存。';
   } finally { $('copy-image').disabled = false; }
 });
 
+$('download').addEventListener('click', async event => {
+  event.preventDefault();
+  const link = event.currentTarget;
+  if (link.getAttribute('aria-disabled') === 'true') return;
+  const href = link.href, filename = link.download, id = detailRow().id;
+  link.setAttribute('aria-disabled', 'true'); link.textContent = '正在下载…';
+  try {
+    const response = await fetch(href, {credentials: 'omit'});
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const blob = await response.blob();
+    if (!blob.type.startsWith('image/')) throw new Error('原站未返回图片');
+    const url = URL.createObjectURL(blob), anchor = element('a');
+    anchor.href = url; anchor.download = filename; anchor.hidden = true;
+    document.body.append(anchor); anchor.click(); anchor.remove();
+    globalThis.galleryStats?.record('download', id);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+  } catch { $('image-status').textContent = '下载失败，请点击“打开原图”后保存。'; }
+  finally {
+    link.removeAttribute('aria-disabled');
+    link.textContent = '下载当前图片';
+  }
+});
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
 for (const [id, delta] of [['prev', -1], ['next', 1]]) $(id).addEventListener('click', () => {

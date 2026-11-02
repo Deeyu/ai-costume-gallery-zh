@@ -16,7 +16,7 @@ def package_site(root: Path, github_pages=False, repository='Deeyu/ai-costume-ga
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir()
-    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'portrait', 'pose', 'depth', 'anime', 'examples', 'catalog.md', 'guide.md', 'sitemap.xml', 'robots.txt', 'llms.txt', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
+    names = ['index.html', '_headers', 'assets', 'data', 'thumbs', 'img', 'costume-anime', 'portrait', 'pose', 'depth', 'anime', 'examples', 'catalog.md', 'guide.md', 'statistics.md', 'sitemap.xml', 'robots.txt', 'llms.txt', 'LICENSE', 'THIRD_PARTY_NOTICES.md']
     if not github_pages:
         names.append('png')
     for name in names:
@@ -45,6 +45,9 @@ def main():
     parser.add_argument('--github-pages', action='store_true', help='不打包 PNG，改为从 GitHub 仓库下载原图')
     args = parser.parse_args()
     verify(assets=True)
+    if (ROOT / 'costume-anime/data/costume.json').exists():
+        from costume_anime import verify as verify_costume_anime
+        verify_costume_anime()
     if (ROOT / 'portrait/data/portrait.json').exists():
         from portrait import verify as verify_portrait
         verify_portrait()

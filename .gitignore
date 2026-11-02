@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 *.part
 .DS_Store
+
+.wrangler/
+.dev.vars
+.env

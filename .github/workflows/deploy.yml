@@ -28,6 +28,10 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -v
           python3 scripts/seo.py --check
+          python3 scripts/metrics_catalog.py --check
+          python3 scripts/costume_anime.py verify
+          node --check assets/site.js
+          node --check worker/src/index.js
           node --check assets/image-clipboard.js
           node --check assets/gallery-loader.js
           node --check assets/app.js

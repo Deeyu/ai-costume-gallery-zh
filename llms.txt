@@ -2,9 +2,10 @@
 
 > 服装、人像、姿势线稿、深度图与二次元角色五库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。
 
-## 五个图库
+## 五个图库（服装库含写实版与动画版）
 
 - [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/catalog.md): 1,407 套服装；无人物衣装搭配、角色服装设计与漫剧造型参考；快照 2026-10-29。
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/catalog.md): 1,320 套服装；动漫衣装搭配、动画角色服装设计与漫画造型参考；快照 2026-11-02。
 - [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/catalog.md): 1,499 张参考图；AI 虚构人物的五官、发型与角色造型参考；快照 2026-10-30。
 - [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/catalog.md): 288 组、1,439 张人体模型线稿；人体模型线稿的动作、身体结构与双人构图参考；快照 2026-10-30。
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/catalog.md): 288 组、1,439 张深度图；人体模型深度图的姿态、遮挡与空间前后关系参考；快照 2026-10-30。
@@ -16,7 +17,7 @@
 - [中文联合使用指南](https://deeyu.github.io/ai-costume-gallery-zh/guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。
 - [联合使用视频与图片](https://deeyu.github.io/ai-costume-gallery-zh/examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。
 - [版权与致谢](https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。
-- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 五个正式图库入口及联合使用案例。
+- [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml): 五库入口、服装动画版及联合使用案例。
 
 ## 内容和计数说明
 
@@ -26,4 +27,6 @@
 
 二次元库完整公开索引为 843 个基础条目，含发色变体共 1,027 张彩图，另有 281 张姿势线稿；不接入作者未公开的特典。
 
-脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。
+服装库动画版完整收录 1,320 套无人物动漫衣装，作为服装库内部版本，不新增顶部图库标签；与写实版 1,407 套分别统计。
+
+动画服装、脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。

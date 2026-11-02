@@ -50,6 +50,7 @@ function applyFilters() {
   if (!loader) return;
   loader.reset();
   filtered = filterPortraits(records, {mode, hair, query: $('q').value});
+  filtered = globalThis.galleryStats?.sort(filtered) || filtered;
   shown = 0;
   $('grid').replaceChildren();
   renderFilters();
@@ -69,6 +70,7 @@ function appendPage() {
     info.append(heading, element('p', row.发型 || '原站未标注细分发型'));
     button.append(imageFor(row, undefined, start + index), info);
     button.addEventListener('click', () => openViewer(filtered, start + index));
+    globalThis.galleryStats?.decorate(button, [row.id]);
     return button;
   });
   $('grid').append(...cards);
@@ -138,15 +140,17 @@ function renderFeatured() {
   }));
 }
 
+document.addEventListener('gallery-sort-change', applyFilters);
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { hair = ''; $('q').value = ''; applyFilters(); });
 $('close').addEventListener('click', () => $('viewer').close());
 $('viewer').addEventListener('close', () => { imageVersion++; });
 $('copy-image').addEventListener('click', async () => {
-  const version = imageVersion, source = viewList[current].原图;
+  const version = imageVersion, source = viewList[current].原图, id = viewList[current].id;
   $('copy-image').disabled = true; $('copy-status').textContent = '正在复制图片…';
   try {
     await copyGalleryImage(source);
+    globalThis.galleryStats?.record('copy', id);
     if (version === imageVersion) $('copy-status').textContent = '图片已复制';
   } catch {
     if (version === imageVersion) $('copy-status').textContent = '复制失败，请打开原图后保存。';
@@ -161,7 +165,7 @@ $('download').addEventListener('click', async (event) => {
   event.preventDefault();
   const link = event.currentTarget;
   if (link.getAttribute('aria-disabled') === 'true') return;
-  const href = link.href, filename = link.download;
+  const href = link.href, filename = link.download, id = viewList[current].id;
   link.setAttribute('aria-disabled', 'true'); link.textContent = '正在下载…';
   let label = '下载 PNG 原图';
   try {
@@ -171,6 +175,7 @@ $('download').addEventListener('click', async (event) => {
     const save = element('a');
     save.href = url; save.download = filename; save.hidden = true;
     document.body.append(save); save.click(); save.remove();
+    globalThis.galleryStats?.record('download', id);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   } catch {
     label = '下载失败，请点“打开原图”';

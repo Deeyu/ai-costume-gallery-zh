@@ -59,6 +59,43 @@ class PageLinks(HTMLParser):
 
 
 class NavigationTests(unittest.TestCase):
+    def test_costume_animation_is_an_internal_edition_with_five_top_level_links(self):
+        page = ROOT / 'costume-anime/index.html'
+        html = page.read_text()
+        parsed = PageLinks(html)
+        self.assertEqual([link['text'] for link in parsed.links], LABELS)
+        current = [link for link in parsed.links if link.get('aria-current') == 'page']
+        self.assertEqual([link['text'] for link in current], ['服装库'])
+        self.assertEqual((page.parent / current[0]['href']).resolve(), ROOT)
+        self.assertEqual(parsed.version_links[0]['href'], 'https://ai-costume-anime-gallery.pages.dev/')
+        self.assertEqual(parsed.version_links[0]['target'], '_blank')
+        self.assertIn('version-realistic', parsed.ids)
+        self.assertIn('version-anime', parsed.ids)
+        self.assertIn('data-gallery="costume-anime"', html)
+        self.assertIn('data-costume-version="anime"', html)
+        self.assertIn('id="version-anime" href="./" aria-current="page"', html)
+        for name in ['index.html', 'costume-anime/index.html']:
+            text = (ROOT / name).read_text()
+            self.assertLess(text.index('class="edition-switch"'), text.index('id="categories"'))
+
+    def test_shared_metrics_and_star_entry_are_available_on_all_pages(self):
+        for name in PAGES + ['examples/index.html']:
+            with self.subTest(page=name):
+                page = ROOT / name
+                html = page.read_text()
+                parsed = PageLinks(html)
+                files = [(page.parent / src.split('?', 1)[0]).resolve() for src in parsed.scripts]
+                self.assertLess(files.index(ROOT / 'assets/site-config.js'), files.index(ROOT / 'assets/site.js'))
+                self.assertIn('site-visits', parsed.ids)
+                self.assertIn('data-star-count', html)
+                github = html.split('class="github-link"', 1)[1].split('</a>', 1)[0]
+                self.assertIn('target="_blank"', github)
+                self.assertIn('rel="noopener noreferrer"', github)
+                self.assertIn('好用就点亮一颗星', github)
+                if name in PAGES:
+                    self.assertIn('sort-popular', parsed.ids)
+                    self.assertIn('sort-default', parsed.ids)
+
     def test_every_gallery_loads_the_shared_scroll_loader_before_the_app(self):
         for name in PAGES:
             with self.subTest(page=name):

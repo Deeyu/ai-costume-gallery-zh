@@ -51,6 +51,7 @@
 ## 相关入口
 
 - [AI 服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/)
+- [AI 动画服装参考库中文版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)
 - [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
 - [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)

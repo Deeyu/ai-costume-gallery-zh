@@ -2,13 +2,15 @@
 
 面向 AI 绘画、角色设定与漫剧创作的五合一中文参考图库：**服装库选衣装，脸型库选人物与发型，姿势库看动作结构，深度库看空间前后关系，二次元库参考发型、眼睛、衣装与动作**。支持中文检索、多视角浏览、PNG 原图下载。原始与中文索引、零依赖静态页面、Python 维护脚本及 GitHub Pages 自动部署放在同一开源仓库维护。
 
-**在线浏览地址：[服装库](https://deeyu.github.io/ai-costume-gallery-zh/) · [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) · [二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/)** · [版权与致谢](#版权与致谢)
+**在线浏览地址：服装库 [写实版](https://deeyu.github.io/ai-costume-gallery-zh/) / [动画版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/) · [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) · [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) · [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) · [二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/)** · [版权与致谢](#版权与致谢)
 
 五个页面底部均显示内容提示。导航始终提供五个图库入口，并在滚动时固定显示；当前图库有选中标记，每个页面底部均列出五库的来源地址与作者。“中文版”旁的“日文源版”在新标签页打开对应作者原站。
 
 本项目是独立的中文整理与静态站点学习实践，不代表原作者的官方版本或背书。
 
 数据来源：[衣装集](https://ai-costume-gallery.pages.dev/) · 原作者X：[ギア](https://x.com/giaaibusi) · 中文版维护：[Deeyu](https://github.com/Deeyu)。
+
+服装库动画版来源：[衣装集 アニメ版 COSTUME-ANIME-DB](https://ai-costume-anime-gallery.pages.dev/) · 原作者：[ギア（@giaaibusi）](https://x.com/giaaibusi) · [动画版发布推文](https://x.com/giaaibusi/status/2117089256015622274)。
 
 脸型库来源：[AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) · 原作者：[あぎ（@agi_aibusi）](https://x.com/agi_aibusi) · [原作者推文](https://x.com/agi_aibusi/status/2113187345814204557)。
 
@@ -22,13 +24,13 @@
 
 | 图库与介绍 | 用途 | 实际收录 | 在线浏览 |
 | --- | --- | --- | --- |
-| [服装库](#costume-library) | 无人物衣装搭配、角色服装设计 | 1,407 套，8 个分类，每套三个图片版本 | [打开服装库](https://deeyu.github.io/ai-costume-gallery-zh/) |
+| [服装库](#costume-library) | 无人物衣装搭配、角色服装设计；内部切换写实与动画画风 | 写实版 1,407 套、动画版 1,320 套，分别包含 8 类 | [写实版](https://deeyu.github.io/ai-costume-gallery-zh/) / [动画版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/) |
 | [脸型库](#portrait-library) | AI 虚构人物的五官、发型和造型参考 | 1,499 张：893 张正面脸图、606 张造型参考 | [打开脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) |
 | [姿势库](#pose-library) | 人体动作教学、线稿结构与双人构图 | 288 组、1,439 张线稿，4 体系、26 分类 | [打开姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) |
 | [深度库](#depth-library) | 姿态、遮挡和空间前后关系参考 | 288 组、1,439 张深度图，4 体系、26 分类 | [打开深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) |
 | [二次元库](#anime-library) | 二次元发型、眼睛、衣装、姿势与英文标签 | 843 条目，1,027 张彩图（含发色变体）＋281 张线稿 | [打开二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/) |
 
-服装图在仓库内保存缩略图、预览图及 PNG；脸型库、姿势库、深度库和二次元库只保存完整双语索引，图片按需由各自原站提供。数量按各库独立记录统计，不将不同文件版本或视角重复计为不同服装或人物。
+服装写实版在仓库内保存缩略图、预览图及 PNG；服装动画版、脸型库、姿势库、深度库和二次元库只保存完整双语索引，图片按需由各自原站提供。数量按版本和各库独立记录统计，不将不同文件版本或视角重复计为不同服装或人物。
 
 脸型库原站标注 CC0，同时请求不要重新分发图片，因此本仓库不打包脸型库图片。脸型库浏览、复制与下载依赖原站；1,499 是图像记录数，不代表互不重复的人物数量。
 
@@ -42,29 +44,48 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 
 ![服装库中文版：中文分类、关键词搜索与服装参考卡片](image/README/1793322085655.png)
 
+二次元库界面总览（你提供的截图；卡片中的旧版组合按钮已从现网移除）：
+
+![二次元库界面预览：节庆与季节服装、中文名称与英文标签](docs/anime-overview.png)
+
 <a id="costume-library"></a>
 
 ## 1. 服装库：衣装搭配与角色造型参考
 
-服装库（Costume Gallery）提供 **1,407 套不含人物的服装参考**，适合角色服装设计、AI 绘画和漫剧造型。先按季节或场合选衣装，再通过双语关键词细化材质、颜色和搭配，下载 PNG 后放入创作工具的服装或图片参考功能。人物脸型、体型与背景需另行指定。
+服装库（Costume Gallery）提供 **写实版 1,407 套、动画版 1,320 套不含人物的服装参考**，适合角色服装设计、AI 绘画和漫剧造型。先按季节或场合选衣装，再通过双语关键词细化材质、颜色和搭配，下载 PNG 后放入创作工具的服装或图片参考功能。人物脸型、体型与背景需另行指定。
 
 **[在线使用服装库](https://deeyu.github.io/ai-costume-gallery-zh/)** · [原始衣装集](https://ai-costume-gallery.pages.dev/) · [中文索引](data/costume-zh.json) · [纯文本介绍](catalog.md)
 
+**[在线使用服装动画版](https://deeyu.github.io/ai-costume-gallery-zh/costume-anime/)** · [动画版原站](https://ai-costume-anime-gallery.pages.dev/) · [动画版中文索引](costume-anime/data/costume-zh.json) · [动画版纯文本介绍](costume-anime/catalog.md)
+
+在服装列表上方通过“写实版 / 动画版”切换，顶部仍保留五库导航。切换保留当前分类和搜索词；复制链接可以分享带筛选条件的当前版本。两版独立保留编号、关键词、套数和热门数据，不将写实版独有编号补进动画版，也不按相同 ID 混用两版标签。
+
+动画版是ギア的无人物动漫衣装集；现有“二次元库”是たき AI的 CharaDB，包含发型、眼睛、服装、姿势和英文标签，来源与用途不同。
+
 ### 收录与图片版本
 
-| 分类 |  套数 |
-| ---- | ----: |
-| 春装 |   215 |
-| 夏装 |   254 |
-| 秋装 |   244 |
-| 冬装 |   253 |
-| 内衣 |   199 |
-| 派对 |    48 |
-| 泳装 |    54 |
-| 性感 |   140 |
-| 合计 | 1,407 |
+| 分类 | 写实版 | 动画版 |
+| ---- | ----: | ----: |
+| 春装 | 215 | 197 |
+| 夏装 | 254 | 237 |
+| 秋装 | 244 | 230 |
+| 冬装 | 253 | 232 |
+| 内衣 | 199 | 197 |
+| 派对 | 48 | 36 |
+| 泳装 | 54 | 52 |
+| 性感 | 140 | 139 |
+| 合计 | 1,407 | 1,320 |
 
-数据快照日期：2026-10-29。86 个英文关键词及 8 个分类全部附中文译文。标签来源于原站，可能不完整，不能当作完整生成提示词。图片为不含人物的服装参考，纵横比 2:3。
+写实版快照日期：2026-10-29；动画版快照日期：2026-11-02。86 个英文关键词及 8 个分类全部附中文译文。标签来源于各自原站，可能不完整，不能当作完整生成提示词。图片为不含人物的服装参考，纵横比 2:3。
+
+动画版仅保存完整公开索引和中文译文，不镜像、打包或自动批量下载图片；缩略图、预览及 PNG 逐张由动画原站提供。原作者允许作品创作中的商用、编辑与参考使用，但禁止图像数据批量获取、再分发、转载、转售及用于表现真实人物或未成年人；详情见[版权与致谢](THIRD_PARTY_NOTICES.md)。更新索引只提取公开 JSON，不执行上游脚本：
+
+```bash
+python3 scripts/costume_anime.py sync
+python3 scripts/costume_anime.py verify
+```
+
+也可使用已保存的页面：`python3 scripts/costume_anime.py sync --html /path/to/index.html`。
 
 **完整本地镜像**：1,407 套服装，每套保存三个图片版本，共 4,221 个图片文件，约 1.42 GiB。它们对应相同的 1,407 套服装。首次克隆体积较大；清单 `data/local-assets.json` 记录已校验的本地文件。
 
@@ -79,9 +100,10 @@ https://github.com/user-attachments/assets/c508ccfd-4144-4907-8ca1-5631c587e0f7
 ### 服装库功能
 
 - 中文分类，支持中文、英文、ID 搜索；多个词以空格分隔，按“同时包含”匹配。
+- 服装库内部切换写实与动画画风；保留筛选，支持独立版本链接。
 - 响应式网格、缩略图异步解码与懒加载；接近列表底部自动追加，每批 60 套。
 - 大图浏览、PNG 原图下载、复制图片；左右方向键切换、Esc 关闭、`/` 聚焦搜索。
-- 无框架、无运行时依赖、无统计或遥测。
+- 无框架、无前端运行时依赖；新增的本站访问与图片操作统计见下文。
 - 原始与中文 JSON、94 条对照词典、下载重试、素材校验、CI。
 
 <a id="portrait-library"></a>
@@ -198,7 +220,7 @@ python3 scripts/pose.py check-images
 
 快照日期：2026-10-30，完整 288 组、1,439 张深度图，涵盖 4 个体系、26 个分类。白色越近、黑色越远，可将原尺寸 PNG 导入 AI 工具的深度参照功能。支持中文、日文、ID 多词搜索、分类与视角筛选、分组与单图浏览、大图、方向键切换和单张下载。同姿势 `full_sexy_P018` 在原站缺少仰视图，仅显示实际四视角。
 
-`depth/data/depth.json` 保存原始日文索引，`upstream-zh.json` 保留中文词条快照，`depth-zh.json` 包含中文检索字段及深度原站图片 URL，`meta.json` 记录计数、缺失视角、原页面 SHA-256 与中文来源提交。中文词条与现有姿势库同源，逐条核对日文元数据后复用，保留 [Anhao 来源许可](depth/UPSTREAM_LICENSE)。两库使用独立图片地址，深度库不会用线稿替代深度图。共享姿势库的筛选函数及布局样式，不增加运行时依赖。
+`depth/data/depth.json` 保存原始日文索引，`upstream-zh.json` 保留中文词条快照，`depth-zh.json` 包含中文检索字段及深度原站图片 URL，`meta.json` 记录计数、缺失视角、原页面 SHA-256 与中文来源提交。中文词条与现有姿势库同源，逐条核对日文元数据后复用，保留 [Anhao 来源许可](depth/UPSTREAM_LICENSE)。两库使用独立图片地址，深度库不会用线稿替代深度图。共享姿势库的筛选函数及布局样式，不增加前端运行时依赖。
 
 ```bash
 python3 scripts/depth.py sync                 # 仅更新公开元数据，不下载图片
@@ -206,7 +228,7 @@ python3 scripts/depth.py sync --html /path/to/saved.html
 python3 scripts/depth.py verify
 ```
 
-原站禁止图片批量下载和再分发，因此仅保存完整索引，图片按需由原站提供。界面独立编写，不包含原站统计或引流脚本。构建与 CI 已包含深度库，执行现有 GitHub Pages 发布流程时会一起发布。
+原站禁止图片批量下载和再分发，因此仅保存完整索引，图片按需由原站提供。界面独立编写，不包含原站统计或引流脚本；本站统计独立实现。构建与 CI 已包含深度库，执行现有 GitHub Pages 发布流程时会一起发布。
 
 <a id="anime-library"></a>
 
@@ -304,6 +326,8 @@ thumbs/                    WebP 缩略图
 img/                       WebP 预览图
 png/                       PNG 原图
 scripts/                   提取、翻译、下载、校验、构建
+costume-anime/             服装库动画版（独立索引与链接，复用服装页面程序）
+scripts/costume_anime.py   动画衣装公开 JSON 提取、翻译及校验，不下载图片
 tests/                     数据与提取安全校验
 portrait/                  脸型库中文版（独立子页面、界面与数据）
 portrait/data/portrait.json 原始脸型库元数据
@@ -330,6 +354,8 @@ docs/seo.md                SEO/GEO 维护方法、中文检索场景与托管边
 .github/workflows/         数据校验与 GitHub Pages 自动部署
 LICENSE                    本项目独立程序代码的 MIT 许可
 THIRD_PARTY_NOTICES.md      第三方素材、许可范围与致谢
+statistics.md              访问人数、图片热度、隐私与维护说明
+worker/                    Cloudflare 统计服务、D1 表结构与图片 ID 白名单
 ```
 
 ## 服装库数据结构
@@ -376,9 +402,9 @@ python3 scripts/build.py
 
 **https://deeyu.github.io/ai-costume-gallery-zh/**
 
-每次推送到 `main`，工作流会运行五个图库的单元测试、导航与内容提示检查、JavaScript 语法检查、服装库素材校验，以及脸型库、姿势库、深度库和二次元库索引校验，执行 `python3 scripts/build.py --github-pages`，然后一次发布五个图库到 `dist/`。服装库保持根路径，脸型库位于 `/portrait/`，姿势库位于 `/pose/`，深度库位于 `/depth/`，二次元库位于 `/anime/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
+每次推送到 `main`，工作流会运行五个图库及服装动画版的单元测试、导航与内容提示检查、JavaScript 语法检查、写实服装素材校验，以及各库完整索引校验，执行 `python3 scripts/build.py --github-pages`，然后发布到 `dist/`。服装库写实版保持根路径，动画版位于 `/costume-anime/`；脸型库位于 `/portrait/`，姿势库位于 `/pose/`，深度库位于 `/depth/`，二次元库位于 `/anime/`。也可进入 Actions →「部署 GitHub Pages」→ Run workflow 手动部署。使用仓库内置的 `GITHUB_TOKEN`，无需额外配置密钥。
 
-GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及服装库缩略图和预览图；构建时会报告实际体积并检查大小上限。服装库 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。脸型库、姿势库、深度库与二次元库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
+GitHub Pages 的[站点大小上限为 1 GB](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)。因此 Pages 发布目录只包含页面、数据、版权文件及写实服装缩略图和预览图；构建时会报告实际体积并检查大小上限。写实服装 PNG 原图仍完整保留在 `png/`，下载按钮从 GitHub 获取原图并保存。动画服装、脸型库、姿势库、深度库与二次元库图片分别由各自原站提供。下载失败时可使用「打开原图」后保存。
 
 Fork 后部署：
 
@@ -399,9 +425,21 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 
 Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 scripts/build.py`，输出目录 `dist`。默认构建会校验并打包全部图片；发布目录约 1.42 GiB，请先确认托管平台容量。构建目录排除 Git 历史和维护脚本。
 
+## Star、访问人数与图片热门
+
+Star 数可直接读取 GitHub。访问人数与跨访客热门排行需要发布 `worker/` 中的 Cloudflare 服务，并在 `assets/site-config.js` 配置服务地址；尚未接通时页面会明确提示，不显示虚构计数。
+
+- 五库与案例页的 GitHub 入口展示仓库 Star 数，并提示“好用就点亮一颗星”；点击在新标签页打开 GitHub，是否 Star 由访问者自行决定。
+- 页底展示累计访问量与去重访客估算值。访客按匿名浏览器标识统计，不代表精确自然人人数，数据从上线后开始积累。
+- 五库增加“默认排序／热门”切换。热门按当前筛选范围内的复制图片＋下载次数排序；成功复制、获取图片并发起保存后才上报，复制标签、打开原图和失败操作不计入。
+- 姿势／深度分组模式合计组内真实视角的热度；二次元库新增当前图片下载，保留 JPG 彩图与 PNG 线稿的真实格式。无数据或热度相同时保持原始顺序。
+- 统计使用独立 Cloudflare Worker＋D1，共享所有访客的聚合数据；GitHub Pages 继续提供页面与既有素材。不上传图片、搜索词、IP 或浏览器 User-Agent，尊重 DNT/GPC，本地预览不上报。
+
+具体计数口径、隐私说明、失败降级与后端维护方法见 [统计说明](statistics.md)。本站的热门计数与脸型库原站的历史下载排行快照分别展示。
+
 ## 搜索引擎与 AI 检索（SEO / GEO）
 
-五个页面各有独立标题、摘要、canonical、Open Graph / Twitter 分享图和 JSON-LD，包含图库、索引数据、维护者与来源信息。首批 12 张参考卡片、图库介绍、真实计数、快照日期和常见问题直接写入 HTML，不依赖 JavaScript 才可读取。交互图库继续使用原有筛选和下载功能。
+五库及服装动画版各有独立标题、摘要、canonical、Open Graph / Twitter 分享图和 JSON-LD，包含图库、索引数据、维护者与来源信息。首批 12 张参考卡片、图库介绍、真实计数、快照日期和常见问题直接写入 HTML，不依赖 JavaScript 才可读取。交互图库继续使用原有筛选和下载功能。
 
 - [站点地图](https://deeyu.github.io/ai-costume-gallery-zh/sitemap.xml)：五个图库与联合案例的正式页面地址。
 - [llms.txt](https://deeyu.github.io/ai-costume-gallery-zh/llms.txt)：五库摘要、纯文本介绍、原始来源和版权入口。
@@ -423,6 +461,7 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 ### 图片与原始数据
 
 - 图片及原始元数据由 **[ギア（@giaaibusi）](https://x.com/giaaibusi)** 在 **[衣装集 COSTUME-DB-01](https://ai-costume-gallery.pages.dev/)** 发布，相关权利归原权利人所有。本项目保留来源、原始编号及英文关键词，不对第三方素材主张权利。
+- 服装库动画版同样由ギア发布：[动画原站](https://ai-costume-anime-gallery.pages.dev/) · [发布推文](https://x.com/giaaibusi/status/2117089256015622274)。仅保存完整 1,320 套元数据与中文译文，图片由原站按需提供。原站允许作品创作中的商用、编辑及参考使用，禁止图片批量获取、再分发、转载和转售，不得用于表现真实人物或未成年人；完整整理见 [第三方说明](THIRD_PARTY_NOTICES.md#服装库动画版来源与使用条件)。
 - 本项目用于个人学习、中文检索整理与静态站点实践。公开收录与提供下载不代表素材进入公有领域，也不构成原作者对本项目的背书。
 - **图片、原始数据及基于原始数据整理的中文数据不适用本项目代码的 MIT 许可。** 使用、再分发或商用前，请自行确认原作者的许可及适用条件；本项目不提供额外授权。
 - 若权利人认为收录内容侵犯其权益，请通过 [GitHub Issue](https://github.com/Deeyu/ai-costume-gallery-zh/issues) 提供相关素材 ID 和说明，维护者将核实并及时删除或调整相关内容。
@@ -457,7 +496,7 @@ GEO 采用清晰事实、来源标注、静态可读内容和可访问内链，�
 
 ### 致谢
 
-- 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开服装参考图库，为本项目提供原始图片及元数据。原作者推文：[查看原文](https://x.com/giaaibusi/status/2115638135208260002)。
+- 感谢 **[ギア](https://x.com/giaaibusi)** 制作并公开写实与动画服装参考图库。发布推文：[写实版](https://x.com/giaaibusi/status/2115638135208260002) · [动画版](https://x.com/giaaibusi/status/2117089256015622274)。
 - 感谢 **[あぎ（@agi_aibusi）](https://x.com/agi_aibusi)** 发布脸型库，为角色脸部与造型参考提供图片及发型元数据。原作者推文：[查看原文](https://x.com/agi_aibusi/status/2113187345814204557)。
 - 感谢 **[ギア](https://x.com/giaaibusi)** 制作[深度图库](https://ai-pose-depth-gallery.pages.dev/)，为姿态、遮挡和空间关系参考提供深度图与原始元数据。
 - 感谢 **[ギア](https://x.com/giaaibusi)** 提供[姿势参考图库](https://ai-pose-gallery.pages.dev/)，并感谢 **[Anhao](https://github.com/anhao)** 的 **[ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)** 提供完整中文姿势词条及静态画廊整理思路。本次姿势库完整接入其 1,439 条索引，用于人体动作教学与绘画参考；本项目界面及脚本独立编写，未复制其代码。

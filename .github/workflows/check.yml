@@ -15,12 +15,15 @@ jobs:
           node-version: '22'
       - run: python3 -m unittest discover -s tests -v
       - run: python3 scripts/seo.py --check
+      - run: python3 scripts/metrics_catalog.py --check
       - run: python3 scripts/verify.py --assets
+      - run: python3 scripts/costume_anime.py verify
       - run: python3 scripts/portrait.py verify
       - run: python3 scripts/pose.py verify
       - run: python3 scripts/depth.py verify
       - run: python3 scripts/anime.py verify
       - run: node --check assets/image-clipboard.js
+      - run: node --check assets/site.js && node --check worker/src/index.js
       - run: node --check assets/gallery-loader.js
       - run: node --check assets/app.js
       - run: node --check portrait/app.js && node --check portrait/catalog.js

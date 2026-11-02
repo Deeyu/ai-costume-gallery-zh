@@ -105,6 +105,8 @@ function render() {
   $('section-title').textContent = state.category || state.system;
   $('grouped').setAttribute('aria-pressed', String(state.grouped));
   $('single').setAttribute('aria-pressed', String(!state.grouped));
+  groups = globalThis.galleryStats?.sort(groups) || groups;
+  filtered = globalThis.galleryStats?.sort(filtered) || filtered;
   items = state.grouped ? groups : filtered.map((row) => [row]);
   loader.reset(); shown = 0;
   $('grid').replaceChildren();
@@ -152,6 +154,7 @@ function card(views, index) {
     }
     article.append(choices);
   }
+  globalThis.galleryStats?.decorate(article, views.map(row => row.id));
   return article;
 }
 
@@ -229,12 +232,14 @@ async function download(event) {
     if (!blob.type.startsWith('image/')) throw new Error('原站未返回图片');
     const url = URL.createObjectURL(blob), anchor = document.createElement('a');
     anchor.href = url; anchor.download = `${row.id}_depth.png`; anchor.click();
+    globalThis.galleryStats?.record('download', row.id);
     setTimeout(() => URL.revokeObjectURL(url), 10000);
   } catch {
     $('image-status').textContent = '下载失败，请点击“打开原图”后保存。';
   } finally { downloading = false; $('download').textContent = '下载深度图 PNG'; }
 }
 
+document.addEventListener('gallery-sort-change', render);
 $('q').addEventListener('input', (event) => { state.query = event.target.value; render(); });
 $('reset').addEventListener('click', () => {
   Object.assign(state, {system: DEFAULT_SYSTEM, category: '', angle: '', query: '', grouped: true});
@@ -262,6 +267,7 @@ $('copy-image').addEventListener('click', async () => {
   $('copy-image').disabled = true; $('copy-status').textContent = '正在复制 PNG 图片…';
   try {
     await copyPoseImage(row);
+    globalThis.galleryStats?.record('copy', row.id);
     if (version === imageVersion) $('copy-status').textContent = 'PNG 图片已复制';
   } catch {
     if (version === imageVersion) $('copy-status').textContent = '复制失败，请下载 PNG 原图后使用。';

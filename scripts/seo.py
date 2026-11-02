@@ -27,6 +27,19 @@ CATALOGS = [
                     ('服装数量和图片文件数有什么区别？', '每套服装有缩略图、预览图、PNG 原图三个版本，三份文件对应同一套服装，不能按图片文件数计算不同服装。'),
                     ('可以直接将标签当成生成提示词吗？', '标签来自原站元数据的中文翻译，用于检索，可能不完整；请结合图片和创作需求补充提示词。'),
                     ('做漫剧角色定妆，服装库和脸型库怎么配合？', '先选单套衣装 PNG，再选脸型库的虚构人物参考，在支持多图参考的工具中分别说明衣装和五官要求；保存确认后的定妆图，供后续分镜复用。')]),
+    dict(key='costume-anime', path='costume-anime/', name='服装库·动画版', label='AI 动画服装参考库中文版',
+         meta='costume-anime/data/meta-zh.json', data='costume-anime/data/costume-zh.json',
+         source='https://ai-costume-anime-gallery.pages.dev/', creator='ギア', creator_url='https://x.com/giaaibusi',
+         aliases=['动画服装库', '动漫衣装参考库', '服装库动画版'],
+         scenario='中文创作场景：为 AI 绘画、漫画和动画角色设定挑选无人物的动漫衣装。用中文颜色、材质和季节关键词检索，再配合二次元库的发型或姿势参考；服装库内部可切换写实版与动画版，并保留分类和搜索词。',
+         purpose='动漫衣装搭配、动画角色服装设计与漫画造型参考',
+         coverage='春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类；与写实版分别保留实际收录及关键词',
+         feature='完整公开索引、中文分类、中英文与 ID 检索、画风切换、滚动加载、图片复制与单张 PNG 下载',
+         delivery='仅保存完整原始与中文索引；动画服装缩略图、预览和 PNG 按需从原站读取，不镜像或批量下载图片。',
+         questions=[('动画版和写实版在哪里切换？', '服装库内容区上方提供写实版与动画版切换，顶部仍只有五个图库入口。切换保留当前分类及搜索词，两个版本有各自的分享链接。'),
+                    ('动画版为什么是 1,320 套，不是 1,407 套？', '两个原站公开索引的实际数量不同。动画版完整收录 1,320 套，保留原始编号间的缺号；不把写实版记录或缩略图、预览图、原图三个版本重复计入动画套数。'),
+                    ('动画版与二次元库有什么区别？', '动画版是ギア的无人物衣装搭配集，是服装库的另一种画风。二次元库是たき AI的 CharaDB，另有角色发型、眼睛、服装、姿势和英文标签。'),
+                    ('动画服装图片可以商用或重新打包吗？', '原作者允许作品创作中的商用、编辑和参考使用，但禁止图像数据批量下载、再分发、转载和转售，也不得用于表现真实人物或未成年人。以原站说明为准。')]),
     dict(key='portrait', path='portrait/', name='脸型库', label='AI 脸型库中文版',
          meta='portrait/data/meta-zh.json', data='portrait/data/portrait-zh.json',
          source='https://ai-portrait-gallery.pages.dev/', creator='あぎ',
@@ -87,7 +100,7 @@ CATALOGS = [
 
 def info(catalog, root):
     meta = json.loads((root / catalog['meta']).read_text(encoding='utf-8'))
-    unit = '套服装' if catalog['key'] == 'costume' else '张参考图'
+    unit = '套服装' if catalog['key'] in ['costume', 'costume-anime'] else '张参考图'
     if catalog['key'] == 'depth':
         unit = '张深度图'
     elif catalog['key'] == 'pose':
@@ -145,7 +158,7 @@ def structured(data):
 def head(data):
     prefix = '../' if data['path'] else ''
     image = BASE + f'assets/og-{data["key"]}.png'
-    unit = {'costume': '套衣装', 'portrait': '张人像参考', 'pose': '张动作线稿', 'depth': '张深度图', 'anime': '张二次元彩图'}[data['key']]
+    unit = {'costume': '套衣装', 'costume-anime': '套动漫衣装', 'portrait': '张人像参考', 'pose': '张动作线稿', 'depth': '张深度图', 'anime': '张二次元彩图'}[data['key']]
     title = f'{data["label"]}｜{data["total"]:,} {unit}'
     fields = [('name', 'description', data['description']), ('name', 'author', 'Deeyu'),
               ('name', 'robots', 'index,follow,max-image-preview:large'),
@@ -203,7 +216,7 @@ def previews(data, root):
         rows = [row for row in rows if row['模式'] == 'outfit']
     cards = []
     for index, row in enumerate(rows[:12]):
-        if data['key'] == 'costume':
+        if data['key'] in ['costume', 'costume-anime']:
             name = f'{row["分类"]} · {row["id"]}'
             detail = '、'.join(row['关键词'][:3])
             original, size = row['预览图'], (300, 450)
@@ -310,16 +323,17 @@ def outputs(root=ROOT):
     result['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(sitemap, encoding='unicode') + '\n'
     result['robots.txt'] = '# Project-path copy; robots rules apply only when served at the origin root.\nUser-agent: *\nAllow: /\nSitemap: ' + BASE + 'sitemap.xml\n'
     lines = ['# ' + SITE_NAME, '', '> 服装、人像、姿势线稿、深度图与二次元角色五库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。', '',
-             '## 五个图库', '']
+             '## 五个图库（服装库含写实版与动画版）', '']
     lines += [f'- [{data["label"]}]({data["url"]}catalog.md): {data["count"]}；{data["purpose"]}；快照 {data["snapshot"]}。' for data in summaries]
     lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 五库用途、功能、本地预览与部署说明。',
               f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
               f'- [联合使用视频与图片]({BASE}examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
-              f'- [站点地图]({BASE}sitemap.xml): 五个正式图库入口及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
+              f'- [站点地图]({BASE}sitemap.xml): 五库入口、服装动画版及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
               '服装按套数统计，三个文件版本不计为三套；脸型库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。', '',
               '二次元库完整公开索引为 843 个基础条目，含发色变体共 1,027 张彩图，另有 281 张姿势线稿；不接入作者未公开的特典。', '',
-              '脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
+              '服装库动画版完整收录 1,320 套无人物动漫衣装，作为服装库内部版本，不新增顶部图库标签；与写实版 1,407 套分别统计。', '',
+              '动画服装、脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
     result['llms.txt'] = '\n'.join(lines)
     return result
 
