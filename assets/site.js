@@ -124,7 +124,7 @@ async function initGallerySite() {
     const value = await read('/stats?gallery=' + encodeURIComponent(gallery === 'examples' ? 'costume' : gallery));
     images = value.images || {}; visits(value.visits); refreshBadges();
     if (hottest) hottest.disabled = false;
-    const note = document.getElementById('popularity-note'); if (note) note.textContent = '热门按复制图片＋下载次数排序';
+    const note = document.getElementById('popularity-note'); if (note) note.textContent = '';
   } catch {
     const note = document.getElementById('popularity-note'); if (note) note.textContent = '热度暂不可用，稍后刷新重试';
     const visit = document.getElementById('site-visits'); if (visit) visit.textContent = '访问统计暂不可用';

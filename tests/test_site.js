@@ -54,6 +54,7 @@ test('Star 数、累计访问与访客真实返回后展示；热门按共享数
   assert.equal(ui.node('stars').textContent, '123');
   assert.match(ui.node('site-visits').textContent, /累计访问 10 次 · 访客 4/);
   assert.equal(ui.node('sort-popular').disabled, false);
+  assert.equal(ui.node('popularity-note').textContent, '');
   ui.node('sort-popular').events.click();
   assert.equal(ui.dispatched[0], 'gallery-sort-change');
   assert.equal(ui.api.galleryStats.sort([{id: 'O002'}, {id: 'O001'}])[0].id, 'O001');
@@ -76,6 +77,7 @@ test('DNT 或本地预览不上报访问或操作；服务失败不显示假零�
   }
   const ui = await client({failure: true});
   assert.equal(ui.node('sort-popular').disabled, true);
+  assert.match(ui.node('popularity-note').textContent, /热度暂不可用/);
   assert.equal(ui.node('stars').textContent, '—');
   assert.match(ui.node('site-visits').textContent, /暂不可用/);
   await assert.doesNotReject(ui.api.galleryStats.record('copy', 'O001'));

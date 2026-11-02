@@ -38,8 +38,9 @@
   <link rel="stylesheet" href="../assets/style.css?v=d3359cbe7c04">
   <link rel="stylesheet" href="../pose/style.css?v=4ded037eef7b">
   <link rel="stylesheet" href="style.css?v=3e33b0b713fb">
+  <link rel="stylesheet" href="../assets/refinement.css?v=f67df967faa8">
   <script src="../assets/site-config.js?v=df12b3c47f05" defer></script>
-  <script src="../assets/site.js?v=f7af11cdff50" defer></script>
+  <script src="../assets/site.js?v=5c6fc2c8470b" defer></script>
   <script src="../pose/catalog.js?v=615de168c07d" defer></script>
   <script src="../assets/gallery-loader.js?v=b1cfc5b114e3" defer></script>
   <script src="app.js?v=9da653a41191" defer></script>
@@ -56,10 +57,10 @@
       <section class="pose-controls" aria-label="筛选与浏览设置">
         <div class="pose-filter-row"><span class="filter-label">人物</span><div id="systems" class="systems" role="group" aria-label="姿势体系"></div></div>
         <div class="pose-filter-row"><span class="filter-label">动作</span><div id="category-options" class="category-options" role="group" aria-label="动作分类"></div></div>
-        <div class="pose-filter-row angle-row"><span class="filter-label">视角</span><div id="angle-options" class="angle-options" role="group" aria-label="视角筛选"></div><div class="view-mode" role="group" aria-label="浏览方式"><button id="grouped" aria-pressed="true">分组浏览</button><button id="single" aria-pressed="false">单图浏览</button></div></div>
+        <div class="pose-filter-row angle-row"><span class="filter-label">视角</span><div id="angle-options" class="angle-options" role="group" aria-label="视角筛选"></div></div>
         <div class="toolbar"><label class="search"><span>搜索</span><input id="q" type="search" placeholder="搜索动作、P001 或日文名称" autocomplete="off"><kbd>/</kbd></label><button id="reset">清除筛选</button></div>
       </section>
-      <div class="library-sort" role="group" aria-label="图片排序"><button id="sort-default" aria-pressed="true">默认排序</button><button id="sort-popular" aria-pressed="false" disabled>热门</button><small id="popularity-note" role="status">正在加载热度…</small></div>
+      <div class="library-browse"><div class="library-sort" role="group" aria-label="图片排序"><button id="sort-default" aria-pressed="true">默认排序</button><button id="sort-popular" aria-pressed="false" disabled>热门</button><small id="popularity-note" role="status">正在加载热度…</small></div><div class="view-mode" role="group" aria-label="浏览方式"><button id="grouped" aria-pressed="true">分组浏览</button><button id="single" aria-pressed="false">单图浏览</button></div></div>
       <div class="result-line"><h2 id="section-title">姿态与空间参考</h2><p id="status" role="status" aria-live="polite">正在加载数据…</p></div>
       <!-- seo:fallback:start --><noscript><p>当前显示首批 12 条静态预览。启用 JavaScript 可使用完整筛选和大图浏览；也可查看<a href="../depth/data/depth-zh.json">完整 JSON 索引</a>和<a href="catalog.md">纯文本介绍</a>。</p></noscript><!-- seo:fallback:end -->
       <div id="grid" class="grid"><!-- seo:previews:start -->
