@@ -1,8 +1,9 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
+let imageVersion = 0;
 const PAGE = 48;
 let records = [], filtered = [], meta, mode = 'outfit', category = '', shown = 0, loader;
-let viewList = [], current = 0, variant, lineart = false, selection = {}, favorites = new Set();
+let viewList = [], current = 0, variant, lineart = false, favorites = new Set();
 try { const saved = JSON.parse(localStorage.getItem('anime-favorites') || '[]'); if (Array.isArray(saved)) favorites = new Set(saved.filter((id) => typeof id === 'string')); } catch {}
 
 function element(tag, text, className) {
@@ -27,14 +28,6 @@ async function copyText(text, button, done = '已复制') {
   catch { button.textContent = '复制失败，请手动复制'; }
 }
 
-function choose(row) {
-  const key = animeSlot(row);
-  selection[key] = row;
-  if (key === 'style') delete selection.color;
-  renderBuilder();
-  $('selection-note').textContent = `已加入${ANIME_SLOTS[key]}：${row.名称}`;
-}
-
 function renderFilters() {
   $('sections').replaceChildren(...Object.entries(ANIME_MODES).map(([key, label]) => {
     const button = element('button', label);
@@ -51,7 +44,7 @@ function renderFilters() {
     return button;
   }));
   $('section-note').textContent = {outfit: '440 套公开服装；编号保留原样，未公开编号不补造。英文标签仅描述衣装，不包含示范人物的脸与发型。',
-    hair: '122 个基础条目，含 46 种发型的五色预览，共 306 张彩图。点击发型卡片可切换颜色；眼睛颜色和形状可分别加入组合。',
+    hair: '122 个基础条目，含 46 种发型的五色预览，共 306 张彩图。点击发型卡片可切换颜色；眼睛颜色和形状分别分类。',
     pose: '281 个公开姿势，每项均有彩图和线稿。点击卡片切换；侧面姿势保留独立编号，不与原有姿势库混计。'}[mode];
 }
 
@@ -78,7 +71,6 @@ function appendPage() {
     heading.append(element('h3', row.名称), element('span', row.id, 'card-cat'));
     const actions = element('div', undefined, 'card-actions');
     const copy = element('button', '复制标签'); copy.addEventListener('click', () => copyText(animeTags(row), copy));
-    const add = element('button', '加入组合'); add.addEventListener('click', () => choose(row));
     const favorite = element('button', favorites.has(row.id) ? '★' : '☆');
     favorite.setAttribute('aria-label', `收藏 ${row.id}`); favorite.setAttribute('aria-pressed', String(favorites.has(row.id)));
     favorite.addEventListener('click', () => {
@@ -87,7 +79,7 @@ function appendPage() {
       if ($('favorites').getAttribute('aria-pressed') === 'true') applyFilters();
       else { favorite.textContent = favorites.has(row.id) ? '★' : '☆'; favorite.setAttribute('aria-pressed', String(favorites.has(row.id))); }
     });
-    actions.append(copy, add, favorite); info.append(heading, element('p', animeTags(row)), actions); card.append(preview, info);
+    actions.append(copy, favorite); info.append(heading, element('p', animeTags(row)), actions); card.append(preview, info);
     return card;
   });
   $('grid').append(...cards); shown += cards.length;
@@ -98,6 +90,8 @@ function appendPage() {
 function detailRow() { return variant || viewList[current]; }
 
 function showDetail() {
+  imageVersion++;
+  $('copy-status').textContent = '';
   const row = detailRow();
   $('detail-title').textContent = row.名称;
   $('detail-cat').textContent = `${row.类型} · ${row.分类} · ${row.id}`;
@@ -111,8 +105,7 @@ function showDetail() {
   $('large').src = src; $('large').alt = `${row.名称} · ${lineart && row.线稿 ? '线稿' : '彩图'}`;
   $('open-original').href = src;
   $('open-original').textContent = lineart && row.线稿 ? '打开原站线稿 PNG' : '打开原站彩图 JPG';
-  $('copy').textContent = '复制标签'; $('copy-id').textContent = '复制 ID';
-  $('add-selection').textContent = '加入组合';
+  $('copy').textContent = '复制标签';
   $('variants').replaceChildren();
   if (animeSlot(row) === 'style') {
     for (const item of animeFamily(records, row)) {
@@ -127,37 +120,22 @@ function showDetail() {
   $('prev').disabled = current === 0; $('next').disabled = current === viewList.length - 1;
 }
 
-function renderBuilder() {
-  $('slots').replaceChildren(...Object.entries(ANIME_SLOTS).map(([key, label]) => {
-    const slot = element('div', undefined, 'selection-slot');
-    slot.append(element('strong', label));
-    const row = selection[key];
-    slot.append(element('span', row ? row.名称 : '未选择'));
-    if (row) {
-      const remove = element('button', '移除'); remove.setAttribute('aria-label', `移除${label}`);
-      remove.addEventListener('click', () => { delete selection[key]; renderBuilder(); }); slot.append(remove);
-    }
-    return slot;
-  }));
-  $('open-builder').textContent = `查看组合（${Object.keys(selection).length} 项）`;
-  updatePrompt();
-}
-
-const QUALITY = {illustrious: ['masterpiece, best quality, amazing quality, very aesthetic, absurdres, newest', 'lowres, worst quality, low quality, bad anatomy, bad hands, text, watermark'],
-  anima: ['masterpiece, best quality, score_7, safe', 'worst quality, low quality, score_1, score_2, score_3, bad anatomy, bad hands, text, watermark'],
-  novelai: ['best quality, amazing quality, very aesthetic, absurdres', 'lowres, bad quality, worst quality, watermark, extra digits, artistic error'],
-  pony: ['score_9, score_8_up, score_7_up, masterpiece, best quality', 'score_1, score_2, score_3, lowres, bad anatomy, bad hands, text, watermark'], none: ['', '']};
-function updatePrompt() {
-  const preset = QUALITY[$('quality').value] || QUALITY.none;
-  $('prompt').value = composeAnime(selection, {quality: preset[0], expression: $('expression').value, camera: $('camera').value, background: $('background').value, extra: $('extra').value, multiline: $('multiline').checked});
-  $('negative').value = preset[1]; $('copy-prompt').textContent = '复制提示词'; $('copy-negative').textContent = '复制负面提示词';
-}
-
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { category = ''; $('q').value = ''; $('favorites').setAttribute('aria-pressed', 'false'); applyFilters(); });
 $('favorites').addEventListener('click', () => { $('favorites').setAttribute('aria-pressed', String($('favorites').getAttribute('aria-pressed') !== 'true')); applyFilters(); });
 $('close').addEventListener('click', () => $('viewer').close());
-$('open-builder').addEventListener('click', () => $('builder').showModal());
+$('viewer').addEventListener('close', () => { imageVersion++; });
+$('copy-image').addEventListener('click', async () => {
+  const version = imageVersion, source = lineart && detailRow().线稿 ? detailRow().线稿 : detailRow().原图;
+  $('copy-image').disabled = true; $('copy-status').textContent = '正在复制图片…';
+  try {
+    await copyGalleryImage(source);
+    if (version === imageVersion) $('copy-status').textContent = '图片已复制';
+  } catch {
+    if (version === imageVersion) $('copy-status').textContent = '复制失败，请打开原图后保存。';
+  } finally { $('copy-image').disabled = false; }
+});
+
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
 for (const [id, delta] of [['prev', -1], ['next', 1]]) $(id).addEventListener('click', () => {
@@ -165,21 +143,7 @@ for (const [id, delta] of [['prev', -1], ['next', 1]]) $(id).addEventListener('c
   current += delta; variant = null; showDetail();
 });
 $('copy').addEventListener('click', () => copyText(animeTags(detailRow()), $('copy')));
-$('copy-id').addEventListener('click', () => copyText(detailRow().id, $('copy-id')));
-$('add-selection').addEventListener('click', () => { choose(detailRow()); $('add-selection').textContent = '已加入组合'; });
 for (const [id, value] of [['color-view', false], ['line-view', true]]) $(id).addEventListener('click', () => { lineart = value; showDetail(); });
-for (const id of ['quality', 'expression', 'camera', 'background', 'extra', 'multiline']) $(id).addEventListener('input', updatePrompt);
-$('copy-prompt').addEventListener('click', () => copyText($('prompt').value, $('copy-prompt')));
-$('copy-negative').addEventListener('click', () => copyText($('negative').value, $('copy-negative')));
-$('clear-selection').addEventListener('click', () => { selection = {}; renderBuilder(); $('selection-note').textContent = '组合已清空'; });
-$('random-selection').addEventListener('click', () => {
-  selection = {};
-  for (const slot of Object.keys(ANIME_SLOTS)) {
-    const list = records.filter((row) => !row.父级 && animeSlot(row) === slot);
-    if (list.length) selection[slot] = list[Math.floor(Math.random() * list.length)];
-  }
-  renderBuilder(); $('selection-note').textContent = '已随机选择，可继续逐项替换';
-});
 document.addEventListener('keydown', (event) => {
   if ($('viewer').open) {
     if (event.key === 'ArrowLeft') { event.preventDefault(); $('prev').click(); }
@@ -188,7 +152,7 @@ document.addEventListener('keydown', (event) => {
     event.preventDefault(); $('q').focus();
   }
 });
-for (const dialog of [$('viewer'), $('builder'), $('guide'), $('wechat')]) dialog.addEventListener('click', (event) => {
+for (const dialog of [$('viewer'), $('guide'), $('wechat')]) dialog.addEventListener('click', (event) => {
   const box = dialog.getBoundingClientRect();
   if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
 });
@@ -206,7 +170,7 @@ async function init() {
     loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < filtered.length, loadMore: appendPage,
       preloadUrls: () => filtered.slice(shown, shown + 12).map((row) => row.缩略图)});
     $('total').textContent = `${meta.cards.toLocaleString()} 条目 · ${meta.total.toLocaleString()} 张彩图（含发色变体）· ${meta.lineart} 张线稿`;
-    renderBuilder(); applyFilters();
+    applyFilters();
   } catch (error) {
     $('status').textContent = '索引加载失败，请刷新重试；本地预览请使用 HTTP 服务。';
     console.error('二次元库数据加载失败', error);

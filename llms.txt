@@ -8,7 +8,7 @@
 - [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/catalog.md): 1,499 张参考图；AI 虚构人物的五官、发型与角色造型参考；快照 2026-10-30。
 - [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/catalog.md): 288 组、1,439 张人体模型线稿；人体模型线稿的动作、身体结构与双人构图参考；快照 2026-10-30。
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/catalog.md): 288 组、1,439 张深度图；人体模型深度图的姿态、遮挡与空间前后关系参考；快照 2026-10-30。
-- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/catalog.md): 1,027 张彩图（含发色变体），另有 281 张姿势线稿；二次元角色发型、眼睛、服装、姿势与提示词组合参考；快照 2026-11-02。
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/catalog.md): 1,027 张彩图（含发色变体），另有 281 张姿势线稿；二次元角色发型、眼睛、服装、姿势与英文标签参考；快照 2026-11-02。
 
 ## 项目与来源
 

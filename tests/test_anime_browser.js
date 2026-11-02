@@ -25,15 +25,15 @@ async function loadBrowser() {
     if (!nodes.has(id)) nodes.set(id, createElement('div'));
     return nodes.get(id);
   };
-  let copied, loader;
-  const context = {document, console,
+  let copied, imageSource, loader;
+  const context = {document, console, copyGalleryImage: async source => { imageSource = source; },
     localStorage: {getItem() { throw new Error('storage blocked'); }, setItem() { throw new Error('storage blocked'); }},
     navigator: {clipboard: {writeText: async (text) => { copied = text; }}},
     GalleryLoader: class { constructor(options) { loader = options; } reset() {} update() {} },
     fetch: async url => ({ok: true, json: async () => JSON.parse(readFileSync(join(__dirname, '../anime', url), 'utf8'))})};
   runInNewContext(readFileSync(join(__dirname, '../anime/catalog.js'), 'utf8'), context);
   await runInNewContext(readFileSync(join(__dirname, '../anime/app.js'), 'utf8'), context);
-  return {node: document.getElementById, copied: () => copied, loader: () => loader};
+  return {node: document.getElementById, copied: () => copied, imageSource: () => imageSource, loader: () => loader};
 }
 
 test('三类切换完整计数，滚动追加保留旧卡片，收藏存储被禁用时仍能使用', async () => {
@@ -44,7 +44,7 @@ test('三类切换完整计数，滚动追加保留旧卡片，收藏存储被�
   ui.loader().loadMore();
   assert.equal(ui.node('grid').children[0], first);
   assert.equal(ui.node('grid').children.length, 96);
-  const favorite = first.children[1].children[2].children[2];
+  const favorite = first.children[1].children[2].children[1];
   favorite.events.click();
   ui.node('favorites').events.click();
   assert.match(ui.node('status').textContent, /共 1 项/);
@@ -55,7 +55,7 @@ test('三类切换完整计数，滚动追加保留旧卡片，收藏存储被�
   assert.match(ui.node('status').textContent, /共 281 项/);
 });
 
-test('发色预览、复制和组合使用同一颜色，姿势切换保持线稿版本', async () => {
+test('发色预览、标签和图片复制使用同一颜色，姿势切换保持线稿版本', async () => {
   const ui = await loadBrowser(), find = (id, text) => ui.node(id).children.find(item => item.textContent === text);
   find('sections', '发型与眼睛122').events.click();
   ui.node('grid').children[0].children[0].events.click();
@@ -64,17 +64,16 @@ test('发色预览、复制和组合使用同一颜色，姿势切换保持线�
   assert.ok(ui.node('large').src.endsWith('/H001-silver.jpg'));
   await ui.node('copy').events.click();
   assert.equal(ui.copied(), 'long hair, silver hair');
-  ui.node('add-selection').events.click();
-  assert.ok(ui.node('prompt').value.includes('silver hair'));
-  assert.match(ui.node('open-builder').textContent, /1 项/);
-  ui.node('open-builder').events.click();
-  assert.equal(ui.node('builder').open, true);
-  ui.node('builder').close();
+  await ui.node('copy-image').events.click();
+  assert.ok(ui.imageSource().endsWith('/img/H001-silver.jpg'));
+  assert.equal(ui.node('copy-status').textContent, '图片已复制');
   ui.node('close').events.click();
   find('sections', '姿势281').events.click();
   ui.node('grid').children[0].children[0].events.click();
   ui.node('line-view').events.click();
   assert.ok(ui.node('large').src.endsWith('/line/P001.png'));
+  await ui.node('copy-image').events.click();
+  assert.ok(ui.imageSource().endsWith('/line/P001.png'));
   ui.node('next').events.click();
   assert.ok(ui.node('large').src.endsWith('/line/P001-s.png'));
   assert.equal(ui.node('open-original').href, ui.node('large').src);

@@ -73,6 +73,28 @@ class NavigationTests(unittest.TestCase):
                 for file in files:
                     self.assertTrue(file.is_file())
 
+    def test_notice_is_at_the_bottom_of_each_gallery_and_example(self):
+        for name in PAGES + ['examples/index.html']:
+            html = (ROOT / name).read_text()
+            self.assertEqual(html.count('class="content-notice"'), 1)
+            self.assertLess(html.index('<footer'), html.index('class="content-notice"'))
+            self.assertLess(html.index('class="content-notice"'), html.index('</footer>'))
+            self.assertGreater(html.index('class="content-notice"'), html.index('</main>'))
+
+    def test_three_modals_copy_images_instead_of_ids_and_anime_has_no_builder(self):
+        for name in ['index.html', 'portrait/index.html', 'anime/index.html']:
+            page = ROOT / name
+            html = page.read_text()
+            parsed = PageLinks(html)
+            self.assertIn('copy-image', parsed.ids)
+            self.assertIn('copy-status', parsed.ids)
+            self.assertNotIn('复制 ID', html)
+            files = [(page.parent / src.split('?', 1)[0]).resolve() for src in parsed.scripts]
+            self.assertLess(files.index(ROOT / 'assets/image-clipboard.js'), files.index(page.parent / ('assets/app.js' if name == 'index.html' else 'app.js')))
+        anime = (ROOT / 'anime/index.html').read_text()
+        for removed in ['id="builder"', 'id="open-builder"', 'id="add-selection"', '加入组合']:
+            self.assertNotIn(removed, anime)
+
     def test_japanese_source_opens_the_corresponding_original_in_a_new_tab(self):
         for name, source in zip(PAGES, SOURCES):
             with self.subTest(page=name):

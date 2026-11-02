@@ -1,5 +1,6 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
+let imageVersion = 0;
 let records = [], filtered = [], category = '', shown = 0, current = 0;
 let loader;
 const PAGE = 60;
@@ -55,6 +56,8 @@ function appendPage() {
   loader.update();
 }
 function showDetail() {
+  imageVersion++;
+  $('copy-status').textContent = '';
   const r = filtered[current];
   $('detail-title').textContent = r.id;
   $('detail-cat').textContent = r.分类;
@@ -69,19 +72,26 @@ function showDetail() {
   $('download').href = r.原图; $('download').download = `${r.id}.png`;
   $('open-original').href = r.原图;
   $('prev').disabled = current === 0; $('next').disabled = current === filtered.length - 1;
-  $('copy').textContent = '复制 ID';
 }
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { category = ''; $('q').value = ''; applyFilters(); });
 $('close').addEventListener('click', () => $('viewer').close());
+$('viewer').addEventListener('close', () => { imageVersion++; });
+$('copy-image').addEventListener('click', async () => {
+  const version = imageVersion, source = filtered[current].原图;
+  $('copy-image').disabled = true; $('copy-status').textContent = '正在复制图片…';
+  try {
+    await copyGalleryImage(source);
+    if (version === imageVersion) $('copy-status').textContent = '图片已复制';
+  } catch {
+    if (version === imageVersion) $('copy-status').textContent = '复制失败，请打开原图后保存。';
+  } finally { $('copy-image').disabled = false; }
+});
+
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
 $('prev').addEventListener('click', () => { if (current > 0) { current--; showDetail(); } });
 $('next').addEventListener('click', () => { if (current < filtered.length - 1) { current++; showDetail(); } });
-$('copy').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(filtered[current].id); $('copy').textContent = '已复制'; }
-  catch { $('copy').textContent = '复制失败，请手动复制上方 ID'; }
-});
 $('download').addEventListener('click', async (event) => {
   const link = event.currentTarget;
   if (new URL(link.href).origin === location.origin) return;

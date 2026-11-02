@@ -31,29 +31,9 @@ test('仅收藏的发色变体仍可检索且不会重复显示基础卡片', ()
   assert.ok(['H001-black', 'H001-silver'].includes(found[0].id));
 });
 
-test('眼睛颜色与形状分别组合，保留英文标签且去重', () => {
-  assert.equal(api.animeSlot(row('H095')), 'eyeColor');
-  assert.equal(api.animeSlot(row('H114')), 'eyeShape');
-  const text = api.composeAnime({style: row('H001-black'), eyeColor: row('H095'), eyeShape: row('H114'), outfit: row('O041')}, {extra: 'black hair, soft light'});
-  assert.ok(text.includes('black hair'));
-  assert.ok(text.includes('brown eyes'));
-  assert.ok(text.includes('heart-shaped pupils'));
-  assert.equal(text.split(', ').filter(tag => tag === 'black hair').length, 1);
-});
-
-test('单独选择发色会覆盖发型默认色，双人动作不叠加 solo', () => {
+test('发型标签保留当前预览色，服装与姿势标签保持原样', () => {
   assert.equal(api.animeTags(row('H001-black')), 'long hair, black hair');
   assert.equal(api.animeTags(row('H001')), 'long hair, brown hair');
-  const text = api.composeAnime({style: row('H001-black'), color: row('H052'), pose: row('P140')});
-  assert.ok(text.includes('blonde hair'));
-  assert.ok(!text.includes('black hair'));
-  assert.ok(text.startsWith('2girls'));
-  assert.ok(!text.includes('solo'));
-});
-
-test('姿势已定义景别时跳过冲突景别，可输出多行', () => {
-  const text = api.composeAnime({pose: row('P090')}, {camera: 'full body', background: 'white background', multiline: true});
-  assert.ok(!text.includes('full body'));
-  assert.ok(text.includes('white background'));
-  assert.ok(text.includes(',\n'));
+  assert.equal(api.animeTags(row('O041')), row('O041').标签);
+  assert.equal(api.animeTags(row('P001')), row('P001').标签);
 });

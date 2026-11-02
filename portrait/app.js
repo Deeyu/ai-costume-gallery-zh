@@ -1,5 +1,6 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
+let imageVersion = 0;
 const PAGE = 60;
 const MODES = {face: '正面脸图', styling: '造型参考'};
 const NOTES = {face: '正面、简洁背景的脸部参考，适合五官与脸型设定。', styling: '展示发型质感、服装与整体氛围，人物朝向可能不同。'};
@@ -82,6 +83,8 @@ function openViewer(list, index) {
 }
 
 function showDetail() {
+  imageVersion++;
+  $('copy-status').textContent = '';
   const row = viewList[current];
   $('detail-title').textContent = row.id;
   $('detail-cat').textContent = `${row.类型} · ${row.发长}`;
@@ -98,7 +101,6 @@ function showDetail() {
   $('download').download = `ai-${row.模式}-${row.id}.png`;
   if ($('download').getAttribute('aria-disabled') !== 'true') $('download').textContent = '下载 PNG 原图';
   $('open-original').href = row.原图;
-  $('copy').textContent = '复制 ID';
   $('prev').disabled = current === 0;
   $('next').disabled = current === viewList.length - 1;
 }
@@ -139,14 +141,22 @@ function renderFeatured() {
 $('q').addEventListener('input', applyFilters);
 $('reset').addEventListener('click', () => { hair = ''; $('q').value = ''; applyFilters(); });
 $('close').addEventListener('click', () => $('viewer').close());
+$('viewer').addEventListener('close', () => { imageVersion++; });
+$('copy-image').addEventListener('click', async () => {
+  const version = imageVersion, source = viewList[current].原图;
+  $('copy-image').disabled = true; $('copy-status').textContent = '正在复制图片…';
+  try {
+    await copyGalleryImage(source);
+    if (version === imageVersion) $('copy-status').textContent = '图片已复制';
+  } catch {
+    if (version === imageVersion) $('copy-status').textContent = '复制失败，请打开原图后保存。';
+  } finally { $('copy-image').disabled = false; }
+});
+
 $('help').addEventListener('click', () => $('guide').showModal());
 $('follow').addEventListener('click', () => $('wechat').showModal());
 $('prev').addEventListener('click', () => { if (current > 0) { current--; showDetail(); } });
 $('next').addEventListener('click', () => { if (current < viewList.length - 1) { current++; showDetail(); } });
-$('copy').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(viewList[current].id); $('copy').textContent = '已复制'; }
-  catch { $('copy').textContent = '复制失败，请手动复制上方 ID'; }
-});
 $('download').addEventListener('click', async (event) => {
   event.preventDefault();
   const link = event.currentTarget;
