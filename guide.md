@@ -1,4 +1,4 @@
-# 四库联合使用指南：AI 绘画、角色定妆与漫剧分镜
+# 五库使用指南：AI 绘画、角色定妆与漫剧分镜
 
 用姿势图说明动作，用服装图说明穿搭；再根据需要加入脸部参考和深度图，把人物外观、衣装、动作及空间关系分别说明清楚。这套流程适合中文 AI 绘画、AIGC 角色设定，以及漫剧和短剧分镜的参考图准备。
 
@@ -18,7 +18,7 @@
 
 视频与两张合集由用户提供，关联思路参考[半格的原帖](https://x.com/ai_bange/status/2115651909948477678)；原始素材作者与使用条件见[版权与致谢](THIRD_PARTY_NOTICES.md)。
 
-## 四库分别负责什么
+## 五库分别负责什么
 
 | 图库 | 参考职责 | 选择方法 |
 | --- | --- | --- |
@@ -26,6 +26,7 @@
 | [脸型库](https://deeyu.github.io/ai-costume-gallery-zh/portrait/) | AI 虚构人物的五官、脸型与发型 | 正面脸图看五官，造型参考看整体外观 |
 | [姿势库](https://deeyu.github.io/ai-costume-gallery-zh/pose/) | 身体动作、关节方向与构图视角 | 选择体系、姿势编号和视角，下载人体模型线稿 |
 | [深度库](https://deeyu.github.io/ai-costume-gallery-zh/depth/) | 空间远近、透视与肢体遮挡 | 使用与姿势线稿相同的完整编号及视角；白色越近、黑色越远 |
+| [二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/) | 动漫发型、眼睛、衣装、姿势与英文标签组合 | 三类完整公开索引、五色发型和姿势线稿，可分项加入提示词组合 |
 
 本站负责检索、预览与单张下载，生图在你选择的 AI 工具中完成。先确认工具支持多图参考、角色参考或深度参照中的哪些功能；不支持的功能可分步处理，不必一次上传四张图。
 
@@ -82,6 +83,14 @@
 
 只在工具支持相应功能时加入深度输入，权重和输入规格以该工具说明为准。本图库不是 OpenPose 骨架数据集，不能把人体线稿直接当作骨架控制图。姿势与深度图均缺少 `full_sexy_P018` 的仰视图，请选用实际已有视角。
 
+## 案例四：二次元角色分项组装
+
+在[二次元库](https://deeyu.github.io/ai-costume-gallery-zh/anime/)选择“发型与眼睛”，将发型、刘海、发色、发饰、眼睛颜色与形状分别加入组合；切换到“服装”选择衣装，再从“姿势”加入动作。发型预览中的五色可以切换，姿势预览中可以切换彩图和线稿。
+
+点击固定的“查看组合”入口打开弹窗，选择适合所用模型的标签模板、表情、构图和背景，按需补充英文标签。复制结果到创作工具，核对发型、眼睛、衣装和动作后再复用；模型模板是示例，不保证特定输出。需要线稿参考时，使用原站 PNG，并按工具说明导入。原有姿势／深度库的 ID 与二次元库 ID 不通用，不应混配。
+
+此流程参考 [たき AI 的原始介绍](https://x.com/taki_auto/status/2116818463125803239)，与前述半格案例分开署名。作者允许标签、提示词和应用商用；图片仅供参考，禁止转载、再分发和转售，也不能用于表现真实人物或未成年人。
+
 ## 来源、作者与使用条件
 
 | 图库 | 原始数据与图片来源 | 原作者 |
@@ -90,6 +99,7 @@
 | 脸型库 | <https://ai-portrait-gallery.pages.dev/> | [あぎ（@agi_aibusi）](https://x.com/agi_aibusi) |
 | 姿势库 | <https://ai-pose-gallery.pages.dev/> | [ギア（@giaaibusi）](https://x.com/giaaibusi) |
 | 深度库 | <https://ai-pose-depth-gallery.pages.dev/> | [ギア（@giaaibusi）](https://x.com/giaaibusi) |
+| 二次元库 | <https://charadb-2fi.pages.dev/> | [たき AI（@taki_auto）](https://x.com/taki_auto) |
 
 姿势与深度的中文词条参考 [Anhao/ai-pose-gallery-zh](https://github.com/anhao/ai-pose-gallery-zh)。联合使用思路参考[半格的原帖](https://x.com/ai_bange/status/2115651909948477678)，不代表原帖作者或素材作者对本站的背书。逐张取用需要的素材，并遵守各原站使用条件；代码开源不等于第三方素材获得同样授权。详细范围见[版权与致谢](https://deeyu.github.io/ai-costume-gallery-zh/THIRD_PARTY_NOTICES.md)。
 

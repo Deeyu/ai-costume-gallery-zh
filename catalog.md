@@ -52,3 +52,4 @@
 - [AI 脸型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/portrait/)
 - [AI 姿势库中文版](https://deeyu.github.io/ai-costume-gallery-zh/pose/)
 - [AI 深度图库中文版](https://deeyu.github.io/ai-costume-gallery-zh/depth/)
+- [AI 二次元造型库中文版](https://deeyu.github.io/ai-costume-gallery-zh/anime/)

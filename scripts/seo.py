@@ -69,6 +69,19 @@ CATALOGS = [
                     ('深度图怎么用于 AI 创作？', '选择姿势与视角，下载 PNG，再导入所用 AI 工具的深度参照功能。脸型、服装和背景需另行指定，具体参数以工具说明为准。'),
                     ('深度库与姿势库的内容是否对应？', '两库使用对应的姿势 ID、分类与视角，但图片来源和图像形式不同。full_sexy_P018 同样只有四个视角。包含成人向分类，仅限成年人艺术与动作参考。'),
                     ('漫剧分镜的姿势图和深度图怎么配对？', '用相同体系、姿势编号和视角组成的完整 ID 配对，例如 full_single_P015_front。深度 PNG 应导入工具支持的深度参照输入，普通图片参考不等于启用了深度控制。')]),
+    dict(key='anime', path='anime/', name='二次元库', label='AI 二次元造型库中文版',
+         meta='anime/data/meta.json', data='anime/data/anime-zh.json',
+         source='https://charadb-2fi.pages.dev/', creator='たき AI', creator_url='https://x.com/taki_auto',
+         aliases=['二次元服装库', '动漫角色参考库', '二次元发型与姿势库', 'CharaDB 中文版'],
+         scenario='中文创作场景：为二次元角色设定、AI 绘画和漫画分开选择发型、刘海、发色、发饰、眼睛颜色与形状、服装和姿势，再复制英文标签组合。保持角色外观项，替换衣装或动作，并核对生成结果。',
+         purpose='二次元角色发型、眼睛、服装、姿势与提示词组合参考',
+         coverage='843 个基础条目：发型与眼睛 122 项、服装 440 项（15 类）、姿势 281 项（8 类）；含发色变体共 1,027 张彩图，另有 281 张姿势线稿',
+         feature='完整公开索引、中文分类与三语搜索、五色发型预览、彩图与线稿切换、本地收藏、英文标签与提示词组合复制',
+         delivery='仓库仅保存完整公开索引与中文译文；彩图 JPG、缩略图 WebP 和姿势线稿 PNG 按需由 CharaDB 原站提供，不包含特典内容及图片打包。',
+         questions=[('二次元库是只收录服装吗？', '不是。完整接入原站公开版的发型与眼睛、服装、姿势三个类型；发型支持五色预览，全部 281 个公开姿势都提供彩图与线稿。'),
+                    ('843 条、1,027 张和 1,308 张有什么区别？', '843 是基础卡片数。46 种发型各有五色，额外 184 个变体加上基础卡片形成 1,027 张彩图；再加 281 张姿势线稿，共 1,308 个远程图片版本。它们不代表 1,308 个不同造型。'),
+                    ('为什么服装编号到 O495，却只有 440 套？', '公开版保留 O001–O340 与 O396–O495，O341–O395 不在作者公开索引中。这里不补造未公开内容，也不把编号上限作为条目数量。'),
+                    ('可以把二次元库图片重新打包或用于真人吗？', '作者允许标签、提示词及应用商用，但图片仅供创作参考，禁止原图或加工图再分发、转载和转售，不能用于表现真实人物或未成年人。图片使用条件不适用本项目代码的 MIT 许可。')]),
 ]
 
 
@@ -79,6 +92,8 @@ def info(catalog, root):
         unit = '张深度图'
     elif catalog['key'] == 'pose':
         unit = '张人体模型线稿'
+    if catalog['key'] == 'anime':
+        unit = f'张彩图（含发色变体），另有 {meta["lineart"]} 张姿势线稿'
     count = f'{meta["total"]:,} {unit}'
     if 'groups' in meta:
         count = f'{meta["groups"]} 组、' + count
@@ -120,7 +135,7 @@ def structured(data):
         crumbs.append({'@type': 'ListItem', 'position': 2, 'name': data['name'], 'item': url})
     return {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebSite', '@id': site, 'url': BASE, 'name': SITE_NAME, 'inLanguage': 'zh-CN',
-         'description': '服装、AI 人像、人体姿势线稿与深度图四库中文检索，供成年人艺术创作和角色设定参考。',
+         'description': '服装、AI 人像、人体姿势线稿、深度图与二次元角色五库中文检索，供成年人艺术创作和角色设定参考。',
          'publisher': {'@id': BASE + '#maintainer'},
          'hasPart': [{'@id': BASE + item['path'] + '#gallery'} for item in CATALOGS]},
         {'@type': 'Person', '@id': BASE + '#maintainer', 'name': 'Deeyu', 'url': 'https://github.com/Deeyu'},
@@ -130,7 +145,7 @@ def structured(data):
 def head(data):
     prefix = '../' if data['path'] else ''
     image = BASE + f'assets/og-{data["key"]}.png'
-    unit = {'costume': '套衣装', 'portrait': '张人像参考', 'pose': '张动作线稿', 'depth': '张深度图'}[data['key']]
+    unit = {'costume': '套衣装', 'portrait': '张人像参考', 'pose': '张动作线稿', 'depth': '张深度图', 'anime': '张二次元彩图'}[data['key']]
     title = f'{data["label"]}｜{data["total"]:,} {unit}'
     fields = [('name', 'description', data['description']), ('name', 'author', 'Deeyu'),
               ('name', 'robots', 'index,follow,max-image-preview:large'),
@@ -139,7 +154,7 @@ def head(data):
               ('property', 'og:title', title), ('property', 'og:description', data['description']),
               ('property', 'og:url', data['url']), ('property', 'og:image', image),
               ('property', 'og:image:type', 'image/png'), ('property', 'og:image:width', '1200'),
-              ('property', 'og:image:height', '630'), ('property', 'og:image:alt', data['label'] + '：中文检索与 PNG 参考图'),
+              ('property', 'og:image:height', '630'), ('property', 'og:image:alt', data['label'] + '：中文检索与创作参考'),
               ('name', 'twitter:card', 'summary_large_image'), ('name', 'twitter:title', title),
               ('name', 'twitter:description', data['description']), ('name', 'twitter:image', image),
               ('name', 'twitter:image:alt', data['label'] + '分享卡片')]
@@ -184,6 +199,8 @@ def previews(data, root):
         rows = [row for row in rows if row['体系'] == '全身单人・标准系' and row['角度'] == '正面']
     elif data['key'] == 'portrait':
         rows = [row for row in rows if row['模式'] == 'face']
+    elif data['key'] == 'anime':
+        rows = [row for row in rows if row['模式'] == 'outfit']
     cards = []
     for index, row in enumerate(rows[:12]):
         if data['key'] == 'costume':
@@ -193,6 +210,9 @@ def previews(data, root):
         elif data['key'] == 'portrait':
             name = f'{row["发长"]} · {row["id"]}'
             detail, original, size = row['发型'] or '正面脸图', row['原图'], (300, 400)
+        elif data['key'] == 'anime':
+            name = row['名称']
+            detail, original, size = f'{row["id"]} · {row["分类"]}', row['原图'], (300, 450)
         else:
             name = row['姿势名称']
             detail, original, size = f'{row["姿势编号"]} · {row["分类"]} · {row["角度"]}', row['原图'], (300, 400)
@@ -226,7 +246,7 @@ def source_directory():
     for catalog in CATALOGS:
         handle = catalog['creator_url'].rsplit('/', 1)[-1]
         items.append(f'<li><strong>{catalog["name"]}</strong><a href="{catalog["source"]}" target="_blank" rel="noopener">{catalog["source"]}</a><span>原作者：<a href="{catalog["creator_url"]}" target="_blank" rel="noopener">{catalog["creator"]}（@{handle}）</a></span></li>')
-    return '<!-- seo:sources:start --><section class="source-directory" aria-labelledby="source-directory-title"><h2 id="source-directory-title">四库原始来源与作者</h2><ul>' + ''.join(items) + '</ul></section><!-- seo:sources:end -->'
+    return '<!-- seo:sources:start --><section class="source-directory" aria-labelledby="source-directory-title"><h2 id="source-directory-title">五库原始来源与作者</h2><ul>' + ''.join(items) + '</ul></section><!-- seo:sources:end -->'
 
 
 def version_assets(html, folder):
@@ -278,7 +298,9 @@ def outputs(root=ROOT):
             html = re.sub(r'(<footer\b[^>]*>)', lambda match: match[1] + '\n' + source_directory(), html, count=1)
         result[path] = version_assets(html, root / data['path'])
         result[data['path'] + 'catalog.md'] = markdown(data)
-    result['examples/index.html'] = version_assets((root / 'examples/index.html').read_text(encoding='utf-8'), root / 'examples')
+    example = (root / 'examples/index.html').read_text(encoding='utf-8')
+    example = re.sub(r'<!-- seo:sources:start -->.*?<!-- seo:sources:end -->', lambda _: source_directory(), example, flags=re.S)
+    result['examples/index.html'] = version_assets(example, root / 'examples')
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     sitemap = ET.Element('{http://www.sitemaps.org/schemas/sitemap/0.9}urlset')
     for data in summaries:
@@ -287,16 +309,17 @@ def outputs(root=ROOT):
     ET.indent(sitemap, space='  ')
     result['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(sitemap, encoding='unicode') + '\n'
     result['robots.txt'] = '# Project-path copy; robots rules apply only when served at the origin root.\nUser-agent: *\nAllow: /\nSitemap: ' + BASE + 'sitemap.xml\n'
-    lines = ['# ' + SITE_NAME, '', '> 服装、人像、姿势线稿与深度图四库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。', '',
-             '## 四个图库', '']
+    lines = ['# ' + SITE_NAME, '', '> 服装、人像、姿势线稿、深度图与二次元角色五库的中文参考索引。供成年人艺术创作、角色设定、绘画与前端技术学习使用。', '',
+             '## 五个图库', '']
     lines += [f'- [{data["label"]}]({data["url"]}catalog.md): {data["count"]}；{data["purpose"]}；快照 {data["snapshot"]}。' for data in summaries]
-    lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 四库用途、功能、本地预览与部署说明。',
+    lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 五库用途、功能、本地预览与部署说明。',
               f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
               f'- [联合使用视频与图片]({BASE}examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
-              f'- [站点地图]({BASE}sitemap.xml): 四个正式图库入口及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
+              f'- [站点地图]({BASE}sitemap.xml): 五个正式图库入口及联合使用案例。', '', '## 内容和计数说明', '', NOTICE, '',
               '服装按套数统计，三个文件版本不计为三套；脸型库按图片记录统计，不等于独立人物数；姿势与深度两库各自有 288 组，full_sexy_P018 缺少仰视图。', '',
-              '脸型库、姿势库和深度库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
+              '二次元库完整公开索引为 843 个基础条目，含发色变体共 1,027 张彩图，另有 281 张姿势线稿；不接入作者未公开的特典。', '',
+              '脸型库、姿势库、深度库和二次元库图片由各自原站按需提供。代码 MIT 许可不覆盖第三方素材及数据。本文为检索摘要，不改变来源使用条件。', '']
     result['llms.txt'] = '\n'.join(lines)
     return result
 

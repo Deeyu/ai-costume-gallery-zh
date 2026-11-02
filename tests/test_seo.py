@@ -77,7 +77,7 @@ class SeoTests(unittest.TestCase):
                     self.assertEqual(parsed.meta['rating'], 'adult')
                 else:
                     self.assertNotIn('rating', parsed.meta)
-        self.assertEqual(len(descriptions), 4)
+        self.assertEqual(len(descriptions), len(CATALOGS))
 
     def test_schema_counts_attribution_and_json_distribution_match_catalog(self):
         for catalog in CATALOGS:

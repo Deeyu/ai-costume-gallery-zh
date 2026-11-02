@@ -87,6 +87,17 @@ class BuildTests(unittest.TestCase):
             self.assertTrue((dist / path).is_file())
         self.assertEqual(json.loads((dist / 'depth/data/depth-zh.json').read_text()), rows)
 
+    def test_pages_build_includes_complete_anime_index_without_mirroring_images(self):
+        folder = self.root / 'anime'
+        (folder / 'data').mkdir(parents=True)
+        (folder / 'index.html').write_text('anime fixture')
+        rows = [{'id': 'O001', '原图': 'https://charadb-2fi.pages.dev/img/O001.jpg'}]
+        (folder / 'data/anime-zh.json').write_text(json.dumps(rows))
+        package_site(self.root, github_pages=True)
+        self.assertTrue((self.root / 'dist/anime/index.html').is_file())
+        self.assertEqual(json.loads((self.root / 'dist/anime/data/anime-zh.json').read_text()), rows)
+        self.assertFalse((self.root / 'dist/anime/img').exists())
+
     def test_pages_build_preserves_pose_sources_and_license(self):
         pose = self.root / 'pose'
         (pose / 'data').mkdir(parents=True)

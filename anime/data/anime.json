@@ -1,0 +1,8989 @@
+[
+  {
+    "id": "H001",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロングヘア",
+    "tags": "long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H001-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロングヘア(黒)",
+    "tags": "long hair",
+    "sub": "style_color",
+    "parent": "H001",
+    "tier": "public"
+  },
+  {
+    "id": "H001-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロングヘア(金)",
+    "tags": "long hair",
+    "sub": "style_color",
+    "parent": "H001",
+    "tier": "public"
+  },
+  {
+    "id": "H001-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロングヘア(ピンク)",
+    "tags": "long hair",
+    "sub": "style_color",
+    "parent": "H001",
+    "tier": "public"
+  },
+  {
+    "id": "H001-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロングヘア(銀)",
+    "tags": "long hair",
+    "sub": "style_color",
+    "parent": "H001",
+    "tier": "public"
+  },
+  {
+    "id": "H002",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "超ロング",
+    "tags": "very long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H002-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "超ロング(黒)",
+    "tags": "very long hair",
+    "sub": "style_color",
+    "parent": "H002",
+    "tier": "public"
+  },
+  {
+    "id": "H002-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "超ロング(金)",
+    "tags": "very long hair",
+    "sub": "style_color",
+    "parent": "H002",
+    "tier": "public"
+  },
+  {
+    "id": "H002-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "超ロング(ピンク)",
+    "tags": "very long hair",
+    "sub": "style_color",
+    "parent": "H002",
+    "tier": "public"
+  },
+  {
+    "id": "H002-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "超ロング(銀)",
+    "tags": "very long hair",
+    "sub": "style_color",
+    "parent": "H002",
+    "tier": "public"
+  },
+  {
+    "id": "H003",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ミディアム",
+    "tags": "medium hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H003-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ミディアム(黒)",
+    "tags": "medium hair",
+    "sub": "style_color",
+    "parent": "H003",
+    "tier": "public"
+  },
+  {
+    "id": "H003-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ミディアム(金)",
+    "tags": "medium hair",
+    "sub": "style_color",
+    "parent": "H003",
+    "tier": "public"
+  },
+  {
+    "id": "H003-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ミディアム(ピンク)",
+    "tags": "medium hair",
+    "sub": "style_color",
+    "parent": "H003",
+    "tier": "public"
+  },
+  {
+    "id": "H003-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ミディアム(銀)",
+    "tags": "medium hair",
+    "sub": "style_color",
+    "parent": "H003",
+    "tier": "public"
+  },
+  {
+    "id": "H004",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート",
+    "tags": "short hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H004-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(黒)",
+    "tags": "short hair",
+    "sub": "style_color",
+    "parent": "H004",
+    "tier": "public"
+  },
+  {
+    "id": "H004-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(金)",
+    "tags": "short hair",
+    "sub": "style_color",
+    "parent": "H004",
+    "tier": "public"
+  },
+  {
+    "id": "H004-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(ピンク)",
+    "tags": "short hair",
+    "sub": "style_color",
+    "parent": "H004",
+    "tier": "public"
+  },
+  {
+    "id": "H004-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(銀)",
+    "tags": "short hair",
+    "sub": "style_color",
+    "parent": "H004",
+    "tier": "public"
+  },
+  {
+    "id": "H005",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ",
+    "tags": "bob cut",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H005-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(黒)",
+    "tags": "bob cut",
+    "sub": "style_color",
+    "parent": "H005",
+    "tier": "public"
+  },
+  {
+    "id": "H005-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(金)",
+    "tags": "bob cut",
+    "sub": "style_color",
+    "parent": "H005",
+    "tier": "public"
+  },
+  {
+    "id": "H005-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(ピンク)",
+    "tags": "bob cut",
+    "sub": "style_color",
+    "parent": "H005",
+    "tier": "public"
+  },
+  {
+    "id": "H005-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(銀)",
+    "tags": "bob cut",
+    "sub": "style_color",
+    "parent": "H005",
+    "tier": "public"
+  },
+  {
+    "id": "H006",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートボブ",
+    "tags": "short hair, bob cut",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H006-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートボブ(黒)",
+    "tags": "short hair, bob cut",
+    "sub": "style_color",
+    "parent": "H006",
+    "tier": "public"
+  },
+  {
+    "id": "H006-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートボブ(金)",
+    "tags": "short hair, bob cut",
+    "sub": "style_color",
+    "parent": "H006",
+    "tier": "public"
+  },
+  {
+    "id": "H006-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートボブ(ピンク)",
+    "tags": "short hair, bob cut",
+    "sub": "style_color",
+    "parent": "H006",
+    "tier": "public"
+  },
+  {
+    "id": "H006-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートボブ(銀)",
+    "tags": "short hair, bob cut",
+    "sub": "style_color",
+    "parent": "H006",
+    "tier": "public"
+  },
+  {
+    "id": "H007",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ピクシーカット",
+    "tags": "pixie cut",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H007-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ピクシーカット(黒)",
+    "tags": "pixie cut",
+    "sub": "style_color",
+    "parent": "H007",
+    "tier": "public"
+  },
+  {
+    "id": "H007-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ピクシーカット(金)",
+    "tags": "pixie cut",
+    "sub": "style_color",
+    "parent": "H007",
+    "tier": "public"
+  },
+  {
+    "id": "H007-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ピクシーカット(ピンク)",
+    "tags": "pixie cut",
+    "sub": "style_color",
+    "parent": "H007",
+    "tier": "public"
+  },
+  {
+    "id": "H007-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ピクシーカット(銀)",
+    "tags": "pixie cut",
+    "sub": "style_color",
+    "parent": "H007",
+    "tier": "public"
+  },
+  {
+    "id": "H008",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット",
+    "tags": "hime cut, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H008-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(黒)",
+    "tags": "hime cut, long hair",
+    "sub": "style_color",
+    "parent": "H008",
+    "tier": "public"
+  },
+  {
+    "id": "H008-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(金)",
+    "tags": "hime cut, long hair",
+    "sub": "style_color",
+    "parent": "H008",
+    "tier": "public"
+  },
+  {
+    "id": "H008-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ピンク)",
+    "tags": "hime cut, long hair",
+    "sub": "style_color",
+    "parent": "H008",
+    "tier": "public"
+  },
+  {
+    "id": "H008-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(銀)",
+    "tags": "hime cut, long hair",
+    "sub": "style_color",
+    "parent": "H008",
+    "tier": "public"
+  },
+  {
+    "id": "H009",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウルフカット",
+    "tags": "wolf cut, medium hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H009-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウルフカット(黒)",
+    "tags": "wolf cut, medium hair",
+    "sub": "style_color",
+    "parent": "H009",
+    "tier": "public"
+  },
+  {
+    "id": "H009-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウルフカット(金)",
+    "tags": "wolf cut, medium hair",
+    "sub": "style_color",
+    "parent": "H009",
+    "tier": "public"
+  },
+  {
+    "id": "H009-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウルフカット(ピンク)",
+    "tags": "wolf cut, medium hair",
+    "sub": "style_color",
+    "parent": "H009",
+    "tier": "public"
+  },
+  {
+    "id": "H009-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウルフカット(銀)",
+    "tags": "wolf cut, medium hair",
+    "sub": "style_color",
+    "parent": "H009",
+    "tier": "public"
+  },
+  {
+    "id": "H010",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール",
+    "tags": "twintails, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H010-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(黒)",
+    "tags": "twintails, long hair",
+    "sub": "style_color",
+    "parent": "H010",
+    "tier": "public"
+  },
+  {
+    "id": "H010-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(金)",
+    "tags": "twintails, long hair",
+    "sub": "style_color",
+    "parent": "H010",
+    "tier": "public"
+  },
+  {
+    "id": "H010-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ピンク)",
+    "tags": "twintails, long hair",
+    "sub": "style_color",
+    "parent": "H010",
+    "tier": "public"
+  },
+  {
+    "id": "H010-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(銀)",
+    "tags": "twintails, long hair",
+    "sub": "style_color",
+    "parent": "H010",
+    "tier": "public"
+  },
+  {
+    "id": "H011",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートツインテール",
+    "tags": "short twintails",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H011-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートツインテール(黒)",
+    "tags": "short twintails",
+    "sub": "style_color",
+    "parent": "H011",
+    "tier": "public"
+  },
+  {
+    "id": "H011-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートツインテール(金)",
+    "tags": "short twintails",
+    "sub": "style_color",
+    "parent": "H011",
+    "tier": "public"
+  },
+  {
+    "id": "H011-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートツインテール(ピンク)",
+    "tags": "short twintails",
+    "sub": "style_color",
+    "parent": "H011",
+    "tier": "public"
+  },
+  {
+    "id": "H011-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショートツインテール(銀)",
+    "tags": "short twintails",
+    "sub": "style_color",
+    "parent": "H011",
+    "tier": "public"
+  },
+  {
+    "id": "H012",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローツインテール",
+    "tags": "low twintails, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H012-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローツインテール(黒)",
+    "tags": "low twintails, long hair",
+    "sub": "style_color",
+    "parent": "H012",
+    "tier": "public"
+  },
+  {
+    "id": "H012-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローツインテール(金)",
+    "tags": "low twintails, long hair",
+    "sub": "style_color",
+    "parent": "H012",
+    "tier": "public"
+  },
+  {
+    "id": "H012-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローツインテール(ピンク)",
+    "tags": "low twintails, long hair",
+    "sub": "style_color",
+    "parent": "H012",
+    "tier": "public"
+  },
+  {
+    "id": "H012-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローツインテール(銀)",
+    "tags": "low twintails, long hair",
+    "sub": "style_color",
+    "parent": "H012",
+    "tier": "public"
+  },
+  {
+    "id": "H013",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール",
+    "tags": "ponytail",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H013-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(黒)",
+    "tags": "ponytail",
+    "sub": "style_color",
+    "parent": "H013",
+    "tier": "public"
+  },
+  {
+    "id": "H013-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(金)",
+    "tags": "ponytail",
+    "sub": "style_color",
+    "parent": "H013",
+    "tier": "public"
+  },
+  {
+    "id": "H013-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ピンク)",
+    "tags": "ponytail",
+    "sub": "style_color",
+    "parent": "H013",
+    "tier": "public"
+  },
+  {
+    "id": "H013-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(銀)",
+    "tags": "ponytail",
+    "sub": "style_color",
+    "parent": "H013",
+    "tier": "public"
+  },
+  {
+    "id": "H014",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハイポニーテール",
+    "tags": "high ponytail, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H014-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハイポニーテール(黒)",
+    "tags": "high ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H014",
+    "tier": "public"
+  },
+  {
+    "id": "H014-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハイポニーテール(金)",
+    "tags": "high ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H014",
+    "tier": "public"
+  },
+  {
+    "id": "H014-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハイポニーテール(ピンク)",
+    "tags": "high ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H014",
+    "tier": "public"
+  },
+  {
+    "id": "H014-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハイポニーテール(銀)",
+    "tags": "high ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H014",
+    "tier": "public"
+  },
+  {
+    "id": "H015",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローポニーテール",
+    "tags": "low ponytail, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H015-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローポニーテール(黒)",
+    "tags": "low ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H015",
+    "tier": "public"
+  },
+  {
+    "id": "H015-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローポニーテール(金)",
+    "tags": "low ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H015",
+    "tier": "public"
+  },
+  {
+    "id": "H015-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローポニーテール(ピンク)",
+    "tags": "low ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H015",
+    "tier": "public"
+  },
+  {
+    "id": "H015-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ローポニーテール(銀)",
+    "tags": "low ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H015",
+    "tier": "public"
+  },
+  {
+    "id": "H016",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドポニー",
+    "tags": "side ponytail",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H016-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドポニー(黒)",
+    "tags": "side ponytail",
+    "sub": "style_color",
+    "parent": "H016",
+    "tier": "public"
+  },
+  {
+    "id": "H016-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドポニー(金)",
+    "tags": "side ponytail",
+    "sub": "style_color",
+    "parent": "H016",
+    "tier": "public"
+  },
+  {
+    "id": "H016-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドポニー(ピンク)",
+    "tags": "side ponytail",
+    "sub": "style_color",
+    "parent": "H016",
+    "tier": "public"
+  },
+  {
+    "id": "H016-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドポニー(銀)",
+    "tags": "side ponytail",
+    "sub": "style_color",
+    "parent": "H016",
+    "tier": "public"
+  },
+  {
+    "id": "H017",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(1本)",
+    "tags": "single braid, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H017-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(1本)(黒)",
+    "tags": "single braid, long hair",
+    "sub": "style_color",
+    "parent": "H017",
+    "tier": "public"
+  },
+  {
+    "id": "H017-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(1本)(金)",
+    "tags": "single braid, long hair",
+    "sub": "style_color",
+    "parent": "H017",
+    "tier": "public"
+  },
+  {
+    "id": "H017-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(1本)(ピンク)",
+    "tags": "single braid, long hair",
+    "sub": "style_color",
+    "parent": "H017",
+    "tier": "public"
+  },
+  {
+    "id": "H017-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(1本)(銀)",
+    "tags": "single braid, long hair",
+    "sub": "style_color",
+    "parent": "H017",
+    "tier": "public"
+  },
+  {
+    "id": "H018",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(2本)",
+    "tags": "twin braids, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H018-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(2本)(黒)",
+    "tags": "twin braids, long hair",
+    "sub": "style_color",
+    "parent": "H018",
+    "tier": "public"
+  },
+  {
+    "id": "H018-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(2本)(金)",
+    "tags": "twin braids, long hair",
+    "sub": "style_color",
+    "parent": "H018",
+    "tier": "public"
+  },
+  {
+    "id": "H018-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(2本)(ピンク)",
+    "tags": "twin braids, long hair",
+    "sub": "style_color",
+    "parent": "H018",
+    "tier": "public"
+  },
+  {
+    "id": "H018-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(2本)(銀)",
+    "tags": "twin braids, long hair",
+    "sub": "style_color",
+    "parent": "H018",
+    "tier": "public"
+  },
+  {
+    "id": "H019",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込み",
+    "tags": "french braid, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H019-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込み(黒)",
+    "tags": "french braid, long hair",
+    "sub": "style_color",
+    "parent": "H019",
+    "tier": "public"
+  },
+  {
+    "id": "H019-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込み(金)",
+    "tags": "french braid, long hair",
+    "sub": "style_color",
+    "parent": "H019",
+    "tier": "public"
+  },
+  {
+    "id": "H019-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込み(ピンク)",
+    "tags": "french braid, long hair",
+    "sub": "style_color",
+    "parent": "H019",
+    "tier": "public"
+  },
+  {
+    "id": "H019-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込み(銀)",
+    "tags": "french braid, long hair",
+    "sub": "style_color",
+    "parent": "H019",
+    "tier": "public"
+  },
+  {
+    "id": "H020",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編みポニー",
+    "tags": "braided ponytail, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H020-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編みポニー(黒)",
+    "tags": "braided ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H020",
+    "tier": "public"
+  },
+  {
+    "id": "H020-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編みポニー(金)",
+    "tags": "braided ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H020",
+    "tier": "public"
+  },
+  {
+    "id": "H020-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編みポニー(ピンク)",
+    "tags": "braided ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H020",
+    "tier": "public"
+  },
+  {
+    "id": "H020-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編みポニー(銀)",
+    "tags": "braided ponytail, long hair",
+    "sub": "style_color",
+    "parent": "H020",
+    "tier": "public"
+  },
+  {
+    "id": "H021",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込みクラウン",
+    "tags": "crown braid",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H021-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込みクラウン(黒)",
+    "tags": "crown braid",
+    "sub": "style_color",
+    "parent": "H021",
+    "tier": "public"
+  },
+  {
+    "id": "H021-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込みクラウン(金)",
+    "tags": "crown braid",
+    "sub": "style_color",
+    "parent": "H021",
+    "tier": "public"
+  },
+  {
+    "id": "H021-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込みクラウン(ピンク)",
+    "tags": "crown braid",
+    "sub": "style_color",
+    "parent": "H021",
+    "tier": "public"
+  },
+  {
+    "id": "H021-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "編み込みクラウン(銀)",
+    "tags": "crown braid",
+    "sub": "style_color",
+    "parent": "H021",
+    "tier": "public"
+  },
+  {
+    "id": "H022",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子",
+    "tags": "hair bun, single hair bun",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H022-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(黒)",
+    "tags": "hair bun, single hair bun",
+    "sub": "style_color",
+    "parent": "H022",
+    "tier": "public"
+  },
+  {
+    "id": "H022-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(金)",
+    "tags": "hair bun, single hair bun",
+    "sub": "style_color",
+    "parent": "H022",
+    "tier": "public"
+  },
+  {
+    "id": "H022-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(ピンク)",
+    "tags": "hair bun, single hair bun",
+    "sub": "style_color",
+    "parent": "H022",
+    "tier": "public"
+  },
+  {
+    "id": "H022-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(銀)",
+    "tags": "hair bun, single hair bun",
+    "sub": "style_color",
+    "parent": "H022",
+    "tier": "public"
+  },
+  {
+    "id": "H023",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインお団子",
+    "tags": "double bun",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H023-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインお団子(黒)",
+    "tags": "double bun",
+    "sub": "style_color",
+    "parent": "H023",
+    "tier": "public"
+  },
+  {
+    "id": "H023-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインお団子(金)",
+    "tags": "double bun",
+    "sub": "style_color",
+    "parent": "H023",
+    "tier": "public"
+  },
+  {
+    "id": "H023-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインお団子(ピンク)",
+    "tags": "double bun",
+    "sub": "style_color",
+    "parent": "H023",
+    "tier": "public"
+  },
+  {
+    "id": "H023-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインお団子(銀)",
+    "tags": "double bun",
+    "sub": "style_color",
+    "parent": "H023",
+    "tier": "public"
+  },
+  {
+    "id": "H024",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフアップ",
+    "tags": "half updo, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H024-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフアップ(黒)",
+    "tags": "half updo, long hair",
+    "sub": "style_color",
+    "parent": "H024",
+    "tier": "public"
+  },
+  {
+    "id": "H024-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフアップ(金)",
+    "tags": "half updo, long hair",
+    "sub": "style_color",
+    "parent": "H024",
+    "tier": "public"
+  },
+  {
+    "id": "H024-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフアップ(ピンク)",
+    "tags": "half updo, long hair",
+    "sub": "style_color",
+    "parent": "H024",
+    "tier": "public"
+  },
+  {
+    "id": "H024-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフアップ(銀)",
+    "tags": "half updo, long hair",
+    "sub": "style_color",
+    "parent": "H024",
+    "tier": "public"
+  },
+  {
+    "id": "H025",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドアップ(片側)",
+    "tags": "one side up, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H025-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドアップ(片側)(黒)",
+    "tags": "one side up, long hair",
+    "sub": "style_color",
+    "parent": "H025",
+    "tier": "public"
+  },
+  {
+    "id": "H025-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドアップ(片側)(金)",
+    "tags": "one side up, long hair",
+    "sub": "style_color",
+    "parent": "H025",
+    "tier": "public"
+  },
+  {
+    "id": "H025-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドアップ(片側)(ピンク)",
+    "tags": "one side up, long hair",
+    "sub": "style_color",
+    "parent": "H025",
+    "tier": "public"
+  },
+  {
+    "id": "H025-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "サイドアップ(片側)(銀)",
+    "tags": "one side up, long hair",
+    "sub": "style_color",
+    "parent": "H025",
+    "tier": "public"
+  },
+  {
+    "id": "H026",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツーサイドアップ",
+    "tags": "two side up, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H026-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツーサイドアップ(黒)",
+    "tags": "two side up, long hair",
+    "sub": "style_color",
+    "parent": "H026",
+    "tier": "public"
+  },
+  {
+    "id": "H026-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツーサイドアップ(金)",
+    "tags": "two side up, long hair",
+    "sub": "style_color",
+    "parent": "H026",
+    "tier": "public"
+  },
+  {
+    "id": "H026-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツーサイドアップ(ピンク)",
+    "tags": "two side up, long hair",
+    "sub": "style_color",
+    "parent": "H026",
+    "tier": "public"
+  },
+  {
+    "id": "H026-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツーサイドアップ(銀)",
+    "tags": "two side up, long hair",
+    "sub": "style_color",
+    "parent": "H026",
+    "tier": "public"
+  },
+  {
+    "id": "H027",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "縦ロール",
+    "tags": "drill hair, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H027-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "縦ロール(黒)",
+    "tags": "drill hair, long hair",
+    "sub": "style_color",
+    "parent": "H027",
+    "tier": "public"
+  },
+  {
+    "id": "H027-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "縦ロール(金)",
+    "tags": "drill hair, long hair",
+    "sub": "style_color",
+    "parent": "H027",
+    "tier": "public"
+  },
+  {
+    "id": "H027-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "縦ロール(ピンク)",
+    "tags": "drill hair, long hair",
+    "sub": "style_color",
+    "parent": "H027",
+    "tier": "public"
+  },
+  {
+    "id": "H027-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "縦ロール(銀)",
+    "tags": "drill hair, long hair",
+    "sub": "style_color",
+    "parent": "H027",
+    "tier": "public"
+  },
+  {
+    "id": "H028",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインドリル",
+    "tags": "twin drills",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H028-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインドリル(黒)",
+    "tags": "twin drills",
+    "sub": "style_color",
+    "parent": "H028",
+    "tier": "public"
+  },
+  {
+    "id": "H028-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインドリル(金)",
+    "tags": "twin drills",
+    "sub": "style_color",
+    "parent": "H028",
+    "tier": "public"
+  },
+  {
+    "id": "H028-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインドリル(ピンク)",
+    "tags": "twin drills",
+    "sub": "style_color",
+    "parent": "H028",
+    "tier": "public"
+  },
+  {
+    "id": "H028-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインドリル(銀)",
+    "tags": "twin drills",
+    "sub": "style_color",
+    "parent": "H028",
+    "tier": "public"
+  },
+  {
+    "id": "H029",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウェーブロング",
+    "tags": "wavy hair, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H029-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウェーブロング(黒)",
+    "tags": "wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H029",
+    "tier": "public"
+  },
+  {
+    "id": "H029-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウェーブロング(金)",
+    "tags": "wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H029",
+    "tier": "public"
+  },
+  {
+    "id": "H029-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウェーブロング(ピンク)",
+    "tags": "wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H029",
+    "tier": "public"
+  },
+  {
+    "id": "H029-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ウェーブロング(銀)",
+    "tags": "wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H029",
+    "tier": "public"
+  },
+  {
+    "id": "H030",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "カールヘア",
+    "tags": "curly hair, medium hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H030-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "カールヘア(黒)",
+    "tags": "curly hair, medium hair",
+    "sub": "style_color",
+    "parent": "H030",
+    "tier": "public"
+  },
+  {
+    "id": "H030-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "カールヘア(金)",
+    "tags": "curly hair, medium hair",
+    "sub": "style_color",
+    "parent": "H030",
+    "tier": "public"
+  },
+  {
+    "id": "H030-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "カールヘア(ピンク)",
+    "tags": "curly hair, medium hair",
+    "sub": "style_color",
+    "parent": "H030",
+    "tier": "public"
+  },
+  {
+    "id": "H030-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "カールヘア(銀)",
+    "tags": "curly hair, medium hair",
+    "sub": "style_color",
+    "parent": "H030",
+    "tier": "public"
+  },
+  {
+    "id": "H031",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "リングレット",
+    "tags": "ringlets, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H031-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "リングレット(黒)",
+    "tags": "ringlets, long hair",
+    "sub": "style_color",
+    "parent": "H031",
+    "tier": "public"
+  },
+  {
+    "id": "H031-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "リングレット(金)",
+    "tags": "ringlets, long hair",
+    "sub": "style_color",
+    "parent": "H031",
+    "tier": "public"
+  },
+  {
+    "id": "H031-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "リングレット(ピンク)",
+    "tags": "ringlets, long hair",
+    "sub": "style_color",
+    "parent": "H031",
+    "tier": "public"
+  },
+  {
+    "id": "H031-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "リングレット(銀)",
+    "tags": "ringlets, long hair",
+    "sub": "style_color",
+    "parent": "H031",
+    "tier": "public"
+  },
+  {
+    "id": "H032",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "無造作ヘア",
+    "tags": "messy hair, medium hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H032-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "無造作ヘア(黒)",
+    "tags": "messy hair, medium hair",
+    "sub": "style_color",
+    "parent": "H032",
+    "tier": "public"
+  },
+  {
+    "id": "H032-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "無造作ヘア(金)",
+    "tags": "messy hair, medium hair",
+    "sub": "style_color",
+    "parent": "H032",
+    "tier": "public"
+  },
+  {
+    "id": "H032-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "無造作ヘア(ピンク)",
+    "tags": "messy hair, medium hair",
+    "sub": "style_color",
+    "parent": "H032",
+    "tier": "public"
+  },
+  {
+    "id": "H032-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "無造作ヘア(銀)",
+    "tags": "messy hair, medium hair",
+    "sub": "style_color",
+    "parent": "H032",
+    "tier": "public"
+  },
+  {
+    "id": "H033",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ストレートロング",
+    "tags": "straight hair, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H033-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ストレートロング(黒)",
+    "tags": "straight hair, long hair",
+    "sub": "style_color",
+    "parent": "H033",
+    "tier": "public"
+  },
+  {
+    "id": "H033-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ストレートロング(金)",
+    "tags": "straight hair, long hair",
+    "sub": "style_color",
+    "parent": "H033",
+    "tier": "public"
+  },
+  {
+    "id": "H033-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ストレートロング(ピンク)",
+    "tags": "straight hair, long hair",
+    "sub": "style_color",
+    "parent": "H033",
+    "tier": "public"
+  },
+  {
+    "id": "H033-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ストレートロング(銀)",
+    "tags": "straight hair, long hair",
+    "sub": "style_color",
+    "parent": "H033",
+    "tier": "public"
+  },
+  {
+    "id": "H034",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "肩に流した髪",
+    "tags": "hair over shoulder, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H034-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "肩に流した髪(黒)",
+    "tags": "hair over shoulder, long hair",
+    "sub": "style_color",
+    "parent": "H034",
+    "tier": "public"
+  },
+  {
+    "id": "H034-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "肩に流した髪(金)",
+    "tags": "hair over shoulder, long hair",
+    "sub": "style_color",
+    "parent": "H034",
+    "tier": "public"
+  },
+  {
+    "id": "H034-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "肩に流した髪(ピンク)",
+    "tags": "hair over shoulder, long hair",
+    "sub": "style_color",
+    "parent": "H034",
+    "tier": "public"
+  },
+  {
+    "id": "H034-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "肩に流した髪(銀)",
+    "tags": "hair over shoulder, long hair",
+    "sub": "style_color",
+    "parent": "H034",
+    "tier": "public"
+  },
+  {
+    "id": "H035",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ゆる結びロング",
+    "tags": "low-tied long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H035-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ゆる結びロング(黒)",
+    "tags": "low-tied long hair",
+    "sub": "style_color",
+    "parent": "H035",
+    "tier": "public"
+  },
+  {
+    "id": "H035-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ゆる結びロング(金)",
+    "tags": "low-tied long hair",
+    "sub": "style_color",
+    "parent": "H035",
+    "tier": "public"
+  },
+  {
+    "id": "H035-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ゆる結びロング(ピンク)",
+    "tags": "low-tied long hair",
+    "sub": "style_color",
+    "parent": "H035",
+    "tier": "public"
+  },
+  {
+    "id": "H035-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ゆる結びロング(銀)",
+    "tags": "low-tied long hair",
+    "sub": "style_color",
+    "parent": "H035",
+    "tier": "public"
+  },
+  {
+    "id": "H036",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(内巻き)",
+    "tags": "bob cut, curled hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H036-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(内巻き)(黒)",
+    "tags": "bob cut, curled hair",
+    "sub": "style_color",
+    "parent": "H036",
+    "tier": "public"
+  },
+  {
+    "id": "H036-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(内巻き)(金)",
+    "tags": "bob cut, curled hair",
+    "sub": "style_color",
+    "parent": "H036",
+    "tier": "public"
+  },
+  {
+    "id": "H036-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(内巻き)(ピンク)",
+    "tags": "bob cut, curled hair",
+    "sub": "style_color",
+    "parent": "H036",
+    "tier": "public"
+  },
+  {
+    "id": "H036-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(内巻き)(銀)",
+    "tags": "bob cut, curled hair",
+    "sub": "style_color",
+    "parent": "H036",
+    "tier": "public"
+  },
+  {
+    "id": "H037",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "ぱっつん前髪",
+    "tags": "blunt bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H038",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "流し前髪",
+    "tags": "swept bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H039",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "センター分け",
+    "tags": "parted bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H040",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "目にかかる前髪",
+    "tags": "hair between eyes",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H041",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "交差前髪",
+    "tags": "crossed bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H042",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "アシンメトリー前髪",
+    "tags": "asymmetrical bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H043",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "カーテンバング",
+    "tags": "curtained hair",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H044",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "片目隠し",
+    "tags": "hair over one eye",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H045",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "おでこ出し",
+    "tags": "forehead, no bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H046",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "もみあげ長め",
+    "tags": "sidelocks, long sidelocks",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H047",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "シースルーバング",
+    "tags": "see-through bangs",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H048",
+    "set": "hair",
+    "cat": "前髪",
+    "jp": "ぱっつん＋横髪",
+    "tags": "blunt bangs, blunt ends",
+    "sub": "bangs",
+    "tier": "public"
+  },
+  {
+    "id": "H049",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "黒髪",
+    "tags": "black hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H050",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "茶髪",
+    "tags": "brown hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H051",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "明るい茶髪",
+    "tags": "light brown hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H052",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "金髪",
+    "tags": "blonde hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H053",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "プラチナブロンド",
+    "tags": "platinum blonde hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H054",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "白髪",
+    "tags": "white hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H055",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "銀髪",
+    "tags": "silver hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H056",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "グレー",
+    "tags": "grey hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H057",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "ピンク",
+    "tags": "pink hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H058",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "赤髪",
+    "tags": "red hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H059",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "オレンジ",
+    "tags": "orange hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H060",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "青髪",
+    "tags": "blue hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H061",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "水色",
+    "tags": "light blue hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H062",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "紫",
+    "tags": "purple hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H063",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "緑",
+    "tags": "green hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H064",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "アクア",
+    "tags": "aqua hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H065",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "グラデーション(青→ピンク)",
+    "tags": "gradient hair, blue hair, pink hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H066",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "インナーカラー",
+    "tags": "two-tone hair, black hair, pink hair, colored inner hair",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H067",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "メッシュ",
+    "tags": "streaked hair, black hair, red streak",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H068",
+    "set": "hair",
+    "cat": "髪色",
+    "jp": "毛先カラー",
+    "tags": "colored tips, white hair, blue tips",
+    "sub": "color",
+    "tier": "public"
+  },
+  {
+    "id": "H069",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "リボン",
+    "tags": "hair ribbon, red ribbon",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H070",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "大きなリボン",
+    "tags": "hair bow, large bow",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H071",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "ヘアピン",
+    "tags": "hairclip, x hair ornament",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H072",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "カチューシャ",
+    "tags": "hairband",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H073",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "花飾り",
+    "tags": "hair flower",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H074",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "かんざし",
+    "tags": "kanzashi, hair ornament",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H075",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "アホ毛",
+    "tags": "ahoge",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H076",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "シュシュ",
+    "tags": "hair scrunchie",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H077",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "ベレー帽",
+    "tags": "beret",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H078",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "猫耳",
+    "tags": "cat ears, animal ears",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H079",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "狐耳",
+    "tags": "fox ears, animal ears",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H080",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "ヘッドホン",
+    "tags": "headphones",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H081",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "ヘアインテーク",
+    "tags": "hair intakes",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H082",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "三角巾",
+    "tags": "head scarf",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H083",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "星の髪飾り",
+    "tags": "star hair ornament",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H084",
+    "set": "hair",
+    "cat": "髪飾り",
+    "jp": "ハート髪飾り",
+    "tags": "heart hair ornament",
+    "sub": "acc",
+    "tier": "public"
+  },
+  {
+    "id": "H085",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(低め・短い)",
+    "tags": "low twintails, short hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H085-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(低め・短い)(黒)",
+    "tags": "low twintails, short hair",
+    "sub": "style_color",
+    "parent": "H085",
+    "tier": "public"
+  },
+  {
+    "id": "H085-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(低め・短い)(金)",
+    "tags": "low twintails, short hair",
+    "sub": "style_color",
+    "parent": "H085",
+    "tier": "public"
+  },
+  {
+    "id": "H085-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(低め・短い)(ピンク)",
+    "tags": "low twintails, short hair",
+    "sub": "style_color",
+    "parent": "H085",
+    "tier": "public"
+  },
+  {
+    "id": "H085-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(低め・短い)(銀)",
+    "tags": "low twintails, short hair",
+    "sub": "style_color",
+    "parent": "H085",
+    "tier": "public"
+  },
+  {
+    "id": "H086",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ふわふわ)",
+    "tags": "ponytail, wavy hair, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H086-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ふわふわ)(黒)",
+    "tags": "ponytail, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H086",
+    "tier": "public"
+  },
+  {
+    "id": "H086-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ふわふわ)(金)",
+    "tags": "ponytail, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H086",
+    "tier": "public"
+  },
+  {
+    "id": "H086-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ふわふわ)(ピンク)",
+    "tags": "ponytail, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H086",
+    "tier": "public"
+  },
+  {
+    "id": "H086-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ポニーテール(ふわふわ)(銀)",
+    "tags": "ponytail, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H086",
+    "tier": "public"
+  },
+  {
+    "id": "H087",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(サイド)",
+    "tags": "side bun, hair bun",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H087-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(サイド)(黒)",
+    "tags": "side bun, hair bun",
+    "sub": "style_color",
+    "parent": "H087",
+    "tier": "public"
+  },
+  {
+    "id": "H087-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(サイド)(金)",
+    "tags": "side bun, hair bun",
+    "sub": "style_color",
+    "parent": "H087",
+    "tier": "public"
+  },
+  {
+    "id": "H087-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(サイド)(ピンク)",
+    "tags": "side bun, hair bun",
+    "sub": "style_color",
+    "parent": "H087",
+    "tier": "public"
+  },
+  {
+    "id": "H087-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "お団子(サイド)(銀)",
+    "tags": "side bun, hair bun",
+    "sub": "style_color",
+    "parent": "H087",
+    "tier": "public"
+  },
+  {
+    "id": "H088",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフツイン",
+    "tags": "two side up, twintails, hair down",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H088-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフツイン(黒)",
+    "tags": "two side up, twintails, hair down",
+    "sub": "style_color",
+    "parent": "H088",
+    "tier": "public"
+  },
+  {
+    "id": "H088-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフツイン(金)",
+    "tags": "two side up, twintails, hair down",
+    "sub": "style_color",
+    "parent": "H088",
+    "tier": "public"
+  },
+  {
+    "id": "H088-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフツイン(ピンク)",
+    "tags": "two side up, twintails, hair down",
+    "sub": "style_color",
+    "parent": "H088",
+    "tier": "public"
+  },
+  {
+    "id": "H088-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ハーフツイン(銀)",
+    "tags": "two side up, twintails, hair down",
+    "sub": "style_color",
+    "parent": "H088",
+    "tier": "public"
+  },
+  {
+    "id": "H089",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(外ハネ)",
+    "tags": "bob cut, flipped hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H089-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(外ハネ)(黒)",
+    "tags": "bob cut, flipped hair",
+    "sub": "style_color",
+    "parent": "H089",
+    "tier": "public"
+  },
+  {
+    "id": "H089-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(外ハネ)(金)",
+    "tags": "bob cut, flipped hair",
+    "sub": "style_color",
+    "parent": "H089",
+    "tier": "public"
+  },
+  {
+    "id": "H089-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(外ハネ)(ピンク)",
+    "tags": "bob cut, flipped hair",
+    "sub": "style_color",
+    "parent": "H089",
+    "tier": "public"
+  },
+  {
+    "id": "H089-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ボブ(外ハネ)(銀)",
+    "tags": "bob cut, flipped hair",
+    "sub": "style_color",
+    "parent": "H089",
+    "tier": "public"
+  },
+  {
+    "id": "H090",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(刈り上げ)",
+    "tags": "short hair, undercut",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H090-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(刈り上げ)(黒)",
+    "tags": "short hair, undercut",
+    "sub": "style_color",
+    "parent": "H090",
+    "tier": "public"
+  },
+  {
+    "id": "H090-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(刈り上げ)(金)",
+    "tags": "short hair, undercut",
+    "sub": "style_color",
+    "parent": "H090",
+    "tier": "public"
+  },
+  {
+    "id": "H090-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(刈り上げ)(ピンク)",
+    "tags": "short hair, undercut",
+    "sub": "style_color",
+    "parent": "H090",
+    "tier": "public"
+  },
+  {
+    "id": "H090-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ショート(刈り上げ)(銀)",
+    "tags": "short hair, undercut",
+    "sub": "style_color",
+    "parent": "H090",
+    "tier": "public"
+  },
+  {
+    "id": "H091",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロング(パーマ)",
+    "tags": "long hair, wavy hair, curly hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H091-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロング(パーマ)(黒)",
+    "tags": "long hair, wavy hair, curly hair",
+    "sub": "style_color",
+    "parent": "H091",
+    "tier": "public"
+  },
+  {
+    "id": "H091-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロング(パーマ)(金)",
+    "tags": "long hair, wavy hair, curly hair",
+    "sub": "style_color",
+    "parent": "H091",
+    "tier": "public"
+  },
+  {
+    "id": "H091-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロング(パーマ)(ピンク)",
+    "tags": "long hair, wavy hair, curly hair",
+    "sub": "style_color",
+    "parent": "H091",
+    "tier": "public"
+  },
+  {
+    "id": "H091-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ロング(パーマ)(銀)",
+    "tags": "long hair, wavy hair, curly hair",
+    "sub": "style_color",
+    "parent": "H091",
+    "tier": "public"
+  },
+  {
+    "id": "H092",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(サイド1本)",
+    "tags": "side braid, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H092-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(サイド1本)(黒)",
+    "tags": "side braid, long hair",
+    "sub": "style_color",
+    "parent": "H092",
+    "tier": "public"
+  },
+  {
+    "id": "H092-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(サイド1本)(金)",
+    "tags": "side braid, long hair",
+    "sub": "style_color",
+    "parent": "H092",
+    "tier": "public"
+  },
+  {
+    "id": "H092-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(サイド1本)(ピンク)",
+    "tags": "side braid, long hair",
+    "sub": "style_color",
+    "parent": "H092",
+    "tier": "public"
+  },
+  {
+    "id": "H092-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "三つ編み(サイド1本)(銀)",
+    "tags": "side braid, long hair",
+    "sub": "style_color",
+    "parent": "H092",
+    "tier": "public"
+  },
+  {
+    "id": "H093",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ウェーブ)",
+    "tags": "twintails, wavy hair, long hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H093-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ウェーブ)(黒)",
+    "tags": "twintails, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H093",
+    "tier": "public"
+  },
+  {
+    "id": "H093-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ウェーブ)(金)",
+    "tags": "twintails, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H093",
+    "tier": "public"
+  },
+  {
+    "id": "H093-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ウェーブ)(ピンク)",
+    "tags": "twintails, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H093",
+    "tier": "public"
+  },
+  {
+    "id": "H093-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "ツインテール(ウェーブ)(銀)",
+    "tags": "twintails, wavy hair, long hair",
+    "sub": "style_color",
+    "parent": "H093",
+    "tier": "public"
+  },
+  {
+    "id": "H094",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ショート)",
+    "tags": "hime cut, short hair",
+    "sub": "style",
+    "tier": "public"
+  },
+  {
+    "id": "H094-black",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ショート)(黒)",
+    "tags": "hime cut, short hair",
+    "sub": "style_color",
+    "parent": "H094",
+    "tier": "public"
+  },
+  {
+    "id": "H094-blonde",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ショート)(金)",
+    "tags": "hime cut, short hair",
+    "sub": "style_color",
+    "parent": "H094",
+    "tier": "public"
+  },
+  {
+    "id": "H094-pink",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ショート)(ピンク)",
+    "tags": "hime cut, short hair",
+    "sub": "style_color",
+    "parent": "H094",
+    "tier": "public"
+  },
+  {
+    "id": "H094-silver",
+    "set": "hair",
+    "cat": "髪型",
+    "jp": "姫カット(ショート)(銀)",
+    "tags": "hime cut, short hair",
+    "sub": "style_color",
+    "parent": "H094",
+    "tier": "public"
+  },
+  {
+    "id": "H095",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "茶色の目",
+    "tags": "brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H096",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "黒目",
+    "tags": "black eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H097",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "青い目",
+    "tags": "blue eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H098",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "水色の目",
+    "tags": "light blue eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H099",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "緑の目",
+    "tags": "green eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H100",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "金色の目",
+    "tags": "yellow eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H101",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "赤い目",
+    "tags": "red eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H102",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "紫の目",
+    "tags": "purple eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H103",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "ピンクの目",
+    "tags": "pink eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H104",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "オレンジの目",
+    "tags": "orange eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H105",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "グレーの目",
+    "tags": "grey eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H106",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "銀色の目",
+    "tags": "silver eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H107",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "アクアの目",
+    "tags": "aqua eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H108",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "琥珀色の目",
+    "tags": "amber eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H109",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "白い目",
+    "tags": "white eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H110",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "オッドアイ(青×金)",
+    "tags": "heterochromia, blue eyes, yellow eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H111",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "オッドアイ(赤×青)",
+    "tags": "heterochromia, red eyes, blue eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H112",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "グラデーションの目",
+    "tags": "gradient eyes, blue eyes, purple eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H113",
+    "set": "hair",
+    "cat": "目の色",
+    "jp": "多色の目(虹)",
+    "tags": "multicolored eyes, rainbow eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H114",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "ハート瞳",
+    "tags": "heart-shaped pupils, pink eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H115",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "星の瞳",
+    "tags": "star-shaped pupils, yellow eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H116",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "猫目(縦長の瞳孔)",
+    "tags": "slit pupils, green eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H117",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "光る目",
+    "tags": "glowing eyes, red eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H118",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "ハイライトなし(病み)",
+    "tags": "empty eyes, brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H119",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "ジト目",
+    "tags": "jitome, half-closed eyes, brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H120",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "たれ目",
+    "tags": "tareme, brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H121",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "つり目",
+    "tags": "tsurime, brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "H122",
+    "set": "hair",
+    "cat": "瞳の形",
+    "jp": "うるうる目",
+    "tags": "tearing up, sparkling eyes, brown eyes",
+    "sub": "eye",
+    "tier": "public"
+  },
+  {
+    "id": "O001",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "セーラー服(紺)",
+    "tags": "serafuku, sailor collar, blue sailor collar, red neckerchief, pleated skirt, blue skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O002",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "セーラー服(白・夏服)",
+    "tags": "serafuku, white serafuku, short sleeves, blue sailor collar, blue neckerchief, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O003",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "セーラー服(黒)",
+    "tags": "serafuku, black serafuku, black sailor collar, red neckerchief, black pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O004",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ブレザー(紺・赤リボン)",
+    "tags": "school uniform, blazer, blue blazer, white shirt, red bow, plaid skirt, red plaid skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O005",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ブレザー(グレー・ネクタイ)",
+    "tags": "school uniform, blazer, grey blazer, white shirt, striped necktie, pleated skirt, grey skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O006",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ブレザー(ベージュ・ボレロ)",
+    "tags": "school uniform, bolero, beige jacket, white shirt, red ribbon, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O007",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "カーディガン制服",
+    "tags": "school uniform, cardigan, brown cardigan, white shirt, red necktie, plaid skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O008",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ベスト制服",
+    "tags": "school uniform, sweater vest, grey vest, white shirt, blue bow, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O009",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "夏制服(半袖シャツ)",
+    "tags": "school uniform, white shirt, short sleeves, collared shirt, red necktie, pleated skirt, blue skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O010",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "夏制服(リボン)",
+    "tags": "school uniform, white shirt, short sleeves, blue bow, grey pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O011",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "体操服・ブルマ",
+    "tags": "gym uniform, white shirt, short sleeves, buruma, red buruma",
+    "tier": "public"
+  },
+  {
+    "id": "O012",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "体操服・ハーフパンツ",
+    "tags": "gym uniform, white shirt, short sleeves, gym shorts, blue shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O013",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "スクール水着",
+    "tags": "school swimsuit, one-piece swimsuit, blue one-piece swimsuit, name tag",
+    "tier": "public"
+  },
+  {
+    "id": "O014",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ジャージ(上下)",
+    "tags": "track jacket, track pants, red jacket, white stripes",
+    "tier": "public"
+  },
+  {
+    "id": "O015",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ジャージ(上だけ)",
+    "tags": "track jacket, pleated skirt, school uniform",
+    "tier": "public"
+  },
+  {
+    "id": "O016",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ジャンパースカート",
+    "tags": "pinafore dress, school uniform, white shirt, blue dress, red bow",
+    "tier": "public"
+  },
+  {
+    "id": "O017",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "サスペンダースカート",
+    "tags": "suspender skirt, white shirt, school uniform, red skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O018",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "小学生風制服",
+    "tags": "school uniform, randoseru, white shirt, blue skirt, suspenders",
+    "tier": "public"
+  },
+  {
+    "id": "O019",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋コート(冬)",
+    "tags": "school uniform, duffel coat, scarf, plaid skirt, winter clothes",
+    "tier": "public"
+  },
+  {
+    "id": "O020",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋マフラー",
+    "tags": "school uniform, blazer, scarf, red scarf, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O021",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋セーター",
+    "tags": "school uniform, sweater, yellow sweater, white shirt, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O022",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋ニーソ",
+    "tags": "school uniform, serafuku, thighhighs, black thighhighs, zettai ryouiki",
+    "tier": "public"
+  },
+  {
+    "id": "O023",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋ルーズソックス",
+    "tags": "school uniform, blazer, loose socks, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O024",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋パーカー",
+    "tags": "school uniform, hooded jacket, pleated skirt, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O025",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋エプロン(家庭科)",
+    "tags": "school uniform, apron, white apron, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O026",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋白衣",
+    "tags": "school uniform, labcoat, open labcoat, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O027",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "私立お嬢様制服",
+    "tags": "school uniform, white blazer, long skirt, bow, elegant, blue skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O028",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "チャイナ風制服",
+    "tags": "school uniform, china dress, short dress, pelvic curtain",
+    "tier": "public"
+  },
+  {
+    "id": "O029",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ミリタリー風制服",
+    "tags": "military uniform, school uniform, black jacket, double-breasted, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O030",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "アイドル風制服",
+    "tags": "idol clothes, school uniform, plaid skirt, frills, bow",
+    "tier": "public"
+  },
+  {
+    "id": "O031",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "ダサい学生服(詰襟)",
+    "tags": "gakuran, black jacket, buttons, black pants, female",
+    "tier": "public"
+  },
+  {
+    "id": "O032",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "修道院風制服",
+    "tags": "school uniform, long dress, white collar, black dress, cross necklace",
+    "tier": "public"
+  },
+  {
+    "id": "O033",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "魔法学校制服",
+    "tags": "school uniform, robe, black robe, striped necktie, wand",
+    "tier": "public"
+  },
+  {
+    "id": "O034",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服(ワンピース型)",
+    "tags": "school uniform, dress, one-piece, sailor collar, white dress, blue trim",
+    "tier": "public"
+  },
+  {
+    "id": "O035",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服(タイトスカート)",
+    "tags": "school uniform, blazer, pencil skirt, black skirt, necktie",
+    "tier": "public"
+  },
+  {
+    "id": "O036",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "半袖セーラー＋スパッツ",
+    "tags": "serafuku, short sleeves, bike shorts, black bike shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O037",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服(リュック)",
+    "tags": "school uniform, backpack, pleated skirt, blazer, walking",
+    "tier": "public"
+  },
+  {
+    "id": "O038",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服(腕まくり)",
+    "tags": "school uniform, white shirt, sleeves rolled up, loose necktie, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O039",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服(シャツはみ出し)",
+    "tags": "school uniform, white shirt, untucked shirt, shirt tucked out, loose necktie, pleated skirt, delinquent, standing",
+    "tier": "public"
+  },
+  {
+    "id": "O040",
+    "set": "outfit",
+    "cat": "制服・学生",
+    "jp": "制服＋眼鏡",
+    "tags": "school uniform, glasses, red-framed eyewear, blazer, pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O041",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "白T＋デニム",
+    "tags": "white t-shirt, denim, jeans, blue pants, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O042",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "Tシャツ＋ショートパンツ",
+    "tags": "t-shirt, print shirt, denim shorts, short shorts, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O043",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "タンクトップ＋デニム",
+    "tags": "tank top, white tank top, denim, jeans",
+    "tier": "public"
+  },
+  {
+    "id": "O044",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "キャミソール＋ショートパンツ",
+    "tags": "camisole, black camisole, shorts, casual, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O045",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ノースリーブワンピ",
+    "tags": "sundress, white dress, sleeveless dress, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O046",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "花柄ワンピース",
+    "tags": "floral print, dress, floral dress, short sleeves, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O047",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ストライプシャツワンピ",
+    "tags": "shirt dress, striped shirt, long dress, belt",
+    "tier": "public"
+  },
+  {
+    "id": "O048",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "オフショルダー",
+    "tags": "off-shoulder shirt, white shirt, bare shoulders, shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O049",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "オーバーサイズT",
+    "tags": "oversized shirt, t-shirt, bare legs, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O050",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "クロップトップ",
+    "tags": "crop top, midriff, shorts, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O051",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ポロシャツ＋スカート",
+    "tags": "polo shirt, white shirt, pleated skirt, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O052",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "パーカー＋ショートパンツ",
+    "tags": "hoodie, grey hoodie, shorts, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O053",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ボーダーT＋スカート",
+    "tags": "striped shirt, long sleeves, skirt, white skirt, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O054",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "サロペット",
+    "tags": "overalls, denim overalls, white shirt, short sleeves",
+    "tier": "public"
+  },
+  {
+    "id": "O055",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "サロペットスカート",
+    "tags": "overall skirt, denim, white shirt",
+    "tier": "public"
+  },
+  {
+    "id": "O056",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ティアードワンピ",
+    "tags": "tiered dress, white dress, frills, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O057",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ロングスカート＋ブラウス",
+    "tags": "long skirt, pleated skirt, blouse, white blouse, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O058",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "マキシワンピ",
+    "tags": "long dress, maxi dress, sleeveless, summer, straw hat",
+    "tier": "public"
+  },
+  {
+    "id": "O059",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "チュニック",
+    "tags": "tunic, loose shirt, shorts, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O060",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ジャケット＋Tシャツ",
+    "tags": "jacket, open jacket, t-shirt, jeans, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O061",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "リネンシャツ",
+    "tags": "linen shirt, beige shirt, white pants, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O062",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ベスト＋シャツ",
+    "tags": "vest, white shirt, black vest, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O063",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "キュロット",
+    "tags": "culottes, blouse, short sleeves, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O064",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ワイドパンツ",
+    "tags": "wide pants, white pants, tank top, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O065",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "カーゴパンツ＋タンク",
+    "tags": "cargo pants, tank top, black tank top, street fashion",
+    "tier": "public"
+  },
+  {
+    "id": "O066",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ストリート(オーバーサイズ)",
+    "tags": "streetwear, oversized shirt, baggy pants, sneakers, cap",
+    "tier": "public"
+  },
+  {
+    "id": "O067",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ジャージスタイル(街)",
+    "tags": "track jacket, crop top, shorts, sneakers, streetwear",
+    "tier": "public"
+  },
+  {
+    "id": "O068",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ガーリー(リボンブラウス)",
+    "tags": "blouse, bow, frilled blouse, skirt, pink skirt, girly",
+    "tier": "public"
+  },
+  {
+    "id": "O069",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "レトロワンピ",
+    "tags": "retro dress, polka dot, dress, red dress, headband",
+    "tier": "public"
+  },
+  {
+    "id": "O070",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "リゾート(透けシャツ)",
+    "tags": "see-through shirt, open shirt, bikini under clothes, shorts, sandals, summer, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O071",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "浴衣風ワンピ",
+    "tags": "dress, japanese print, summer, sandals",
+    "tier": "public"
+  },
+  {
+    "id": "O072",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "デニムジャケット",
+    "tags": "denim jacket, white dress, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O073",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "バスケ風(ジャージ)",
+    "tags": "basketball uniform, jersey, shorts, sneakers",
+    "tier": "public"
+  },
+  {
+    "id": "O074",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ラフな部屋着",
+    "tags": "t-shirt, shorts, barefoot, casual, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O075",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "寝起きのTシャツ",
+    "tags": "oversized t-shirt, bare legs, messy hair, sleepy",
+    "tier": "public"
+  },
+  {
+    "id": "O076",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "チェックシャツ",
+    "tags": "plaid shirt, flannel, shorts, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O077",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "セットアップ(半袖)",
+    "tags": "short sleeves, matching set, shirt, shorts, beige",
+    "tier": "public"
+  },
+  {
+    "id": "O078",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ビッグシルエットパーカー",
+    "tags": "oversized hoodie, hoodie, bare legs, sleeves past wrists",
+    "tier": "public"
+  },
+  {
+    "id": "O079",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "ガウチョ",
+    "tags": "gaucho pants, blouse, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O080",
+    "set": "outfit",
+    "cat": "カジュアル(春夏)",
+    "jp": "バケハ＋T",
+    "tags": "bucket hat, t-shirt, shorts, casual, streetwear",
+    "tier": "public"
+  },
+  {
+    "id": "O081",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ニット＋ロングスカート",
+    "tags": "sweater, turtleneck, ribbed sweater, long skirt, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O082",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "白ニット＋デニム",
+    "tags": "sweater, white sweater, jeans, winter clothes",
+    "tier": "public"
+  },
+  {
+    "id": "O083",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ダッフルコート",
+    "tags": "duffel coat, scarf, winter clothes, skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O084",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "トレンチコート",
+    "tags": "trench coat, beige coat, boots, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O085",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "チェスターコート",
+    "tags": "long coat, black coat, turtleneck, pants, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O086",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ダウンジャケット",
+    "tags": "down jacket, puffer jacket, white jacket, winter clothes",
+    "tier": "public"
+  },
+  {
+    "id": "O087",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ピーコート",
+    "tags": "peacoat, navy coat, pleated skirt, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O088",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ポンチョ",
+    "tags": "poncho, knit, autumn, boots",
+    "tier": "public"
+  },
+  {
+    "id": "O089",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "タートルネック(黒)",
+    "tags": "turtleneck, black sweater, long sleeves, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O090",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "カーディガン＋ワンピ",
+    "tags": "cardigan, long cardigan, dress, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O091",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "セーター＋プリーツ",
+    "tags": "sweater, beige sweater, pleated skirt, thighhighs, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O092",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ニットワンピ",
+    "tags": "sweater dress, ribbed dress, long sleeves, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O093",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ケーブルニット",
+    "tags": "cable knit, sweater, scarf, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O094",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "フリース＋ジーンズ",
+    "tags": "fleece jacket, jeans, casual, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O095",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ムートンコート",
+    "tags": "shearling coat, brown coat, boots, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O096",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ロングブーツ＋ミニ",
+    "tags": "boots, knee boots, miniskirt, sweater, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O097",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "マフラー＋手袋",
+    "tags": "scarf, mittens, coat, winter clothes, snow",
+    "tier": "public"
+  },
+  {
+    "id": "O098",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ニット帽",
+    "tags": "beanie, knit hat, sweater, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O099",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ストール",
+    "tags": "shawl, dress, autumn, boots",
+    "tier": "public"
+  },
+  {
+    "id": "O100",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "タイツ＋ショートパンツ",
+    "tags": "pantyhose, black pantyhose, shorts, sweater, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O101",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ライダース",
+    "tags": "leather jacket, black jacket, jeans, boots",
+    "tier": "public"
+  },
+  {
+    "id": "O102",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "MA-1",
+    "tags": "bomber jacket, green jacket, t-shirt, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O103",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "コーデュロイ",
+    "tags": "corduroy, brown jacket, turtleneck, pants, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O104",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ワンピース＋ブーツ",
+    "tags": "long dress, brown dress, boots, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O105",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ハイネック＋ジャンスカ",
+    "tags": "turtleneck, pinafore dress, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O106",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "チェック柄コート",
+    "tags": "plaid coat, coat, scarf, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O107",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ロングカーディガン",
+    "tags": "long cardigan, grey cardigan, t-shirt, jeans",
+    "tier": "public"
+  },
+  {
+    "id": "O108",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "パーカー＋コート",
+    "tags": "hoodie, coat, open coat, pants, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O109",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "セーター＋眼鏡",
+    "tags": "sweater, glasses, long sleeves, sleeves past wrists, skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O110",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "袖余りニット",
+    "tags": "sweater, sleeves past wrists, sleeves past fingers, oversized sweater",
+    "tier": "public"
+  },
+  {
+    "id": "O111",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "裸ニット(肩出し)",
+    "tags": "off-shoulder sweater, sweater, bare shoulders, collarbone",
+    "tier": "public"
+  },
+  {
+    "id": "O112",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "レギンス＋チュニック",
+    "tags": "leggings, tunic, black leggings, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O113",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "ファーコート",
+    "tags": "fur coat, white coat, dress, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O114",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "キルティングジャケット",
+    "tags": "quilted jacket, jacket, pants, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O115",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "パジャマ(冬)",
+    "tags": "pajamas, long sleeves, pink pajamas, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O116",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "フリースルームウェア",
+    "tags": "fleece, room wear, loungewear, shorts, winter, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O117",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "こたつでニット",
+    "tags": "sweater, kotatsu, winter, indoors, sitting",
+    "tier": "public"
+  },
+  {
+    "id": "O118",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "雪の日(傘)",
+    "tags": "coat, umbrella, snow, scarf, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O119",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "クリスマスセーター",
+    "tags": "christmas sweater, sweater, red sweater, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O120",
+    "set": "outfit",
+    "cat": "カジュアル(秋冬)",
+    "jp": "バレンタイン(エプロン＋ニット)",
+    "tags": "sweater, apron, heart, valentine",
+    "tier": "public"
+  },
+  {
+    "id": "O121",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "スーツ(黒)",
+    "tags": "business suit, black jacket, white shirt, pencil skirt, office lady",
+    "tier": "public"
+  },
+  {
+    "id": "O122",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "スーツ(グレー・パンツ)",
+    "tags": "business suit, grey jacket, pants, formal, office lady",
+    "tier": "public"
+  },
+  {
+    "id": "O123",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ブラウス＋タイトスカート",
+    "tags": "blouse, white blouse, pencil skirt, black skirt, office lady",
+    "tier": "public"
+  },
+  {
+    "id": "O124",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "シャツ＋ベスト",
+    "tags": "collared shirt, vest, black vest, pencil skirt, office lady",
+    "tier": "public"
+  },
+  {
+    "id": "O125",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ブラウス＋リボンタイ",
+    "tags": "blouse, ribbon, bowtie, skirt, office",
+    "tier": "public"
+  },
+  {
+    "id": "O126",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "カーディガン＋OL",
+    "tags": "cardigan, blouse, pencil skirt, office lady, lanyard",
+    "tier": "public"
+  },
+  {
+    "id": "O127",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "パンツスーツ(白)",
+    "tags": "white suit, pantsuit, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O128",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ジャケット＋ワンピ",
+    "tags": "jacket, dress, office, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O129",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "受付(制服)",
+    "tags": "receptionist, uniform, vest, scarf, office",
+    "tier": "public"
+  },
+  {
+    "id": "O130",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "就活スーツ",
+    "tags": "business suit, black suit, white shirt, pencil skirt, black hair",
+    "tier": "public"
+  },
+  {
+    "id": "O131",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "新人OL(名札)",
+    "tags": "office lady, blouse, name tag, pencil skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O132",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "秘書風(眼鏡)",
+    "tags": "secretary, glasses, blouse, pencil skirt, pantyhose",
+    "tier": "public"
+  },
+  {
+    "id": "O133",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "シャツ＋スラックス",
+    "tags": "collared shirt, slacks, belt, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O134",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "エレガントワンピ",
+    "tags": "elegant, dress, long dress, formal, pearl necklace",
+    "tier": "public"
+  },
+  {
+    "id": "O135",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ニット＋スカート(通勤)",
+    "tags": "sweater, skirt, office, commuting, shoulder bag",
+    "tier": "public"
+  },
+  {
+    "id": "O136",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ブラウス(半袖・クールビズ)",
+    "tags": "blouse, short sleeves, skirt, office, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O137",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "トレンチ＋通勤",
+    "tags": "trench coat, office lady, bag, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O138",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "大人カジュアル",
+    "tags": "blouse, wide pants, formal, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O139",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "教師(スーツ)",
+    "tags": "teacher, suit, glasses, blouse, pencil skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O140",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ナチュラル(リネン)",
+    "tags": "linen, blouse, long skirt, natural",
+    "tier": "public"
+  },
+  {
+    "id": "O141",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "ジャケット＋デニム",
+    "tags": "jacket, jeans, casual, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O142",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "キャリアウーマン",
+    "tags": "business suit, high heels, holding briefcase, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O143",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "看護師風(白衣パンツ)",
+    "tags": "nurse, scrubs, white uniform, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O144",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "アナウンサー",
+    "tags": "news anchor, newscaster, blazer, white blouse, pencil skirt, holding microphone, name tag, formal, standing",
+    "tier": "public"
+  },
+  {
+    "id": "O145",
+    "set": "outfit",
+    "cat": "きれいめ・オフィス",
+    "jp": "銀行員",
+    "tags": "uniform, vest, scarf, office, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O146",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ウェディングドレス",
+    "tags": "wedding dress, white dress, veil, bridal",
+    "tier": "public"
+  },
+  {
+    "id": "O147",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ウェディング(マーメイド)",
+    "tags": "wedding dress, mermaid dress, white dress, bouquet",
+    "tier": "public"
+  },
+  {
+    "id": "O148",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "イブニングドレス(赤)",
+    "tags": "evening gown, red dress, long dress, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O149",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "イブニングドレス(黒)",
+    "tags": "evening gown, black dress, long dress, elegant, side slit",
+    "tier": "public"
+  },
+  {
+    "id": "O150",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "カクテルドレス",
+    "tags": "cocktail dress, dress, short dress, party",
+    "tier": "public"
+  },
+  {
+    "id": "O151",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "リトルブラックドレス",
+    "tags": "black dress, short dress, elegant, pearl necklace",
+    "tier": "public"
+  },
+  {
+    "id": "O152",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "プリンセスドレス",
+    "tags": "princess, ball gown, pink dress, tiara",
+    "tier": "public"
+  },
+  {
+    "id": "O153",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ゴシックドレス",
+    "tags": "gothic, black dress, lace, long dress, gothic lolita",
+    "tier": "public"
+  },
+  {
+    "id": "O154",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ゴスロリ",
+    "tags": "gothic lolita, black dress, frills, lace, bonnet",
+    "tier": "public"
+  },
+  {
+    "id": "O155",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "甘ロリ",
+    "tags": "sweet lolita, pink dress, frills, lace, bonnet, lolita fashion",
+    "tier": "public"
+  },
+  {
+    "id": "O156",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "クラシカルロリータ",
+    "tags": "classic lolita, brown dress, lace, lolita fashion",
+    "tier": "public"
+  },
+  {
+    "id": "O157",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "チャイナドレス(赤)",
+    "tags": "china dress, red dress, side slit, gold trim",
+    "tier": "public"
+  },
+  {
+    "id": "O158",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "チャイナドレス(青)",
+    "tags": "china dress, blue dress, floral print, side slit",
+    "tier": "public"
+  },
+  {
+    "id": "O159",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ドレス(肩出し)",
+    "tags": "off-shoulder dress, dress, bare shoulders, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O160",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ドレス(背中開き)",
+    "tags": "backless dress, dress, elegant, black dress",
+    "tier": "public"
+  },
+  {
+    "id": "O161",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "パーティドレス(キラキラ)",
+    "tags": "sequin dress, dress, sparkle, party",
+    "tier": "public"
+  },
+  {
+    "id": "O162",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "成人式(振袖)",
+    "tags": "furisode, kimono, floral print, obi, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O163",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "卒業式(袴)",
+    "tags": "hakama, kimono, hakama skirt, graduation",
+    "tier": "public"
+  },
+  {
+    "id": "O164",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ナイトドレス",
+    "tags": "slip dress, satin, nightgown, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O165",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ハロウィン(魔女ドレス)",
+    "tags": "witch, witch hat, black dress, halloween",
+    "tier": "public"
+  },
+  {
+    "id": "O166",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ハロウィン(小悪魔)",
+    "tags": "demon girl, demon horns, demon tail, black dress, halloween",
+    "tier": "public"
+  },
+  {
+    "id": "O167",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ハロウィン(吸血鬼)",
+    "tags": "vampire, cape, black dress, fangs, halloween",
+    "tier": "public"
+  },
+  {
+    "id": "O168",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "クリスマス(サンタ)",
+    "tags": "santa costume, santa hat, red dress, fur trim, christmas",
+    "tier": "public"
+  },
+  {
+    "id": "O169",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "クリスマス(トナカイ)",
+    "tags": "reindeer costume, antlers, brown dress, christmas",
+    "tier": "public"
+  },
+  {
+    "id": "O170",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "バニー(クラシック)",
+    "tags": "playboy bunny, rabbit ears, leotard, black leotard, pantyhose, bowtie",
+    "tier": "public"
+  },
+  {
+    "id": "O171",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "バニー(白)",
+    "tags": "playboy bunny, rabbit ears, white leotard, fishnets, bowtie",
+    "tier": "public"
+  },
+  {
+    "id": "O172",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ドレス(キャバ)",
+    "tags": "dress, tight dress, short dress, cleavage, high heels, glamorous",
+    "tier": "public"
+  },
+  {
+    "id": "O173",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ドレス(パーティ・ロング)",
+    "tags": "long dress, blue dress, elegant, gloves, elbow gloves",
+    "tier": "public"
+  },
+  {
+    "id": "O174",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "舞台衣装(アイドル)",
+    "tags": "idol clothes, frills, mini skirt, ribbon, stage",
+    "tier": "public"
+  },
+  {
+    "id": "O175",
+    "set": "outfit",
+    "cat": "ドレス・パーティ",
+    "jp": "ドレス(花柄)",
+    "tags": "floral dress, dress, elegant, party",
+    "tier": "public"
+  },
+  {
+    "id": "O176",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "浴衣(紺・朝顔)",
+    "tags": "yukata, blue kimono, floral print, obi, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O177",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "浴衣(白・金魚)",
+    "tags": "yukata, white kimono, goldfish print, obi, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O178",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "浴衣(赤)",
+    "tags": "yukata, red kimono, floral print, obi",
+    "tier": "public"
+  },
+  {
+    "id": "O179",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "浴衣(花火)",
+    "tags": "yukata, kimono, fireworks, summer festival, obi",
+    "tier": "public"
+  },
+  {
+    "id": "O180",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物(振袖)",
+    "tags": "furisode, kimono, long sleeves, floral print, obi",
+    "tier": "public"
+  },
+  {
+    "id": "O181",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物(訪問着)",
+    "tags": "kimono, floral print, obi, formal",
+    "tier": "public"
+  },
+  {
+    "id": "O182",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物(無地)",
+    "tags": "kimono, plain kimono, obi, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O183",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "巫女",
+    "tags": "miko, hakama, red hakama, white kimono, shrine maiden",
+    "tier": "public"
+  },
+  {
+    "id": "O184",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "巫女(改)",
+    "tags": "miko, red hakama, detached sleeves, nontraditional miko",
+    "tier": "public"
+  },
+  {
+    "id": "O185",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "袴(大正)",
+    "tags": "hakama, meiji schoolgirl uniform, hakama skirt, taishou roman",
+    "tier": "public"
+  },
+  {
+    "id": "O186",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "大正ロマン(着物＋ブーツ)",
+    "tags": "kimono, hakama, boots, taishou roman",
+    "tier": "public"
+  },
+  {
+    "id": "O187",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "和風メイド",
+    "tags": "wa maid, kimono, maid headdress, apron",
+    "tier": "public"
+  },
+  {
+    "id": "O188",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "忍者",
+    "tags": "ninja, shinobi, black outfit, mask, kunai",
+    "tier": "public"
+  },
+  {
+    "id": "O189",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "くノ一",
+    "tags": "kunoichi, ninja, fishnets, short kimono",
+    "tier": "public"
+  },
+  {
+    "id": "O190",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "剣道着",
+    "tags": "kendo, hakama, dougi, shinai",
+    "tier": "public"
+  },
+  {
+    "id": "O191",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "道着(空手)",
+    "tags": "karate gi, dougi, black belt, martial arts",
+    "tier": "public"
+  },
+  {
+    "id": "O192",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "弓道着",
+    "tags": "kyuudou, hakama, white kimono, holding bow (weapon)",
+    "tier": "public"
+  },
+  {
+    "id": "O193",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物(肩出し・崩し)",
+    "tags": "kimono, off-shoulder kimono, bare shoulders, obi",
+    "tier": "public"
+  },
+  {
+    "id": "O194",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物(短丈)",
+    "tags": "short kimono, kimono, thighhighs, obi",
+    "tier": "public"
+  },
+  {
+    "id": "O195",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "遊女風",
+    "tags": "oiran, kimono, off-shoulder kimono, kanzashi, elaborate",
+    "tier": "public"
+  },
+  {
+    "id": "O196",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "狐の巫女",
+    "tags": "miko, fox ears, fox tail, red hakama",
+    "tier": "public"
+  },
+  {
+    "id": "O197",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "着物＋傘",
+    "tags": "kimono, oil-paper umbrella, obi, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O198",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "甚平",
+    "tags": "jinbei, japanese clothes, shorts, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O199",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "半被(祭り)",
+    "tags": "happi, festival, headband, shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O200",
+    "set": "outfit",
+    "cat": "和服",
+    "jp": "和装花嫁",
+    "tags": "uchikake, wedding kimono, white kimono, tsunokakushi",
+    "tier": "public"
+  },
+  {
+    "id": "O201",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(白)",
+    "tags": "bikini, white bikini, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O202",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(黒)",
+    "tags": "bikini, black bikini, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O203",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(三角・水色)",
+    "tags": "bikini, light blue bikini, string bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O204",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(花柄)",
+    "tags": "bikini, floral print bikini, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O205",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(ストライプ)",
+    "tags": "bikini, striped bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O206",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "フリルビキニ",
+    "tags": "frilled bikini, bikini, pink bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O207",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ハイレグ・ワンピース",
+    "tags": "one-piece swimsuit, highleg swimsuit, white swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O208",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "競泳水着",
+    "tags": "competition swimsuit, one-piece swimsuit, blue swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O209",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "スク水",
+    "tags": "school swimsuit, one-piece swimsuit, blue one-piece swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O210",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "スク水(白)",
+    "tags": "school swimsuit, white school swimsuit, one-piece swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O211",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "タンキニ",
+    "tags": "tankini, swimsuit, swim shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O212",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ラッシュガード",
+    "tags": "rash guard, bikini, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O213",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ホルターネック",
+    "tags": "halterneck, bikini, red bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O214",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "バンドゥビキニ",
+    "tags": "bandeau, bikini, strapless, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O215",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ハイウエストビキニ",
+    "tags": "high-waist bikini, bikini, retro, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O216",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "モノキニ",
+    "tags": "monokini, swimsuit, black swimsuit, cutout",
+    "tier": "public"
+  },
+  {
+    "id": "O217",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "サイドタイ",
+    "tags": "side-tie bikini bottom, bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O218",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "パレオ",
+    "tags": "sarong, bikini, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O219",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着＋パーカー",
+    "tags": "bikini, hoodie, open hoodie, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O220",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着＋浮き輪",
+    "tags": "bikini, innertube, swimsuit, pool",
+    "tier": "public"
+  },
+  {
+    "id": "O221",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "スポーツビキニ",
+    "tags": "sports bikini, bikini, swimsuit, athletic",
+    "tier": "public"
+  },
+  {
+    "id": "O222",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(ボーダー)",
+    "tags": "striped swimsuit, one-piece swimsuit, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O223",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(リボン)",
+    "tags": "bikini, bow, ribbon, swimsuit, cute",
+    "tier": "public"
+  },
+  {
+    "id": "O224",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(シースルー)",
+    "tags": "see-through, bikini, swimsuit, cover-up",
+    "tier": "public"
+  },
+  {
+    "id": "O225",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着＋麦わら帽子",
+    "tags": "bikini, straw hat, sun hat, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O226",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ビキニ(紐・黒)",
+    "tags": "string bikini, black bikini, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O227",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "ワンピース(背中開き)",
+    "tags": "one-piece swimsuit, backless swimsuit, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O228",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(サーフ)",
+    "tags": "swimsuit, surfboard, bikini, beach, sporty",
+    "tier": "public"
+  },
+  {
+    "id": "O229",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(スリングショット風・控えめ)",
+    "tags": "slingshot swimsuit, swimsuit, highleg",
+    "tier": "public"
+  },
+  {
+    "id": "O230",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(ウェットスーツ)",
+    "tags": "wetsuit, diving suit, swimsuit, black bodysuit",
+    "tier": "public"
+  },
+  {
+    "id": "O231",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "マイクロビキニ",
+    "tags": "micro bikini, bikini, swimsuit, string bikini",
+    "tier": "public"
+  },
+  {
+    "id": "O232",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(ジッパー)",
+    "tags": "zipper, one-piece swimsuit, front zipper, swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O233",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(フリル多め)",
+    "tags": "frilled swimsuit, one-piece swimsuit, pink swimsuit",
+    "tier": "public"
+  },
+  {
+    "id": "O234",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着(パーカー風)",
+    "tags": "swimsuit, hooded swimsuit, bikini, cute",
+    "tier": "public"
+  },
+  {
+    "id": "O235",
+    "set": "outfit",
+    "cat": "水着",
+    "jp": "水着＋サングラス",
+    "tags": "bikini, sunglasses, swimsuit, beach",
+    "tier": "public"
+  },
+  {
+    "id": "O236",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "テニスウェア",
+    "tags": "tennis uniform, tennis dress, white dress, visor, holding racket",
+    "tier": "public"
+  },
+  {
+    "id": "O237",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "チアリーダー",
+    "tags": "cheerleader, cheerleader uniform, pom pom (cheerleading), pleated skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O238",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "バレー部",
+    "tags": "volleyball uniform, sportswear, shorts, knee pads",
+    "tier": "public"
+  },
+  {
+    "id": "O239",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "バスケ部",
+    "tags": "basketball uniform, jersey, shorts, sneakers",
+    "tier": "public"
+  },
+  {
+    "id": "O240",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "陸上(セパレート)",
+    "tags": "track uniform, sports bra, buruma, athletic",
+    "tier": "public"
+  },
+  {
+    "id": "O241",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "水泳(競泳)",
+    "tags": "competition swimsuit, swim cap, goggles",
+    "tier": "public"
+  },
+  {
+    "id": "O242",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ヨガウェア",
+    "tags": "yoga pants, sports bra, yoga, yoga mat, barefoot, stretching, standing on one leg",
+    "tier": "public"
+  },
+  {
+    "id": "O243",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ジムウェア",
+    "tags": "gym uniform, tank top, bike shorts, sneakers, towel around neck, holding dumbbell",
+    "tier": "public"
+  },
+  {
+    "id": "O244",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "サッカー",
+    "tags": "soccer uniform, jersey, shorts, soccer ball",
+    "tier": "public"
+  },
+  {
+    "id": "O245",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "野球(ユニフォーム)",
+    "tags": "baseball uniform, baseball cap, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O246",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "剣道",
+    "tags": "kendo, dougi, hakama, shinai",
+    "tier": "public"
+  },
+  {
+    "id": "O247",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "弓道",
+    "tags": "kyuudou, hakama, holding bow (weapon), single weapon",
+    "tier": "public"
+  },
+  {
+    "id": "O248",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "体操(レオタード)",
+    "tags": "gymnastics, leotard, white leotard, ribbon",
+    "tier": "public"
+  },
+  {
+    "id": "O249",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "新体操",
+    "tags": "rhythmic gymnastics, leotard, holding ribbon baton, ribbon",
+    "tier": "public"
+  },
+  {
+    "id": "O250",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "バドミントン",
+    "tags": "badminton, sportswear, skirt, racket",
+    "tier": "public"
+  },
+  {
+    "id": "O251",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ゴルフ",
+    "tags": "golf, polo shirt, skirt, visor, golf club",
+    "tier": "public"
+  },
+  {
+    "id": "O252",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "サイクルジャージ",
+    "tags": "cycling jersey, bike shorts, helmet",
+    "tier": "public"
+  },
+  {
+    "id": "O253",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ランニング",
+    "tags": "running, sportswear, tank top, shorts, sneakers",
+    "tier": "public"
+  },
+  {
+    "id": "O254",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ボクシング",
+    "tags": "boxing gloves, sports bra, shorts, athletic",
+    "tier": "public"
+  },
+  {
+    "id": "O255",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "スキーウェア",
+    "tags": "ski suit, snow, goggles, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O256",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "スケート(フィギュア)",
+    "tags": "figure skating, leotard, skirt, ice skates",
+    "tier": "public"
+  },
+  {
+    "id": "O257",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "乗馬",
+    "tags": "equestrian, riding boots, riding jacket, riding helmet, riding crop",
+    "tier": "public"
+  },
+  {
+    "id": "O258",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "空手",
+    "tags": "karate gi, dougi, black belt",
+    "tier": "public"
+  },
+  {
+    "id": "O259",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "ラクロス",
+    "tags": "lacrosse, sportswear, skirt, holding lacrosse stick",
+    "tier": "public"
+  },
+  {
+    "id": "O260",
+    "set": "outfit",
+    "cat": "スポーツ・部活",
+    "jp": "eスポーツ(ジャージ)",
+    "tags": "gaming, jersey, headphones, casual",
+    "tier": "public"
+  },
+  {
+    "id": "O261",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "メイド(クラシック)",
+    "tags": "maid, maid headdress, maid apron, black dress, long dress",
+    "tier": "public"
+  },
+  {
+    "id": "O262",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "メイド(ミニ)",
+    "tags": "maid, maid headdress, maid apron, short dress, thighhighs",
+    "tier": "public"
+  },
+  {
+    "id": "O263",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "メイド(ピンク)",
+    "tags": "maid, pink dress, maid headdress, frills",
+    "tier": "public"
+  },
+  {
+    "id": "O264",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ナース(白)",
+    "tags": "nurse, nurse cap, white dress, short dress",
+    "tier": "public"
+  },
+  {
+    "id": "O265",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ナース(ピンク)",
+    "tags": "nurse, pink dress, nurse cap, stethoscope",
+    "tier": "public"
+  },
+  {
+    "id": "O266",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "警察官",
+    "tags": "police, police uniform, police hat, pencil skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O267",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "婦警(ミニ)",
+    "tags": "police uniform, police hat, miniskirt, holding handcuffs",
+    "tier": "public"
+  },
+  {
+    "id": "O268",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "キャビンアテンダント",
+    "tags": "flight attendant, uniform, scarf, pencil skirt, hat",
+    "tier": "public"
+  },
+  {
+    "id": "O269",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ウェイトレス",
+    "tags": "waitress, apron, dress, tray",
+    "tier": "public"
+  },
+  {
+    "id": "O270",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "バーテンダー",
+    "tags": "bartender, vest, white shirt, bowtie, black pants",
+    "tier": "public"
+  },
+  {
+    "id": "O271",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "シェフ",
+    "tags": "chef, chef hat, chef uniform, apron",
+    "tier": "public"
+  },
+  {
+    "id": "O272",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "パティシエ",
+    "tags": "patissier, chef hat, white uniform, apron",
+    "tier": "public"
+  },
+  {
+    "id": "O273",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "医者(白衣)",
+    "tags": "doctor, labcoat, stethoscope around neck, shirt, pencil skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O274",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "研究者(白衣＋眼鏡)",
+    "tags": "labcoat, glasses, turtleneck, scientist",
+    "tier": "public"
+  },
+  {
+    "id": "O275",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "教師",
+    "tags": "teacher, blouse, pencil skirt, glasses, pointer",
+    "tier": "public"
+  },
+  {
+    "id": "O276",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "保育士",
+    "tags": "childcare worker, apron, t-shirt, pants, name tag",
+    "tier": "public"
+  },
+  {
+    "id": "O277",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "図書館司書",
+    "tags": "librarian, cardigan, glasses, long skirt, book",
+    "tier": "public"
+  },
+  {
+    "id": "O278",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "駅員",
+    "tags": "train conductor, uniform, hat, white gloves",
+    "tier": "public"
+  },
+  {
+    "id": "O279",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "軍服",
+    "tags": "military uniform, military jacket, peaked cap, belt",
+    "tier": "public"
+  },
+  {
+    "id": "O280",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "海軍",
+    "tags": "naval uniform, sailor hat, white uniform",
+    "tier": "public"
+  },
+  {
+    "id": "O281",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "パイロット",
+    "tags": "pilot, flight jacket, aviator sunglasses, pants",
+    "tier": "public"
+  },
+  {
+    "id": "O282",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "消防士",
+    "tags": "firefighter, firefighter jacket, helmet",
+    "tier": "public"
+  },
+  {
+    "id": "O283",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "農家(つなぎ)",
+    "tags": "farmer, overalls, straw hat, gloves",
+    "tier": "public"
+  },
+  {
+    "id": "O284",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "整備士",
+    "tags": "mechanic, jumpsuit, open jumpsuit, tank top, wrench",
+    "tier": "public"
+  },
+  {
+    "id": "O285",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "配達員",
+    "tags": "delivery, uniform, cap, package",
+    "tier": "public"
+  },
+  {
+    "id": "O286",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "コンビニ店員",
+    "tags": "convenience store uniform, striped shirt, apron, name tag",
+    "tier": "public"
+  },
+  {
+    "id": "O287",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "カフェ店員",
+    "tags": "barista, apron, green apron, shirt",
+    "tier": "public"
+  },
+  {
+    "id": "O288",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "花屋",
+    "tags": "florist, apron, flowers, bouquet",
+    "tier": "public"
+  },
+  {
+    "id": "O289",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "アイドル",
+    "tags": "idol, idol clothes, frills, ribbon, microphone",
+    "tier": "public"
+  },
+  {
+    "id": "O290",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "アナウンサー",
+    "tags": "news anchor, jacket, dress, microphone",
+    "tier": "public"
+  },
+  {
+    "id": "O291",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "魔法少女",
+    "tags": "magical girl, frills, ribbon, holding wand, pink dress",
+    "tier": "public"
+  },
+  {
+    "id": "O292",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "魔法使い",
+    "tags": "witch, witch hat, cape, staff, long dress",
+    "tier": "public"
+  },
+  {
+    "id": "O293",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "シスター",
+    "tags": "nun, habit, nun habit, cross necklace",
+    "tier": "public"
+  },
+  {
+    "id": "O294",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ゴスロリ(コスプレ)",
+    "tags": "gothic lolita, frills, lace, bonnet",
+    "tier": "public"
+  },
+  {
+    "id": "O295",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "執事(女)",
+    "tags": "butler, tailcoat, vest, white gloves, bowtie",
+    "tier": "public"
+  },
+  {
+    "id": "O296",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "海賊",
+    "tags": "pirate, pirate hat, coat, boots, eyepatch",
+    "tier": "public"
+  },
+  {
+    "id": "O297",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "カウガール",
+    "tags": "cowgirl, cowboy hat, denim shorts, boots, plaid shirt",
+    "tier": "public"
+  },
+  {
+    "id": "O298",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ガンマン(西部劇)",
+    "tags": "western, cowboy hat, poncho, boots",
+    "tier": "public"
+  },
+  {
+    "id": "O299",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "探偵",
+    "tags": "detective, trench coat, deerstalker, magnifying glass",
+    "tier": "public"
+  },
+  {
+    "id": "O300",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "スパイ",
+    "tags": "spy, black bodysuit, catsuit, sunglasses",
+    "tier": "public"
+  },
+  {
+    "id": "O301",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "サイバーパンク",
+    "tags": "cyberpunk, jacket, neon, techwear, visor",
+    "tier": "public"
+  },
+  {
+    "id": "O302",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "宇宙飛行士",
+    "tags": "astronaut, spacesuit, helmet",
+    "tier": "public"
+  },
+  {
+    "id": "O303",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "レースクイーン",
+    "tags": "race queen, racing suit, boots, hand on hip",
+    "tier": "public"
+  },
+  {
+    "id": "O304",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "バニーガール(カフェ)",
+    "tags": "bunny girl, rabbit ears, apron, waitress",
+    "tier": "public"
+  },
+  {
+    "id": "O305",
+    "set": "outfit",
+    "cat": "職業・コスプレ",
+    "jp": "ネコミミメイド",
+    "tags": "cat ears, maid, maid headdress, apron, cat tail",
+    "tier": "public"
+  },
+  {
+    "id": "O306",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "勇者(軽装)",
+    "tags": "hero, armor, breastplate, cape, sword",
+    "tier": "public"
+  },
+  {
+    "id": "O307",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "騎士(フルプレート)",
+    "tags": "knight, full armor, plate armor, helmet off, holding sword",
+    "tier": "public"
+  },
+  {
+    "id": "O308",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "女騎士",
+    "tags": "female knight, armor, breastplate, skirt armor, holding sword, holding shield",
+    "tier": "public"
+  },
+  {
+    "id": "O309",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "聖騎士",
+    "tags": "paladin, white armor, cape, holy, sword",
+    "tier": "public"
+  },
+  {
+    "id": "O310",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "魔術師",
+    "tags": "mage, robe, wizard hat, staff, long robe",
+    "tier": "public"
+  },
+  {
+    "id": "O311",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "黒魔道士",
+    "tags": "black mage, dark robe, hood, holding staff",
+    "tier": "public"
+  },
+  {
+    "id": "O312",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "僧侶・ヒーラー",
+    "tags": "priestess, white robe, holding staff, holy",
+    "tier": "public"
+  },
+  {
+    "id": "O313",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "エルフの弓使い",
+    "tags": "elf, pointy ears, holding bow (weapon), leather armor, cape",
+    "tier": "public"
+  },
+  {
+    "id": "O314",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "ダークエルフ",
+    "tags": "dark elf, dark skin, pointy ears, white hair, armor",
+    "tier": "public"
+  },
+  {
+    "id": "O315",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "盗賊",
+    "tags": "thief, hood, leather armor, holding dagger, cloak",
+    "tier": "public"
+  },
+  {
+    "id": "O316",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "忍者(ファンタジー)",
+    "tags": "ninja, mask, scarf, kunai, dark outfit",
+    "tier": "public"
+  },
+  {
+    "id": "O317",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "侍",
+    "tags": "samurai, japanese armor, holding katana, hakama",
+    "tier": "public"
+  },
+  {
+    "id": "O318",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "王女",
+    "tags": "princess, crown, ball gown, elegant",
+    "tier": "public"
+  },
+  {
+    "id": "O319",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "女王",
+    "tags": "queen, crown, long dress, cape, throne",
+    "tier": "public"
+  },
+  {
+    "id": "O320",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "魔王(女)",
+    "tags": "demon lord, horns, black dress, cape, crown",
+    "tier": "public"
+  },
+  {
+    "id": "O321",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "サキュバス(控えめ)",
+    "tags": "succubus, demon horns, demon wings, demon tail, black dress",
+    "tier": "public"
+  },
+  {
+    "id": "O322",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "天使",
+    "tags": "angel, angel wings, halo, white dress",
+    "tier": "public"
+  },
+  {
+    "id": "O323",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "堕天使",
+    "tags": "fallen angel, black wings, halo, black dress",
+    "tier": "public"
+  },
+  {
+    "id": "O324",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "ドラゴン娘",
+    "tags": "dragon girl, dragon horns, dragon tail, scales, armor",
+    "tier": "public"
+  },
+  {
+    "id": "O325",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "獣人(狼)",
+    "tags": "wolf girl, wolf ears, wolf tail, fur, leather armor",
+    "tier": "public"
+  },
+  {
+    "id": "O326",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "猫の獣人",
+    "tags": "cat girl, cat ears, cat tail, paw pose, dress",
+    "tier": "public"
+  },
+  {
+    "id": "O327",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "狐の妖",
+    "tags": "fox girl, fox ears, multiple tails, kimono",
+    "tier": "public"
+  },
+  {
+    "id": "O328",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "人魚",
+    "tags": "mermaid, fish tail, seashell bra, underwater",
+    "tier": "public"
+  },
+  {
+    "id": "O329",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "妖精",
+    "tags": "fairy, fairy wings, flower dress, small",
+    "tier": "public"
+  },
+  {
+    "id": "O330",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "魔女(現代)",
+    "tags": "witch, witch hat, black dress, broom",
+    "tier": "public"
+  },
+  {
+    "id": "O331",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "錬金術師",
+    "tags": "alchemist, apron, goggles, vial, gloves",
+    "tier": "public"
+  },
+  {
+    "id": "O332",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "冒険者(初期装備)",
+    "tags": "adventurer, tunic, belt, boots, backpack, holding sword",
+    "tier": "public"
+  },
+  {
+    "id": "O333",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "剣士(着流し)",
+    "tags": "swordswoman, kimono, holding katana, sarashi",
+    "tier": "public"
+  },
+  {
+    "id": "O334",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "ヴァルキリー",
+    "tags": "valkyrie, winged helmet, armor, holding spear",
+    "tier": "public"
+  },
+  {
+    "id": "O335",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "巫女戦士",
+    "tags": "miko, armor, holding naginata, hakama",
+    "tier": "public"
+  },
+  {
+    "id": "O336",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "メカ娘",
+    "tags": "mecha musume, mechanical parts, armor, headgear, mechanical arms, thighhighs",
+    "tier": "public"
+  },
+  {
+    "id": "O337",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "SF(ボディスーツ)",
+    "tags": "bodysuit, sci-fi, skin tight, glowing lines",
+    "tier": "public"
+  },
+  {
+    "id": "O338",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "魔法学園(ローブ)",
+    "tags": "robe, school uniform, wand, striped necktie",
+    "tier": "public"
+  },
+  {
+    "id": "O339",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "ゴーレム使い",
+    "tags": "mage, book, glowing, robe, hood",
+    "tier": "public"
+  },
+  {
+    "id": "O340",
+    "set": "outfit",
+    "cat": "ファンタジー",
+    "jp": "吟遊詩人",
+    "tags": "bard, lute, feather hat, cape",
+    "tier": "public"
+  },
+  {
+    "id": "O396",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "パジャマ(ピンク・長袖)",
+    "tags": "pajamas, pink pajamas, long sleeves, buttons",
+    "tier": "public"
+  },
+  {
+    "id": "O397",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "パジャマ(水玉)",
+    "tags": "pajamas, polka dot, short sleeves, shorts",
+    "tier": "public"
+  },
+  {
+    "id": "O398",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "ネグリジェ風ルームウェア",
+    "tags": "nightgown, white nightgown, long dress, loungewear",
+    "tier": "public"
+  },
+  {
+    "id": "O399",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "スウェット上下",
+    "tags": "sweatpants, sweatshirt, grey sweater, loungewear",
+    "tier": "public"
+  },
+  {
+    "id": "O400",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "パーカー＋ショートパンツ(部屋着)",
+    "tags": "hoodie, shorts, loungewear, barefoot",
+    "tier": "public"
+  },
+  {
+    "id": "O401",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "キャミ＋短パン",
+    "tags": "camisole, shorts, loungewear, barefoot",
+    "tier": "public"
+  },
+  {
+    "id": "O402",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "大きなTシャツ",
+    "tags": "oversized t-shirt, bare legs, loungewear",
+    "tier": "public"
+  },
+  {
+    "id": "O403",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "ジャージ(部屋着)",
+    "tags": "track suit, loungewear, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O404",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "ルームワンピ",
+    "tags": "loungewear, dress, short dress, soft",
+    "tier": "public"
+  },
+  {
+    "id": "O405",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "もこもこルームウェア",
+    "tags": "fleece, fluffy, loungewear, pajamas, animal hood",
+    "tier": "public"
+  },
+  {
+    "id": "O406",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "着ぐるみパジャマ(猫)",
+    "tags": "kigurumi, cat costume, pajamas, hood",
+    "tier": "public"
+  },
+  {
+    "id": "O407",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "着ぐるみパジャマ(うさぎ)",
+    "tags": "kigurumi, rabbit costume, pajamas, hood",
+    "tier": "public"
+  },
+  {
+    "id": "O408",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "バスローブ",
+    "tags": "bathrobe, white robe, towel on head",
+    "tier": "public"
+  },
+  {
+    "id": "O409",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "浴衣(寝間着)",
+    "tags": "yukata, sleepwear, loose, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O410",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "タンクトップ＋スウェットパンツ",
+    "tags": "tank top, sweatpants, loungewear",
+    "tier": "public"
+  },
+  {
+    "id": "O411",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "ニット＋ショーパン(部屋)",
+    "tags": "sweater, shorts, loungewear, socks",
+    "tier": "public"
+  },
+  {
+    "id": "O412",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "エプロン(家事)",
+    "tags": "apron, t-shirt, jeans, housework",
+    "tier": "public"
+  },
+  {
+    "id": "O413",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "エプロン(料理)",
+    "tags": "apron, long sleeves, cooking, kitchen",
+    "tier": "public"
+  },
+  {
+    "id": "O414",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "ヘアバンド＋部屋着(洗顔)",
+    "tags": "hairband, loungewear, t-shirt, washing face",
+    "tier": "public"
+  },
+  {
+    "id": "O415",
+    "set": "outfit",
+    "cat": "部屋着・パジャマ",
+    "jp": "毛布にくるまる",
+    "tags": "blanket, wrapped in blanket, pajamas, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O416",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "ハロウィン(かぼちゃ)",
+    "tags": "halloween costume, pumpkin, orange dress, witch hat",
+    "tier": "public"
+  },
+  {
+    "id": "O417",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "ハロウィン(猫)",
+    "tags": "halloween, cat costume, cat ears, black dress",
+    "tier": "public"
+  },
+  {
+    "id": "O418",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "ハロウィン(ゾンビナース)",
+    "tags": "halloween, zombie, nurse, torn clothes",
+    "tier": "public"
+  },
+  {
+    "id": "O419",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "ハロウィン(ミイラ)",
+    "tags": "halloween, mummy costume, bandages",
+    "tier": "public"
+  },
+  {
+    "id": "O420",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "クリスマス(サンタミニ)",
+    "tags": "santa costume, santa hat, red dress, fur trim, thighhighs",
+    "tier": "public"
+  },
+  {
+    "id": "O421",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "クリスマス(エルフ)",
+    "tags": "christmas, elf costume, green dress, pointy hat",
+    "tier": "public"
+  },
+  {
+    "id": "O422",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "クリスマス(ニット＋ケーキ)",
+    "tags": "christmas sweater, cake, winter, indoors",
+    "tier": "public"
+  },
+  {
+    "id": "O423",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "大晦日(こたつ＋みかん)",
+    "tags": "kotatsu, sweater, mandarin orange, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O424",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "正月(晴れ着)",
+    "tags": "kimono, furisode, new year, hatsumoude",
+    "tier": "public"
+  },
+  {
+    "id": "O425",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "正月(巫女・初詣)",
+    "tags": "miko, new year, shrine",
+    "tier": "public"
+  },
+  {
+    "id": "O426",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "成人式",
+    "tags": "furisode, kimono, formal, ceremony",
+    "tier": "public"
+  },
+  {
+    "id": "O427",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "節分(鬼)",
+    "tags": "oni costume, oni horns, tiger print, setsubun",
+    "tier": "public"
+  },
+  {
+    "id": "O428",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "バレンタイン(エプロン＋チョコ)",
+    "tags": "apron, chocolate, valentine, heart",
+    "tier": "public"
+  },
+  {
+    "id": "O429",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "ひな祭り(十二単風)",
+    "tags": "junihitoe, kimono, hinamatsuri, layered",
+    "tier": "public"
+  },
+  {
+    "id": "O430",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "入学式(スーツ)",
+    "tags": "suit, formal, entrance ceremony, corsage",
+    "tier": "public"
+  },
+  {
+    "id": "O431",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "卒業式(袴)",
+    "tags": "hakama, graduation, kimono",
+    "tier": "public"
+  },
+  {
+    "id": "O432",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "花見(着物＋桜)",
+    "tags": "kimono, cherry blossoms, spring, picnic",
+    "tier": "public"
+  },
+  {
+    "id": "O433",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "梅雨(レインコート)",
+    "tags": "raincoat, hood up, rain, boots, puddle, water drop",
+    "tier": "public"
+  },
+  {
+    "id": "O434",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "夏祭り(浴衣＋りんご飴)",
+    "tags": "yukata, candy apple, summer festival",
+    "tier": "public"
+  },
+  {
+    "id": "O435",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "海(ビキニ＋パレオ)",
+    "tags": "bikini, sarong, beach, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O436",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "プール(スク水＋浮き輪)",
+    "tags": "school swimsuit, innertube, pool",
+    "tier": "public"
+  },
+  {
+    "id": "O437",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "運動会(体操服)",
+    "tags": "gym uniform, headband, sports festival",
+    "tier": "public"
+  },
+  {
+    "id": "O438",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "文化祭(メイド喫茶)",
+    "tags": "maid, school festival, apron",
+    "tier": "public"
+  },
+  {
+    "id": "O439",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "紅葉(ニット＋ストール)",
+    "tags": "sweater, shawl, autumn leaves, autumn",
+    "tier": "public"
+  },
+  {
+    "id": "O440",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "スキー場",
+    "tags": "ski suit, goggles, snow, winter",
+    "tier": "public"
+  },
+  {
+    "id": "O441",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "温泉(浴衣)",
+    "tags": "yukata, onsen, towel, hot spring",
+    "tier": "public"
+  },
+  {
+    "id": "O442",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "誕生日(ドレス＋ケーキ)",
+    "tags": "party dress, birthday cake, party hat",
+    "tier": "public"
+  },
+  {
+    "id": "O443",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "結婚式(お呼ばれドレス)",
+    "tags": "party dress, formal, wedding guest",
+    "tier": "public"
+  },
+  {
+    "id": "O444",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "お祭り(法被)",
+    "tags": "happi, festival, headband, summer festival",
+    "tier": "public"
+  },
+  {
+    "id": "O445",
+    "set": "outfit",
+    "cat": "イベント・季節",
+    "jp": "七夕(浴衣＋短冊)",
+    "tags": "yukata, tanabata, bamboo, summer",
+    "tier": "public"
+  },
+  {
+    "id": "O446",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(フリル・ピンク)",
+    "tags": "idol clothes, pink dress, frills, ribbon, stage",
+    "tier": "public"
+  },
+  {
+    "id": "O447",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(白×青)",
+    "tags": "idol clothes, white dress, blue trim, frills",
+    "tier": "public"
+  },
+  {
+    "id": "O448",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(学園風)",
+    "tags": "idol clothes, school uniform, plaid skirt, bow",
+    "tier": "public"
+  },
+  {
+    "id": "O449",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(チア風)",
+    "tags": "idol clothes, cheerleader, pom pom",
+    "tier": "public"
+  },
+  {
+    "id": "O450",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(黒・クール)",
+    "tags": "idol clothes, black dress, silver trim, cool",
+    "tier": "public"
+  },
+  {
+    "id": "O451",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "アイドル(軍服風)",
+    "tags": "idol clothes, military uniform, peaked cap, mini skirt",
+    "tier": "public"
+  },
+  {
+    "id": "O452",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "地下アイドル(Tシャツ＋スカート)",
+    "tags": "t-shirt, pleated skirt, idol, stage",
+    "tier": "public"
+  },
+  {
+    "id": "O453",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "バンド(ギター)",
+    "tags": "holding guitar, electric guitar, playing guitar, leather jacket, shorts, band",
+    "tier": "public"
+  },
+  {
+    "id": "O454",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "バンド(ドラム)",
+    "tags": "drum, t-shirt, headband, band",
+    "tier": "public"
+  },
+  {
+    "id": "O455",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "ゴスバンド",
+    "tags": "gothic, black dress, lace, band, holding microphone",
+    "tier": "public"
+  },
+  {
+    "id": "O456",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "歌手(ロングドレス)",
+    "tags": "evening gown, microphone, stage, singer",
+    "tier": "public"
+  },
+  {
+    "id": "O457",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "ダンサー(ストリート)",
+    "tags": "streetwear, crop top, cargo pants, dancer",
+    "tier": "public"
+  },
+  {
+    "id": "O458",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "バレエ(チュチュ)",
+    "tags": "ballet, tutu, leotard, ballet shoes",
+    "tier": "public"
+  },
+  {
+    "id": "O459",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "チアリーダー(ステージ)",
+    "tags": "cheerleader, pom pom, stage",
+    "tier": "public"
+  },
+  {
+    "id": "O460",
+    "set": "outfit",
+    "cat": "アイドル・ステージ",
+    "jp": "マジシャン",
+    "tags": "magician, top hat, tailcoat, playing card",
+    "tier": "public"
+  },
+  {
+    "id": "O461",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "地雷系(黒×ピンク)",
+    "tags": "jirai kei, black dress, pink ribbon, twintails, thighhighs",
+    "tier": "public"
+  },
+  {
+    "id": "O462",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "地雷系(白×黒)",
+    "tags": "jirai kei, white blouse, black skirt, ribbon, platform shoes",
+    "tier": "public"
+  },
+  {
+    "id": "O463",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "量産型(ピンク)",
+    "tags": "ryousangata, pink dress, frills, bow",
+    "tier": "public"
+  },
+  {
+    "id": "O464",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "量産型(水色)",
+    "tags": "ryousangata, light blue dress, frills, ribbon",
+    "tier": "public"
+  },
+  {
+    "id": "O465",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ゴスロリ(黒)",
+    "tags": "gothic lolita, black dress, lace, bonnet",
+    "tier": "public"
+  },
+  {
+    "id": "O466",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ゴスロリ(赤)",
+    "tags": "gothic lolita, red dress, black lace, headdress",
+    "tier": "public"
+  },
+  {
+    "id": "O467",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "甘ロリ(ピンク)",
+    "tags": "sweet lolita, pink dress, frills, bonnet",
+    "tier": "public"
+  },
+  {
+    "id": "O468",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "クラロリ(茶)",
+    "tags": "classic lolita, brown dress, lace, bow",
+    "tier": "public"
+  },
+  {
+    "id": "O469",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "パンク",
+    "tags": "punk, leather jacket, plaid skirt, chains",
+    "tier": "public"
+  },
+  {
+    "id": "O470",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "病みかわ(包帯)",
+    "tags": "yamikawa, bandages, pastel, oversized hoodie",
+    "tier": "public"
+  },
+  {
+    "id": "O471",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ゆめかわ",
+    "tags": "yumekawa, pastel colors, frills, star, hairclips",
+    "tier": "public"
+  },
+  {
+    "id": "O472",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ファンシー(ユニコーン)",
+    "tags": "pastel, unicorn, frills, hair bow",
+    "tier": "public"
+  },
+  {
+    "id": "O473",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ゴシック(ドレス・長)",
+    "tags": "gothic, long dress, black dress, corset, lace",
+    "tier": "public"
+  },
+  {
+    "id": "O474",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ロリータ(セーラー)",
+    "tags": "lolita fashion, sailor collar, frills, dress",
+    "tier": "public"
+  },
+  {
+    "id": "O475",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "地雷系(チャイナ)",
+    "tags": "jirai kei, china dress, black dress, pink trim",
+    "tier": "public"
+  },
+  {
+    "id": "O476",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "サブカル(ベレー)",
+    "tags": "beret, oversized shirt, suspender skirt, subculture",
+    "tier": "public"
+  },
+  {
+    "id": "O477",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "V系",
+    "tags": "visual kei, black outfit, lace, chains, dark makeup",
+    "tier": "public"
+  },
+  {
+    "id": "O478",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ゴスメイド",
+    "tags": "gothic, maid, black dress, lace, cross",
+    "tier": "public"
+  },
+  {
+    "id": "O479",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "ロリータ(和風)",
+    "tags": "wa lolita, kimono, frills, lolita fashion",
+    "tier": "public"
+  },
+  {
+    "id": "O480",
+    "set": "outfit",
+    "cat": "ゴスロリ・地雷系",
+    "jp": "地雷系(ツインテ＋マスク)",
+    "tags": "jirai kei, twintails, mask, black dress",
+    "tier": "public"
+  },
+  {
+    "id": "O481",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "軍服(黒・将校)",
+    "tags": "military uniform, black jacket, peaked cap, gloves",
+    "tier": "public"
+  },
+  {
+    "id": "O482",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "軍服(緑・野戦)",
+    "tags": "military uniform, camouflage, helmet, boots",
+    "tier": "public"
+  },
+  {
+    "id": "O483",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "海軍(白)",
+    "tags": "naval uniform, white uniform, sailor hat",
+    "tier": "public"
+  },
+  {
+    "id": "O484",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "空軍パイロット",
+    "tags": "pilot suit, flight jacket, helmet",
+    "tier": "public"
+  },
+  {
+    "id": "O485",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "特殊部隊",
+    "tags": "tactical gear, bulletproof vest, balaclava",
+    "tier": "public"
+  },
+  {
+    "id": "O486",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "SFスーツ(白)",
+    "tags": "bodysuit, sci-fi, white bodysuit, glowing lines",
+    "tier": "public"
+  },
+  {
+    "id": "O487",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "SFスーツ(黒)",
+    "tags": "bodysuit, sci-fi, black bodysuit, armor plates",
+    "tier": "public"
+  },
+  {
+    "id": "O488",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "宇宙服",
+    "tags": "spacesuit, helmet, space",
+    "tier": "public"
+  },
+  {
+    "id": "O489",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "サイバーパンク(ジャケット)",
+    "tags": "cyberpunk, jacket, neon, techwear, goggles",
+    "tier": "public"
+  },
+  {
+    "id": "O490",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "メカ娘(軽装)",
+    "tags": "mecha musume, mechanical parts, light armor, headgear, bodysuit",
+    "tier": "public"
+  },
+  {
+    "id": "O491",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "アンドロイド",
+    "tags": "android, joints, mechanical parts, bodysuit",
+    "tier": "public"
+  },
+  {
+    "id": "O492",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "機動兵器パイロット",
+    "tags": "plugsuit, pilot suit, skin tight",
+    "tier": "public"
+  },
+  {
+    "id": "O493",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "騎士(SF)",
+    "tags": "sci-fi armor, knight, energy sword",
+    "tier": "public"
+  },
+  {
+    "id": "O494",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "傭兵",
+    "tags": "mercenary, tank top, cargo pants, dog tags",
+    "tier": "public"
+  },
+  {
+    "id": "O495",
+    "set": "outfit",
+    "cat": "ミリタリー・SF",
+    "jp": "スナイパー",
+    "tags": "ghillie suit, camouflage, rifle",
+    "tier": "public"
+  },
+  {
+    "id": "P001",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "気をつけ",
+    "tags": "standing, arms at sides",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P001-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "気をつけ(横から)",
+    "tags": "standing, arms at sides, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P002",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腰に手",
+    "tags": "standing, hands on hips",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P002-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腰に手(横から)",
+    "tags": "standing, hands on hips, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P003",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腕組み",
+    "tags": "standing, crossed arms",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P003-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腕組み(横から)",
+    "tags": "standing, crossed arms, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P004",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "後ろ手",
+    "tags": "standing, arms behind back",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P004-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "後ろ手(横から)",
+    "tags": "standing, arms behind back, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P005",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ピース",
+    "tags": "standing, v, peace sign",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P005-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ピース(横から)",
+    "tags": "standing, v, peace sign, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P006",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ダブルピース",
+    "tags": "standing, double v",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P006-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ダブルピース(横から)",
+    "tags": "standing, double v, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P007",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を振る",
+    "tags": "standing, waving",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P007-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を振る(横から)",
+    "tags": "standing, waving, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P008",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "敬礼",
+    "tags": "standing, salute",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P008-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "敬礼(横から)",
+    "tags": "standing, salute, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P009",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "伸び",
+    "tags": "standing, arms up, stretching",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P009-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "伸び(横から)",
+    "tags": "standing, arms up, stretching, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P010",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "バンザイ",
+    "tags": "standing, arms up, both arms raised, hands open, outstretched arms",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P010-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "バンザイ(横から)",
+    "tags": "standing, arms up, both arms raised, hands open, outstretched arms, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P011",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "指差し(こっち)",
+    "tags": "standing, pointing at viewer",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P011-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "指差し(こっち)(横から)",
+    "tags": "standing, pointing at viewer, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P012",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "指差し(横)",
+    "tags": "standing, pointing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P012-s",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "指差し(横)(横から)",
+    "tags": "standing, pointing, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P013",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を前で組む",
+    "tags": "standing, own hands together, hands clasped",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P014",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "胸に手",
+    "tags": "standing, hand on own chest",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P015",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "頬に手",
+    "tags": "standing, hand on own cheek",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P016",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "口に指",
+    "tags": "standing, finger to mouth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P017",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "髪をかき上げ",
+    "tags": "standing, hand in own hair, adjusting hair",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P018",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "髪を耳にかける",
+    "tags": "standing, hair tucking",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P019",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "振り返り",
+    "tags": "standing, looking back, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P020",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "後ろ姿",
+    "tags": "standing, from behind, facing away",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P021",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "横向き",
+    "tags": "standing, from side, profile",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P022",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "コントラポスト",
+    "tags": "standing, contrapposto, hand on hip",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P023",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "壁にもたれ",
+    "tags": "standing, against wall, leaning",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P024",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "片足上げ",
+    "tags": "standing, standing on one leg, leg up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P025",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "スカートを押さえる",
+    "tags": "standing, skirt hold, wind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P026",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "スカートをつまむ",
+    "tags": "standing, curtsey, skirt hold",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P027",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ハートの手",
+    "tags": "standing, heart hands",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P028",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "猫のポーズ",
+    "tags": "standing, paw pose",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P029",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "両手で頬",
+    "tags": "standing, hands on own cheeks",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P030",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "胸の前で手を合わせる",
+    "tags": "standing, hands clasped, praying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P031",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ポケットに手",
+    "tags": "standing, hands in pockets",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P032",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "カバンを持つ",
+    "tags": "standing, holding bag, bag",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P033",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "傘をさす",
+    "tags": "upper body, holding umbrella, open umbrella, transparent umbrella",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P034",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腕を広げる",
+    "tags": "standing, outstretched arms, spread arms",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P035",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を差し伸べる",
+    "tags": "standing, reaching towards viewer, outstretched hand",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P036",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "背伸び(つま先)",
+    "tags": "standing, tiptoes, standing on toes, heels raised, arms up, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P037",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "椅子に座る",
+    "tags": "sitting, chair, on chair",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P037-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "椅子に座る(横から)",
+    "tags": "sitting, chair, on chair, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P038",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "椅子で足を組む",
+    "tags": "sitting, on chair, crossed legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P038-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "椅子で足を組む(横から)",
+    "tags": "sitting, on chair, crossed legs, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P039",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "体育座り",
+    "tags": "sitting, knees up, hugging own legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P039-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "体育座り(横から)",
+    "tags": "sitting, knees up, hugging own legs, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P040",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "女の子座り",
+    "tags": "wariza, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P040-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "女の子座り(横から)",
+    "tags": "wariza, sitting, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P041",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "正座",
+    "tags": "seiza, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P041-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "正座(横から)",
+    "tags": "seiza, sitting, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P042",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "あぐら",
+    "tags": "indian style, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P042-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "あぐら(横から)",
+    "tags": "indian style, sitting, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P043",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "横座り",
+    "tags": "yokozuwari, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P043-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "横座り(横から)",
+    "tags": "yokozuwari, sitting, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P044",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "片膝を立てて座る",
+    "tags": "sitting on floor, one knee up, one leg stretched out, hands on floor behind, leaning back, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P044-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "片膝を立てて座る(横から)",
+    "tags": "sitting on floor, one knee up, one leg stretched out, hands on floor behind, leaning back, full body, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P045",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "ベッドの端に座る",
+    "tags": "sitting, on bed, bed, legs together",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P045-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "ベッドの端に座る(横から)",
+    "tags": "sitting, on bed, bed, legs together, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P046",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "階段に座る",
+    "tags": "sitting, stairs, on stairs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P046-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "階段に座る(横から)",
+    "tags": "sitting, stairs, on stairs, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P047",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "膝に手",
+    "tags": "sitting, hands on own knees",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P047-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "膝に手(横から)",
+    "tags": "sitting, hands on own knees, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P048",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "頬杖",
+    "tags": "sitting, chin rest, hand on own cheek, elbow on table, table",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P048-s",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "頬杖(横から)",
+    "tags": "sitting, chin rest, hand on own cheek, elbow on table, table, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P049",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "机に伏せる",
+    "tags": "sitting, head down, on table, sleeping, desk",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P050",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "本を読む",
+    "tags": "sitting, reading, holding book, book",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P051",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "スマホを見る",
+    "tags": "sitting, holding phone, cellphone",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P052",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "カップを持つ",
+    "tags": "sitting, holding cup, cup",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P053",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "ソファでくつろぐ",
+    "tags": "sitting, couch, on couch, relaxing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P054",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "窓辺に座る",
+    "tags": "sitting, window, windowsill",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P055",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "ブランコ",
+    "tags": "sitting on swing, chain swing, playground swing, holding chains, two chains, from side, feet dangling",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P056",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "座って振り返る",
+    "tags": "sitting, looking back, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P057",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "膝枕(ひざを差し出す)",
+    "tags": "sitting, seiza, hands on own lap",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P058",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "片膝立て座り",
+    "tags": "sitting, knee up, one knee up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P059",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "M字座り(大人しめ)",
+    "tags": "sitting, knees apart, hands on floor, arms behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P060",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "座って足を抱える(横)",
+    "tags": "sitting, from side, hugging own legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P061",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "座ってピース",
+    "tags": "sitting, v, peace sign",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P062",
+    "set": "pose",
+    "cat": "座り",
+    "jp": "ベンチで足ぶらぶら",
+    "tags": "sitting, on bench, legs dangling, feet off ground, swinging legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P063",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "仰向け",
+    "tags": "lying, on back, arms at sides",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P064",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "仰向け(手を頭の上)",
+    "tags": "lying, on back, arms up, arms above head, on bed, from above, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P065",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "うつ伏せ(後ろから)",
+    "tags": "lying, on stomach, arms at sides, face down on pillow, feet up, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P066",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "うつ伏せで頬杖",
+    "tags": "lying, on stomach, chin rest, head rest",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P067",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "横向きで寝る",
+    "tags": "lying, on side, sleeping",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P068",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "横向きで頭を支える",
+    "tags": "lying, on side, head rest, arm support",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P069",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ベッドで仰向け(上から)",
+    "tags": "lying, on back, on bed, from above",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P070",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "布団で寝る(横向き)",
+    "tags": "lying, on side, on bed, blanket, sleeping, closed eyes",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P071",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ごろ寝(本)",
+    "tags": "lying, on stomach, reading, book",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P072",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "芝生に寝転ぶ",
+    "tags": "lying, on back, grass, outdoors",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P073",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "うつ伏せで足バタバタ",
+    "tags": "lying, on stomach, legs up, the pose",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P074",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "仰向け(膝を立てる)",
+    "tags": "lying, on back, knees up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P075",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "横向き(膝を抱える)",
+    "tags": "lying, on side, fetal position",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P076",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "枕を抱える",
+    "tags": "lying, hugging pillow, pillow, on side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P077",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ベッドで伸び",
+    "tags": "lying, on back, stretching, waking up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P078",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがむ",
+    "tags": "squatting, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P078-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがむ(横から)",
+    "tags": "squatting, full body, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P079",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがんで頬杖",
+    "tags": "squatting, head rest, chin rest",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P079-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがんで頬杖(横から)",
+    "tags": "squatting, head rest, chin rest, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P080",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "片膝立ち",
+    "tags": "on one knee, kneeling on one knee, one knee up, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P080-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "片膝立ち(横から)",
+    "tags": "on one knee, kneeling on one knee, one knee up, full body, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P081",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "両膝立ち",
+    "tags": "kneeling, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P081-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "両膝立ち(横から)",
+    "tags": "kneeling, full body, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P082",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "四つん這い(控えめ)",
+    "tags": "all fours, on hands and knees, looking at viewer",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P082-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "四つん這い(控えめ)(横から)",
+    "tags": "all fours, on hands and knees, looking at viewer, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P083",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "膝立ちで手を前",
+    "tags": "kneeling, hands on own thighs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P083-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "膝立ちで手を前(横から)",
+    "tags": "kneeling, hands on own thighs, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P084",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがんで猫と遊ぶ",
+    "tags": "squatting, cat, petting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P084-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "しゃがんで猫と遊ぶ(横から)",
+    "tags": "squatting, cat, petting, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P085",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "うずくまる",
+    "tags": "crouching, hugging own knees, head down, looking down, face hidden",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P085-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "うずくまる(横から)",
+    "tags": "crouching, hugging own knees, head down, looking down, face hidden, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P086",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "ヤンキー座り",
+    "tags": "squatting, knees apart, hands between legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P086-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "ヤンキー座り(横から)",
+    "tags": "squatting, knees apart, hands between legs, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P087",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "靴ひもを結ぶ",
+    "tags": "kneeling, tying shoes, tying shoelaces, shoe in front, hands on shoe",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P087-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "靴ひもを結ぶ(横から)",
+    "tags": "kneeling, tying shoes, tying shoelaces, shoe in front, hands on shoe, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P088",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "かがんで拾う",
+    "tags": "bent over, picking up, reaching down, hand on floor, leaning forward",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P088-s",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "かがんで拾う(横から)",
+    "tags": "bent over, picking up, reaching down, hand on floor, leaning forward, from side, profile, side view",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P089",
+    "set": "pose",
+    "cat": "しゃがみ・膝立ち",
+    "jp": "膝立ちで振り返る",
+    "tags": "kneeling, looking back, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P090",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "正面の笑顔(ポートレート)",
+    "tags": "upper body, smile, looking at viewer",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P091",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "頬に手(照れ)",
+    "tags": "upper body, hand on own cheek, blush",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P092",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "口元に手(笑い)",
+    "tags": "upper body, hand to own mouth, laughing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P093",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "あごに手(考え中)",
+    "tags": "upper body, hand on own chin, thinking",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P094",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "人差し指を立てる",
+    "tags": "upper body, index finger raised, pointing up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P095",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "しーっ",
+    "tags": "upper body, finger to mouth, shushing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P096",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "ウインク＋ピース",
+    "tags": "upper body, wink, v, one eye closed",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P097",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "投げキッス",
+    "tags": "upper body, blowing kiss, hand to mouth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P098",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "両手でハート",
+    "tags": "upper body, heart hands",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P099",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "指ハート",
+    "tags": "upper body, finger heart",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P100",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "手を振る(近く)",
+    "tags": "upper body, waving, smile",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P101",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "眼鏡を直す",
+    "tags": "upper body, adjusting eyewear, glasses",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P102",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "髪を結ぶ",
+    "tags": "upper body, tying hair, arms up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P103",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "耳に手(聞こえない)",
+    "tags": "upper body, hand to ear, cupping ear",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P104",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "口に手(驚き)",
+    "tags": "upper body, hands on own mouth, surprised",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P105",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "頭をかく",
+    "tags": "upper body, scratching head, embarrassed",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P106",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "両手を頬に(かわいい)",
+    "tags": "upper body, hands on own cheeks, open mouth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P107",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "目を隠す",
+    "tags": "upper body, covering own eyes, hands over own eyes, eyes hidden",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P108",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "片目を隠す",
+    "tags": "upper body, covering one eye, hand over own eye, one eye covered",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P109",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "腕を組む(上半身)",
+    "tags": "upper body, crossed arms, serious",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P110",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "見上げる",
+    "tags": "upper body, looking up, from above",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P111",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "見下ろす",
+    "tags": "upper body, looking down, from below",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P112",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "横顔",
+    "tags": "upper body, profile, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P113",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "振り向きアップ",
+    "tags": "upper body, looking back, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P114",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "あくび",
+    "tags": "upper body, yawning, hand over mouth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P115",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "泣く",
+    "tags": "upper body, crying, tears, wiping tears",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P116",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "怒る(頬ふくらむ)",
+    "tags": "upper body, pout, puffy cheeks, angry",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P117",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "手を出す(握手)",
+    "tags": "upper body, handshake, outstretched hand, palm sideways, reaching towards viewer",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P118",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "マイクを持つ",
+    "tags": "upper body, holding microphone, singing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P119",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "自撮り",
+    "tags": "upper body, selfie, holding phone, arm up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P120",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "走る",
+    "tags": "running, full body, motion",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P121",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "ジャンプ",
+    "tags": "jumping, full body, arms up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P122",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "歩く",
+    "tags": "walking, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P123",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "スキップ",
+    "tags": "skipping, full body, happy",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P124",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "ダンス",
+    "tags": "dancing, full body, arms up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P125",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "回転(スカートふわり)",
+    "tags": "spinning, twirl, skirt, motion",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P126",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "ファイティングポーズ",
+    "tags": "fighting stance, full body, clenched hands",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P127",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "パンチ",
+    "tags": "punching, full body, incoming punch",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P128",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "ハイキック",
+    "tags": "kicking, high kick, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P129",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "剣を構える",
+    "tags": "holding sword, sword, fighting stance, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P130",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "弓を引く",
+    "tags": "drawing bow, holding bow (weapon), aiming, arrow, from side, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P131",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "杖を構える",
+    "tags": "holding staff, staff, casting spell, magic, ready stance, staff raised",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P132",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "振り向きざま",
+    "tags": "turning around, looking back, motion",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P133",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "転びそう",
+    "tags": "tripping, stumbling, off balance, arms flailing, standing on one leg, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P134",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "自転車",
+    "tags": "riding bicycle, bicycle, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P135",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "投げる",
+    "tags": "throwing, full body, ball",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P136",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "バット",
+    "tags": "holding baseball bat, batting stance, ready to swing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P137",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "バレーのレシーブ",
+    "tags": "volleyball, receiving, forearm pass, arms together, bent knees, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P138",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "ストレッチ(前屈)",
+    "tags": "stretching, bending forward, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P139",
+    "set": "pose",
+    "cat": "動き",
+    "jp": "側転",
+    "tags": "cartwheel, handstand, upside-down, full body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P140",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "手をつなぐ",
+    "tags": "2girls, holding hands, standing, side by side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P141",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "抱きしめる",
+    "tags": "2girls, hug, hugging, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P142",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "後ろから抱きつく",
+    "tags": "2girls, hug from behind, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P143",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "背中合わせ",
+    "tags": "2girls, back-to-back, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P144",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "肩を組む",
+    "tags": "2girls, arm around shoulder, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P145",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "腕を組む(恋人つなぎ)",
+    "tags": "2girls, locked arms, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P146",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "おんぶ",
+    "tags": "2girls, piggyback, carrying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P147",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "お姫様抱っこ",
+    "tags": "2girls, princess carry, carrying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P148",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "頭なでなで",
+    "tags": "2girls, headpat, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P149",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "ほっぺたをつつく",
+    "tags": "2girls, poking cheek, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P150",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "膝枕",
+    "tags": "2girls, lap pillow, sitting, lying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P151",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "耳打ち",
+    "tags": "2girls, whispering, hand to ear",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P152",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "向かい合って座る",
+    "tags": "2girls, sitting, facing each other, face-to-face, talking, distance between, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P153",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "並んで座る",
+    "tags": "2girls, sitting, side by side, bench",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P154",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "見つめ合う",
+    "tags": "2girls, eye contact, face-to-face, close-up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P155",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "おでこをくっつける",
+    "tags": "2girls, forehead-to-forehead",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P156",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "キス(2人)",
+    "tags": "2girls, kiss, blush, from side, closed eyes",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P157",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "手を引く",
+    "tags": "2girls, pulling, holding hands, running",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P158",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "傘を一緒に",
+    "tags": "2girls, shared umbrella, standing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P159",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "自撮り(2人)",
+    "tags": "2girls, selfie, holding phone, cheek-to-cheek",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P160",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "ケンカ(にらみ合い)",
+    "tags": "2girls, glaring, face-to-face, angry",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P161",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "壁ドン",
+    "tags": "2girls, kabedon, wall, against wall",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P162",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "髪を結んであげる",
+    "tags": "2girls, hairdressing, tying hair, hands on hair, one behind the other, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P163",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "食べさせ合い",
+    "tags": "2girls, feeding, food, sitting",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P164",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "ダブルピース(2人)",
+    "tags": "2girls, double v, standing, side by side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P180",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "スマホを見る(立ち)",
+    "tags": "standing, holding phone, looking at phone, looking down",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P181",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "コーヒーを飲む",
+    "tags": "standing, holding cup, drinking",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P182",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "本を抱える",
+    "tags": "standing, holding book, hugging book, book to chest",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P183",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "傘を差して歩く",
+    "tags": "upper body, walking, holding umbrella, open umbrella, transparent umbrella, rain, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P184",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "買い物袋",
+    "tags": "standing, holding bag, shopping bag",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P185",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "カバンを肩に",
+    "tags": "standing, shoulder bag, hand on strap",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P186",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "髪を乾かす",
+    "tags": "standing, holding hair dryer, drying hair",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P187",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "歯みがき",
+    "tags": "standing, toothbrush, brushing teeth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P188",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "料理する",
+    "tags": "standing, cooking, holding knife, kitchen",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P189",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "洗濯物を干す",
+    "tags": "standing, laundry, arms up, hanging clothes",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P190",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "掃除機",
+    "tags": "standing, holding vacuum cleaner, vacuuming, one vacuum cleaner, white socks",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P191",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "窓を開ける",
+    "tags": "standing, opening window, window, hands on window, reaching up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P192",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "靴をはく",
+    "tags": "sitting, putting on shoes, bending",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P193",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "ネクタイを締める",
+    "tags": "standing, adjusting necktie",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P194",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "時計を見る",
+    "tags": "standing, checking watch, looking at wrist, wristwatch, arm raised, looking down",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P195",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "イヤホンをつける",
+    "tags": "standing, earphones, wireless earphones, hand to ear, bare legs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P196",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "荷物を運ぶ",
+    "tags": "walking, carrying box, holding box",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P197",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "自転車を押す",
+    "tags": "walking, pushing bicycle, beside bicycle, hands on handlebars, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P198",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "犬の散歩",
+    "tags": "walking, walking dog, 1dog, holding leash",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P199",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "猫を抱く",
+    "tags": "standing, holding cat, cat",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P200",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "手を洗う",
+    "tags": "standing, washing hands, sink, faucet, hands under water, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P201",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "鏡を見る",
+    "tags": "upper body, holding hand mirror, looking at hand mirror, applying makeup, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P202",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "ドアを開ける",
+    "tags": "standing, opening door, one door, hand on doorknob",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P203",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "階段を上る",
+    "tags": "walking, stairs, climbing stairs",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P204",
+    "set": "pose",
+    "cat": "日常の動作",
+    "jp": "電話する",
+    "tags": "standing, talking on phone, phone to ear",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P205",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "両手を後ろで組んで前かがみ",
+    "tags": "standing, arms behind back, leaning forward",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P206",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "片手を腰・片手を頭",
+    "tags": "standing, hand on hip, hand on own head",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P207",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "腕をまくる",
+    "tags": "standing, rolling sleeves, adjusting sleeve, hand on sleeve",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P208",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "考える(あごに手)",
+    "tags": "standing, hand on own chin, thinking",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P209",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ため息",
+    "tags": "standing, sighing, hand on forehead",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P210",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "ガッツポーズ",
+    "tags": "standing, clenched hand, fist pump, excited",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P211",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "両手でガッツポーズ",
+    "tags": "standing, clenched hands, arms up, victory",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P212",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を差し出す(握手)",
+    "tags": "standing, outstretched hand, reaching towards viewer, open hand",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P213",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "お辞儀",
+    "tags": "standing, bowing, hands clasped in front, hands together",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P214",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "敬礼(ふざけ)",
+    "tags": "standing, salute, wink",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P215",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "帽子を押さえる",
+    "tags": "standing, hat, hand on headwear",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P216",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "スカートの裾を持つ",
+    "tags": "standing, skirt hold, curtsey",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P217",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "片足を後ろに",
+    "tags": "standing, standing on one leg, one leg raised behind, from side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P218",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "壁にもたれて腕組み",
+    "tags": "standing, against wall, crossed arms",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P219",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "両手を広げて笑う",
+    "tags": "standing, outstretched arms, open mouth, happy",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P220",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "指で輪(OK)",
+    "tags": "standing, ok sign",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P221",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "手を振る(大きく)",
+    "tags": "standing, waving, arm up, big smile",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P222",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "背中で手を組む(見上げ)",
+    "tags": "standing, arms behind back, looking up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P223",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "背伸びして取る",
+    "tags": "standing, reaching up, tiptoes",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P224",
+    "set": "pose",
+    "cat": "立ち",
+    "jp": "体をひねって振り返る",
+    "tags": "standing, twisted torso, looking back",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P225",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "両手であごを支える",
+    "tags": "upper body, hands on own chin, head rest",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P226",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "頬をふくらませる",
+    "tags": "upper body, puffy cheeks, pout",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P227",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "舌を出す",
+    "tags": "upper body, tongue out, wink",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P228",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "目を閉じて笑う",
+    "tags": "upper body, closed eyes, smile, happy",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P229",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "驚いて口を開ける",
+    "tags": "upper body, open mouth, surprised, wide-eyed",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P230",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "涙をぬぐう",
+    "tags": "upper body, wiping tears, crying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P231",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "耳をふさぐ",
+    "tags": "upper body, (covering ears:1.3), hands over ears, hands on own ears, blocking out sound, closed eyes, frown",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P232",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "両手を口に(叫ぶ)",
+    "tags": "upper body, cupping hands, hands around mouth, shouting, open mouth",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P233",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "ウインク＋指差し",
+    "tags": "upper body, wink, pointing at viewer",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P234",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "髪を結ぶ(後ろ)",
+    "tags": "upper body, tying hair, from behind",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P235",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "肩越しに振り返る",
+    "tags": "upper body, from behind, looking back, looking over shoulder, looking at viewer, face visible",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P236",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "手で日よけ",
+    "tags": "upper body, one hand on forehead, shading eyes, hand over eyes, other hand down",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P237",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "サムズアップ",
+    "tags": "upper body, thumbs up, hand up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P238",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "両手でサムズアップ",
+    "tags": "upper body, double thumbs up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P239",
+    "set": "pose",
+    "cat": "上半身・手の仕草",
+    "jp": "手を胸に当てて安堵",
+    "tags": "upper body, hand on own chest, relieved, sigh",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P240",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "うつ伏せでスマホ",
+    "tags": "lying, on stomach, holding phone, feet up",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P241",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "仰向けで本を読む",
+    "tags": "lying, on back, reading, holding book",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P242",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "横向きでスマホ",
+    "tags": "lying, on side, holding phone",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P243",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ベッドで伸び(うつ伏せ)",
+    "tags": "lying, on stomach, stretching",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P244",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ソファで寝る",
+    "tags": "lying, on couch, sleeping",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P245",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "芝生でうつ伏せ",
+    "tags": "lying, on stomach, grass, outdoors",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P246",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "浮き輪で浮く",
+    "tags": "lying, innertube, floating, pool",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P247",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "ハンモック",
+    "tags": "lying, hammock, relaxing",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P248",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "こたつで寝る",
+    "tags": "lying, kotatsu, under kotatsu, sleeping, closed eyes, winter",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P249",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "布団から顔だけ",
+    "tags": "lying, under covers, blanket, head out of blanket, only face visible, sleepy, on bed",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P250",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "仰向けで手を伸ばす",
+    "tags": "lying, on back, reaching up, outstretched arm",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P251",
+    "set": "pose",
+    "cat": "寝そべり",
+    "jp": "横向きで膝を抱える(ベッド)",
+    "tags": "lying, on side, fetal position, hugging own legs, knees to chest, on bed",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P252",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "手を振り合う",
+    "tags": "2girls, waving, facing each other, face-to-face, profile",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P253",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "ハイタッチ",
+    "tags": "2girls, high five",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P254",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "肩車",
+    "tags": "2girls, carrying on shoulders, shoulder carry",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P255",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "一緒に本を読む",
+    "tags": "2girls, reading, sitting, holding book, looking at book, looking down, side by side",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P256",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "一緒にスマホを見る",
+    "tags": "2girls, holding phone, looking at phone, looking down, side by side, heads together",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P257",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "抱きついて泣く",
+    "tags": "2girls, hug, crying",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P258",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "腕相撲",
+    "tags": "2girls, arm wrestling, table",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P259",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "髪をとかしてあげる",
+    "tags": "2girls, duo, brushing hair, hair brush, holding hair brush, sitting, upper body",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P260",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "傘で相合傘(歩く)",
+    "tags": "2girls, shared umbrella, walking",
+    "line": true,
+    "tier": "public"
+  },
+  {
+    "id": "P261",
+    "set": "pose",
+    "cat": "2人",
+    "jp": "手をつないで走る",
+    "tags": "2girls, holding hands, running",
+    "line": true,
+    "tier": "public"
+  }
+]

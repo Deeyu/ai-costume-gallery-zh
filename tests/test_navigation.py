@@ -3,10 +3,10 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ['index.html', 'portrait/index.html', 'pose/index.html', 'depth/index.html']
-LABELS = ['服装库', '脸型库', '姿势库', '深度库']
+PAGES = ['index.html', 'portrait/index.html', 'pose/index.html', 'depth/index.html', 'anime/index.html']
+LABELS = ['服装库', '脸型库', '姿势库', '深度库', '二次元库']
 SOURCES = ['https://ai-costume-gallery.pages.dev/', 'https://ai-portrait-gallery.pages.dev/',
-           'https://ai-pose-gallery.pages.dev/', 'https://ai-pose-depth-gallery.pages.dev/']
+           'https://ai-pose-gallery.pages.dev/', 'https://ai-pose-depth-gallery.pages.dev/', 'https://charadb-2fi.pages.dev/']
 NOTICE = '图库包含成人向姿势参考（部分分类名称涉及性行为术语），仅供艺术创作、动作参考与前端技术学习使用。请勿用于违法用途。未成年人请勿访问。'
 
 
@@ -84,8 +84,8 @@ class NavigationTests(unittest.TestCase):
                 self.assertIn('noopener', link['rel'].split())
                 self.assertEqual(link['hreflang'], 'ja')
 
-    def test_every_gallery_links_to_all_four_and_marks_current_page(self):
-        destinations = [ROOT, ROOT / 'portrait', ROOT / 'pose', ROOT / 'depth']
+    def test_every_gallery_links_to_all_five_and_marks_current_page(self):
+        destinations = [ROOT, ROOT / 'portrait', ROOT / 'pose', ROOT / 'depth', ROOT / 'anime']
         for index, name in enumerate(PAGES):
             with self.subTest(page=name):
                 page = ROOT / name
@@ -101,7 +101,7 @@ class NavigationTests(unittest.TestCase):
                 parsed = PageLinks((ROOT / name).read_text())
                 for source in SOURCES:
                     self.assertIn(source, parsed.sources)
-                for author in ['https://x.com/giaaibusi', 'https://x.com/agi_aibusi']:
+                for author in ['https://x.com/giaaibusi', 'https://x.com/agi_aibusi', 'https://x.com/taki_auto']:
                     self.assertIn(author, parsed.sources)
                 self.assertTrue(all(not link['href'].startswith('https://') for link in parsed.links))
                 self.assertIn(NOTICE, ''.join(parsed.notice))

@@ -29,8 +29,8 @@ function loadUI(script = 'assets/app.js') {
   return {node, documentEvents};
 }
 
-test('四库索引尚未读取完成时可以输入搜索词', () => {
-  for (const script of ['assets/app.js', 'portrait/app.js', 'pose/app.js', 'depth/app.js']) {
+test('五库索引尚未读取完成时可以输入搜索词', () => {
+  for (const script of ['assets/app.js', 'portrait/app.js', 'pose/app.js', 'depth/app.js', 'anime/app.js']) {
     const {node} = loadUI(script);
     node('q').value = '参考';
     assert.doesNotThrow(() => node('q').events.input({target: node('q')}));
