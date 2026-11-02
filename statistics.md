@@ -2,6 +2,8 @@
 
 本站使用 Cloudflare Worker 和 D1 保存访问与图片操作的聚合计数，页面继续由 GitHub Pages 托管。统计从功能上线时开始，不补造历史数据。
 
+正式统计服务：[ai-reference-gallery-stats.deeyu54321.workers.dev](https://ai-reference-gallery-stats.deeyu54321.workers.dev/health)，2026-11-02 上线。五库及服装动画版共享访问总数，图片热度按图库及画风分别累计。
+
 | 指标 | 计数口径 |
 | --- | --- |
 | 累计访问 | 五库及联合案例页打开后成功上报一次计一次；刷新页面会增加访问量 |

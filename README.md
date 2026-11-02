@@ -427,7 +427,7 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 ## Star、访问人数与图片热门
 
-Star 数可直接读取 GitHub。访问人数与跨访客热门排行需要发布 `worker/` 中的 Cloudflare 服务，并在 `assets/site-config.js` 配置服务地址；尚未接通时页面会明确提示，不显示虚构计数。
+访问人数与跨访客热门排行已接入 [Cloudflare 统计服务](https://ai-reference-gallery-stats.deeyu54321.workers.dev/health)，从 2026-11-02 上线后开始累计；不补造历史访问或图片使用次数。前端地址配置位于 `assets/site-config.js`，服务代码位于 `worker/`。Star 数优先由服务获取，失败时回退 GitHub API；统计服务暂不可用时明确显示提示。
 
 - 五库与案例页的 GitHub 入口展示仓库 Star 数，并提示“好用就点亮一颗星”；点击在新标签页打开 GitHub，是否 Star 由访问者自行决定。
 - 页底展示累计访问量与去重访客估算值。访客按匿名浏览器标识统计，不代表精确自然人人数，数据从上线后开始积累。
