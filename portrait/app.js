@@ -5,7 +5,7 @@ const PAGE = 60;
 const MODES = {face: '正面脸图', styling: '造型参考'};
 const NOTES = {face: '正面、简洁背景的脸部参考，适合五官与脸型设定。', styling: '展示发型质感、服装与整体氛围，人物朝向可能不同。'};
 const HAIRS = ['短发', '中发', '中长发', '长发'];
-let records = [], filtered = [], ranking = {}, meta, mode = 'face', hair = '', shown = 0;
+let records = [], filtered = [], ranking = {}, rankingMeta, meta, mode = 'face', hair = '', shown = 0;
 let viewList = [], current = 0, rankCategory = '全部';
 let loader;
 
@@ -122,7 +122,7 @@ function renderRanking() {
     button.addEventListener('click', () => openViewer(list, index));
     return button;
   }));
-  $('ranking-note').textContent = `原站排行快照 · ${meta.snapshot}`;
+  $('ranking-note').textContent = portraitRankingNote(rankingMeta);
   $('ranking').hidden = false;
 }
 
@@ -204,8 +204,9 @@ async function loadJson(path) {
 
 async function init() {
   try {
-    [records, meta, ranking] = await Promise.all([
-      loadJson('data/portrait-zh.json'), loadJson('data/meta-zh.json'), loadJson('data/ranking-zh.json')
+    [records, meta, ranking, rankingMeta] = await Promise.all([
+      loadJson('data/portrait-zh.json'), loadJson('data/meta-zh.json'), loadJson('data/ranking-zh.json'),
+      loadJson('data/ranking-meta.json').catch(() => null)
     ]);
     if (!Array.isArray(records) || !records.length || !ranking.全部) throw new Error('数据格式不正确');
     loader = new GalleryLoader({sentinel: $('load-sentinel'), hasMore: () => shown < filtered.length,

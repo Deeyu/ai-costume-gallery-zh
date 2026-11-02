@@ -1,0 +1,62 @@
+name: 每日同步脸型库原站排行
+
+on:
+  schedule:
+    # 01:17 UTC = 北京时间 09:17，避开整点高峰。
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portrait-ranking-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'Deeyu/ai-costume-gallery-zh'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 获取并校验原站实时排行
+        run: |
+          python3 scripts/portrait.py sync-ranking
+          python3 scripts/portrait.py verify
+          python3 -m unittest discover -s tests -p test_portrait.py -v
+      - name: 提交已验证的排行
+        id: commit
+        run: |
+          git config user.name Deeyu
+          git config user.email 33755522+Deeyu@users.noreply.github.com
+          git add portrait/data/ranking.json portrait/data/ranking-zh.json portrait/data/ranking-meta.json
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            git commit -m '每日同步脸型库原站下载排行'
+            git push origin HEAD:main
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

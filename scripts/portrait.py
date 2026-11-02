@@ -3,10 +3,13 @@ import argparse
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import csv
-from datetime import date
+from datetime import date, datetime, timezone
+from hashlib import sha256
 import json
 from pathlib import Path
 import re
+from tempfile import TemporaryDirectory
+from time import sleep
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,13 +120,24 @@ def translate(rows):
 def translate_ranking(ranking, rows):
     by_id = {row['id']: row for row in rows}
     labels = {'総合': '全部', **HAIRS}
+    if (not isinstance(ranking, dict) or not isinstance(ranking.get('cats'), list)
+            or not isinstance(ranking.get('top'), dict)
+            or any(not isinstance(category, str) for category in ranking['cats'])
+            or len(ranking['cats']) != len(labels) or set(ranking['cats']) != set(labels)
+            or set(ranking['top']) != set(labels)):
+        raise ValueError('排行必须包含完整且不重复的五个原站分类')
     result = {}
     for category in ranking['cats']:
         if category not in labels:
             raise ValueError('排行中出现未翻译分类')
         ids = ranking['top'][category]
+        if (not isinstance(ids, list) or not 1 <= len(ids) <= 10
+                or any(not isinstance(identifier, str) for identifier in ids)):
+            raise ValueError('排行必须为非空且不超过十项的图片 ID 列表')
         if len(ids) != len(set(ids)) or any(identifier not in by_id for identifier in ids):
             raise ValueError('排行中存在重复或未知图片 ID')
+        if category in HAIRS and any(by_id[identifier]['hair'] != category for identifier in ids):
+            raise ValueError('排行图片与发长分类不一致')
         result[labels[category]] = ids
     if not result:
         raise ValueError('排行为空')
@@ -139,18 +153,51 @@ def metadata(rows, snapshot):
 
 
 def fetch_text(path):
-    request = Request(SOURCE + path, headers={'User-Agent': 'Mozilla/5.0', 'Referer': SOURCE})
-    with urlopen(request, timeout=45) as response:
-        return response.read().decode('utf-8')
+    request = Request(SOURCE + path, headers={'User-Agent': 'Mozilla/5.0', 'Referer': SOURCE, 'Cache-Control': 'no-cache'})
+    for attempt in range(3):
+        try:
+            with urlopen(request, timeout=45) as response:
+                return response.read().decode('utf-8')
+        except OSError:
+            if attempt == 2:
+                raise
+            sleep(2 ** attempt)
+
+
+def ranking_files(ranking, rows, endpoint, synced_at=None):
+    translated = translate_ranking(ranking, rows)
+    synced_at = synced_at or datetime.now(timezone.utc).isoformat(timespec='seconds')
+    if datetime.fromisoformat(synced_at).utcoffset() is None:
+        raise ValueError('排行同步时间缺少时区')
+    digest = sha256(json.dumps(ranking, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    return {'ranking.json': ranking, 'ranking-zh.json': translated,
+            'ranking-meta.json': {'source': SOURCE, 'endpoint': endpoint,
+                                 'synced_at': synced_at,
+                                 'sha256': digest}}
+
+
+def refresh_ranking(ranking=None, *, data=DATA, synced_at=None):
+    rows = json.loads((data / 'portrait.json').read_text(encoding='utf-8'))
+    validate(rows)
+    if ranking is None:
+        ranking = json.loads(fetch_text('api/ranking'))
+    files = ranking_files(ranking, rows, SOURCE + 'api/ranking', synced_at)
+    # Validate every field before replacing any published snapshot file.
+    with TemporaryDirectory(dir=data) as staging:
+        for name, value in files.items():
+            (Path(staging) / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        for name in files:
+            (Path(staging) / name).replace(data / name)
+    print('已同步原站实时下载排行；图片索引和图片文件保持不变。')
 
 
 def write_snapshot(images_source, ranking_source):
     rows = extract(images_source, 'GALLERY_IMAGES')
     chinese = translate(rows)
     ranking = extract(ranking_source, 'GALLERY_RANKING')
-    chinese_ranking = translate_ranking(ranking, rows)
-    files = {'portrait.json': rows, 'portrait-zh.json': chinese, 'ranking.json': ranking,
-             'ranking-zh.json': chinese_ranking, 'meta-zh.json': metadata(rows, date.today().isoformat())}
+    files = {'portrait.json': rows, 'portrait-zh.json': chinese,
+             'meta-zh.json': metadata(rows, date.today().isoformat()),
+             **ranking_files(ranking, rows, SOURCE + 'data/ranking.js')}
     DATA.mkdir(parents=True, exist_ok=True)
     for name, content in files.items():
         (DATA / name).write_text(json.dumps(content, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
@@ -168,6 +215,13 @@ def verify():
         raise ValueError('脸型库中文数据与原始数据或词典不一致')
     if load('ranking-zh.json') != translate_ranking(load('ranking.json'), rows):
         raise ValueError('脸型库排行不一致')
+    rank_meta = load('ranking-meta.json')
+    if rank_meta['endpoint'] not in [SOURCE + 'api/ranking', SOURCE + 'data/ranking.js']:
+        raise ValueError('排行来源不正确')
+    if datetime.fromisoformat(rank_meta['synced_at']).utcoffset() is None:
+        raise ValueError('排行同步时间缺少时区')
+    if rank_meta != ranking_files(load('ranking.json'), rows, rank_meta['endpoint'], rank_meta['synced_at'])['ranking-meta.json']:
+        raise ValueError('排行来源、时间或内容校验不一致')
     meta = load('meta-zh.json')
     if meta != metadata(rows, meta['snapshot']):
         raise ValueError('脸型库计数或来源不一致')
@@ -196,6 +250,8 @@ if __name__ == '__main__':
     sync = sub.add_parser('sync')
     sync.add_argument('--images-js', type=Path)
     sync.add_argument('--ranking-js', type=Path)
+    rank = sub.add_parser('sync-ranking')
+    rank.add_argument('--ranking-json', type=Path, help='使用已保存的原站 /api/ranking JSON')
     sub.add_parser('verify')
     check = sub.add_parser('check-images')
     check.add_argument('--limit', type=int, default=8, choices=range(1, 9))
@@ -203,6 +259,8 @@ if __name__ == '__main__':
     if args.command == 'sync':
         write_snapshot(args.images_js.read_text(encoding='utf-8') if args.images_js else fetch_text('data/images.js'),
                        args.ranking_js.read_text(encoding='utf-8') if args.ranking_js else fetch_text('data/ranking.js'))
+    elif args.command == 'sync-ranking':
+        refresh_ranking(json.loads(args.ranking_json.read_text(encoding='utf-8')) if args.ranking_json else None)
     elif args.command == 'verify':
         verify()
     else:

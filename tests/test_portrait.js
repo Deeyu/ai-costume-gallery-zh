@@ -28,3 +28,14 @@ test('排行保留原站顺序并排除失效 ID', () => {
   const ids = [rows[4].id, 'missing', rows[0].id];
   assert.deepEqual(Array.from(catalog.rankedPortraits(rows, ids), row => row.id), [rows[4].id, rows[0].id]);
 });
+
+test('排行展示独立同步时间，统一北京时间并区分实时 API 与备用快照', () => {
+  const meta = {synced_at: '2026-11-02T01:17:00+00:00', endpoint: 'https://ai-portrait-gallery.pages.dev/api/ranking'};
+  const note = catalog.portraitRankingNote(meta);
+  assert.match(note, /每日同步/);
+  assert.match(note, /2026\/11\/02 09:17/);
+  assert.match(note, /北京时间/);
+  assert.match(catalog.portraitRankingNote({...meta, endpoint: 'https://ai-portrait-gallery.pages.dev/data/ranking.js'}), /原站快照/);
+  assert.equal(catalog.portraitRankingNote(null), '同步时间暂不可用');
+  assert.equal(catalog.portraitRankingNote({synced_at: 'invalid'}), '同步时间暂不可用');
+});

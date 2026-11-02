@@ -119,9 +119,9 @@ python3 scripts/costume_anime.py verify
 - “正面脸图 / 造型参考”两种模式，各自显示数量与发长筛选结果。
 - 4 类发长、50 种细分发型全部汉化，保留原始日文名称；未标注的细分发型保持为空，不推测人物特征。
 - 支持中文、日文、模式英文名及图片 ID 搜索，多个词同时匹配；滚动到底部自动追加，每批 60 张。
-- 保留原站下载排行的本地快照，明确显示快照日期，不代表本站访问或下载统计。
+- 每天北京时间 09:17 从原站实时接口同步下载排行，显示独立的最近成功同步时间，不代表本站访问或下载统计。
 - 灯箱导航、PNG 下载、复制图片、键盘操作；与服装库共用 GitHub 及公众号入口。
-- 页面与脚本独立编写，不包含原站的点击上报、实时排行请求或 LINE 引流。
+- 页面与脚本独立编写；浏览器读取本站每日同步的排行，不向原站发送点击上报，也不包含 LINE 引流。
 
 | 发长 | 正面脸图 | 造型参考 | 合计 |
 | --- | ---: | ---: | ---: |
@@ -143,7 +143,16 @@ python3 scripts/portrait.py verify
 python3 scripts/portrait.py check-images --limit 8
 ```
 
-`sync` 只读取原站公开的元数据和排行快照，不下载或镜像图片，也不执行原站 JavaScript。也可使用已保存的文件：`python3 scripts/portrait.py sync --images-js /path/to/images.js --ranking-js /path/to/ranking.js`。出现新增分类或发型时会先报错，补齐词典后再更新，避免静默漏译。`check-images` 仅用 HEAD 请求抽查不同模式和发长的图片地址。
+`sync` 只读取原站公开的元数据和备用排行快照，不下载或镜像图片，也不执行原站 JavaScript。也可使用已保存的文件：`python3 scripts/portrait.py sync --images-js /path/to/images.js --ranking-js /path/to/ranking.js`。出现新增分类或发型时会先报错，补齐词典后再更新，避免静默漏译。`check-images` 仅用 HEAD 请求抽查不同模式和发长的图片地址。
+
+原站页面优先读取 [`/api/ranking`](https://ai-portrait-gallery.pages.dev/api/ranking)，`data/ranking.js` 只是备用快照。本站的[每日同步工作流](.github/workflows/update-portrait-ranking.yml)直接获取实时接口，验证五个分类、图片编号、分类归属与重复项后，更新原始／中文排行及 `portrait/data/ranking-meta.json`，再复用 Pages 流程自动部署。GitHub 定时任务可能延迟，也可在 Actions 中手动运行。只更新排行时执行：
+
+```bash
+python3 scripts/portrait.py sync-ranking
+python3 scripts/portrait.py verify
+```
+
+同步失败、排行为空、出现未知编号或格式变化时，任务报错并保留线上已有排行；不会回退备用文件后标为最新。排行同步时间与图库索引快照日期分开记录，日常同步不会改写 1,499 张图片的索引或下载图片。自动更新提交使用维护者 `Deeyu` 的 GitHub 隐私邮箱。
 
 <a id="pose-library"></a>
 

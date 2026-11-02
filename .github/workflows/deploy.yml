@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -17,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -43,7 +50,7 @@ jobs:
           node --check anime/app.js
           node --check anime/catalog.js
           node --test tests/test_*.js
-          python3 scripts/build.py --github-pages
+          GITHUB_SHA="$(git rev-parse HEAD)" python3 scripts/build.py --github-pages
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
