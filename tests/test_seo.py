@@ -135,7 +135,7 @@ class SeoTests(unittest.TestCase):
                 self.assertIn(catalog['scenario'], text)
                 prefix = '../' if catalog['path'] else ''
                 self.assertIn(f'href="{prefix}guide.md"', overview)
-                self.assertIn('https://x.com/ai_bange/status/2115651909948477678', overview)
+                self.assertIn(f'href="{prefix}examples/">观看项目演示</a>', overview)
         self.assertIn(BASE + 'guide.md', (ROOT / 'llms.txt').read_text())
 
     def test_complete_directories_cover_every_record_and_keep_source_terms(self):
@@ -192,8 +192,11 @@ class SeoTests(unittest.TestCase):
         video = next(node for node in graph if node['@type'] == 'VideoObject')
         for field in ['contentUrl', 'thumbnailUrl']:
             self.assertTrue((ROOT / video[field].removeprefix(BASE)).is_file())
-        self.assertEqual(video['duration'], 'PT5.178S')
+        self.assertEqual(video['duration'], 'PT62.1S')
         self.assertLessEqual(video['uploadDate'][:10], CONTENT_UPDATED)
         image = (ROOT / parsed.meta['og:image'].removeprefix(BASE)).read_bytes()
         self.assertEqual(struct.unpack('>II', image[16:24]), (int(parsed.meta['og:image:width']), int(parsed.meta['og:image:height'])))
-        self.assertIn('案例原帖', parsed.meta['description'])
+        self.assertIn('项目演示', parsed.meta['description'])
+        self.assertIn('src="project-demo.mp4"', html)
+        self.assertIn('poster="project-demo-poster.png"', html)
+        self.assertNotIn('citation', graph[0])

@@ -6,7 +6,7 @@
 - 收录：1,407 套服装
 - 分类与视角：春装、夏装、秋装、冬装、内衣、派对、泳装、性感，共 8 个分类
 - 索引快照：2026-10-29
-- 介绍更新：2026-11-02
+- 介绍更新：2026-11-03
 - 功能：中文分类、中英文关键词与 ID 搜索、服装预览、PNG 原图下载、复制图片
 - 图片提供：服装图片保存在仓库；在线预览由 GitHub Pages 提供，PNG 原图由 GitHub 仓库提供。
 - 完整文字目录：https://deeyu.github.io/ai-costume-gallery-zh/directory/costume/
@@ -20,7 +20,7 @@
 
 中文创作场景：为 AI 绘画、漫剧和短剧选取角色服装，建立角色定妆参考；用春装、外套等中文关键词查找，再结合脸型库与姿势库制作分镜。
 
-联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
+图库使用指南：https://deeyu.github.io/ai-costume-gallery-zh/guide.md
 
 ## 内容提示
 

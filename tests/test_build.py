@@ -58,7 +58,7 @@ class BuildTests(unittest.TestCase):
     def test_pages_build_keeps_example_video_images_and_player_together(self):
         example = self.root / 'examples'
         example.mkdir()
-        for name in ['index.html', 'joint-reference-demo.mp4', 'costume-reference.png', 'pose-reference.jpeg', 'joint-reference-poster.jpg']:
+        for name in ['index.html', 'project-demo.mp4', 'project-demo-poster.png']:
             (example / name).write_bytes(b'media fixture')
         package_site(self.root, github_pages=True)
         for original in example.iterdir():

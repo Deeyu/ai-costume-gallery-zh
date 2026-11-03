@@ -12,7 +12,7 @@ BASE = 'https://deeyu.github.io/ai-costume-gallery-zh/'
 REPOSITORY = 'https://github.com/Deeyu/ai-costume-gallery-zh'
 SITE_NAME = 'AI 参考图库中文版'
 # Change only when the published descriptive content changes, never on each build.
-CONTENT_UPDATED = '2026-11-02'
+CONTENT_UPDATED = '2026-11-03'
 SOURCE_POSTS = {
     'costume': 'https://x.com/giaaibusi/status/2115638135208260002',
     'costume-anime': 'https://x.com/giaaibusi/status/2117089256015622274',
@@ -233,9 +233,7 @@ def overview(data):
       <h3>常见问题</h3>
       {details}
       <p>其他图库：{related}</p>
-      <h3>四库联合使用：角色定妆与分镜</h3>
-      <p>先用姿势线稿说明动作、服装图说明穿搭，再加入脸部参考明确人物外观；需要空间参照时选择同编号同视角的深度图。按工具实际支持的参考功能分步使用，并检查人物一致性与遮挡关系。</p>
-      <p><a href="{prefix}examples/">联合使用案例：视频与参考图片</a> · <a href="{prefix}guide.md">中文操作指南与提示词</a> · 思路参考：<a href="https://x.com/ai_bange/status/2115651909948477678" target="_blank" rel="noopener">半格（@ai_bange）的姿势与服装联合参考案例</a></p>
+      <p><a href="{prefix}examples/">观看项目演示</a> · <a href="{prefix}guide.md">图库使用指南</a></p>
     </section>
     <!-- seo:overview:end -->'''
 
@@ -278,7 +276,7 @@ def markdown(data):
              f'- 原始素材来源：{data["source"]}，原作者 {data["creator"]}（{data["creator_url"]}）',
              f'- 中文 JSON 索引：{BASE + data["data"]}', '', '## 中文创作用法', '',
              f'常用名称：{"、".join(data["aliases"])}。', '', data['scenario'], '',
-             f'联合使用指南（角色定妆、姿势与穿搭、分镜深度参考）：{BASE}guide.md', '',
+             f'图库使用指南：{BASE}guide.md', '',
              '## 内容提示', '', NOTICE, '', '## 常见问题', '']
     for question, answer in data['questions']:
         lines += ['### ' + question, '', answer, '']
@@ -376,25 +374,24 @@ def directories(root, summaries):
     <p>服装库包含写实版与动画版两个目录。目录与交互页面使用同一份公开索引，保留实际数量和快照日期；无需启用 JavaScript 或滚动加载图片。</p>
     <table class="directory-table"><caption>按创作用途选择完整目录</caption><thead><tr><th scope="col">目录</th><th scope="col">收录</th><th scope="col">用途</th></tr></thead><tbody>{''.join(index_rows)}</tbody></table>
     <p>服装按套数、脸型按图像记录、姿势与深度按视角记录分别统计；二次元库按基础条目、彩图发色变体和姿势线稿分别说明。</p>
-    <p><a href="{BASE}examples/">联合使用视频与图片</a> · <a href="{BASE}guide.md">中文操作指南</a> · <a href="{REPOSITORY}#readme">项目 README</a></p>'''
+    <p><a href="{BASE}examples/">项目演示视频</a> · <a href="{BASE}guide.md">图库使用指南</a> · <a href="{REPOSITORY}#readme">项目 README</a></p>'''
     result['directory/index.html'] = directory_shell(root, 'directory/index.html', title, description, body)
     return result
 
 
 def example_head():
     url = BASE + 'examples/'
-    title = 'AI 绘画多图参考案例｜脸型、服装与姿势联合使用'
-    description = '观看约 5 秒的多图参考演示及服装、姿势参考合集，了解如何分别指定人物五官、穿搭与动作，为角色定妆和漫剧分镜准备参考图。附中文操作步骤、案例原帖及素材来源。'
+    title = '项目演示｜AI 参考图库中文版'
+    description = '观看约 1 分钟的项目演示，了解如何用 AI 参考图库中文版挑选脸型、服装和姿势参考，并用于角色造型与分镜创作。'
     graph = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'WebPage', '@id': url, 'url': url, 'name': title, 'description': description,
          'inLanguage': 'zh-CN', 'dateModified': CONTENT_UPDATED,
-         'isPartOf': {'@id': BASE + '#website'}, 'mainEntity': {'@id': url + '#demo'},
-         'citation': 'https://x.com/ai_bange/status/2115651909948477678'},
-        {'@type': 'VideoObject', '@id': url + '#demo', 'name': '脸部、服装与姿势多图参考演示',
-         'description': '用户提供的约 5 秒参考输入演示；视频不代表本站提供图像生成服务。',
-         'thumbnailUrl': url + 'joint-reference-poster.jpg', 'contentUrl': url + 'joint-reference-demo.mp4',
-         'uploadDate': '2026-10-30T17:14:59+08:00', 'duration': 'PT5.178S', 'creditText': '演示视频由用户提供。'}]}
-    return metadata_head(title, description, url, url + 'costume-reference.png', graph, '../', image_size=(900, 675))
+         'isPartOf': {'@id': BASE + '#website'}, 'mainEntity': {'@id': url + '#demo'}},
+        {'@type': 'VideoObject', '@id': url + '#demo', 'name': '项目演示（参考音色版）',
+         'description': '用户提供的新版项目演示，含配音。',
+         'thumbnailUrl': url + 'project-demo-poster.png', 'contentUrl': url + 'project-demo.mp4',
+         'uploadDate': '2026-11-03', 'duration': 'PT62.1S', 'creditText': '演示视频由用户提供。'}]}
+    return metadata_head(title, description, url, url + 'project-demo-poster.png', graph, '../', image_size=(960, 540))
 
 
 def source_directory():
@@ -463,7 +460,7 @@ def outputs(root=ROOT):
         example = re.sub(r'  <title>.*?(?=  <link rel="stylesheet")', lambda _: example_head() + '\n', example, count=1, flags=re.S)
     if '<!-- seo:example-info -->' not in example:
         example = example.replace('    <div class="example-layout">',
-                                  f'    <p><!-- seo:example-info -->本站流程整理：<a href="https://github.com/Deeyu">Deeyu</a> · 介绍更新：<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time> · <a href="../directory/">五库完整文字目录</a></p>\n    <div class="example-layout">', 1)
+                                  f'    <p><!-- seo:example-info -->中文版维护：<a href="https://github.com/Deeyu">Deeyu</a> · 介绍更新：<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time> · <a href="../directory/">五库完整文字目录</a></p>\n    <div class="example-layout">', 1)
     else:
         example = re.sub(r'(<!-- seo:example-info -->.*?)<time datetime="[^"]+">[^<]+</time>',
                          lambda match: match[1] + f'<time datetime="{CONTENT_UPDATED}">{CONTENT_UPDATED}</time>', example)
@@ -487,10 +484,10 @@ def outputs(root=ROOT):
     lines += [f'- [{data["name"]}全部条目]({BASE + data["directory"]}): 全部编号、中文名称、原始词条与分类。' for data in summaries]
     lines += ['', '## 合并参考', '', f'- [五库完整文字介绍]({BASE}llms-full.txt): 六个版本的收录、用途、问答、快照、作者及许可边界合并阅读。']
     lines += ['', '## 项目与来源', '', f'- [项目说明]({REPOSITORY}#readme): 五库用途、功能、本地预览与部署说明。',
-              f'- [中文联合使用指南]({BASE}guide.md): AI 绘画、角色定妆、漫剧与短剧分镜的多图参考步骤及中文提示词示例，附原始案例链接。',
-              f'- [联合使用视频与图片]({BASE}examples/): 用户提供的约 5 秒演示视频、服装参考合集和姿势参考合集。',
+              f'- [图库使用指南]({BASE}guide.md): 各库的查找方式、筛选和图片格式。',
+              f'- [项目演示视频]({BASE}examples/): 用户提供的新版项目演示，约 1 分钟，含配音。',
               f'- [版权与致谢]({BASE}THIRD_PARTY_NOTICES.md): 原始素材、Anhao 中文词条及独立代码的许可范围。',
-              f'- [站点地图]({BASE}sitemap.xml): 五库入口、服装动画版、联合案例及完整文字目录。', '',
+              f'- [站点地图]({BASE}sitemap.xml): 五库入口、服装动画版、项目演示及完整文字目录。', '',
               '## 维护与引用', '', f'内容整理更新：{CONTENT_UPDATED}；各库原始索引的快照日期分别标注，不代表原站实时数量。', '',
               '维护者为 Deeyu（https://github.com/Deeyu）。本项目是独立中文整理与静态站点学习实践，不代表原作者的官方版本或背书。引用请注明具体图库、完整编号、视角、索引快照及原始作者。', '',
               '## 内容和计数说明', '', NOTICE, '',

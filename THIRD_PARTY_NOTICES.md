@@ -108,6 +108,6 @@ README 中的三张二次元库界面截图位于 `docs/anime-*-desktop.jpg`，�
 
 姿势库与深度库的直接筛选、取消选项、展开动作和缩略图视角切换等交互，参考 [HAL-9909](https://github.com/HAL-9909) 提交的 [Anhao/ai-pose-gallery-zh PR #3](https://github.com/anhao/ai-pose-gallery-zh/pull/3)，参考提交为 `3651dd8f4af0f5632752c06e949ba959f31a67a0`。本项目在现有页面、脚本与样式基础上独立适配，未引入该 PR 的图标、标志或其他第三方依赖。该交互参考不改变图库图片与中文词条的原有使用条件。
 
-## 联合使用案例媒体
+## 项目演示媒体
 
-`examples/joint-reference-demo.mp4`、`costume-reference.png`、`pose-reference.jpeg` 为用户提供的案例视频与参考合集；`joint-reference-poster.jpg` 从该视频截取。关联使用思路见 [半格的原帖](https://x.com/ai_bange/status/2115651909948477678)。原始服装与姿势素材归ギア等原权利人所有，媒体展示不适用本项目独立代码的 MIT 许可，不提供额外授权。
+`examples/project-demo.mp4` 为用户提供的参考音色版演示的网页播放版本，`examples/project-demo-poster.png` 从该视频截取。视频中的第三方素材仍归各自权利人所有，演示媒体不适用本项目独立代码的 MIT 许可。
