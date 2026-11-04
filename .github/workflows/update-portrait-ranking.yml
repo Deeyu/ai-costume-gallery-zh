@@ -2,8 +2,10 @@ name: 每日同步脸型库原站排行
 
 on:
   schedule:
-    # 01:17 UTC = 北京时间 09:17，避开整点高峰。
+    # 北京时间 09:17；若延迟、漏触发或发布失败，10:43 和 12:31 补跑。
     - cron: '17 1 * * *'
+    - cron: '43 2 * * *'
+    - cron: '31 4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -31,8 +33,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: 获取并校验原站实时排行
+        env:
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          python3 scripts/portrait.py sync-ranking
+          if [ "$EVENT_NAME" = schedule ]; then
+            python3 scripts/portrait.py sync-ranking --skip-if-published-today
+          else
+            python3 scripts/portrait.py sync-ranking
+          fi
           python3 scripts/portrait.py verify
           python3 -m unittest discover -s tests -p test_portrait.py -v
       - name: 提交已验证的排行
