@@ -1,11 +1,6 @@
-name: 每日同步脸型库原站排行
+name: 手动刷新脸型库备用排行
 
 on:
-  schedule:
-    # 北京时间 09:17；若延迟、漏触发或发布失败，10:43 和 12:31 补跑。
-    - cron: '17 1 * * *'
-    - cron: '43 2 * * *'
-    - cron: '31 4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,14 +28,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: 获取并校验原站实时排行
-        env:
-          EVENT_NAME: ${{ github.event_name }}
         run: |
-          if [ "$EVENT_NAME" = schedule ]; then
-            python3 scripts/portrait.py sync-ranking --skip-if-published-today
-          else
-            python3 scripts/portrait.py sync-ranking
-          fi
+          python3 scripts/portrait.py sync-ranking
           python3 scripts/portrait.py verify
           python3 -m unittest discover -s tests -p test_portrait.py -v
       - name: 提交已验证的排行
@@ -52,7 +41,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
-            git commit -m '每日同步脸型库原站下载排行'
+            git commit -m '更新脸型库原站下载排行备用快照'
             git push origin HEAD:main
             echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi

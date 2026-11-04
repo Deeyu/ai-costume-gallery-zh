@@ -10,6 +10,7 @@ const service = import('../worker/src/index.js');
 function database(t) {
   const sqlite = new DatabaseSync(':memory:');
   sqlite.exec(readFileSync(join(__dirname, '../worker/schema.sql'), 'utf8'));
+  sqlite.exec(readFileSync(join(__dirname, '../worker/migrations/portrait-ranking.sql'), 'utf8'));
   t.after(() => sqlite.close());
   return {sqlite, prepare(sql) {
     let args = [];
@@ -20,6 +21,30 @@ function database(t) {
       async run() { return statement.run(...args); }};
   }, async batch(statements) { for (const statement of statements) await statement.run(); }};
 }
+
+test('每日 Cron 拉取原站并写入可跨域读取的排行；无效响应保留上一份', async t => {
+  const db = database(t), {default: worker} = await service;
+  const env = {DB: db};
+  const request = new Request('https://stats.example/portrait-ranking');
+  const raw = JSON.parse(readFileSync(join(__dirname, '../portrait/data/ranking.json'), 'utf8'));
+  const translated = JSON.parse(readFileSync(join(__dirname, '../portrait/data/ranking-zh.json'), 'utf8'));
+  const event = {cron: '17 1 * * *'};
+  const upstream = t.mock.method(globalThis, 'fetch', async url => {
+    assert.equal(url, 'https://ai-portrait-gallery.pages.dev/api/ranking');
+    return Response.json(raw);
+  });
+  assert.equal((await worker.fetch(request, env)).status, 503);
+  await worker.scheduled(event, env);
+  assert.equal(upstream.mock.callCount(), 1);
+  const response = await worker.fetch(request, env);
+  assert.equal(response.headers.get('Access-Control-Allow-Origin'), '*');
+  const snapshot = await response.json();
+  assert.deepEqual(snapshot.ranking, translated);
+  assert.ok(Number.isFinite(Date.parse(snapshot.synced_at)));
+  raw.top['ショート'][0] = raw.top['ロング'][0];
+  await assert.rejects(worker.scheduled(event, env), /发长分类无效/);
+  assert.deepEqual(await (await worker.fetch(request, env)).json(), snapshot);
+});
 function visit(visitor = randomUUID(), id = randomUUID()) { return {type: 'visit', page: 'anime', visitor_id: visitor, event_id: id}; }
 function action(overrides = {}) { return {...visit(), type: 'image', gallery: 'anime', image_id: 'O001', action: 'copy', ...overrides}; }
 async function post(db, body, origin = 'https://deeyu.github.io') {

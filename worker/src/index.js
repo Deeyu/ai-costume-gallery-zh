@@ -1,4 +1,5 @@
 import catalog from '../catalog.json' with {type: 'json'};
+import {PORTRAIT_RANKING_CRON, readPortraitRanking, syncPortraitRanking} from './portrait-ranking.js';
 
 const allowedIds = Object.fromEntries(Object.entries(catalog).map(([key, ids]) => [key, new Set(ids)]));
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -90,6 +91,11 @@ export default {
       if (request.method === 'GET' && url.pathname === '/health') response = json({ok: true});
       else if (request.method === 'GET' && url.pathname === '/stars') response = await stars(request);
       else if (request.method === 'GET' && url.pathname === '/stats') response = await getStats(url.searchParams.get('gallery'), env.DB);
+      else if (request.method === 'GET' && url.pathname === '/portrait-ranking') {
+        const snapshot = await readPortraitRanking(env.DB);
+        response = snapshot ? json(snapshot, 200, {'Cache-Control': 'public,max-age=300'})
+          : json({error: 'ranking_unavailable'}, 503);
+      }
       else if (request.method === 'POST' && url.pathname === '/events') {
         if (!headers['Access-Control-Allow-Origin']) return json({error: 'origin_not_allowed'}, 403);
         response = await record(request, env.DB);
@@ -100,7 +106,11 @@ export default {
     result.headers.set('X-Content-Type-Options', 'nosniff');
     return result;
   },
-  async scheduled(_event, env) {
+  async scheduled(event, env) {
+    if (event.cron === PORTRAIT_RANKING_CRON) {
+      await syncPortraitRanking(env.DB);
+      return;
+    }
     const before = Math.floor(Date.now() / 1000) - 172800;
     await env.DB.batch([
       env.DB.prepare('DELETE FROM visit_events WHERE created_at<?').bind(before),

@@ -11,12 +11,10 @@ import re
 from tempfile import TemporaryDirectory
 from time import sleep
 from urllib.request import Request, urlopen
-from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'portrait/data'
 SOURCE = 'https://ai-portrait-gallery.pages.dev/'
-PUBLISHED_RANKING_META = 'https://deeyu.github.io/ai-costume-gallery-zh/portrait/data/ranking-meta.json'
 TWEET = 'https://x.com/agi_aibusi/status/2113187345814204557'
 SECTIONS = {'face': '正面脸图', 'styling': '造型参考'}
 HAIRS = {'ショート': '短发', 'ミディアム': '中发', 'セミロング': '中长发', 'ロング': '长发'}
@@ -178,24 +176,6 @@ def ranking_files(ranking, rows, endpoint, synced_at=None):
                                  'sha256': digest}}
 
 
-def published_ranking_is_current(now):
-    # Read the deployed snapshot so a failed deploy can be retried too.
-    request = Request(f'{PUBLISHED_RANKING_META}?t={int(now.timestamp())}',
-                      headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
-    try:
-        with urlopen(request, timeout=15) as response:
-            meta = json.load(response)
-        if not isinstance(meta, dict) or meta.get('endpoint') != SOURCE + 'api/ranking':
-            return False
-        synced = datetime.fromisoformat(meta['synced_at'])
-    except (OSError, ValueError, KeyError, TypeError) as error:
-        print(f'无法确认线上排行已更新，继续同步：{error}')
-        return False
-    beijing = ZoneInfo('Asia/Shanghai')
-    return (synced.utcoffset() is not None and synced <= now
-            and synced.astimezone(beijing).date() == now.astimezone(beijing).date())
-
-
 def refresh_ranking(ranking=None, *, data=DATA, synced_at=None):
     rows = json.loads((data / 'portrait.json').read_text(encoding='utf-8'))
     validate(rows)
@@ -271,9 +251,7 @@ if __name__ == '__main__':
     sync.add_argument('--images-js', type=Path)
     sync.add_argument('--ranking-js', type=Path)
     rank = sub.add_parser('sync-ranking')
-    rank_source = rank.add_mutually_exclusive_group()
-    rank_source.add_argument('--ranking-json', type=Path, help='使用已保存的原站 /api/ranking JSON')
-    rank_source.add_argument('--skip-if-published-today', action='store_true', help='线上已有北京时间当天的原站排行时跳过')
+    rank.add_argument('--ranking-json', type=Path, help='使用已保存的原站 /api/ranking JSON')
     sub.add_parser('verify')
     check = sub.add_parser('check-images')
     check.add_argument('--limit', type=int, default=8, choices=range(1, 9))
@@ -282,10 +260,7 @@ if __name__ == '__main__':
         write_snapshot(args.images_js.read_text(encoding='utf-8') if args.images_js else fetch_text('data/images.js'),
                        args.ranking_js.read_text(encoding='utf-8') if args.ranking_js else fetch_text('data/ranking.js'))
     elif args.command == 'sync-ranking':
-        if args.skip_if_published_today and published_ranking_is_current(datetime.now(timezone.utc)):
-            print('线上已发布北京时间当天的原站排行，跳过补跑。')
-        else:
-            refresh_ranking(json.loads(args.ranking_json.read_text(encoding='utf-8')) if args.ranking_json else None)
+        refresh_ranking(json.loads(args.ranking_json.read_text(encoding='utf-8')) if args.ranking_json else None)
     elif args.command == 'verify':
         verify()
     else:

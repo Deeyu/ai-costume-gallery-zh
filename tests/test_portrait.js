@@ -32,10 +32,21 @@ test('排行保留原站顺序并排除失效 ID', () => {
 test('排行展示独立同步时间，统一北京时间并区分实时 API 与备用快照', () => {
   const meta = {synced_at: '2026-11-02T01:17:00+00:00', endpoint: 'https://ai-portrait-gallery.pages.dev/api/ranking'};
   const note = catalog.portraitRankingNote(meta);
-  assert.match(note, /每日同步/);
+  assert.match(note, /最近同步/);
   assert.match(note, /2026\/11\/02 09:17/);
   assert.match(note, /北京时间/);
   assert.match(catalog.portraitRankingNote({...meta, endpoint: 'https://ai-portrait-gallery.pages.dev/data/ranking.js'}), /原站快照/);
   assert.equal(catalog.portraitRankingNote(null), '同步时间暂不可用');
   assert.equal(catalog.portraitRankingNote({synced_at: 'invalid'}), '同步时间暂不可用');
+});
+
+test('页面只采用更新且分类齐全的定时排行，失败时保留已有快照', () => {
+  const fallback = {synced_at: '2026-11-04T01:17:00Z'};
+  const ranking = JSON.parse(readFileSync(join(__dirname, '../portrait/data/ranking-zh.json'), 'utf8'));
+  const snapshot = {synced_at: '2026-11-05T01:17:00Z', ranking};
+  assert.equal(catalog.isNewerPortraitRanking(snapshot, fallback), true);
+  assert.equal(catalog.isNewerPortraitRanking(snapshot, null), true);
+  assert.equal(catalog.isNewerPortraitRanking({...snapshot, ...fallback}, fallback), false);
+  assert.equal(catalog.isNewerPortraitRanking({...snapshot, ranking: {全部: ranking.全部}}, fallback), false);
+  assert.equal(catalog.isNewerPortraitRanking(null, fallback), false);
 });

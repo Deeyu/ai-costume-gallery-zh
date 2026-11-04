@@ -196,10 +196,24 @@ for (const dialog of [$('viewer'), $('guide'), $('wechat')]) dialog.addEventList
   if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
 });
 
-async function loadJson(path) {
-  const response = await fetch(path);
+async function loadJson(path, options) {
+  const response = await fetch(path, options);
   if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
   return response.json();
+}
+
+async function loadScheduledRanking() {
+  const endpoint = globalThis.GALLERY_SITE_CONFIG?.statsEndpoint;
+  if (!endpoint) return;
+  try {
+    const snapshot = await loadJson(new URL('/portrait-ranking', endpoint), {signal: AbortSignal.timeout(5000)});
+    if (!isNewerPortraitRanking(snapshot, rankingMeta)) return;
+    ranking = snapshot.ranking;
+    rankingMeta = snapshot;
+    renderRanking();
+  } catch {
+    // Keep the published static snapshot when the scheduled service is unavailable.
+  }
 }
 
 async function init() {
@@ -213,6 +227,7 @@ async function init() {
       loadMore: appendPage, preloadUrls: () => filtered.slice(shown, shown + 12).map((row) => row.缩略图)});
     $('total').textContent = `${meta.sections.face.toLocaleString()} 张正面脸图 / ${meta.sections.styling.toLocaleString()} 张造型参考`;
     renderFeatured(); renderRanking(); applyFilters();
+    void loadScheduledRanking();
   } catch (error) {
     $('status').textContent = '数据加载失败，请刷新重试；本地预览请先启动 HTTP 服务。';
     $('total').textContent = '暂时无法读取图库';

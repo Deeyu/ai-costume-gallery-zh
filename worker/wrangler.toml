@@ -12,4 +12,5 @@ database_name = "ai-reference-gallery-stats"
 database_id = "a0de3155-f9be-4782-a899-9d8644d41e31"
 
 [triggers]
-crons = ["0 19 * * *"]
+# 01:17 UTC = 09:17 Asia/Shanghai; 19:00 UTC cleans up stats events.
+crons = ["17 1 * * *", "0 19 * * *"]

@@ -1,6 +1,5 @@
 from collections import Counter
 from copy import deepcopy
-from datetime import datetime, timezone
 import json
 from pathlib import Path
 import sys
@@ -10,7 +9,7 @@ from unittest.mock import MagicMock, patch
 from urllib.error import URLError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from portrait import DATA, SOURCE, extract, fetch_text, metadata, published_ranking_is_current, refresh_ranking, translate, translate_ranking, validate
+from portrait import DATA, SOURCE, extract, fetch_text, metadata, refresh_ranking, translate, translate_ranking, validate
 
 
 class PortraitTests(unittest.TestCase):
@@ -98,24 +97,6 @@ class PortraitTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 refresh_ranking(bad, data=data)
             self.assertEqual({path.name: path.read_bytes() for path in data.iterdir()}, before)
-
-    def test_scheduled_retry_skips_only_a_live_api_snapshot_published_today_in_beijing(self):
-        now = datetime(2026, 11, 4, 3, 6, tzinfo=timezone.utc)
-        meta = {'endpoint': SOURCE + 'api/ranking', 'synced_at': '2026-11-03T18:00:00+00:00'}
-        response = MagicMock()
-        for value, expected in [
-            (meta, True),
-            (dict(meta, synced_at='2026-11-03T15:59:59+00:00'), False),
-            (dict(meta, synced_at='2026-11-04T04:00:00+00:00'), False),
-            (dict(meta, synced_at='2026-11-04T02:00:00'), False),
-            (dict(meta, endpoint=SOURCE + 'data/ranking.js'), False),
-            (None, False),
-        ]:
-            with self.subTest(value=value), patch('portrait.urlopen', return_value=response):
-                response.__enter__.return_value.read.return_value = json.dumps(value).encode()
-                self.assertEqual(published_ranking_is_current(now), expected)
-        with patch('portrait.urlopen', side_effect=URLError('Pages unavailable')):
-            self.assertFalse(published_ranking_is_current(now))
 
     def test_source_network_errors_retry_but_are_not_replaced_with_stale_snapshots(self):
         response = MagicMock()

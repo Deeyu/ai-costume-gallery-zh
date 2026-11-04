@@ -136,7 +136,9 @@ Cloudflare Pages 可连接本仓库，框架选择 None，构建命令 `python3 
 
 ### 脸型库每日排行
 
-[每日工作流](../.github/workflows/update-portrait-ranking.yml)计划在北京时间 09:17 从原站 `/api/ranking` 获取排行，校验后自动提交并部署。GitHub 定时任务可能延迟或漏跑，因此另设 10:43 和 12:31 两个补跑时段；线上已有当天的原站排行时跳过。失败时保留上次发布的数据。排行同步时间独立于图库索引的快照日期。
+[Cloudflare Worker](../worker/README.md)每天北京时间 09:17 从原站 `/api/ranking` 获取排行，校验后写入 D1。脸型库通过 `/portrait-ranking` 读取更新；定时拉取和更新都无需 GitHub 提交或 Pages 重新部署。原站抓取失败时保留上次成功的排行；服务不可用时页面显示静态快照。同步时间独立于图库索引的快照日期。
+
+[GitHub 工作流](../.github/workflows/update-portrait-ranking.yml)仅用于手动更新静态备用快照，也可在本地生成：
 
 ```bash
 python3 scripts/portrait.py sync-ranking

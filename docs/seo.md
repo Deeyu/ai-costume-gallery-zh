@@ -56,7 +56,7 @@ About 简介：
 
 `CONTENT_UPDATED` 是介绍内容发生实质变更时手动更新的日期，当前为 2026-11-03，用于可见介绍、页面 Schema 与 sitemap 的 `lastmod`。Dataset 的 `dateModified` 继续使用原始索引快照。构建时间、访问量或样式哈希变化不会自动将数据快照改成“今天”。
 
-脸型库原站下载排行由 `.github/workflows/update-portrait-ranking.yml` 每日北京时间 09:17 从原站 `/api/ranking` 同步，成功后自动提交并复用 Pages 部署。`portrait/data/ranking-meta.json` 单独记录接口、成功同步时间和内容校验值；不会把排行日期写入图库索引的快照，也不会为了每日同步修改全站 sitemap 日期。接口失败、未知编号或校验错误时保留已有线上排行，工作流显示失败。该排行与本站复制／下载累计热度分别展示。
+脸型库原站下载排行由 Cloudflare Worker 每日北京时间 09:17 从原站 `/api/ranking` 同步到 D1，浏览器读取最新成功记录。同步无需提交或重新部署 Pages。`portrait/data/ranking-meta.json` 记录静态备用快照的来源、同步时间和校验值；每日排行更新不改变索引快照与 sitemap 日期。该排行与本站复制／下载累计热度分别展示。
 
 ```bash
 python3 scripts/seo.py
