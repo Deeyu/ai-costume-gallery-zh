@@ -2,13 +2,11 @@
 
 为 AI 绘画、角色设计和漫剧分镜挑选参考图。这里有**服装、脸型、姿势、深度和二次元**五个图库，可按中文关键词或编号查找，打开大图后复制或下载所需素材。
 
-**[打开在线图库](https://deeyu.github.io/ai-costume-gallery-zh/)** · [观看项目演示](https://deeyu.github.io/ai-costume-gallery-zh/examples/) · [查找全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/)
+**[打开在线图库](https://deeyu.github.io/ai-costume-gallery-zh/)** · [观看项目演示](#项目演示) · [查找全部条目](https://deeyu.github.io/ai-costume-gallery-zh/directory/)
 
 ## 项目演示
 
-[![播放新版项目演示，含配音，约 1 分钟](examples/project-demo-poster.png)](https://deeyu.github.io/ai-costume-gallery-zh/examples/)
-
-[播放视频（参考音色版）](https://deeyu.github.io/ai-costume-gallery-zh/examples/) · [下载 MP4](https://deeyu.github.io/ai-costume-gallery-zh/examples/project-demo.mp4)
+https://github.com/user-attachments/assets/63ec6229-0037-446f-a8cb-7afd0783feac
 
 ## 选哪个图库？
 
