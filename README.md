@@ -80,7 +80,6 @@ https://github.com/user-attachments/assets/63ec6229-0037-446f-a8cb-7afd0783feac
 | 服装库·动画版 | [衣装集 アニメ版 COSTUME-ANIME-DB](https://ai-costume-anime-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | [发布推文](https://x.com/giaaibusi/status/2117089256015622274) |
 | 脸型库 | [AIモデル顔データベース](https://ai-portrait-gallery.pages.dev/) | [あぎ（@agi_aibusi）](https://x.com/agi_aibusi) | [发布推文](https://x.com/agi_aibusi/status/2113187345814204557) |
 | 姿势库 | [AI 姿势原始图库](https://ai-pose-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | 中文词条：[Anhao 中文姿势图库](https://github.com/anhao/ai-pose-gallery-zh) |
-| 姿势库补充参考 | [WaveSpeedAI 姿势参考库](https://wavespeed.ai/zh-CN/free-tools/ai-pose-gallery) | WaveSpeedAI | 在原站浏览 3D 人偶、线稿与多视角姿势 |
 | 深度库 | [POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/) | [ギア（@giaaibusi）](https://x.com/giaaibusi) | 中文词条与姿势库同源，保留 [来源许可](depth/UPSTREAM_LICENSE) |
 | 二次元库 | [キャラ組み立てDB / CharaDB](https://charadb-2fi.pages.dev/) | [たき AI（@taki_auto）](https://x.com/taki_auto) | [发布推文](https://x.com/taki_auto/status/2116818463125803239) |
 

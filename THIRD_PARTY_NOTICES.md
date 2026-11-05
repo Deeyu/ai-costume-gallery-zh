@@ -48,8 +48,6 @@
 
 姿势库界面与维护脚本为独立实现，未复制 Anhao 的程序代码。中文整理不代表原作者或参考项目维护者的官方版本、背书或授权。
 
-补充参考来源为 [WaveSpeedAI 姿势参考库](https://wavespeed.ai/zh-CN/free-tools/ai-pose-gallery)，素材由 WaveSpeedAI 制作。该入口链接到独立图库，原站提供 3D 人偶与线稿两种样式及三个视角。原站说明可在个人及商业作品中使用这些姿势参考，请勿将图片单独打包转售，具体以原站说明为准。
-
 ## 深度库素材与中文词条来源
 
 - 原始站点：[POSE-DB-02 深度图库](https://ai-pose-depth-gallery.pages.dev/)，原作者 [ギア（@giaaibusi）](https://x.com/giaaibusi)。
